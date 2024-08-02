@@ -1,22 +1,36 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    private InventoryModel inventoryModel;
-    void Start()
+    [SerializeField]
+    private InventoryUiPage inventoryUi;
+    private bool InventoryUiActive;
+
+    public void Awake()
     {
-        inventoryModel = new InventoryModel();
+        inventoryUi.InstantiateInventory();
     }
 
     // Update is called once per frame
-    public void AddItemToInventory(ItemData Data, int quantity)
+    void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(!InventoryUiActive)
+            { 
+                inventoryUi.ShowInventory(); 
+                InventoryUiActive = true;
+            }
+            else if (InventoryUiActive)
+            {
+                inventoryUi.HideInventory();
+                InventoryUiActive = false;
+            }
 
-    }
-    public void RemoveItemFromInventory(ItemData Data)
-    {
-
+        }
+     
     }
 }

@@ -14,11 +14,6 @@ public class Health : MonoBehaviour
     public UnityEvent OnHeal;
     public UnityEvent OnDeath;
 
-    private void Start()
-    {
-        data = GetComponent<HealthData>();
-
-    }
 
     public void InstantiateHealth(HealthData data)
     {
