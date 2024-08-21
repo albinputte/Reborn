@@ -12,7 +12,7 @@ public class InventoryController : MonoBehaviour
 
     public void Awake()
     {
-        inventoryUi.InstantiateInventory();
+        //inventoryUi.InstantiateInventory();
     }
 
     // Update is called once per frame

@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventoryUiPage : MonoBehaviour
 {
@@ -10,18 +13,100 @@ public class InventoryUiPage : MonoBehaviour
 
     List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
 
+    [SerializeField] private MouseFollower mouseFollower;
+
+
+    private int currentDraggingIndex;
+
+    public Action<int> OnDrag;
+
+    public Action<int, int> OnSwap;
+
 
     private void Start()
     {
         InstantiateInventory();
+        mouseFollower.Toggle(false);
+        currentDraggingIndex = -1;
     }
 
     public void InstantiateInventory()
     {
         itemSlot = FindObjectsOfType<InventoryUiSlot>();
-        ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
+ 
+     ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
+        Debug.Log(ListOfUIslots.Count);
+        foreach (InventoryUiSlot slot in ListOfUIslots)
+        {
+            slot.OnItemClicked += ItemSelection;
+            slot.OnItemBeginDrag += BeginDrag;
+            slot.OnItemDroppedOn += ItemSwap;
+            slot.OnItemEndDrag += EndDrag;
+            slot.OnRightMouseBtnClick += ShowItemActions;
+          
+        }
+        
+    
 
 
+    }
+
+    public void UpdateData(int Index, Sprite newSprite, int newQuantity)
+    {
+        if(ListOfUIslots.Count > Index)
+        {
+            ListOfUIslots[Index].SetData(newSprite, newQuantity);
+        }
+        else
+        {
+            Debug.Log("Mikael wtf did you do");
+        }
+    }
+
+    private void ShowItemActions(InventoryUiSlot slot)
+    {
+        
+    }
+
+    private void EndDrag(InventoryUiSlot slot)
+    {
+        ResetMouse();
+    }
+
+    private void ItemSwap(InventoryUiSlot slot)
+    {
+        int index = ListOfUIslots.IndexOf(slot);
+        if (index == -1)
+            return;
+        OnSwap?.Invoke(currentDraggingIndex, index);
+       
+    }
+
+    private void BeginDrag(InventoryUiSlot slot)
+    {
+       int index = ListOfUIslots.IndexOf(slot);
+        if (index < 0) 
+            return;
+       
+       currentDraggingIndex = index;
+       OnDrag?.Invoke(currentDraggingIndex);
+    }
+
+   public void ResetMouse()
+    {
+        currentDraggingIndex = -1;
+        mouseFollower.Toggle(false);
+    }
+
+    public void SetMouse(Sprite sprite, int quantity)
+    {
+        mouseFollower.SetData(sprite, quantity);
+        mouseFollower.Toggle(true);
+    }
+
+    private void ItemSelection(InventoryUiSlot slot)
+    {
+       
     }
 
     public void ShowInventory()
