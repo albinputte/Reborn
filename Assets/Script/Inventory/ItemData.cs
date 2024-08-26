@@ -10,11 +10,12 @@ public class ItemData : ScriptableObject
     public Sprite Icon;
     public ItemType itemType;
     public bool IsStackable;
-    public int MaxStack = 100;
-    //todo add stats and all of that
 
-    
-   
+    public int ID => GetInstanceID();
+
+
+
+
 
 
 

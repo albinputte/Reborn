@@ -1,0 +1,176 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using UnityEngine;
+
+public class InventorySO : ScriptableObject
+{
+    public List<InventoryItem> Inventory;
+
+    [SerializeField] private int size;
+    [SerializeField] public int MaxItemStack;
+
+    public Action<Dictionary<int, InventoryItem>> OnInventoryChange;
+
+    public void InstantiateInventory()
+    {
+        Inventory = new List<InventoryItem>();
+
+        for (int i = 0; i < size - 1; i++) {
+            Inventory.Add(InventoryItem.CreateEmptyItem());
+        }
+
+    }
+    public int AddItem(ItemData item, int quantity ) {
+        if (!item.IsStackable)
+        {
+            for (int i = 0;i < Inventory.Count;i++) {
+            while(quantity > 0 && !inventoryIsFull()) 
+                {
+                    FindNearestEmptyItem(item,1);
+                    quantity--;
+                }
+                OnInventoryStateChange();
+                return quantity;
+            
+            }
+
+        }
+
+        quantity = StackItem(item, quantity);
+        OnInventoryStateChange();
+        return quantity;
+       
+
+    }
+
+    public InventoryItem GetSpecificItem(int index)
+    {
+        return Inventory[index];
+    }
+
+    public void RemoveItem(int itemIndex, int amount)
+    {
+        if(Inventory.Count >= itemIndex)
+        {
+            int remaningAmount = Inventory[itemIndex].quantity - amount;
+            if(remaningAmount <= 0) {
+                Inventory[itemIndex] = InventoryItem.CreateEmptyItem();
+
+            }
+            else
+            {
+                Inventory[itemIndex].ChangeQuantity(remaningAmount);
+            }
+            OnInventoryStateChange();
+        }
+
+        
+    }
+
+    public int StackItem(ItemData item, int quantity) 
+    { 
+        for (int i = 0; i < Inventory.Count;i++) 
+        {
+            if (Inventory[i].IsEmpty)
+                continue;
+            if (item.ID == Inventory[i].item.ID)
+            {
+                int PossibleAmountToTake = MaxItemStack - Inventory[i].quantity;
+
+                if (quantity > PossibleAmountToTake)
+                {
+
+                    Inventory[i] = Inventory[i].ChangeQuantity(MaxItemStack);
+                    quantity -= PossibleAmountToTake;
+                }
+                else
+                {
+                    Inventory[i].ChangeQuantity(Inventory[i].quantity + quantity);
+                    OnInventoryStateChange();
+                    return 0;
+                }
+
+            }
+        
+        }
+        while (quantity > 0 && !inventoryIsFull())
+        {
+            int newQuantity = Math.Clamp(quantity, 0, MaxItemStack);
+            quantity -= newQuantity;
+            AddItem(item, quantity);
+            
+        }
+        return quantity;
+    }
+
+    public void SwapitemPlace(int item1, int item2) 
+    {
+        InventoryItem temp = Inventory[item1];
+        Inventory[item2] = Inventory[item1];
+        Inventory[item1] = temp;
+        OnInventoryStateChange();
+    }
+
+    public bool inventoryIsFull() => Inventory.Where(item => item.IsEmpty).Any();
+
+    public int FindNearestEmptyItem(ItemData items, int quantity)
+    {
+        InventoryItem newItem = new InventoryItem
+        {
+            item = items,
+            quantity = quantity
+        };
+
+        for (int i = 0;i < Inventory.Count;i++) {
+            if (!Inventory[i].IsEmpty)
+            {
+                Inventory[i] = newItem;
+                return quantity;
+            }
+        
+        }
+
+        return 0;
+    }
+
+    public void OnInventoryStateChange() { OnInventoryChange?.Invoke(GetInventoryState()); }
+
+
+    public Dictionary<int, InventoryItem> GetInventoryState()
+    {
+        Dictionary<int,InventoryItem> Returnvalue = new Dictionary<int, InventoryItem>();
+
+        for (int i = 0;i < Inventory.Count; i++)
+        {
+            if (Inventory[i].IsEmpty)
+                continue;
+            Returnvalue[i] = Inventory[i];
+
+        }
+        return Returnvalue;
+    }
+}
+
+[Serializable]
+public struct InventoryItem
+{
+    public ItemData item;
+    public int quantity;
+    public bool IsEmpty => item == null;
+
+    public InventoryItem ChangeQuantity(int Newquantity)
+    {
+        return new InventoryItem
+        {
+            item = this.item,
+            quantity = Newquantity
+        };
+    }
+
+    public static InventoryItem CreateEmptyItem() => new InventoryItem { item = null, quantity = 0 }; 
+
+
+}
