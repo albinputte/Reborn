@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
+[CreateAssetMenu]
 public class InventorySO : ScriptableObject
 {
     public List<InventoryItem> Inventory;
@@ -18,31 +19,39 @@ public class InventorySO : ScriptableObject
     {
         Inventory = new List<InventoryItem>();
 
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size - 1; i++)
+        {
             Inventory.Add(InventoryItem.CreateEmptyItem());
         }
 
     }
-    public int AddItem(ItemData item, int quantity ) {
+    public int AddItem(ItemData item, int quantity)
+    {
+        Debug.Log("K");
         if (!item.IsStackable)
         {
-            for (int i = 0;i < Inventory.Count;i++) {
-            while(quantity > 0 && !inventoryIsFull()) 
+            Debug.Log("L");
+            for (int i = 0; i < Inventory.Count; i++)
+            {
+                Debug.Log(inventoryIsFull());
+                while (quantity > 0 && inventoryIsFull() == false)
                 {
-                    FindNearestEmptyItem(item,1);
+                    Debug.Log("YOOO");
+                    FindNearestEmptyItem(item, 1);
                     quantity--;
                 }
                 OnInventoryStateChange();
                 return quantity;
-            
+
             }
 
         }
 
         quantity = StackItem(item, quantity);
+        Debug.Log("2");
         OnInventoryStateChange();
         return quantity;
-       
+
 
     }
 
@@ -53,10 +62,11 @@ public class InventorySO : ScriptableObject
 
     public void RemoveItem(int itemIndex, int amount)
     {
-        if(Inventory.Count >= itemIndex)
+        if (Inventory.Count >= itemIndex)
         {
             int remaningAmount = Inventory[itemIndex].quantity - amount;
-            if(remaningAmount <= 0) {
+            if (remaningAmount <= 0)
+            {
                 Inventory[itemIndex] = InventoryItem.CreateEmptyItem();
 
             }
@@ -67,12 +77,12 @@ public class InventorySO : ScriptableObject
             OnInventoryStateChange();
         }
 
-        
+
     }
 
-    public int StackItem(ItemData item, int quantity) 
-    { 
-        for (int i = 0; i < Inventory.Count;i++) 
+    public int StackItem(ItemData item, int quantity)
+    {
+        for (int i = 0; i < Inventory.Count; i++)
         {
             if (Inventory[i].IsEmpty)
                 continue;
@@ -94,19 +104,19 @@ public class InventorySO : ScriptableObject
                 }
 
             }
-        
+
         }
-        while (quantity > 0 && !inventoryIsFull())
+        while (quantity > 0 && !inventoryIsFull() == false)
         {
             int newQuantity = Math.Clamp(quantity, 0, MaxItemStack);
             quantity -= newQuantity;
             AddItem(item, quantity);
-            
+
         }
         return quantity;
     }
 
-    public void SwapitemPlace(int item1, int item2) 
+    public void SwapitemPlace(int item1, int item2)
     {
         InventoryItem temp = Inventory[item1];
         Inventory[item2] = Inventory[item1];
@@ -114,7 +124,7 @@ public class InventorySO : ScriptableObject
         OnInventoryStateChange();
     }
 
-    public bool inventoryIsFull() => Inventory.Where(item => item.IsEmpty).Any();
+    public bool inventoryIsFull() => Inventory.Where(item => item.IsEmpty).Any() == false;
 
     public int FindNearestEmptyItem(ItemData items, int quantity)
     {
@@ -124,13 +134,14 @@ public class InventorySO : ScriptableObject
             quantity = quantity
         };
 
-        for (int i = 0;i < Inventory.Count;i++) {
-            if (!Inventory[i].IsEmpty)
+        for (int i = 0; i < Inventory.Count; i++)
+        {
+            if (Inventory[i].IsEmpty)
             {
                 Inventory[i] = newItem;
                 return quantity;
             }
-        
+
         }
 
         return 0;
@@ -141,9 +152,9 @@ public class InventorySO : ScriptableObject
 
     public Dictionary<int, InventoryItem> GetInventoryState()
     {
-        Dictionary<int,InventoryItem> Returnvalue = new Dictionary<int, InventoryItem>();
+        Dictionary<int, InventoryItem> Returnvalue = new Dictionary<int, InventoryItem>();
 
-        for (int i = 0;i < Inventory.Count; i++)
+        for (int i = 0; i < Inventory.Count; i++)
         {
             if (Inventory[i].IsEmpty)
                 continue;
@@ -152,8 +163,12 @@ public class InventorySO : ScriptableObject
         }
         return Returnvalue;
     }
-}
 
+    internal void AddItem(InventoryItem item)
+    {
+        AddItem(item.item, item.quantity);
+    }
+}
 [Serializable]
 public struct InventoryItem
 {

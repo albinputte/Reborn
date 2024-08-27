@@ -25,7 +25,7 @@ public class InventoryUiPage : MonoBehaviour
 
     private void Start()
     {
-        InstantiateInventory();
+   
         mouseFollower.Toggle(false);
         currentDraggingIndex = -1;
     }
@@ -80,6 +80,7 @@ public class InventoryUiPage : MonoBehaviour
             return;
         OnSwap?.Invoke(currentDraggingIndex, index);
        
+
     }
 
     private void BeginDrag(InventoryUiSlot slot)
@@ -98,6 +99,14 @@ public class InventoryUiPage : MonoBehaviour
         mouseFollower.Toggle(false);
     }
 
+    public void ResetInventory()
+    {
+        foreach(var item in ListOfUIslots)
+        {
+            item.ResetItemData();
+            item.DeselectBorder();
+        }
+    }
     public void SetMouse(Sprite sprite, int quantity)
     {
         mouseFollower.SetData(sprite, quantity);
