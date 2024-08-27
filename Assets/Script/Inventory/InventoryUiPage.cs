@@ -76,7 +76,7 @@ public class InventoryUiPage : MonoBehaviour
     private void ItemSwap(InventoryUiSlot slot)
     {
         int index = ListOfUIslots.IndexOf(slot);
-        if (index == -1)
+        if (index == -1 || currentDraggingIndex == -1)
             return;
         OnSwap?.Invoke(currentDraggingIndex, index);
        
@@ -86,10 +86,11 @@ public class InventoryUiPage : MonoBehaviour
     private void BeginDrag(InventoryUiSlot slot)
     {
        int index = ListOfUIslots.IndexOf(slot);
-        if (index < 0) 
+        if (index == -1) 
             return;
        
        currentDraggingIndex = index;
+        Debug.Log(currentDraggingIndex);
        OnDrag?.Invoke(currentDraggingIndex);
     }
 

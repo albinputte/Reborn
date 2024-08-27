@@ -62,6 +62,8 @@ public class InventoryController : MonoBehaviour
 
     private void HandleItemSwap(int index1,int Index2)
     {
+        Debug.Log(Index2);
+        Debug.Log(index1);
         inventoryData.SwapitemPlace(index1,Index2);
     }
 

@@ -122,6 +122,7 @@ public class InventorySO : ScriptableObject
 
     public void SwapitemPlace(int item1, int item2)
     {
+       
         InventoryItem temp = Inventory[item1];
         Inventory[item1] = Inventory[item2];
         Inventory[item2] = temp;
