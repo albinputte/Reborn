@@ -106,11 +106,15 @@ public class InventorySO : ScriptableObject
             }
 
         }
-        while (quantity > 0 && !inventoryIsFull() == false)
+     
+        while (quantity > 0 && inventoryIsFull() == false)
         {
-            int newQuantity = Math.Clamp(quantity, 0, MaxItemStack);
+    
+            int newQuantity = Mathf.Clamp(quantity, 0, MaxItemStack);
+     
             quantity -= newQuantity;
-            AddItem(item, quantity);
+          
+            FindNearestEmptyItem(item, newQuantity);
 
         }
         return quantity;
@@ -119,8 +123,8 @@ public class InventorySO : ScriptableObject
     public void SwapitemPlace(int item1, int item2)
     {
         InventoryItem temp = Inventory[item1];
-        Inventory[item2] = Inventory[item1];
-        Inventory[item1] = temp;
+        Inventory[item1] = Inventory[item2];
+        Inventory[item2] = temp;
         OnInventoryStateChange();
     }
 
