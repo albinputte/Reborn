@@ -21,6 +21,7 @@ public class PlayerState
 
     public virtual void Enter()
     {
+      
         //Player.animator.play(animationName);  add later when i add player controller script
     }
 
@@ -45,14 +46,15 @@ public class PlayerState
 
     public void CheckFlip()
     {
+        Debug.Log(facingDirection);
         if(controller.Input.normInputX == 1)
         {
-            controller.transform.localScale = new Vector3(1, 1, 0);
+            controller.Parrent.transform.localScale = new Vector3(1, 1, 0);
             facingDirection = 1;
         }
         else if (controller.Input.normInputX == -1)
         {
-            controller.transform.localScale = new Vector3(-1, 1, 0);
+            controller.Parrent.transform.localScale = new Vector3(-1, 1, 0);
             facingDirection = -1;
         }
 

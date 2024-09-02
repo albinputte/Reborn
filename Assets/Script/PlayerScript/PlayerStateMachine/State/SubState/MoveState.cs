@@ -21,6 +21,7 @@ public class MoveState : BaseMovementStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+    
         CheckFlip();
     }
 

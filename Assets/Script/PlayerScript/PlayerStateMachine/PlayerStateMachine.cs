@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    private PlayerState CurrentState;
+    public PlayerState CurrentState { get; private set; }
    
 
     public void InisiateState(PlayerState NewState)

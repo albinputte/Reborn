@@ -54,9 +54,11 @@ public class InventoryController : MonoBehaviour
 
     private void HandleDragging(int index)
     {
+        
         InventoryItem item = inventoryData.GetSpecificItem(index);
         if (item.IsEmpty)
             return;
+
         inventoryUi.SetMouse(item.item.Icon,item.quantity);
     }
 

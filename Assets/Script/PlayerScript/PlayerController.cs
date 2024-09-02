@@ -1,24 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public Animator animator;
-    public Rigidbody rb;
+    public Rigidbody2D rb;
     public PlayerInputManger Input;
+    public GameObject Parrent;
+    public PlayerStateMachine stateMachine { get; private set; }
+    public PlayerData playerData;
+
+    
 
     public IdleState idle {  get; private set; }
     public MoveState move { get; private set; }
+
+    public PlayerState playerState { get; private set; }
     void Start()
     {
-        
+        stateMachine = new PlayerStateMachine();
+        move = new MoveState(stateMachine,playerData,"Move_anim", this);
+        idle = new IdleState(stateMachine, playerData, "idle_anim", this);
+        playerState = new PlayerState(stateMachine,playerData, "Base",this );
+        stateMachine.InisiateState(idle);
+      
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        stateMachine.CurrentState.LogicUpdate();
     }
+
+    public void FixedUpdate()
+    {
+      stateMachine.CurrentState.PhysicsUpdate();
+    }
+
+
+
 }

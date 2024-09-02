@@ -27,16 +27,16 @@ public class InventorySO : ScriptableObject
     }
     public int AddItem(ItemData item, int quantity)
     {
-        Debug.Log("K");
+
         if (!item.IsStackable)
         {
-            Debug.Log("L");
+       
             for (int i = 0; i < Inventory.Count; i++)
             {
                 Debug.Log(inventoryIsFull());
                 while (quantity > 0 && inventoryIsFull() == false)
                 {
-                    Debug.Log("YOOO");
+                
                     FindNearestEmptyItem(item, 1);
                     quantity--;
                 }
@@ -48,7 +48,7 @@ public class InventorySO : ScriptableObject
         }
 
         quantity = StackItem(item, quantity);
-        Debug.Log("2");
+   
         OnInventoryStateChange();
         return quantity;
 
