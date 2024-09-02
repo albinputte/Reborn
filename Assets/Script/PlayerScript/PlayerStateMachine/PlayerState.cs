@@ -46,7 +46,7 @@ public class PlayerState
 
     public void CheckFlip()
     {
-        Debug.Log(facingDirection);
+      
         if(controller.Input.normInputX == 1)
         {
             controller.Parrent.transform.localScale = new Vector3(1, 1, 0);
