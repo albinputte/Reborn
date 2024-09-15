@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
 
     public IdleState idle {  get; private set; }
     public MoveState move { get; private set; }
-
+    public RunState run { get; private set; }
     public PlayerState playerState { get; private set; }
     void Start()
     {
         stateMachine = new PlayerStateMachine();
         move = new MoveState(stateMachine,playerData,"Move_anim", this);
-        idle = new IdleState(stateMachine, playerData, "idle_anim", this);
+        idle = new IdleState(stateMachine, playerData, "Idle_anim", this);
+        run = new RunState(stateMachine, playerData, "Run_anim", this);
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
         stateMachine.InisiateState(idle);
       

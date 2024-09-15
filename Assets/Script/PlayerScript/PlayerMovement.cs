@@ -21,6 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void MovementXY(PlayerData data)
     {
-        rb.velocity = new Vector2(Input.normInputX * data.MoveSpeed, Input.normInputY * data.MoveSpeed);
+        //rb.velocity = new Vector2(Input.normInputX * data.MoveSpeed, Input.normInputY * data.MoveSpeed);
     }
 }

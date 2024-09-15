@@ -26,7 +26,12 @@ public class BaseMovementStates : PlayerState
         {
             stateMachine.SwitchState(controller.idle);
         }
-        else { stateMachine.SwitchState(controller.move); }
+        else if (controller.Input.isSprinting)
+        {
+            stateMachine.SwitchState(controller.run);
+        }
+        else 
+        { stateMachine.SwitchState(controller.move); }
 
         MovementXY();
 
