@@ -11,6 +11,8 @@ public class PlayerState
     protected PlayerController controller;
     protected int facingDirection = 1;
 
+
+
     public PlayerState(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController ) {
         stateMachine = StateMachine;
         playerData = data;
@@ -27,7 +29,7 @@ public class PlayerState
 
     public virtual void Exit()
     {
-
+        
     }
     public virtual void LogicUpdate() 
     {
@@ -36,12 +38,19 @@ public class PlayerState
 
     public virtual void PhysicsUpdate() 
     { 
-    
+     
     }
 
     public void MovementXY()
     {
-        controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.MoveSpeed, controller.Input.normInputY * playerData.MoveSpeed);
+        if(!controller.Input.isSprinting) 
+        {    
+        controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.moveSpeed, controller.Input.normInputY * playerData.moveSpeed);
+        }
+        else
+        {
+            controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.runSpeed, controller.Input.normInputY * playerData.runSpeed);
+        }
     }
 
     public void CheckFlip()
