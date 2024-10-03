@@ -1,0 +1,4131 @@
+fileFormatVersion: 2
+guid: 1217965e37d37374cb3be8b673d7b48a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1078
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e27c4be82b5f040aab870801d5ec7d
+      internalID: 1379475641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1078
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56decd41de6563849b19ea55efb2b7f7
+      internalID: 3800671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1078
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a528eb3a94cc4124791f719f57fb32ad
+      internalID: -1971540451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1078
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56c5f95cb3bd384da9fb77105322081
+      internalID: 84146313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1078
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497a3a199f3dfd64c8d5a99a292aa4e5
+      internalID: -1052088765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e5a0985408f3c48b92774bb2bb1304
+      internalID: 1553543428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa37fe83e6910fb4c9409b45104847b2
+      internalID: 1205953729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3364757531d9841ab98e89bfcbbb0d
+      internalID: -962481787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b651ef037c028e4b9584b8579e6421b
+      internalID: -1356566954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146d4e1bb9d2b6e4eb76c814db6f946f
+      internalID: 2000988381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3362a1c2d2e3540a603b19eaa672cc
+      internalID: -553883567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931c1430d6cdf10439c76edc76f8a6f6
+      internalID: -1301946024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e42a6a52da4aa342a779863e3fbb725
+      internalID: -1381651223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8046e73f386eda940a630baa585f1520
+      internalID: 1961289862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1046
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e34330c960411243ac2811f1f6f167a
+      internalID: 1893109545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8117b4f96ecad7d40ab3460933afd9ed
+      internalID: 1387900829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9540efaf2b6c68942b8d0de6e2dd8f9a
+      internalID: 1705965451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd74e700a4bce7543a52613fe99f0f05
+      internalID: 1321847607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670037359dcfdaa4abb35e77fc19b2ce
+      internalID: 1414806914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d151dc3d686ac2144833761d76cd42de
+      internalID: -403122964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb4ab55b00ca75449dd49bc33f06876
+      internalID: -1032946389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f482bb938710db4ba634d75d95b5a5e
+      internalID: -1369046406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d73b1d2dbb7684aaca2e08d7aa49d3
+      internalID: 1290207558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fb35c85dbd61144bd57c865f4bc353
+      internalID: -39809847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb4528af10df9141af06f1d850bfcff
+      internalID: 846441051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f390ea45f1ff254bae3f0b90946e4cc
+      internalID: 1120802926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c2332a278343247b7186a1920f32a6
+      internalID: -1251379895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1014
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b572ebbd65e4b4ebcff8d9a9c6d449
+      internalID: -1716569148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c0c51c5325a5347977c55ffe9f32f7
+      internalID: -292938265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602a942c03abc7940ab91dcb8462bb70
+      internalID: -1781683130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13de26cc2efd01b4a95b42a279ef0fd1
+      internalID: 800073954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0dd7103a24aac46aab2a2bad1aa774
+      internalID: 1168879968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ab0fbf77b9ec249baa63c36ed2c8eb
+      internalID: 1102449737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48dd9506d83d6b4ba3020e3db1e72d1
+      internalID: -1968593112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491f9b8f06c8b804099982f92022ff06
+      internalID: 361266742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a51772af1864c24c8bffafeb2d49ede
+      internalID: -1633703594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a9e19fc7ad5454fb8dab7003110f9a
+      internalID: -187276903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493953397b846dc4b8e9335db1f515e9
+      internalID: -751172105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a978fab7dc80545a0faf8317cee654
+      internalID: 397702225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb420aadc924a5643a841c58ec0a3d39
+      internalID: -1991499879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 982
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b6592d842f9584192e6a0c973c5db4
+      internalID: 16682796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8212c6b48154670449c652070bb084a0
+      internalID: 1158711492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e8a8117ccf62b4e9c95982434ee99f
+      internalID: -1453873059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b415f0b4a4b7046806f6ca40db3902
+      internalID: 1421829799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac62320d773d45243b5851dc84ce5c84
+      internalID: 1069157586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac279f03e9929c64ea6e649443973186
+      internalID: -737878098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab6ace9c3486f94680d55ceb77316ec
+      internalID: -546922808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8caf10945b091b645b7f1c33d57260f0
+      internalID: 1037840129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55bbd2fd98d065429cea750f5eed071
+      internalID: 1176441547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f9cf64d5b0ea749a3062dba393cd3b
+      internalID: 403869682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af12fc8a4b2dc642871d27f34cf1e3e
+      internalID: -1944457527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 950
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd87421b1ca4a240973137ba4c746ae
+      internalID: -311926529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5401f0dd532bd642a549586e8af15fd
+      internalID: -1925334237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6626e4598ee0a428abf30075f1fe93
+      internalID: -1122727289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c152e567be071419330394a62ce464
+      internalID: 1858057715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e67c09cf9bc1ca48bfc76cfe465e443
+      internalID: -1994622335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c05d0a3c9a07e4cb9bf733dddaddab
+      internalID: 1465890194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81e7121920e3df41902ba81556de222
+      internalID: 551794690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd10bdf9ba14a74ab7478c6cb0f05b1
+      internalID: -1126255284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277af6a3aa0bb924aa2df00b95726629
+      internalID: -1632618341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde6b21a1cc74a943adf32167d71104d
+      internalID: -207030154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276cdfa1e34ce3641afb36a3ab7aba8c
+      internalID: 484839227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 918
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9750edea2a8feaa49b17e6c43319064d
+      internalID: -1476719671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d905d6dcf992d4db9cf6e8c06e48a3
+      internalID: -440700224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6f85ca0a22fdc49bd666bd19e4104d
+      internalID: 645660152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8366e18885fdb1469a309bcc2f6e28e
+      internalID: 13244614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2d28c52a2161f4db92957a0f3c0f4a
+      internalID: -1733476193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cd75b9fe57a8b40875d80052b42fa4
+      internalID: 252098384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de5119788a700c42adf66a79895a463
+      internalID: -310997164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82aaacdd1b2d7014895041a8b019a3b2
+      internalID: 1495768018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 886
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c95481a9696d954b9f5fa216449b7a7
+      internalID: 1320823002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 854
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963345cdcf447c243835d07ae71ccf74
+      internalID: 1669017696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 854
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e677fad26614a2b42afed0a889e68ce1
+      internalID: 1984611314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 854
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafa630cc8ed38846adfcc523fee8b54
+      internalID: -392900558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 854
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efef34f092fa0754ea08072e678c4b0a
+      internalID: -246492865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 854
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100e4f03291e844439508c132c22351d
+      internalID: -1886563006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 854
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68eeec016540f334db9715264a303263
+      internalID: -1643202715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 822
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9582ecebe4c42449227d702af6e83a
+      internalID: -328225681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 822
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bd4521ffbe3f649b5602cc899bf47c
+      internalID: 993729691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 822
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5937f8839e94b8e43a9f3249c50af6c5
+      internalID: -1601698525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 822
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ebca7cc4cb5114d8a27759eee2c6d7
+      internalID: 748886446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebbb3289bd74bc408b03d7b37dcee9c
+      internalID: -625530296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7813467bdf7aa45a1515ad5897628e
+      internalID: -1564291667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1d665f0f26818449b5d16a62a9d850
+      internalID: -543521970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77901a27a4a3b944a334e417a620f36
+      internalID: 1543041991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12b8946cfb1b9b4fb22e0d7df9776ab
+      internalID: -253411951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724e7bd7071577e40818c5a7cc969e90
+      internalID: -1138812657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1f2badde454ac489ec7880ab0a4a70
+      internalID: -2103171978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deffd119857fae147a6fbb2f8b43bcf6
+      internalID: 409031626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8400b95b45e09d048b18fda5b5224ed5
+      internalID: 29843391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d309ab97fe4fb348a132335d2cb5711
+      internalID: -946196647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64ffccd06ca62c498950d9d25fdd2e8
+      internalID: 1505981072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379ec25abab524c428b71614cbdac9d6
+      internalID: -1041366966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d29bec8cc5e4384aaf10e88f6e46049
+      internalID: -1807492366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc83fca053090947970bdec6a0eb895
+      internalID: -461629638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afd69462fca0794ea47d2bbe9d7c70f
+      internalID: 1563567643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a17f9a1dc68d604eae2a841d603923e
+      internalID: 407925782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 630
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4f620674eb6c545804200dd4faf30b
+      internalID: 406655709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 598
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc37ef4ae123f814aa2c83588c1d882a
+      internalID: -1643573915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 598
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc41b187056868940ab1dcbaa073d903
+      internalID: -1013851999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 598
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ab1997e0450b8478a98c37e13f5e28
+      internalID: 1988659616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 598
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d9c205d11247941ac45ada2cee450e
+      internalID: -2092512494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 598
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0a26df9892bc243a960561c75a44ae
+      internalID: -2033945925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 598
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f24c38fe6fd66b41a9a912796e6b2ab
+      internalID: 1245309626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 566
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b38f0c2a1594a84ea44ece0959cc42a
+      internalID: -1707001493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 566
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f2fd1f4792c3e4ba35d8d036de8e76
+      internalID: 280505396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 566
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3891f348cd041924d8dd4af33201d53d
+      internalID: 2061446185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 566
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca62c20fadfb35144a3ed839b63e9c62
+      internalID: -716797079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 566
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5d69a54d6a6a24fa39870605b0d2bb
+      internalID: -1081434621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 566
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ab07f78236dc84fab40e948d325385
+      internalID: 1594267008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5bcb29faa7aee408991833774579ee
+      internalID: 676899209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8d3496fc378c041b2d9b4186a1fcf0
+      internalID: 1869234205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c18260ff17ac634cbfa19dde798af4c
+      internalID: 1359972576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cad89d6afb6c642a73d840fb59cd58
+      internalID: -1828619772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450eda4696758bb4db5ed61ed8bc2a63
+      internalID: -1160650391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557f70edd1597724aa9e93019af23349
+      internalID: -1806505769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 534
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1c652b2956c9240814998d9cf887a5
+      internalID: 1898855597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99550c3721ad6c54ab14037d10210fa4
+      internalID: -1796927844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784dce54285579c48b40f7bbc8b6d006
+      internalID: 1020004629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd3b30ec00431644a97e2c542b79c81
+      internalID: -188394620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8401d5a041ebc2d4dad04dd0a8071320
+      internalID: -710099801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d863489d74b70b549bae794c59ff6bca
+      internalID: -577796362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bef44afd5af7d64ba3497f44117ca6b
+      internalID: 928111912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17af86f2b8397ed4dbea7c484291947c
+      internalID: -472706045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d65d1ccf0885f43a058abf5b7e7157
+      internalID: 1785595700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 502
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68296211c538dee41b833257e7effad6
+      internalID: 653341153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df855f497987b243bd7b9e97be270ef
+      internalID: 938527670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da850a6b4b4f584d87855c6b5ae7fdf
+      internalID: -296556664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f8894b17d41414a96e7aec070d5290
+      internalID: 1173820328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54935b0cd144de44b873c74b7d12d1b6
+      internalID: 1085489132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2644d1a8958f8e54f8e9bababf25ba5e
+      internalID: -1466594733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbf491128e64604a96db1bd32e2f910
+      internalID: 1008138890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_132
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ae3f30cef2eb443a2f55133fe87dd6
+      internalID: -838652707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_133
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de92e9827fe07ae4ba92658832326167
+      internalID: 461413066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_134
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c7ea6a5d6a63949845407c340ef79b
+      internalID: -1757292989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_135
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff627a3d16586be4abecf0c31a65bd4b
+      internalID: 2079803313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_136
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cfbd26cdec3e442b6e44a8346d7f1d
+      internalID: 1464264786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_137
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5e2e9a4f902f14f9e1942e61c8aeec
+      internalID: -1109014861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_138
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940179987a4f93241b6986369d4ca3a1
+      internalID: -52309946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_139
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 470
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0117ae098680842a5fb3699ad82aaf
+      internalID: 511556759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_140
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 438
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b500790b958890445b2a7a138b470cf8
+      internalID: 599747271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_141
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 438
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263906c0b11b7184299062d56a7fe75e
+      internalID: 1172890965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_142
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 438
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a459cced739c549aee2b09fc55af13
+      internalID: -1567386672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_143
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 438
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0bd935eb07d1a4e95b982d42caa34a
+      internalID: -265577928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_144
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 438
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629938ccac2d0a5498f24ed5f1e51ed8
+      internalID: 405974310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_145
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 438
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01825f820956b6e459d53e72afd19cbe
+      internalID: -1834175829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_146
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 406
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a393fee5abd4fc4aa5bcc5d43ffa0ce
+      internalID: -1220165739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_147
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 406
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0310b087ad54aa44f9fb431578d3f28f
+      internalID: -1367086818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_148
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 406
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6ea6a6c7f9e424681f2819e40459e4
+      internalID: -2109248336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_149
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 406
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c2eda5d7432ef40bbd863cb9af1918
+      internalID: -813521377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_150
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 374
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aba18f4bfea6fd4e8628549cd6c2248
+      internalID: 1307931980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_151
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 374
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d143d6077d84fb48b4565107f7b33a4
+      internalID: -524203351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_152
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 374
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915381a104acb814fa225b84617881f0
+      internalID: 911906048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_153
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 374
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b60986639f524f4e89651f0383e5911
+      internalID: -1989591476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_154
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 182
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc277c228ba25f468320cc3c27a283c
+      internalID: -561082642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_155
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 182
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca68e75a60bcfaf4489d7abb6728752c
+      internalID: -700845816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_156
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 182
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f93b5be049e07e4789af4b1058af327
+      internalID: 137560995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_157
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 182
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d639b2dfd29bf64478fe87fcd1e2c47f
+      internalID: -1538008662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_158
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be1bf1cebf4ef14889e5986d32c7fee
+      internalID: -1711182381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_159
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d54287754a34e4591417f878fd5b51
+      internalID: 614012167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_160
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbb82b7407c4f84b93c874f775ef043
+      internalID: -1767869762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_161
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e7cae1577f3eb448215cc69042d0db
+      internalID: -400367624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_162
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66838142af1f31e4bbaefe2604a6c80e
+      internalID: -1316842573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_163
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 118
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf31a43a41c69634097b54e256f43cd0
+      internalID: -1138769363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_164
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 118
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1599ccd6b8c73134da9cc0511123d509
+      internalID: 528191622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_165
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 118
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f9500415e04344a9ca2f26150a2231
+      internalID: -455749214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_166
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 118
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c521afa5b07b8b41b9a5f58b91baeeb
+      internalID: 751906801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_167
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 118
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159d70ccb27d8fb4ca9062e503439210
+      internalID: 1107617882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_168
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 86
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175f6f21e2328da4381c41a7635867a6
+      internalID: -1730527662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_169
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 86
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308d9efa97ab4234da8bfc5afd81e134
+      internalID: 108014256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_170
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 86
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2315310b7d3166840abcc7f44f4f3725
+      internalID: 1567074225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_171
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 86
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b260875b461fec1438f613acc7f5a104
+      internalID: 627032736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_172
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 86
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2cb3d991276784694f4426f9b6aa22
+      internalID: -1965812997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_173
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 86
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb130009a99f7d498d84c3d7bec5899
+      internalID: -254434827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_174
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 54
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fce946fd3b8a894d959a31c6ec96a37
+      internalID: 758003883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_175
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 54
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e9134fc9e3bf24eac5360b43f18756
+      internalID: -58983835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_176
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 54
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da9b6e3deb895d479f7d296266867c9
+      internalID: 998965036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_177
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 54
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc8eb4c5f51eec4f8f142e6c75d4b79
+      internalID: 2067016410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_178
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 22
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af55ce642ef4ba34d99e56f18cf4d9ac
+      internalID: -449533087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_179
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 22
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5863478e61dc34fbcaed7db8128e4a
+      internalID: 351339313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_180
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 22
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce1d32c30e32744cab8d8c167f37a8a
+      internalID: 652969401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mix Cutting-Sheet_181
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 22
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edee71fbdd5eb4f4996e009eef0ad13b
+      internalID: -5121808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mix Cutting-Sheet_0: 1379475641
+      Mix Cutting-Sheet_1: 3800671
+      Mix Cutting-Sheet_10: -553883567
+      Mix Cutting-Sheet_100: 1988659616
+      Mix Cutting-Sheet_101: -2092512494
+      Mix Cutting-Sheet_102: -2033945925
+      Mix Cutting-Sheet_103: 1245309626
+      Mix Cutting-Sheet_104: -1707001493
+      Mix Cutting-Sheet_105: 280505396
+      Mix Cutting-Sheet_106: 2061446185
+      Mix Cutting-Sheet_107: -716797079
+      Mix Cutting-Sheet_108: -1081434621
+      Mix Cutting-Sheet_109: 1594267008
+      Mix Cutting-Sheet_11: -1301946024
+      Mix Cutting-Sheet_110: 676899209
+      Mix Cutting-Sheet_111: 1869234205
+      Mix Cutting-Sheet_112: 1359972576
+      Mix Cutting-Sheet_113: -1828619772
+      Mix Cutting-Sheet_114: -1160650391
+      Mix Cutting-Sheet_115: -1806505769
+      Mix Cutting-Sheet_116: 1898855597
+      Mix Cutting-Sheet_117: -1796927844
+      Mix Cutting-Sheet_118: 1020004629
+      Mix Cutting-Sheet_119: -188394620
+      Mix Cutting-Sheet_12: -1381651223
+      Mix Cutting-Sheet_120: -710099801
+      Mix Cutting-Sheet_121: -577796362
+      Mix Cutting-Sheet_122: 928111912
+      Mix Cutting-Sheet_123: -472706045
+      Mix Cutting-Sheet_124: 1785595700
+      Mix Cutting-Sheet_125: 653341153
+      Mix Cutting-Sheet_126: 938527670
+      Mix Cutting-Sheet_127: -296556664
+      Mix Cutting-Sheet_128: 1173820328
+      Mix Cutting-Sheet_129: 1085489132
+      Mix Cutting-Sheet_13: 1961289862
+      Mix Cutting-Sheet_130: -1466594733
+      Mix Cutting-Sheet_131: 1008138890
+      Mix Cutting-Sheet_132: -838652707
+      Mix Cutting-Sheet_133: 461413066
+      Mix Cutting-Sheet_134: -1757292989
+      Mix Cutting-Sheet_135: 2079803313
+      Mix Cutting-Sheet_136: 1464264786
+      Mix Cutting-Sheet_137: -1109014861
+      Mix Cutting-Sheet_138: -52309946
+      Mix Cutting-Sheet_139: 511556759
+      Mix Cutting-Sheet_14: 1893109545
+      Mix Cutting-Sheet_140: 599747271
+      Mix Cutting-Sheet_141: 1172890965
+      Mix Cutting-Sheet_142: -1567386672
+      Mix Cutting-Sheet_143: -265577928
+      Mix Cutting-Sheet_144: 405974310
+      Mix Cutting-Sheet_145: -1834175829
+      Mix Cutting-Sheet_146: -1220165739
+      Mix Cutting-Sheet_147: -1367086818
+      Mix Cutting-Sheet_148: -2109248336
+      Mix Cutting-Sheet_149: -813521377
+      Mix Cutting-Sheet_15: 1387900829
+      Mix Cutting-Sheet_150: 1307931980
+      Mix Cutting-Sheet_151: -524203351
+      Mix Cutting-Sheet_152: 911906048
+      Mix Cutting-Sheet_153: -1989591476
+      Mix Cutting-Sheet_154: -561082642
+      Mix Cutting-Sheet_155: -700845816
+      Mix Cutting-Sheet_156: 137560995
+      Mix Cutting-Sheet_157: -1538008662
+      Mix Cutting-Sheet_158: -1711182381
+      Mix Cutting-Sheet_159: 614012167
+      Mix Cutting-Sheet_16: 1705965451
+      Mix Cutting-Sheet_160: -1767869762
+      Mix Cutting-Sheet_161: -400367624
+      Mix Cutting-Sheet_162: -1316842573
+      Mix Cutting-Sheet_163: -1138769363
+      Mix Cutting-Sheet_164: 528191622
+      Mix Cutting-Sheet_165: -455749214
+      Mix Cutting-Sheet_166: 751906801
+      Mix Cutting-Sheet_167: 1107617882
+      Mix Cutting-Sheet_168: -1730527662
+      Mix Cutting-Sheet_169: 108014256
+      Mix Cutting-Sheet_17: 1321847607
+      Mix Cutting-Sheet_170: 1567074225
+      Mix Cutting-Sheet_171: 627032736
+      Mix Cutting-Sheet_172: -1965812997
+      Mix Cutting-Sheet_173: -254434827
+      Mix Cutting-Sheet_174: 758003883
+      Mix Cutting-Sheet_175: -58983835
+      Mix Cutting-Sheet_176: 998965036
+      Mix Cutting-Sheet_177: 2067016410
+      Mix Cutting-Sheet_178: -449533087
+      Mix Cutting-Sheet_179: 351339313
+      Mix Cutting-Sheet_18: 1414806914
+      Mix Cutting-Sheet_180: 652969401
+      Mix Cutting-Sheet_181: -5121808
+      Mix Cutting-Sheet_19: -403122964
+      Mix Cutting-Sheet_2: -1971540451
+      Mix Cutting-Sheet_20: -1032946389
+      Mix Cutting-Sheet_21: -1369046406
+      Mix Cutting-Sheet_22: 1290207558
+      Mix Cutting-Sheet_23: -39809847
+      Mix Cutting-Sheet_24: 846441051
+      Mix Cutting-Sheet_25: 1120802926
+      Mix Cutting-Sheet_26: -1251379895
+      Mix Cutting-Sheet_27: -1716569148
+      Mix Cutting-Sheet_28: -292938265
+      Mix Cutting-Sheet_29: -1781683130
+      Mix Cutting-Sheet_3: 84146313
+      Mix Cutting-Sheet_30: 800073954
+      Mix Cutting-Sheet_31: 1168879968
+      Mix Cutting-Sheet_32: 1102449737
+      Mix Cutting-Sheet_33: -1968593112
+      Mix Cutting-Sheet_34: 361266742
+      Mix Cutting-Sheet_35: -1633703594
+      Mix Cutting-Sheet_36: -187276903
+      Mix Cutting-Sheet_37: -751172105
+      Mix Cutting-Sheet_38: 397702225
+      Mix Cutting-Sheet_39: -1991499879
+      Mix Cutting-Sheet_4: -1052088765
+      Mix Cutting-Sheet_40: 16682796
+      Mix Cutting-Sheet_41: 1158711492
+      Mix Cutting-Sheet_42: -1453873059
+      Mix Cutting-Sheet_43: 1421829799
+      Mix Cutting-Sheet_44: 1069157586
+      Mix Cutting-Sheet_45: -737878098
+      Mix Cutting-Sheet_46: -546922808
+      Mix Cutting-Sheet_47: 1037840129
+      Mix Cutting-Sheet_48: 1176441547
+      Mix Cutting-Sheet_49: 403869682
+      Mix Cutting-Sheet_5: 1553543428
+      Mix Cutting-Sheet_50: -1944457527
+      Mix Cutting-Sheet_51: -311926529
+      Mix Cutting-Sheet_52: -1925334237
+      Mix Cutting-Sheet_53: -1122727289
+      Mix Cutting-Sheet_54: 1858057715
+      Mix Cutting-Sheet_55: -1994622335
+      Mix Cutting-Sheet_56: 1465890194
+      Mix Cutting-Sheet_57: 551794690
+      Mix Cutting-Sheet_58: -1126255284
+      Mix Cutting-Sheet_59: -1632618341
+      Mix Cutting-Sheet_6: 1205953729
+      Mix Cutting-Sheet_60: -207030154
+      Mix Cutting-Sheet_61: 484839227
+      Mix Cutting-Sheet_62: -1476719671
+      Mix Cutting-Sheet_63: -440700224
+      Mix Cutting-Sheet_64: 645660152
+      Mix Cutting-Sheet_65: 13244614
+      Mix Cutting-Sheet_66: -1733476193
+      Mix Cutting-Sheet_67: 252098384
+      Mix Cutting-Sheet_68: -310997164
+      Mix Cutting-Sheet_69: 1495768018
+      Mix Cutting-Sheet_7: -962481787
+      Mix Cutting-Sheet_70: 1320823002
+      Mix Cutting-Sheet_71: 1669017696
+      Mix Cutting-Sheet_72: 1984611314
+      Mix Cutting-Sheet_73: -392900558
+      Mix Cutting-Sheet_74: -246492865
+      Mix Cutting-Sheet_75: -1886563006
+      Mix Cutting-Sheet_76: -1643202715
+      Mix Cutting-Sheet_77: -328225681
+      Mix Cutting-Sheet_78: 993729691
+      Mix Cutting-Sheet_79: -1601698525
+      Mix Cutting-Sheet_8: -1356566954
+      Mix Cutting-Sheet_80: 748886446
+      Mix Cutting-Sheet_81: -625530296
+      Mix Cutting-Sheet_82: -1564291667
+      Mix Cutting-Sheet_83: -543521970
+      Mix Cutting-Sheet_84: 1543041991
+      Mix Cutting-Sheet_85: -253411951
+      Mix Cutting-Sheet_86: -1138812657
+      Mix Cutting-Sheet_87: -2103171978
+      Mix Cutting-Sheet_88: 409031626
+      Mix Cutting-Sheet_89: 29843391
+      Mix Cutting-Sheet_9: 2000988381
+      Mix Cutting-Sheet_90: -946196647
+      Mix Cutting-Sheet_91: 1505981072
+      Mix Cutting-Sheet_92: -1041366966
+      Mix Cutting-Sheet_93: -1807492366
+      Mix Cutting-Sheet_94: -461629638
+      Mix Cutting-Sheet_95: 1563567643
+      Mix Cutting-Sheet_96: 407925782
+      Mix Cutting-Sheet_97: 406655709
+      Mix Cutting-Sheet_98: -1643573915
+      Mix Cutting-Sheet_99: -1013851999
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
