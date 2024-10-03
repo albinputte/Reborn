@@ -11,24 +11,21 @@ public class BaseAttackState : ActionState
     public override void Enter()
     {
         base.Enter();
+        controller.weaponAgent.OnExit += HandleExit;
+        controller.weaponAgent.Activate(facingDirectionY);
+
     }
 
-
-    public override void Exit()
+    public void HandleExit()
     {
-        base.Exit();
+        IsAbilityDone = true;
     }
 
 
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-    }
+   
 
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-    }
+
+
 
 
 }

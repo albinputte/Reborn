@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Parrent;
     public PlayerStateMachine stateMachine { get; private set; }
     public PlayerData playerData;
-
+    public PlayerWeaponAgent weaponAgent;
     
 
     public IdleState idle {  get; private set; }
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         run = new RunState(stateMachine, playerData, "Run_anim", this);
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
         stateMachine.InisiateState(idle);
+       
       
     }
 
