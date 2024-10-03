@@ -11,6 +11,7 @@ public class ItemData : ScriptableObject
     public ItemType itemType;
     public bool IsStackable;
 
+
     public int ID => GetInstanceID();
 
 
