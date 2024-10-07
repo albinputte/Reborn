@@ -9,7 +9,11 @@ public class PlayerState
     protected PlayerData playerData;
     protected string animationName;
     protected PlayerController controller;
-    protected int facingDirection = 1;
+    protected int facingDirectionX = 1;
+    protected int facingDirectionY = 0;
+    protected bool IsAbilityDone;
+
+
 
     public PlayerState(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController ) {
         stateMachine = StateMachine;
@@ -27,7 +31,7 @@ public class PlayerState
 
     public virtual void Exit()
     {
-
+        
     }
     public virtual void LogicUpdate() 
     {
@@ -36,27 +40,46 @@ public class PlayerState
 
     public virtual void PhysicsUpdate() 
     { 
-    
+     
     }
 
     public void MovementXY()
     {
-        controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.MoveSpeed, controller.Input.normInputY * playerData.MoveSpeed);
+        if(!controller.Input.isSprinting) 
+        {    
+        controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.moveSpeed, controller.Input.normInputY * playerData.moveSpeed);
+        }
+        else
+        {
+            controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.runSpeed, controller.Input.normInputY * playerData.runSpeed);
+        }
     }
 
     public void CheckFlip()
     {
-      
-        if(controller.Input.normInputX == 1)
+
+        if (controller.Input.normInputX == 1)
         {
             controller.Parrent.transform.localScale = new Vector3(1, 1, 0);
-            facingDirection = 1;
+            facingDirectionX = 1;
         }
         else if (controller.Input.normInputX == -1)
         {
             controller.Parrent.transform.localScale = new Vector3(-1, 1, 0);
-            facingDirection = -1;
+            facingDirectionX = -1;
         }
+
+        if (controller.Input.normInputY == 0)
+        {
+            facingDirectionY = 0;
+        }
+        else if (controller.Input.normInputY == 1)
+        {
+            facingDirectionY = 1;
+        }
+        else {facingDirectionY = 2; }
+       
+            
 
     }
 

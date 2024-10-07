@@ -9,6 +9,7 @@ public class PlayerInputManger : MonoBehaviour
     private Vector3 rawInput;
     public float normInputX;
     public float normInputY;
+    public bool isSprinting;
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
@@ -19,12 +20,21 @@ public class PlayerInputManger : MonoBehaviour
 
     }
 
-    public void OnJumpInput(InputAction.CallbackContext context)
+    public void OnSprintInput(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
-            Debug.Log("hej");
+            if(isSprinting)
+            {
+                isSprinting = false;
+            }
+            else
+            {
+                isSprinting = true;
+            }
+
         }
+
     }
 
 }

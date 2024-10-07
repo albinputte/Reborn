@@ -2,17 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RunState : MonoBehaviour
+public class RunState : BaseMovementStates
 {
-    // Start is called before the first frame update
-    void Start()
+    public RunState(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController) : base(StateMachine, data, animName, playerController)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        CheckFlip();
+       
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }
