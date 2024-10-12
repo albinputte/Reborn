@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDamagable
+public interface Idamagable 
 {
+    
+    public void Hit()
+    {
 
-    public void Hit(int Damage);
-   
+    }
 
 
 }
