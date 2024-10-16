@@ -2823,6 +2823,7 @@ MonoBehaviour:
   Input: {fileID: 181227054}
   Parrent: {fileID: 1932083272}
   playerData: {fileID: 11400000, guid: 812598092a0325649b05ed8deb87e182, type: 2}
+  weaponAgent: {fileID: 0}
 --- !u!1001 &695257012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4101,6 +4102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1046930242}
   - component: {fileID: 1046930243}
+  - component: {fileID: 1046930244}
   m_Layer: 0
   m_Name: WeaponAgentComponent
   m_TagString: Untagged
@@ -4141,6 +4143,28 @@ MonoBehaviour:
   test: {fileID: 11400000, guid: 57cfcd58129e60e44a4952fe6fb187a3, type: 2}
   WeaponTypeIndex: 0
   CurrentAttackSpriteNumber: 0
+  isAttackActive: 0
+--- !u!95 &1046930244
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046930241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2ce1aa4a4c51ba43871cfd7b9aeed9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1050392586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7477,7 +7501,7 @@ Animator:
   m_GameObject: {fileID: 1932083272}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f748ec8cd4bfcc748ad6e4399beb5950, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

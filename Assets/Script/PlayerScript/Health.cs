@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamagable
 {
     public HealthData data;
     private int currentHealth;
@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
         maxHealth = data.maxHealth;
         currentHealth = maxHealth;
     }
+
+
 
     public void TakeDamage(int amount)
     {
@@ -45,7 +47,8 @@ public class Health : MonoBehaviour
         OnHeal?.Invoke();
     }
 
-
-
-
+    public void Hit(int Damage)
+    {
+        TakeDamage(Damage);
+    }
 }
