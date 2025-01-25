@@ -16,9 +16,15 @@ public class BaseAttackState : ActionState
 
     }
 
+ 
+
     public void HandleExit()
     {
+        controller.weaponAgent.OnExit -= HandleExit;
+        controller.Input.IsAttacking = false;
         IsAbilityDone = true;
+       
+      
     }
 
 

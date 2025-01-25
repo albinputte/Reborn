@@ -9,7 +9,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     [SerializeField] private WeaponItemData CurrentWeapon;
     [SerializeField] private WeaponItemData test;
     private BoxCollider2D[] attackCol;
-    private SpriteRenderer weaponSpriteRenderer;
+    public SpriteRenderer weaponSpriteRenderer;
     private int FacingDirection;
     private SpriteRenderer PlayerSprite;
     public int WeaponTypeIndex;
@@ -18,7 +18,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     private int currentAttack;
     private WeaponAnimationHandler animationHandler;
     public event Action OnExit;
-
+    private Sprite[] attackSpriteArray;
     public event Action OnEnter;
     public bool isAttackActive;
 
@@ -28,16 +28,22 @@ public class PlayerWeaponAgent : MonoBehaviour
     {
         CurrentWeapon = newWeaponData;
         WeaponTypeIndex = ((int)newWeaponData.WeaponType);
+        attackSpriteArray = CurrentWeapon.WeaponAttackSprites[FacingDirection].AttackSprite; 
 
     }
 
     public void Activate(int NewFacingDirection)
     {
-        weaponSpriteRenderer.enabled = true;
+        if(!isAttackActive) {
+            isAttackActive = true;
+            Debug.Log("l");
+            weaponSpriteRenderer.enabled = true;
         FacingDirection = NewFacingDirection;
         CurrentAttackSpriteNumber = 0;
         AttackAnimator.Play(ConvertToAnimationName(CurrentWeapon, FacingDirection, currentAttack));
         OnEnter?.Invoke();
+           
+        }
 
     }
 
@@ -63,12 +69,12 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     public void ChangeCurrentWeaponSpriteHandler(SpriteRenderer renderer)
     {
-
-        var attackSpriteArray = CurrentWeapon.WeaponAttackSprites[FacingDirection].AttackSprite;
         if (CurrentAttackSpriteNumber <= attackSpriteArray.Length)
         {
             weaponSpriteRenderer.sprite = attackSpriteArray[CurrentAttackSpriteNumber];
+            Debug.Log(CurrentAttackSpriteNumber);
             CurrentAttackSpriteNumber++;
+
         }
     }
 
@@ -79,7 +85,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         if (attackCol == null || attackCol.Length == 0)
             Debug.LogError("No BoxCollider2D found in children!");
 
-        weaponSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        //weaponSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (weaponSpriteRenderer == null)
             Debug.LogError("Weapon SpriteRenderer is missing!");
 
@@ -98,11 +104,13 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     protected virtual void HandleEnter()
     {
-        isAttackActive = true;
+        PlayerSprite.RegisterSpriteChangeCallback(ChangeCurrentWeaponSpriteHandler);
     }
     protected virtual void HandleExit()
     {
         isAttackActive = false;
+        PlayerSprite.UnregisterSpriteChangeCallback(ChangeCurrentWeaponSpriteHandler);
+        AttackAnimator.Play("EmptyAnim");
     }
 
     public void OnEnable()
@@ -110,7 +118,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         animationHandler.OnAnimationComplete += Deactivate;
         OnEnter += HandleEnter;
         OnExit += HandleExit;
-        PlayerSprite.RegisterSpriteChangeCallback(ChangeCurrentWeaponSpriteHandler);
+
      
 
     }
@@ -120,7 +128,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         animationHandler.OnAnimationComplete -= Deactivate;
         OnEnter -= HandleEnter;
         OnExit -= HandleExit;
-        PlayerSprite.UnregisterSpriteChangeCallback(ChangeCurrentWeaponSpriteHandler);
+ 
     }
 
     public string ConvertToAnimationName(WeaponItemData CurrentItemData, int facingDirection, int currentAttack)

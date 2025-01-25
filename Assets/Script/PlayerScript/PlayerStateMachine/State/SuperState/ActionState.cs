@@ -11,11 +11,14 @@ public class ActionState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        IsAbilityDone = false;
     }
 
     public override void Exit()
     {
         base.Exit();
+        controller.Input.ActionPefromed = false;
+        
     }
 
     public override void LogicUpdate()
@@ -24,6 +27,7 @@ public class ActionState : PlayerState
         if (IsAbilityDone)
         {
             stateMachine.SwitchState(controller.idle);
+           
         }
     }
 

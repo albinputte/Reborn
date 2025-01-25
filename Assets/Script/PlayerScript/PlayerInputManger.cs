@@ -10,6 +10,9 @@ public class PlayerInputManger : MonoBehaviour
     public float normInputX;
     public float normInputY;
     public bool isSprinting;
+    public bool IsAttacking;
+    public bool ActionPefromed;
+
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
@@ -35,6 +38,15 @@ public class PlayerInputManger : MonoBehaviour
 
         }
 
+    }
+    public void OnAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.performed && !IsAttacking)
+        {
+            ActionPefromed = true;
+            IsAttacking = true;
+           
+        }
     }
 
 }

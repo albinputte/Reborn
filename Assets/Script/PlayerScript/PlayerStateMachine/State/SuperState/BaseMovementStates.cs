@@ -33,6 +33,11 @@ public class BaseMovementStates : PlayerState
         else 
         { stateMachine.SwitchState(controller.move); }
 
+        if (controller.Input.IsAttacking)
+        {
+            controller.stateMachine.SwitchState(controller.baseAttack);
+        }
+
         MovementXY();
 
 

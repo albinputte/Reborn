@@ -11,6 +11,7 @@ public class PlayerStateMachine : MonoBehaviour
     {
         CurrentState = NewState;
         CurrentState.Enter();
+     
 
     }
 
@@ -19,5 +20,6 @@ public class PlayerStateMachine : MonoBehaviour
         CurrentState.Exit();
         CurrentState = NewState;
         CurrentState.Enter();
+        Debug.Log(NewState.ToString());
     }
 }
