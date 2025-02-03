@@ -2891,8 +2891,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentTilemap: {fileID: 1149454265}
-  tileBase: {fileID: 11400000, guid: 26d2bf389e3d92444b170d7cbb748a99, type: 2}
+  Grass1: {fileID: 11400000, guid: d58ae54b50f1ca2409ef76825d4fbf0d, type: 2}
+  Grass2: {fileID: 11400000, guid: d7d2b47fc735a5d4ebc911049aa7b658, type: 2}
+  Grass3: {fileID: 11400000, guid: 00615c84140d19145a9b5065d347ceec, type: 2}
+  Grass4: {fileID: 11400000, guid: 85f623ee985ce334eb491f0d776d5d61, type: 2}
+  FarmLand: {fileID: 11400000, guid: 26d2bf389e3d92444b170d7cbb748a99, type: 2}
   cam: {fileID: 645542847}
+  seedPrefab: {fileID: 6353207888275368129, guid: 63d909974785a934db305d63199de1fa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
