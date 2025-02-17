@@ -5,9 +5,9 @@ using UnityEngine;
 public class SeedScript : MonoBehaviour
 {
 
-    [SerializeField] Sprite Carrot;
+    [SerializeField] Sprite GrowState1;
+    [SerializeField] Sprite GrowState2;
     [SerializeField] SpriteRenderer SpriteR;
-
 
 
     // Start is called before the first frame update
@@ -17,19 +17,13 @@ public class SeedScript : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator Grow()
     {
         yield return new WaitForSeconds(10);
-        SpriteR.sprite = Carrot;
-        transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        SpriteR.sprite = GrowState1;
         yield return new WaitForSeconds(10);
-        Destroy(gameObject);
+        SpriteR.sprite = GrowState2;
+       
     }
 
 
