@@ -16,7 +16,10 @@ public class WeaponItemData : ItemData
        public Sprite[] AttackSprite;
     }
     [Header("Weapon Info")]
+   
     [Space(12)]
+    public int Damage;
+    public float KnockbackForce ;
     public WeaponType WeaponType;
     [Space(0)]
     [Header("Direction indexes:  Righ/left = 0, top = 1, down = 2")]

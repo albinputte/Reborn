@@ -9,10 +9,8 @@ public class PlayerState
     protected PlayerData playerData;
     protected string animationName;
     protected PlayerController controller;
-    protected int facingDirectionX = 1;
-    protected int facingDirectionY = 0;
     protected bool IsAbilityDone;
-
+   
 
 
     public PlayerState(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController ) {
@@ -35,7 +33,7 @@ public class PlayerState
     }
     public virtual void LogicUpdate() 
     {
-    
+       
     }
 
     public virtual void PhysicsUpdate() 
@@ -55,33 +53,45 @@ public class PlayerState
         }
     }
 
+  
+
     public void CheckFlip()
     {
 
         if (controller.Input.normInputX == 1)
         {
             controller.Parrent.transform.localScale = new Vector3(1, 1, 0);
-            facingDirectionX = 1;
+            PlayerController.FacingDirection.x = 1;
+           
         }
         else if (controller.Input.normInputX == -1)
         {
             controller.Parrent.transform.localScale = new Vector3(-1, 1, 0);
-            facingDirectionX = -1;
+            PlayerController.FacingDirection.x = -1;
+          
         }
 
-        if (controller.Input.normInputY == 0)
+        if (controller.Input.normInputX != 0 && controller.Input.normInputY == 0 )
         {
-            facingDirectionY = 0;
+            PlayerController.FacingDirection.y = 0;
         }
+
         else if (controller.Input.normInputY == 1)
         {
-            facingDirectionY = 1;
+            PlayerController.FacingDirection.y = 1;
         }
-        else {facingDirectionY = 2; }
-       
-            
+        else if (controller.Input.normInputY == -1)
+        {
+            PlayerController.FacingDirection.y = 2;
+        }
+
+
+
+
 
     }
+
+ 
 
 
 

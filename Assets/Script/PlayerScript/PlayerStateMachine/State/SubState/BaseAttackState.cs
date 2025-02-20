@@ -12,7 +12,9 @@ public class BaseAttackState : ActionState
     {
         base.Enter();
         controller.weaponAgent.OnExit += HandleExit;
-        controller.weaponAgent.Activate(facingDirectionY);
+        
+        controller.weaponAgent.Activate((int)PlayerController.FacingDirection.y);
+    
 
     }
 
@@ -26,6 +28,8 @@ public class BaseAttackState : ActionState
        
       
     }
+
+   
 
 
    

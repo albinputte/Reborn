@@ -9,11 +9,15 @@ public class Health : MonoBehaviour, IDamagable
     public HealthData data;
     private int currentHealth;
     private int maxHealth;
-
+    private Vector2 tempKnockBack;
     public UnityEvent OnTakeDamage;
     public UnityEvent OnHeal;
     public UnityEvent OnDeath;
 
+    private void Start()
+    {
+        InstantiateHealth(data);
+    }
 
     public void InstantiateHealth(HealthData data)
     {
@@ -47,8 +51,36 @@ public class Health : MonoBehaviour, IDamagable
         OnHeal?.Invoke();
     }
 
-    public void Hit(int Damage)
+    public void Hit(int Damage,Vector2 Knockback)
     {
+        Debug.Log("Hit");
+        tempKnockBack = Knockback;
         TakeDamage(Damage);
     }
+
+    public void TakeKnockBack(Rigidbody2D rb)
+    {
+        rb.AddForce(tempKnockBack, ForceMode2D.Impulse);
+    }
+
+    public void Flash(SpriteRenderer sprite)
+    {
+        StartCoroutine(EnemyFlash(sprite));
+    }   
+
+    public IEnumerator EnemyFlash(SpriteRenderer sprite)
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+        StopCoroutine("EnemyFlash");
+        yield return new WaitForSeconds(0.1f);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject, 0.35f);
+    }
+
+
 }

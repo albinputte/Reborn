@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     public PlayerStateMachine stateMachine { get; private set; }
     public PlayerData playerData;
     public PlayerWeaponAgent weaponAgent;
-    
+
+    [SerializeField]
+    public static Vector2 FacingDirection;
+
 
     public IdleState idle {  get; private set; }
     public MoveState move { get; private set; }

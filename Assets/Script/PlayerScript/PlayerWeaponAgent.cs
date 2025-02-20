@@ -6,133 +6,180 @@ using UnityEngine;
 
 public class PlayerWeaponAgent : MonoBehaviour
 {
-    [SerializeField] private WeaponItemData CurrentWeapon;
-    [SerializeField] private WeaponItemData test;
-    private BoxCollider2D[] attackCol;
-    public SpriteRenderer weaponSpriteRenderer;
-    private int FacingDirection;
-    private SpriteRenderer PlayerSprite;
-    public int WeaponTypeIndex;
-    public int CurrentAttackSpriteNumber;
-    private Animator AttackAnimator;
-    private int currentAttack;
-    private WeaponAnimationHandler animationHandler;
-    public event Action OnExit;
+    [SerializeField] public WeaponItemData currentWeapon;
+    [SerializeField] private WeaponItemData testWeapon;
+
+    private BoxCollider2D[] attackColliders;
     private Sprite[] attackSpriteArray;
+    private SpriteRenderer playerSprite;
+    private Animator attackAnimator;
+    private WeaponAnimationHandler animationHandler;
+    private Rigidbody2D rb;
+    public PlayerInputManger playerInput;
+    public GameObject[] slashObj;
+
+    public SpriteRenderer weaponSpriteRenderer;
+    public int WeaponTypeIndex { get; private set; }
+    public int CurrentAttackSpriteNumber { get; private set; }
+    public bool IsAttackActive { get; private set; }
     public event Action OnEnter;
-    public bool isAttackActive;
+    public event Action OnExit;
+
+    private int facingDirection;
+    private int currentAttack;
+    private bool hitStop;
 
 
-
-    public void SetWeapon(WeaponItemData newWeaponData)
+    private void Awake()
     {
-        CurrentWeapon = newWeaponData;
-        WeaponTypeIndex = ((int)newWeaponData.WeaponType);
-        attackSpriteArray = CurrentWeapon.WeaponAttackSprites[FacingDirection].AttackSprite; 
-
+        InitializeComponents();
+        SetWeapon(testWeapon);
+        hitStop = false;
+        rb = GetComponentInParent<Rigidbody2D>();
     }
 
-    public void Activate(int NewFacingDirection)
+    private void InitializeComponents()
     {
-        if(!isAttackActive) {
-            isAttackActive = true;
-            Debug.Log("l");
-            weaponSpriteRenderer.enabled = true;
-        FacingDirection = NewFacingDirection;
-        CurrentAttackSpriteNumber = 0;
-        AttackAnimator.Play(ConvertToAnimationName(CurrentWeapon, FacingDirection, currentAttack));
-        OnEnter?.Invoke();
-           
-        }
-
-    }
-
-
-    public void Deactivate()
-    {
-        weaponSpriteRenderer.enabled = false;
-        FacingDirection = -1;
-
-        OnExit?.Invoke();
-    }
-
-    public void EnableCol()
-    {
-        attackCol[FacingDirection].enabled = true;
-        
-    }
-
-    public void DisableCol() 
-    {
-        attackCol[FacingDirection].enabled = false;
-    }
-
-    public void ChangeCurrentWeaponSpriteHandler(SpriteRenderer renderer)
-    {
-        if (CurrentAttackSpriteNumber <= attackSpriteArray.Length)
-        {
-            weaponSpriteRenderer.sprite = attackSpriteArray[CurrentAttackSpriteNumber];
-            Debug.Log(CurrentAttackSpriteNumber);
-            CurrentAttackSpriteNumber++;
-
-        }
-    }
-
-    void Awake()
-    {
-        SetWeapon(test);
-        attackCol = GetComponentsInChildren<BoxCollider2D>();
-        if (attackCol == null || attackCol.Length == 0)
+        attackColliders = GetComponentsInChildren<BoxCollider2D>();
+        if (attackColliders == null || attackColliders.Length == 0)
             Debug.LogError("No BoxCollider2D found in children!");
 
-        //weaponSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (weaponSpriteRenderer == null)
             Debug.LogError("Weapon SpriteRenderer is missing!");
 
-        PlayerSprite = GetComponent<SpriteRenderer>();
-        if (PlayerSprite == null)
+        playerSprite = GetComponent<SpriteRenderer>();
+        if (playerSprite == null)
             Debug.LogError("Player SpriteRenderer is missing!");
 
         animationHandler = GetComponent<WeaponAnimationHandler>();
         if (animationHandler == null)
             Debug.LogError("WeaponAnimationHandler is missing!");
-        AttackAnimator = GetComponentInChildren<Animator>();
-        if (AttackAnimator == null)
+
+        attackAnimator = GetComponentInChildren<Animator>();
+        if (attackAnimator == null)
             Debug.LogError("AttackAnimator is missing!");
     }
 
 
-    protected virtual void HandleEnter()
+    public void SetWeapon(WeaponItemData newWeaponData)
     {
-        PlayerSprite.RegisterSpriteChangeCallback(ChangeCurrentWeaponSpriteHandler);
-    }
-    protected virtual void HandleExit()
-    {
-        isAttackActive = false;
-        PlayerSprite.UnregisterSpriteChangeCallback(ChangeCurrentWeaponSpriteHandler);
-        AttackAnimator.Play("EmptyAnim");
+        currentWeapon = newWeaponData;
+        WeaponTypeIndex = (int)newWeaponData.WeaponType;
+        attackSpriteArray = currentWeapon.WeaponAttackSprites[facingDirection].AttackSprite;
     }
 
-    public void OnEnable()
+    public void Activate(int newFacingDirection)
+    {
+        if (IsAttackActive) return;
+        
+        IsAttackActive = true;
+        weaponSpriteRenderer.enabled = true;
+        facingDirection = newFacingDirection;
+        CurrentAttackSpriteNumber = 0;
+        attackAnimator.Play(GetAnimationName(currentWeapon, facingDirection, currentAttack));
+        OnEnter?.Invoke();
+        currentAttack++;
+      
+    }
+
+    public void Deactivate()
+    {
+        weaponSpriteRenderer.enabled = false;
+        facingDirection = -1;
+        IsAttackActive = false;
+        OnExit?.Invoke();
+    }
+
+    public void EnableCollider()
+    {
+
+            attackColliders[facingDirection].enabled = true;
+        slashObj[facingDirection].SetActive(true);
+        rb.AddForce(new Vector2(playerInput.normInputX,playerInput.normInputY).normalized *10f, ForceMode2D.Impulse);
+
+    }
+
+    public void DisableCollider()
+    {
+      
+            attackColliders[facingDirection].enabled = false;
+        slashObj[facingDirection].SetActive(false);
+    }
+
+    public void UpdateWeaponSprite(SpriteRenderer spriteRenderer)
+    {
+        if (CurrentAttackSpriteNumber < attackSpriteArray.Length)
+        {
+            weaponSpriteRenderer.sprite = attackSpriteArray[CurrentAttackSpriteNumber++];
+        }
+    }
+
+
+
+    private void HandleEnter()
+    {
+        playerSprite.RegisterSpriteChangeCallback(UpdateWeaponSprite);
+    }
+
+    private void HandleExit()
+    {
+        IsAttackActive = false;
+        playerSprite.UnregisterSpriteChangeCallback(UpdateWeaponSprite);
+        attackAnimator.Play("EmptyAnim");
+    }
+
+    private void OnEnable()
     {
         animationHandler.OnAnimationComplete += Deactivate;
         OnEnter += HandleEnter;
         OnExit += HandleExit;
-
-     
-
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         animationHandler.OnAnimationComplete -= Deactivate;
         OnEnter -= HandleEnter;
         OnExit -= HandleExit;
- 
     }
 
-    public string ConvertToAnimationName(WeaponItemData CurrentItemData, int facingDirection, int currentAttack)
+    private string GetAnimationName(WeaponItemData CurrentItemData, int facingDir, int attackIndex)
     {
         return new string(CurrentItemData.WeaponType.ToString() + "_Facing" + facingDirection.ToString() + "_Nr" + (currentAttack + 1).ToString());
+    }
+
+    public void StartTimer()
+    {
+        StartCoroutine(ResetTimer(1));
+    }
+
+    public IEnumerator ResetTimer(float time)
+    {
+        if (currentAttack >= 3) { currentAttack = 0; CurrentAttackSpriteNumber = 0; yield return null; }
+        float CachedcurrentAttack = currentAttack;
+        yield return new WaitForSeconds(time);
+        if (CachedcurrentAttack == currentAttack)
+        {
+            currentAttack = 0;
+            CurrentAttackSpriteNumber = 0;
+        }
+
+
+
+    }
+
+
+    public void HitStop()
+    {
+        if(hitStop) return;
+        Time.timeScale = 0f;
+        StartCoroutine(ResetTimeScale(0.1f));
+    }
+
+    public IEnumerator ResetTimeScale(float time)
+    {
+        hitStop = true;
+        yield return new WaitForSecondsRealtime(time);
+        Time.timeScale = 1;
+        hitStop = false;
     }
 }
