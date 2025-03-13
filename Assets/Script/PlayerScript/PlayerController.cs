@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public PlayerWeaponAgent weaponAgent;
 
     [SerializeField]
-    public static Vector2 FacingDirection;
+    public static Vector3 FacingDirection;
 
 
     public IdleState idle {  get; private set; }
