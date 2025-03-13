@@ -24,7 +24,7 @@ public class ActionState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        //MovementXY();
+        MovementXY();
         if (IsAbilityDone)
         {
             stateMachine.SwitchState(controller.idle);

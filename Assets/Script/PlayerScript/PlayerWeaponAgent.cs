@@ -95,7 +95,7 @@ public class PlayerWeaponAgent : MonoBehaviour
 
             attackColliders[facingDirection].enabled = true;
         slashObj[facingDirection].SetActive(true);
-        rb.AddForce(new Vector2(playerInput.normInputX,playerInput.normInputY).normalized *10f, ForceMode2D.Impulse);
+        //rb.AddForce(new Vector2(playerInput.normInputX,playerInput.normInputY).normalized *10f, ForceMode2D.Impulse);
 
     }
 
@@ -172,7 +172,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     {
         if(hitStop) return;
         Time.timeScale = 0f;
-        StartCoroutine(ResetTimeScale(0.1f));
+        StartCoroutine(ResetTimeScale(0.01f));
     }
 
     public IEnumerator ResetTimeScale(float time)
