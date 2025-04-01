@@ -15,11 +15,6 @@ public class ItemData : ScriptableObject
     public int ID => GetInstanceID();
 
 
-
-
-
-
-
 }
 public enum ItemType
 {
