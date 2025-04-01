@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f09372905aba42140a0ec7dacf58887d
+guid: e09b514e4eb8764459cacbedfbdc2778
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,146 +106,15 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Farming_Plants_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b956beff99667d4e88116364ddd2784
-      internalID: 1706340765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Farming_Plants_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ba724ba90e10e74cb61592bc22446fd
-      internalID: -849747619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Farming_Plants_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8bd87518b718ec45ba6f6a6766677fb
-      internalID: -250426139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Farming_Plants_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad43ea75731c6754f9f6a0d408da497f
-      internalID: 26301798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Farming_Plants_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d702d81392431b746afcc13480290841
-      internalID: 1167423638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Farming_Plants_5
+      name: Fences_0
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 124
         width: 32
         height: 32
       alignment: 0
@@ -255,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 685f501cdcda8e74d8c0b5932393c052
-      internalID: -626854128
+      spriteID: d4ecfda5c341f144e994dd33ad7f93c0
+      internalID: 1902284889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_6
+      name: Fences_1
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 124
         width: 32
         height: 32
       alignment: 0
@@ -276,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ed4b8fff3840254eaa54d4b4cb25eef
-      internalID: 62572233
+      spriteID: dd1cacdbc37fb8145b682f29424dd66d
+      internalID: -1893127616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_7
+      name: Fences_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 124
         width: 32
         height: 32
       alignment: 0
@@ -297,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02058399a2eb5b942b42bfdd127d7885
-      internalID: -859582767
+      spriteID: ecaa0e6cd9a1a8441a3a46e6b0e2167c
+      internalID: 1413515645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_8
+      name: Fences_3
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 124
         width: 32
         height: 32
       alignment: 0
@@ -318,18 +187,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c46af50d4d9f7646ac4a732ca420fa8
-      internalID: -794698814
+      spriteID: 7aa182cfc08618645b04080ddef1bb3a
+      internalID: 2047535691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_9
+      name: Fences_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 96
+        y: 60
         width: 32
         height: 32
       alignment: 0
@@ -339,18 +208,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d98b9a827f36861419eaaa7a5664ad7d
-      internalID: -2069593442
+      spriteID: d133b7cec94cec447a1a646096cf3492
+      internalID: -2051826905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_10
+      name: Fences_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 128
+        y: 60
         width: 32
         height: 32
       alignment: 0
@@ -360,18 +229,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b8018ca2b98b40448dcb7cf44e793c6
-      internalID: 916832872
+      spriteID: 8e2b2728f73216944944e3a12b656001
+      internalID: 1413248737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_11
+      name: Fences_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 60
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd45cad050dfce459578bd714d92526
+      internalID: -1951072500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_7
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 28
         width: 32
         height: 32
       alignment: 0
@@ -381,18 +271,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2de9833049ef4924ab39d553a1f74089
-      internalID: -548604682
+      spriteID: ffee15dbd679d8d4e9c039d8d3775ce0
+      internalID: -519769595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farming_Plants_12
+      name: Fences_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 96
+        y: 28
         width: 32
         height: 32
       alignment: 0
@@ -402,29 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c21649789e6d788419199cff385086bd
-      internalID: -1116362685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Farming_Plants_13
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d34dae62ee53cfc48b892dd1f7689643
-      internalID: -1143535512
+      spriteID: a11a68448ac83bf48b903ddeb695d535
+      internalID: 688473577
       vertices: []
       indices: 
       edges: []
@@ -440,20 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Farming_Plants_0: 1706340765
-      Farming_Plants_1: -849747619
-      Farming_Plants_10: 916832872
-      Farming_Plants_11: -548604682
-      Farming_Plants_12: -1116362685
-      Farming_Plants_13: -1143535512
-      Farming_Plants_2: -250426139
-      Farming_Plants_3: 26301798
-      Farming_Plants_4: 1167423638
-      Farming_Plants_5: -626854128
-      Farming_Plants_6: 62572233
-      Farming_Plants_7: -859582767
-      Farming_Plants_8: -794698814
-      Farming_Plants_9: -2069593442
+      Fences_0: 1902284889
+      Fences_1: -1893127616
+      Fences_2: 1413515645
+      Fences_3: 2047535691
+      Fences_4: -2051826905
+      Fences_5: 1413248737
+      Fences_6: -1951072500
+      Fences_7: -519769595
+      Fences_8: 688473577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
