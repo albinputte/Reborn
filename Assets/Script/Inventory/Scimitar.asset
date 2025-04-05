@@ -21,9 +21,9 @@ MonoBehaviour:
   craftingRecipe:
   - ingredients:
     - item: {fileID: 11400000, guid: f257cb408d4746f48a8582fc18641191, type: 2}
-      quantity: 0
+      quantity: 1
     - item: {fileID: 11400000, guid: b3f8754b61890bd409e514b39edf7724, type: 2}
-      quantity: 0
+      quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   Damage: 5
