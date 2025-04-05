@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,8 @@ public class ItemData : ScriptableObject
     public Sprite Icon;
     public ItemType itemType;
     public bool IsStackable;
-
+    public bool IsCraftable;
+    public List<CraftingRecipe> craftingRecipe;
 
     public int ID => GetInstanceID();
 
@@ -26,4 +28,18 @@ public enum ItemType
     Armour,
     accessory,
     Misc
+}
+[Serializable]
+public struct CraftingRecipe
+{
+    public List<RecipeIngredient> ingredients;
+    public ItemData resultItem;
+    public int resultQuantity;
+}
+
+[Serializable]
+public struct RecipeIngredient
+{
+    public ItemData item;
+    public int quantity;
 }

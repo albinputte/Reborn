@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
+
 
 public class InventoryUiPage : MonoBehaviour
 {
@@ -12,6 +12,8 @@ public class InventoryUiPage : MonoBehaviour
     private InventoryUiSlot[] itemSlot;
 
     List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
+
+    List<InventoryUiSlot> ListOfUIAccesoriesSlots = new List<InventoryUiSlot>();
 
     [SerializeField] private MouseFollower mouseFollower;
 
@@ -32,9 +34,9 @@ public class InventoryUiPage : MonoBehaviour
 
     public void InstantiateInventory()
     {
-        itemSlot = FindObjectsOfType<InventoryUiSlot>();
- 
-     ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
+        itemSlot = FindObjectsOfType<InventoryUiSlot>(); //need to find naother way to find the slots bcus multiole other slots are being found
+
+        ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
         Debug.Log(ListOfUIslots.Count);
         foreach (InventoryUiSlot slot in ListOfUIslots)
         {
@@ -45,6 +47,7 @@ public class InventoryUiPage : MonoBehaviour
             slot.OnRightMouseBtnClick += ShowItemActions;
           
         }
+
         
     
 

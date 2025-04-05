@@ -10,10 +10,10 @@ public class TileManger : MonoBehaviour
     [SerializeField] private Tilemap BuildLayer;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject seedPrefab;
-
+    
     [SerializeField] private TileBase[] GrassTiles;
     [SerializeField] private TileBase FarmLand;
-
+    
     private Dictionary<Vector3Int, GameObject> placedObjects = new();
     private Dictionary<Vector3Int, float> objectTimers = new();
     private List<TileRule> tileRules = new();
@@ -34,12 +34,12 @@ public class TileManger : MonoBehaviour
     private void Update()
     {
         Vector3Int pos = GroundLayer.WorldToCell(cam.ScreenToWorldPoint(Input.mousePosition));
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             ProcessTilePlacement(pos);
         }
-
+        
         if (Input.GetMouseButtonDown(1))
         {
             HandleObjectPlacement(pos);
@@ -49,7 +49,7 @@ public class TileManger : MonoBehaviour
     private void ProcessTilePlacement(Vector3Int pos)
     {
         TileBase tile = GroundLayer.GetTile(pos);
-
+        
         foreach (var rule in tileRules)
         {
             if (rule.Condition(tile, pos))
@@ -113,7 +113,7 @@ public class TileRule
 {
     public System.Func<TileBase, Vector3Int, bool> Condition { get; }
     public System.Action<Vector3Int> Action { get; }
-
+    
     public TileRule(System.Func<TileBase, Vector3Int, bool> condition, System.Action<Vector3Int> action)
     {
         Condition = condition;

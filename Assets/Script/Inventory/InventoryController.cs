@@ -14,12 +14,15 @@ public class InventoryController : MonoBehaviour
     private InventorySO inventoryData;
     private bool InventoryUiActive;
 
+    public ItemData testItem;
+
     public List<InventoryItem> ItemToInitialize  = new List<InventoryItem>();
 
     private void Start()
     {
         PrepareInventoryUI();
         PrepareInventoryData();
+      
     }
 
     private void PrepareInventoryUI()

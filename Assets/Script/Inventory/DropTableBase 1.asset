@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072b9ee32a032504fb809636cf7b88ea, type: 3}
   m_Name: DropTableBase 1
   m_EditorClassIdentifier: 
+  GurantedLoot:
+    Name: 
+    ChanceToRoll: 0
+    lootTable: []
   LootingTable:
   - Name: common
     ChanceToRoll: 80
