@@ -35,12 +35,15 @@ public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
   
     public bool PerformAction(GameObject gameObject)
     {
-        PlayerWeaponAgent agent = gameObject.GetComponentInParent<PlayerWeaponAgent>();
+        Debug.Log("Performing action with weapon: " + gameObject.name);
+        PlayerWeaponAgent agent = gameObject.GetComponentInChildren<PlayerWeaponAgent>();
         if (agent != null)
         {
+            Debug.Log("Setting weapon: " + gameObject.name);
             agent.SetWeapon(this);
             return true;
         }
+        Debug.LogWarning("PlayerWeaponAgent component not found in the game object.");
         return false;
     }
 }

@@ -14,7 +14,6 @@ public class InventoryController : MonoBehaviour
     private InventorySO inventoryData;
 
     [SerializeField]
-    private PlayerWeaponAgent weaponAgent;
     private bool InventoryUiActive;
 
     public ItemData testItem;
@@ -80,16 +79,21 @@ public class InventoryController : MonoBehaviour
 
     private void HandleItemSelection(int index1)
     {
-        IDestroyableItem iDestroyableItem = inventoryData.GetSpecificItem(index1).item as IDestroyableItem;
+        InventoryItem item = inventoryData.GetSpecificItem(index1);
+        if (item.IsEmpty)
+            return;
+
+        IDestroyableItem iDestroyableItem = item.item as IDestroyableItem;
         if (iDestroyableItem != null)
         {
             inventoryData.RemoveItem(index1, 1);
         }
 
-        IitemAction iitemAction = inventoryData.GetSpecificItem(index1).item as IitemAction;
+        IitemAction iitemAction = item.item as IitemAction;
         if (iitemAction != null)
+        {
             iitemAction.PerformAction(Character);
-
+        }
      
         
     }

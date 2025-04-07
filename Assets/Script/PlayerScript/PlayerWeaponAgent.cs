@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerWeaponAgent : MonoBehaviour
 {
-    [SerializeField] public WeaponItemData currentWeapon;
+    public WeaponItemData currentWeapon;
     [SerializeField] private InventorySO inventory;
     [SerializeField] private WeaponItemData testWeapon;
 
@@ -61,17 +61,18 @@ public class PlayerWeaponAgent : MonoBehaviour
             Debug.LogError("AttackAnimator is missing!");
     }
 
-
     public void SetWeapon(WeaponItemData newWeaponData)
     {
-        if(currentWeapon != null)
+        if (currentWeapon != null)
         {
-          inventory.AddItem(currentWeapon, 1);
+            inventory.AddItem(currentWeapon, 1);
         }
 
         currentWeapon = newWeaponData;
         WeaponTypeIndex = (int)newWeaponData.WeaponType;
-        attackSpriteArray = currentWeapon.WeaponAttackSprites[facingDirection].AttackSprite;
+        attackSpriteArray = currentWeapon.WeaponAttackSprites[0].AttackSprite;
+        // Don't assign attackSpriteArray here.
+        // Wait until facingDirection is valid (e.g., in Activate)
     }
 
     public void Activate(int newFacingDirection)
@@ -109,7 +110,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     {
       
             attackColliders[facingDirection].enabled = false;
-        slashObj[facingDirection].SetActive(false);
+            slashObj[facingDirection].SetActive(false);
     }
 
     public void UpdateWeaponSprite(SpriteRenderer spriteRenderer)
