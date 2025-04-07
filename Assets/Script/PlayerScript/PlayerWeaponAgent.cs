@@ -70,9 +70,9 @@ public class PlayerWeaponAgent : MonoBehaviour
 
         currentWeapon = newWeaponData;
         WeaponTypeIndex = (int)newWeaponData.WeaponType;
+
+        //add for loop to assign all directions(Dictonary)
         attackSpriteArray = currentWeapon.WeaponAttackSprites[0].AttackSprite;
-        // Don't assign attackSpriteArray here.
-        // Wait until facingDirection is valid (e.g., in Activate)
     }
 
     public void Activate(int newFacingDirection)
