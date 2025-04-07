@@ -9,9 +9,11 @@ public class CraftButtonUi : MonoBehaviour
     public event Action<CraftButtonUi> OnItemClicked;
 
     public CraftingRecipe recipe;
-    public void SetRecipe(CraftingRecipe recipe)
+    public int CurrentCraftingMangerIndex;
+    public void SetRecipe(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
         this.recipe = recipe;
+        this.CurrentCraftingMangerIndex = CurrentCraftingMangerIndex;
     }
 
 

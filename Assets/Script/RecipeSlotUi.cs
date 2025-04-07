@@ -12,10 +12,12 @@ public class RecipeSlotUi : MonoBehaviour
     public int recipeIndex;
     public Image recipeIconImage;
     public CraftingRecipe recipe;
-    public void SetRecipe(CraftingRecipe recipe)
+    public int CurrentCraftingMangerIndex;
+    public void SetRecipe(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
         recipeIconImage.sprite = recipe.resultItem.Icon;
         this.recipe = recipe;
+        this.CurrentCraftingMangerIndex = CurrentCraftingMangerIndex;
     }
     public void SetIndex(int index)
     {

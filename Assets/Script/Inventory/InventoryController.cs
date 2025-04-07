@@ -12,9 +12,14 @@ public class InventoryController : MonoBehaviour
 
     [SerializeField]
     private InventorySO inventoryData;
+
+    [SerializeField]
+    private PlayerWeaponAgent weaponAgent;
     private bool InventoryUiActive;
 
     public ItemData testItem;
+
+    public GameObject Character;
 
     public List<InventoryItem> ItemToInitialize  = new List<InventoryItem>();
 
@@ -22,7 +27,7 @@ public class InventoryController : MonoBehaviour
     {
         PrepareInventoryUI();
         PrepareInventoryData();
-      
+
     }
 
     private void PrepareInventoryUI()
@@ -30,6 +35,7 @@ public class InventoryController : MonoBehaviour
         inventoryUi.InstantiateInventory();
         inventoryUi.OnSwap += HandleItemSwap;
         inventoryUi.OnDrag += HandleDragging;
+        inventoryUi.OnItemAction += HandleItemSelection;
     }
 
     private void PrepareInventoryData()
@@ -72,6 +78,22 @@ public class InventoryController : MonoBehaviour
         inventoryData.SwapitemPlace(index1,Index2);
     }
 
+    private void HandleItemSelection(int index1)
+    {
+        IDestroyableItem iDestroyableItem = inventoryData.GetSpecificItem(index1).item as IDestroyableItem;
+        if (iDestroyableItem != null)
+        {
+            inventoryData.RemoveItem(index1, 1);
+        }
+
+        IitemAction iitemAction = inventoryData.GetSpecificItem(index1).item as IitemAction;
+        if (iitemAction != null)
+            iitemAction.PerformAction(Character);
+
+     
+        
+    }
+
 
 
 
@@ -99,4 +121,5 @@ public class InventoryController : MonoBehaviour
         }
      
     }
+
 }

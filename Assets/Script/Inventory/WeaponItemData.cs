@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(fileName = "WeaponItemBase", menuName = "WeaponItem", order = 3)]
 
-public class WeaponItemData : ItemData
+public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
 {
    
      [Serializable]
@@ -32,8 +32,17 @@ public class WeaponItemData : ItemData
         WeaponAttackSprites = new WeaponAttackSprite[3];
     }
 
-    
-
+  
+    public bool PerformAction(GameObject gameObject)
+    {
+        PlayerWeaponAgent agent = gameObject.GetComponentInParent<PlayerWeaponAgent>();
+        if (agent != null)
+        {
+            agent.SetWeapon(this);
+            return true;
+        }
+        return false;
+    }
 }
 
 public enum WeaponType

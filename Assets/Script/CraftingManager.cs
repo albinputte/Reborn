@@ -6,6 +6,7 @@ using UnityEngine;
 public class CraftingManager : MonoBehaviour
 {
     [SerializeField] private List<ItemData> craftingRecipes;
+    private int currentCraftingMangerIndex;
     [SerializeField] private InventorySO inventory;
     [SerializeField] private List<CraftingRecipe> availableRecipes;
     [SerializeField] private CraftingUI craftingUI;
@@ -75,10 +76,22 @@ public class CraftingManager : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            craftingUI.craftingManager = this;
+            currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
+            craftingUI.craftingManager[craftingUI.checkFirstEmptySlotInCraftingManger()] = this;
             craftingUI.gameObject.SetActive(true);
-            craftingUI.UpdateUi(this);
+            craftingUI.UpdateUi(this, currentCraftingMangerIndex, false);
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+    
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            craftingUI.craftingManager[currentCraftingMangerIndex] = null;
+            craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
         }
     }
 }

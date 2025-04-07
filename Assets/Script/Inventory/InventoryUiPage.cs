@@ -20,7 +20,7 @@ public class InventoryUiPage : MonoBehaviour
 
     private int currentDraggingIndex;
 
-    public Action<int> OnDrag;
+    public Action<int> OnDrag, OnItemAction;
 
     public Action<int, int> OnSwap;
 
@@ -68,7 +68,10 @@ public class InventoryUiPage : MonoBehaviour
 
     private void ShowItemActions(InventoryUiSlot slot)
     {
-        
+        int index = ListOfUIslots.IndexOf(slot);
+        if (index == -1)
+            return;
+        OnItemAction?.Invoke(index);
     }
 
     private void EndDrag(InventoryUiSlot slot)

@@ -1,54 +1,106 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CraftingUI : MonoBehaviour
-
 {
-    [SerializeField] public CraftingManager craftingManager;
-    [SerializeField] private List<CraftingRecipe> availableRecipes;
+    [SerializeField] public CraftingManager[] craftingManager;
+    private Dictionary<int, List<CraftingRecipe>> availableRecipes = new();
     private int AmountOfRecipes;
+
     [SerializeField] private GameObject ParrentToSpawnRecipeunder;
     [SerializeField] private GameObject RecipePrefab;
-    [SerializeField] private List<RecipeSlotUi> recipeSlots;
+    [SerializeField, HideInInspector] private List<RecipeSlotUi> recipeSlots;
     [SerializeField] private Image[] IngrediantSlot;
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
 
-    public void AttemptCrafting(CraftingRecipe recipe)
+    public void AttemptCrafting(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
-       
-            craftingManager.CraftItem(recipe);
-    
+        craftingManager[CurrentCraftingMangerIndex].CraftItem(recipe);
     }
 
-
-
-    public void UpdateUi(CraftingManager crafting)
+    public void UpdateUi(CraftingManager crafting, int CurrentCraftingMangerIndex, bool IsActive)
     {
-        craftingManager = crafting;
-        availableRecipes.Clear();
-        availableRecipes = craftingManager.GetAvailableRecipes();
-        AmountOfRecipes = availableRecipes.Count;
+        if (IsActive)
+        {
+            // Deactivate/remove this manager
+            craftingManager[CurrentCraftingMangerIndex] = null;
 
+            if (availableRecipes.ContainsKey(CurrentCraftingMangerIndex))
+            {
+                availableRecipes.Remove(CurrentCraftingMangerIndex);
+            }
+        }
+        else
+        {
+            // Add or update this manager
+            craftingManager[CurrentCraftingMangerIndex] = crafting;
+
+            if (crafting == null)
+                return;
+
+            var newRecipes = crafting.GetAvailableRecipes();
+
+            // Check for changes
+            if (availableRecipes.ContainsKey(CurrentCraftingMangerIndex) &&
+                AreRecipesEqual(availableRecipes[CurrentCraftingMangerIndex], newRecipes))
+            {
+                return; // No change, skip
+            }
+
+            availableRecipes[CurrentCraftingMangerIndex] = newRecipes;
+        }
+
+        // Update the UI from all active managers
+        RefreshCraftingUI();
+    }
+
+    private void RefreshCraftingUI()
+    {
+        // Clear existing UI
         foreach (Transform child in ParrentToSpawnRecipeunder.transform)
         {
             Destroy(child.gameObject);
         }
-        for (int i = 0; i < AmountOfRecipes; i++)
+
+        recipeSlots.Clear();
+
+        // Create new slots starting from newest (last added manager shown on top)
+        List<int> sortedKeys = new List<int>(availableRecipes.Keys);
+        sortedKeys.Sort(); // optional: reverse or custom sort
+
+        foreach (int managerIndex in sortedKeys)
         {
-            GameObject recipe = Instantiate(RecipePrefab, ParrentToSpawnRecipeunder.transform);
-            recipe.GetComponent<RecipeSlotUi>().SetRecipe(availableRecipes[i]);
-            recipe.GetComponent<RecipeSlotUi>().SetIndex(i);
-            recipeSlots.Add(recipe.GetComponent<RecipeSlotUi>());
-            recipeSlots[i].OnItemClicked += SetUpRecipeInfiormation;
+            var recipes = availableRecipes[managerIndex];
+
+            for (int i = 0; i < recipes.Count; i++)
+            {
+                GameObject recipe = Instantiate(RecipePrefab, ParrentToSpawnRecipeunder.transform);
+                var slotUi = recipe.GetComponent<RecipeSlotUi>();
+                slotUi.SetRecipe(recipes[i], managerIndex);
+                slotUi.SetIndex(recipeSlots.Count);
+                slotUi.OnItemClicked += SetUpRecipeInfiormation;
+
+                recipeSlots.Add(slotUi);
+            }
         }
-     
+    }
 
 
+
+    private bool AreRecipesEqual(List<CraftingRecipe> oldList, List<CraftingRecipe> newList)
+    {
+        if (oldList.Count != newList.Count)
+            return false;
+
+        for (int i = 0; i < oldList.Count; i++)
+        {
+            if (!oldList[i].Equals(newList[i])) // Ensure CraftingRecipe implements Equals
+                return false;
+        }
+
+        return true;
     }
 
     public void SetUpRecipeInfiormation(RecipeSlotUi recipe)
@@ -58,33 +110,39 @@ public class CraftingUI : MonoBehaviour
             IngrediantSlot[i].gameObject.SetActive(true);
             IngrediantSlot[i].sprite = recipe.recipe.ingredients[i].item.Icon;
         }
+
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
         ResultSlot.gameObject.SetActive(true);
 
         craftButtonUi.gameObject.SetActive(true);
-        craftButtonUi.SetRecipe(recipe.recipe);
+        craftButtonUi.SetRecipe(recipe.recipe, recipe.CurrentCraftingMangerIndex);
         craftButtonUi.OnItemClicked += CraftButtonPressed;
-
     }
 
     public void CraftButtonPressed(CraftButtonUi button)
     {
-        AttemptCrafting(button.recipe);
+        AttemptCrafting(button.recipe, button.CurrentCraftingMangerIndex);
     }
-
-
 
     public void ClearRecipeInformation()
     {
-        for (int i = 0; i < IngrediantSlot.Length; i++)
+        foreach (var slot in IngrediantSlot)
         {
-            IngrediantSlot[i].gameObject.SetActive(false);
+            slot.gameObject.SetActive(false);
         }
+
         ResultSlot.gameObject.SetActive(false);
         craftButtonUi.gameObject.SetActive(false);
     }
 
+    public int checkFirstEmptySlotInCraftingManger()
+    {
+        for (int i = 0; i < craftingManager.Length; i++)
+        {
+            if (craftingManager[i] == null)
+                return i;
+        }
 
-
+        return -1;
+    }
 }
-

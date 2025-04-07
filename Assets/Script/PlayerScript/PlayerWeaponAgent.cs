@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerWeaponAgent : MonoBehaviour
 {
     [SerializeField] public WeaponItemData currentWeapon;
+    [SerializeField] private InventorySO inventory;
     [SerializeField] private WeaponItemData testWeapon;
 
     private BoxCollider2D[] attackColliders;
@@ -63,6 +64,11 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     public void SetWeapon(WeaponItemData newWeaponData)
     {
+        if(currentWeapon != null)
+        {
+          inventory.AddItem(currentWeapon, 1);
+        }
+
         currentWeapon = newWeaponData;
         WeaponTypeIndex = (int)newWeaponData.WeaponType;
         attackSpriteArray = currentWeapon.WeaponAttackSprites[facingDirection].AttackSprite;
