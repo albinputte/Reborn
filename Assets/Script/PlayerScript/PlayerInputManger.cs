@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,7 @@ public class PlayerInputManger : MonoBehaviour
             {
                 isSprinting = true;
             }
-
+           
         }
 
     }
