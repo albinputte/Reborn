@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -86,7 +87,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         attackAnimator.Play(GetAnimationName(currentWeapon, facingDirection, currentAttack));
         OnEnter?.Invoke();
         currentAttack++;
-      
+
     }
 
     public void Deactivate()
