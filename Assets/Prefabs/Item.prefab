@@ -101,6 +101,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   item: {fileID: 0}
   sprite: {fileID: 0}
+  IsADrop: 1
 --- !u!61 &5788161787525419817
 BoxCollider2D:
   m_ObjectHideFlags: 0

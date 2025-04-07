@@ -10,10 +10,17 @@ public class WorldItem : MonoBehaviour
     [SerializeField] private Sprite sprite; 
     private int quantity;
 
+    [SerializeField] private bool IsADrop;
+
 
     public void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    public void Start()
+    {
+        if (!IsADrop && item != null)
+            SetItem(item, quantity);
     }
 
     public void SetItem(ItemData item, int Quantity)
@@ -36,6 +43,8 @@ public class WorldItem : MonoBehaviour
         }
 
     }
+
+
 
 
 }
