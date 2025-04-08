@@ -16,6 +16,9 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private bool InventoryUiActive;
 
+    [SerializeField]
+    private CraftingUI craftingUI; //temporary
+
     public ItemData testItem;
 
     public GameObject Character;
@@ -31,10 +34,12 @@ public class InventoryController : MonoBehaviour
 
     private void PrepareInventoryUI()
     {
+        inventoryUi.ShowInventory(); 
         inventoryUi.InstantiateInventory();
         inventoryUi.OnSwap += HandleItemSwap;
         inventoryUi.OnDrag += HandleDragging;
         inventoryUi.OnItemAction += HandleItemSelection;
+        inventoryUi.HideInventory();
     }
 
     private void PrepareInventoryData()
@@ -108,6 +113,7 @@ public class InventoryController : MonoBehaviour
             if(!InventoryUiActive)
             { 
                 inventoryUi.ShowInventory(); 
+                craftingUI.ShowCraftinUi();
 
                 InventoryUiActive = true;
                 foreach(var item in inventoryData.GetInventoryState())
@@ -119,6 +125,7 @@ public class InventoryController : MonoBehaviour
             else if (InventoryUiActive)
             {
                 inventoryUi.HideInventory();
+                craftingUI.HideCraftingUi();
                 InventoryUiActive = false;
             }
 

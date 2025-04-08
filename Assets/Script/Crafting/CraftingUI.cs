@@ -145,4 +145,14 @@ public class CraftingUI : MonoBehaviour
 
         return -1;
     }
+
+    public void HideCraftingUi()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ShowCraftinUi()
+    {
+        gameObject.SetActive(true);
+    }
 }
