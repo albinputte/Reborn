@@ -17,7 +17,7 @@ namespace SmallHedge.SoundManager
         private AudioSource audioSource;
         private static AudioSource loopingAudioSource;
 
-
+     
 
 
         // Tracking the last play time for each sound type

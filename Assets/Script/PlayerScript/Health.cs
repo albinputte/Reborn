@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class Health : MonoBehaviour, IDamagable
     public UnityEvent OnTakeDamage;
     public UnityEvent OnHeal;
     public UnityEvent OnDeath;
+
+
 
     private void Start()
     {
@@ -92,6 +95,12 @@ public class Health : MonoBehaviour, IDamagable
         Vector3 direction = new Vector3(tempKnockBack.x, tempKnockBack.y).normalized;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
         Instantiate(ParticlePrefab, transform.position, rotation);
+    }
+
+    public void PlaySound(int index)
+    {
+        SoundType type = (SoundType)index;
+        SoundManager.PlaySound(type);
     }
 
 

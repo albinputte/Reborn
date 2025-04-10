@@ -86,6 +86,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         CurrentAttackSpriteNumber = 0;
         attackAnimator.Play(GetAnimationName(currentWeapon, facingDirection, currentAttack));
         OnEnter?.Invoke();
+        SoundManager.PlaySound(SoundType.SwordAttack1);
         currentAttack++;
 
     }
@@ -179,8 +180,8 @@ public class PlayerWeaponAgent : MonoBehaviour
     public void HitStop()
     {
         if(hitStop) return;
-        Time.timeScale = 0f;
-        StartCoroutine(ResetTimeScale(0.01f));
+        Time.timeScale = 0.1f;
+        StartCoroutine(ResetTimeScale(0.1f));
     }
 
     public IEnumerator ResetTimeScale(float time)

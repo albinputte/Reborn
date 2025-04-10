@@ -4,12 +4,10 @@ namespace SmallHedge.SoundManager
 {
     public enum SoundType
     {
-        SwordAttack,
-        
+        SwordAttack1,
+        MonsterHitSound1,
         MineCoal,
         MineIron,
-
-        AssBlsaterAttack,
     }
 
     // Call sounds like this:
