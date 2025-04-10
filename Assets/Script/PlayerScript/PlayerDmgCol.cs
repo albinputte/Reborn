@@ -21,6 +21,7 @@ public class PlayerDmgCol : MonoBehaviour
             Vector2 direction = (other.transform.position - transform.position).normalized;
             Vector2 knockback = direction * playerWeaponAgent.currentWeapon.KnockbackForce;
             damagable.Hit(playerWeaponAgent.currentWeapon.Damage, knockback);
+            CameraShake.instance.ShakeCamera(2f, 0.3f);
             playerWeaponAgent.HitStop();
             playerWeaponAgent.DisableCollider();
            

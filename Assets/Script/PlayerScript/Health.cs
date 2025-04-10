@@ -82,5 +82,17 @@ public class Health : MonoBehaviour, IDamagable
         Destroy(gameObject, 0.35f);
     }
 
+    public void SpawnParticles(GameObject ParticlePrefab)
+    {
+        Instantiate(ParticlePrefab, transform.position, Quaternion.identity);
+    }
+
+    public void SpawnParticlesFromTarget(GameObject ParticlePrefab)
+    {
+        Vector3 direction = new Vector3(tempKnockBack.x, tempKnockBack.y).normalized;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        Instantiate(ParticlePrefab, transform.position, rotation);
+    }
+
 
 }

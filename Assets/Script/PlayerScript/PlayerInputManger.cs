@@ -97,7 +97,7 @@ public class PlayerInputManger : MonoBehaviour
 
             if (Time.time <= timePressed + bufferTime)
             {
-                Debug.Log("bUFFER");
+              
                 BufferList.Remove(actionName); // Optionally consume it
                 StartCoroutine(PeformAttack());
              
