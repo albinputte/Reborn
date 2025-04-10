@@ -13,11 +13,17 @@ MonoBehaviour:
   m_Name: SoundManager
   m_EditorClassIdentifier: 
   sounds:
-  - name: SwordAttack
+  - name: SwordAttack1
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 5b0dc8e23f5195544b46c979f95d6c99, type: 3}
+    - {fileID: 8300000, guid: c2d08728c507149498d087a9945d123d, type: 3}
+    useRandomPitch: 1
+  - name: MonsterHitSound1
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: f7f96c6e3ac2cc84493308affd9ea7eb, type: 3}
     useRandomPitch: 1
   - name: MineCoal
     volume: 1
@@ -25,11 +31,6 @@ MonoBehaviour:
     sounds: []
     useRandomPitch: 0
   - name: MineIron
-    volume: 1
-    mixer: {fileID: 0}
-    sounds: []
-    useRandomPitch: 0
-  - name: AssBlsaterAttack
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds: []
