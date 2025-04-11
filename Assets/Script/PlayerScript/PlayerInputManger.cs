@@ -19,6 +19,7 @@ public class PlayerInputManger : MonoBehaviour
     private bool CanPefromKeyBuffer;
     [SerializeField]private Dictionary<string, KeyBuffer> BufferList = new Dictionary<string, KeyBuffer>();
     [SerializeField] private PlayerWeaponAgent agent;
+    [SerializeField] public Vector2 moveDir;
 
     public void Start()
     {
@@ -33,6 +34,7 @@ public class PlayerInputManger : MonoBehaviour
 
         normInputX = (int)(rawInput * Vector2.right).normalized.x;
         normInputY = (int)(rawInput * Vector2.up).normalized.y;
+        moveDir = new Vector2(normInputX, normInputY).normalized;
 
     }
 

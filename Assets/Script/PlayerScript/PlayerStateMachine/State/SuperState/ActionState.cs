@@ -11,6 +11,8 @@ public class ActionState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        CalculateFacingDir();
+        controller.rb.velocity = new Vector2 (100, 0);
         IsAbilityDone = false;
     }
 
@@ -18,13 +20,14 @@ public class ActionState : PlayerState
     {
         base.Exit();
         controller.Input.ActionPefromed = false;
+        SetDrag(5);
         
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        MovementXY();
+        //MovementXY();
         if (IsAbilityDone)
         {
             stateMachine.SwitchState(controller.idle);

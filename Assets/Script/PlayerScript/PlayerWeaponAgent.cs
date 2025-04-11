@@ -1,129 +1,146 @@
 using SmallHedge.SoundManager;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerWeaponAgent : MonoBehaviour
 {
-    public WeaponItemData currentWeapon;
+    [Header("References")]
     [SerializeField] private InventorySO inventory;
     [SerializeField] private WeaponItemData testWeapon;
+    [SerializeField] private GameObject[] slashEffects;
+    [SerializeField] private SpriteRenderer weaponSpriteRenderer;
+    [SerializeField] private Transform PlayerTransform;
+    [SerializeField] private Vector2[] faceDir = { new Vector2(1,0), new Vector2(0, 1), new Vector2(0, -1) };
 
     private BoxCollider2D[] attackColliders;
-    private Sprite[] attackSpriteArray;
+    private Sprite[] attackSprites;
     private SpriteRenderer playerSprite;
     private Animator attackAnimator;
     private WeaponAnimationHandler animationHandler;
     private Rigidbody2D rb;
-    public PlayerInputManger playerInput;
-    public GameObject[] slashObj;
 
-    public SpriteRenderer weaponSpriteRenderer;
+    public PlayerInputManger playerInput;
+
+    public WeaponItemData CurrentWeapon { get; private set; }
     public int WeaponTypeIndex { get; private set; }
-    public int CurrentAttackSpriteNumber { get; private set; }
+    public int CurrentAttackSpriteIndex { get; private set; }
     public bool IsAttackActive { get; private set; }
+
+    private int tempFaceDir;
+
     public event Action OnEnter;
     public event Action OnExit;
 
     private int facingDirection;
-    private int currentAttack;
-    private bool hitStop;
-
+    private int currentAttackIndex;
+    private bool isHitStopActive;
 
     private void Awake()
     {
         InitializeComponents();
         SetWeapon(testWeapon);
-        hitStop = false;
-        rb = GetComponentInParent<Rigidbody2D>();
     }
 
     private void InitializeComponents()
     {
         attackColliders = GetComponentsInChildren<BoxCollider2D>();
+        playerSprite = GetComponent<SpriteRenderer>();
+        animationHandler = GetComponent<WeaponAnimationHandler>();
+        attackAnimator = GetComponentInChildren<Animator>();
+        rb = GetComponentInParent<Rigidbody2D>();
+
         if (attackColliders == null || attackColliders.Length == 0)
             Debug.LogError("No BoxCollider2D found in children!");
-
-        if (weaponSpriteRenderer == null)
+        if (!weaponSpriteRenderer)
             Debug.LogError("Weapon SpriteRenderer is missing!");
-
-        playerSprite = GetComponent<SpriteRenderer>();
-        if (playerSprite == null)
+        if (!playerSprite)
             Debug.LogError("Player SpriteRenderer is missing!");
-
-        animationHandler = GetComponent<WeaponAnimationHandler>();
-        if (animationHandler == null)
+        if (!animationHandler)
             Debug.LogError("WeaponAnimationHandler is missing!");
-
-        attackAnimator = GetComponentInChildren<Animator>();
-        if (attackAnimator == null)
+        if (!attackAnimator)
             Debug.LogError("AttackAnimator is missing!");
     }
 
-    public void SetWeapon(WeaponItemData newWeaponData)
+    public void SetWeapon(WeaponItemData newWeapon)
     {
-        if (currentWeapon != null)
-        {
-            inventory.AddItem(currentWeapon, 1);
-        }
+        if (CurrentWeapon != null)
+            inventory.AddItem(CurrentWeapon, 1);
 
-        currentWeapon = newWeaponData;
-        WeaponTypeIndex = (int)newWeaponData.WeaponType;
-
-        //add for loop to assign all directions(Dictonary)
-        attackSpriteArray = currentWeapon.WeaponAttackSprites[0].AttackSprite;
+        CurrentWeapon = newWeapon;
+        WeaponTypeIndex = (int)newWeapon.WeaponType;
+        attackSprites = newWeapon.WeaponAttackSprites[0].AttackSprite;
     }
 
-    public void Activate(int newFacingDirection)
+    public void Activate(int direction)
     {
         if (IsAttackActive) return;
-        
+       
         IsAttackActive = true;
         weaponSpriteRenderer.enabled = true;
-        facingDirection = newFacingDirection;
-        CurrentAttackSpriteNumber = 0;
-        attackAnimator.Play(GetAnimationName(currentWeapon, facingDirection, currentAttack));
+        tempFaceDir = direction;
+        facingDirection = TemporaryDirCorrection(direction);
+        CurrentAttackSpriteIndex = 0;
+
+        string animName = GetAnimationName(CurrentWeapon, facingDirection, currentAttackIndex);
+        attackAnimator.Play(animName);
+
         OnEnter?.Invoke();
         SoundManager.PlaySound(SoundType.SwordAttack1);
-        currentAttack++;
 
+        currentAttackIndex++;
     }
 
     public void Deactivate()
     {
         weaponSpriteRenderer.enabled = false;
-        facingDirection = -1;
         IsAttackActive = false;
+        facingDirection = -1;
         OnExit?.Invoke();
     }
 
     public void EnableCollider()
     {
+        if (facingDirection < 0 || facingDirection >= attackColliders.Length) return;
 
-            attackColliders[facingDirection].enabled = true;
-        slashObj[facingDirection].SetActive(true);
-        //rb.AddForce(new Vector2(playerInput.normInputX,playerInput.normInputY).normalized *10f, ForceMode2D.Impulse);
-
+        attackColliders[facingDirection].enabled = true;
+        slashEffects[facingDirection].SetActive(true);
     }
 
     public void DisableCollider()
     {
-      
-            attackColliders[facingDirection].enabled = false;
-            slashObj[facingDirection].SetActive(false);
+        if (facingDirection < 0 || facingDirection >= attackColliders.Length) return;
+
+        attackColliders[facingDirection].enabled = false;
+        slashEffects[facingDirection].SetActive(false);
     }
 
-    public void UpdateWeaponSprite(SpriteRenderer spriteRenderer)
+    public void SetPlayerVelocityZero()
     {
-        if (CurrentAttackSpriteNumber < attackSpriteArray.Length)
+        StartCoroutine(LerpVel());
+    }
+
+    public IEnumerator LerpVel()
+    {
+        Vector2 x = rb.velocity / 10;
+        for (int i = 0;i < 5; i++)
         {
-            weaponSpriteRenderer.sprite = attackSpriteArray[CurrentAttackSpriteNumber++];
+            rb.velocity -= x;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
+    public void ApplyKnockbackToPlayer()
+    {
+        rb.AddForce(faceDir[tempFaceDir] * 4, ForceMode2D.Impulse);
+    }
 
+    public void UpdateWeaponSprite(SpriteRenderer _)
+    {
+        if (CurrentAttackSpriteIndex < attackSprites.Length)
+            weaponSpriteRenderer.sprite = attackSprites[CurrentAttackSpriteIndex++];
+    }
 
     private void HandleEnter()
     {
@@ -151,44 +168,86 @@ public class PlayerWeaponAgent : MonoBehaviour
         OnExit -= HandleExit;
     }
 
-    private string GetAnimationName(WeaponItemData CurrentItemData, int facingDir, int attackIndex)
+    private string GetAnimationName(WeaponItemData weapon, int direction, int index)
     {
-        return new string(CurrentItemData.WeaponType.ToString() + "_Facing" + facingDirection.ToString() + "_Nr" + (currentAttack + 1).ToString());
+        return $"{weapon.WeaponType}_Facing{direction}_Nr{index + 1}";
     }
 
-    public void StartTimer()
+    public void StartAttackResetTimer()
     {
-        StartCoroutine(ResetTimer(1));
+        StartCoroutine(ResetAttackTimer(1f));
     }
 
-    public IEnumerator ResetTimer(float time)
+    private IEnumerator ResetAttackTimer(float delay)
     {
-        if (currentAttack >= 3) { currentAttack = 0; CurrentAttackSpriteNumber = 0; yield return null; }
-        float CachedcurrentAttack = currentAttack;
-        yield return new WaitForSeconds(time);
-        if (CachedcurrentAttack == currentAttack)
+        if (currentAttackIndex >= 3)
         {
-            currentAttack = 0;
-            CurrentAttackSpriteNumber = 0;
+            currentAttackIndex = 0;
+            CurrentAttackSpriteIndex = 0;
+            yield break;
         }
 
+        int cachedAttackIndex = currentAttackIndex;
+        yield return new WaitForSeconds(delay);
 
-
+        if (cachedAttackIndex == currentAttackIndex)
+        {
+            currentAttackIndex = 0;
+            CurrentAttackSpriteIndex = 0;
+        }
     }
 
-
-    public void HitStop()
+    public void TriggerHitStop()
     {
-        if(hitStop) return;
+        if (isHitStopActive) return;
+
         Time.timeScale = 0.1f;
-        StartCoroutine(ResetTimeScale(0.1f));
+        StartCoroutine(ResetTimeScaleAfterDelay(0.1f));
     }
 
-    public IEnumerator ResetTimeScale(float time)
+    private IEnumerator ResetTimeScaleAfterDelay(float delay)
     {
-        hitStop = true;
-        yield return new WaitForSecondsRealtime(time);
-        Time.timeScale = 1;
-        hitStop = false;
+        isHitStopActive = true;
+        yield return new WaitForSecondsRealtime(delay);
+        Time.timeScale = 1f;
+        isHitStopActive = false;
+    }
+
+
+    private int TemporaryDirCorrection(int dir)
+    {
+        switch (dir)
+        {
+            case 0:
+                PlayerTransform.localScale = new Vector3(1, 1, 0);
+                return 0;
+
+            case 1:
+                return 1;
+
+            case 2:
+                return 2;
+
+            case 3:
+                PlayerTransform.localScale = new Vector3(-1, 1, 0);
+                return 0;
+
+            case 4:
+                PlayerTransform.localScale = new Vector3(1, 1, 0);
+                return 0;
+            case 5:
+                PlayerTransform.localScale = new Vector3(1, 1, 0);
+                return 0;
+
+            case 6:
+                PlayerTransform.localScale = new Vector3(-1, 1, 0);
+                return 0;
+            case 7:
+                PlayerTransform.localScale = new Vector3(-1, 1, 0);
+                return 0;
+
+            default:
+                return 0;
+        }
     }
 }

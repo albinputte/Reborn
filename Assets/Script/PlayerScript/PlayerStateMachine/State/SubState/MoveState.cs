@@ -21,7 +21,7 @@ public class MoveState : BaseMovementStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        CalculateFacingdir();
+        CalculateFacingDir();
         CheckFlip();
     }
 

@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerDmgCol : MonoBehaviour
 {
     private PlayerWeaponAgent playerWeaponAgent;
+    public Rigidbody2D rb;
     private void Start()
     {
         playerWeaponAgent = GetComponentInParent<PlayerWeaponAgent>();
+        rb = GetComponentInParent<Rigidbody2D>();
     }
 
 
@@ -19,10 +21,11 @@ public class PlayerDmgCol : MonoBehaviour
         if (damagable != null)
         {
             Vector2 direction = (other.transform.position - transform.position).normalized;
-            Vector2 knockback = direction * playerWeaponAgent.currentWeapon.KnockbackForce;
-            damagable.Hit(playerWeaponAgent.currentWeapon.Damage, knockback);
+            Vector2 knockback = direction * playerWeaponAgent.CurrentWeapon.KnockbackForce;
+            damagable.Hit(playerWeaponAgent.CurrentWeapon.Damage, knockback);
+            //rb.AddForce((direction * 3) * -1, ForceMode2D.Impulse);
             CameraShake.instance.ShakeCamera(2f, 0.3f);
-            playerWeaponAgent.HitStop();
+            playerWeaponAgent.TriggerHitStop();
             playerWeaponAgent.DisableCollider();
            
 

@@ -37,7 +37,7 @@ public class BaseMovementStates : PlayerState
         {
             controller.stateMachine.SwitchState(controller.baseAttack);
         }
-        CalculateFacingdir();
+        CalculateFacingDir();
         MovementXY();
 
 
