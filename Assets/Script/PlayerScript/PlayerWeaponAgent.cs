@@ -12,7 +12,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     [SerializeField] private GameObject[] slashEffects;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private Transform PlayerTransform;
-    [SerializeField] private Vector2[] faceDir = { new Vector2(1,0), new Vector2(0, 1), new Vector2(0, -1) };
+    [SerializeField] private Vector2[] faceDir;
 
     private BoxCollider2D[] attackColliders;
     private Sprite[] attackSprites;
