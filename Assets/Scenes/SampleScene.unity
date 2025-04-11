@@ -26530,6 +26530,7 @@ MonoBehaviour:
   IsAttacking: 0
   ActionPefromed: 0
   agent: {fileID: 0}
+  moveDir: {x: 0, y: 0}
 --- !u!114 &181227055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26846,6 +26847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b8ae42a938b4b44a40f26cc681a708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 1932083277}
 --- !u!1 &193076349
 GameObject:
   m_ObjectHideFlags: 0
@@ -32559,15 +32561,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4692ba0044f603e4b8104f9974fe8b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   testWeapon: {fileID: 11400000, guid: 5f4d664978cc04042ad38db2298d7d52, type: 2}
-  playerInput: {fileID: 181227054}
-  slashObj:
+  slashEffects:
   - {fileID: 193076349}
   - {fileID: 407805426}
   - {fileID: 1049226017}
   weaponSpriteRenderer: {fileID: 1339327372}
+  PlayerTransform: {fileID: 1932083276}
+  faceDir:
+  - {x: 1, y: 0}
+  - {x: 0, y: 1}
+  - {x: 0, y: -1}
+  - {x: -1, y: 0}
+  - {x: 1, y: 1}
+  - {x: 1, y: -1}
+  - {x: -1, y: 1}
+  - {x: -1, y: -1}
+  playerInput: {fileID: 181227054}
 --- !u!114 &1046930245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39148,8 +39159,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
-  m_AngularDrag: 0.05
+  m_LinearDrag: 5
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
