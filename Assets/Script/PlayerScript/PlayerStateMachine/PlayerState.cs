@@ -13,6 +13,7 @@ public class PlayerState
     protected Vector2 CurrentVelocity;
     protected bool IsAbilityDone;
     protected Directions directions;
+    
    
 
 
