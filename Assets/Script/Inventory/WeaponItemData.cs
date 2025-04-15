@@ -9,8 +9,11 @@ using UnityEngine.Rendering.Universal;
 
 public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
 {
-   
-     [Serializable]
+
+    [SerializeReference, SubclassSelector]
+    public List<BuffBase> buffs = new List<BuffBase>();
+
+    [Serializable]
     public struct WeaponAttackSprite
     {
        public Sprite[] AttackSprite;
@@ -47,6 +50,8 @@ public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
         return false;
     }
 }
+
+
 
 public enum WeaponType
 {

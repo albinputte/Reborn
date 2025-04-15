@@ -17,6 +17,11 @@ MonoBehaviour:
   Icon: {fileID: 0}
   itemType: 4
   IsStackable: 0
+  IsCraftable: 0
+  craftingRecipe: []
+  buffs: []
+  Damage: 0
+  KnockbackForce: 0
   WeaponType: 1
   WeaponAttackSprites:
   - AttackSprite:
