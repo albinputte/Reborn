@@ -21,6 +21,7 @@ public class IdleState : BaseMovementStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        
     }
 
     public override void PhysicsUpdate()

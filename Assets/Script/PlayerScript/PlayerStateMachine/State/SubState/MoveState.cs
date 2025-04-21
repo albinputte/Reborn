@@ -11,6 +11,7 @@ public class MoveState : BaseMovementStates
     public override void Enter()
     {
         base.Enter();
+        ResetFlip();
     }
 
     public override void Exit()
@@ -21,8 +22,8 @@ public class MoveState : BaseMovementStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        CalculateFacingDir();
-        CheckFlip();
+        HandleFacingDirection();
+        
     }
 
     public override void PhysicsUpdate()

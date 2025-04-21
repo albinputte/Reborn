@@ -11,7 +11,7 @@ public class ActionState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        CalculateFacingDir();
+       
         controller.rb.velocity = new Vector2 (100, 0);
         IsAbilityDone = false;
     }

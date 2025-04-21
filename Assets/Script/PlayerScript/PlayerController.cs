@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public PlayerWeaponAgent weaponAgent;
 
     [SerializeField]
-    public static Directions FacingDirection;
+    public static Directions[] FacingDirection = new Directions[2];
 
 
     public IdleState idle {  get; private set; }
@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         stateMachine = new PlayerStateMachine();
-        move = new MoveState(stateMachine,playerData,"Move_anim", this);
-        idle = new IdleState(stateMachine, playerData, "Idle_anim", this);
-        run = new RunState(stateMachine, playerData, "Run_anim", this);
+        move = new MoveState(stateMachine,playerData, "PlayerRunAnim", this);
+        idle = new IdleState(stateMachine, playerData, "Idle", this);
+        run = new RunState(stateMachine, playerData, "PlayerRunAnim", this);
         baseAttack = new BaseAttackState(stateMachine, playerData, "", this);
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
         stateMachine.InisiateState(idle);
        
-      
+     
     }
 
     public void Update()

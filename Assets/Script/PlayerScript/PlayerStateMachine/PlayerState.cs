@@ -13,6 +13,17 @@ public class PlayerState
     protected Vector2 CurrentVelocity;
     protected bool IsAbilityDone;
     protected Directions directions;
+    protected Vector2[] FaceDir =
+    {
+        new Vector2(1, 0),
+        new Vector2(0, 1),
+        new Vector2(0, -1),
+        new Vector2(-1, 0),
+        new Vector2(1, 1),
+        new Vector2(1, -1),
+        new Vector2(-1, 1),
+        new Vector2(-1, -1),
+    }; 
     
    
 
@@ -27,8 +38,8 @@ public class PlayerState
 
     public virtual void Enter()
     {
-      
-        //Player.animator.play(animationName);  add later when i add player controller script
+
+        controller.animator.Play(animationName + "_" + (int)PlayerController.FacingDirection[1]);  //add later when i add player controller script
     }
 
     public virtual void Exit()
@@ -71,23 +82,47 @@ public class PlayerState
 
   
 
-    public void CheckFlip()
+    public void ResetFlip()
     {
-
-        if (controller.Input.normInputX == 1)
-        {
             controller.Parrent.transform.localScale = new Vector3(1, 1, 0);
-        }
-        else if (controller.Input.normInputX == -1)
-        {
-            controller.Parrent.transform.localScale = new Vector3(-1, 1, 0);
-        }
-
-    
-
     }
 
-    public void CalculateFacingDir()
+    public void HandleFacingDirection()
+    {
+        Vector2 faceDirCheck = new Vector2(controller.Input.normInputX, controller.Input.normInputY);
+        int Dir = -1;
+        for (int i = 0; i < FaceDir.Length; i++)
+        {
+            if(faceDirCheck == FaceDir[i])
+                Dir = i;
+        }
+        switch(Dir)
+        {
+            case 0:
+                PlayerController.FacingDirection[1] = Directions.Right; break;
+            case 1:
+                PlayerController.FacingDirection[1] = Directions.Up; break;
+            case 2:
+                PlayerController.FacingDirection[1] = Directions.Down; break;
+            case 3:
+                PlayerController.FacingDirection[1] = Directions.Left; break;
+            case 4:
+                PlayerController.FacingDirection[1] = Directions.RightUp; break;
+            case 5:
+                PlayerController.FacingDirection[1] = Directions.RightDown; break;
+            case 6:
+                PlayerController.FacingDirection[1] = Directions.LeftUp; break;
+            case 7:
+                PlayerController.FacingDirection[1] = Directions.LeftDown; break;
+            default:
+                break;
+        }
+      
+
+        
+    }
+
+    public Directions CalculateFacingDir(bool ActionCalc)
     {
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - controller.transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -95,40 +130,46 @@ public class PlayerState
 
         if (angle >= 337.5f || angle < 22.5f)
         {
-            PlayerController.FacingDirection = Directions.Right;
+            HandleSpriteFlip(Directions.Right);
+           return Directions.Right;
         }
         else if (angle >= 22.5f && angle < 67.5f)
         {
-            PlayerController.FacingDirection = Directions.RightUp;
+            HandleSpriteFlip(Directions.RightUp);
+            return Directions.RightUp;
         }
         else if (angle >= 67.5f && angle < 112.5f)
         {
-            PlayerController.FacingDirection = Directions.Up;
+            HandleSpriteFlip(Directions.Up);
+            return Directions.Up;
         }
         else if (angle >= 112.5f && angle < 157.5f)
         {
-            PlayerController.FacingDirection = Directions.LeftUp;
+            HandleSpriteFlip(Directions.LeftUp);
+            return Directions.LeftUp;
         }
         else if (angle >= 157.5f && angle < 202.5f)
         {
-            PlayerController.FacingDirection = Directions.Left;
+            HandleSpriteFlip(Directions.Left);
+            return Directions.Left;
         }
         else if (angle >= 202.5f && angle < 247.5f)
         {
-            PlayerController.FacingDirection = Directions.LeftDown;
+            HandleSpriteFlip(Directions.LeftDown);
+            return Directions.LeftDown;
         }
         else if (angle >= 247.5f && angle < 292.5f)
         {
-            PlayerController.FacingDirection = Directions.Down;
+            HandleSpriteFlip(Directions.Down);
+            return Directions.Down;
         }
         else if (angle >= 292.5f && angle < 337.5f)
         {
-            PlayerController.FacingDirection = Directions.RightDown;
+            HandleSpriteFlip(Directions.RightDown);
+            return Directions.RightDown;
         }
-        if (controller.Input.normInputX == 0)
-        {
-            HandleSpriteFlip(PlayerController.FacingDirection);
-        }
+        else { return 0; }
+      
     }
 
     private void HandleSpriteFlip(Directions dir)

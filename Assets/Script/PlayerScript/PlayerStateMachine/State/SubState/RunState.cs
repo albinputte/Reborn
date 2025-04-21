@@ -11,6 +11,7 @@ public class RunState : BaseMovementStates
     public override void Enter()
     {
         base.Enter();
+        ResetFlip();
     }
 
     public override void Exit()
@@ -21,7 +22,7 @@ public class RunState : BaseMovementStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        CheckFlip();
+        HandleFacingDirection();
        
     }
 

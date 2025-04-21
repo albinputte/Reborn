@@ -11,6 +11,7 @@ public class BaseMovementStates : PlayerState
     public override void Enter()
     {
         base.Enter();
+        ResetFlip();
     }
 
     public override void Exit()
@@ -37,7 +38,8 @@ public class BaseMovementStates : PlayerState
         {
             controller.stateMachine.SwitchState(controller.baseAttack);
         }
-        CalculateFacingDir();
+        //HandleFacingDirection();
+        //CalculateFacingDir();
         MovementXY();
 
 
