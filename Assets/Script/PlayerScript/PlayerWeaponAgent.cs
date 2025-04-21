@@ -24,6 +24,11 @@ public class PlayerWeaponAgent : MonoBehaviour
     public PlayerInputManger playerInput;
 
     public WeaponItemData CurrentWeapon { get; private set; }
+    public ItemData currentOrb;
+    public WeaponInstances CurrentWeaponInstances { get; private set; }
+
+    
+
     public int WeaponTypeIndex { get; private set; }
     public int CurrentAttackSpriteIndex { get; private set; }
     public bool IsAttackActive { get; private set; }
@@ -40,7 +45,12 @@ public class PlayerWeaponAgent : MonoBehaviour
     private void Awake()
     {
         InitializeComponents();
-        SetWeapon(testWeapon);
+        WeaponInstances testinst = new WeaponInstances(testWeapon, null, 1212021);
+        testinst.Weapon = testWeapon;
+        SetWeapon(testinst);
+
+        //CurrentWeapon = testWeapon;
+        //attackSprites = CurrentWeapon.WeaponAttackSprites[0].AttackSprite;
     }
 
     private void InitializeComponents()
@@ -63,14 +73,16 @@ public class PlayerWeaponAgent : MonoBehaviour
             Debug.LogError("AttackAnimator is missing!");
     }
 
-    public void SetWeapon(WeaponItemData newWeapon)
+    public void SetWeapon(WeaponInstances newWeapon)
     {
         if (CurrentWeapon != null)
-            inventory.AddItem(CurrentWeapon, 1);
+            inventory.AddItem(CurrentWeapon, 1, CurrentWeaponInstances);
+        CurrentWeaponInstances = newWeapon;
+        CurrentWeapon = newWeapon.Weapon;
+        currentOrb = newWeapon.GetOrb();
+        WeaponTypeIndex = (int)CurrentWeapon.WeaponType;
+        attackSprites = CurrentWeapon.WeaponAttackSprites[0].AttackSprite;
 
-        CurrentWeapon = newWeapon;
-        WeaponTypeIndex = (int)newWeapon.WeaponType;
-        attackSprites = newWeapon.WeaponAttackSprites[0].AttackSprite;
     }
 
     public void Activate(int direction)

@@ -37,7 +37,7 @@ public class WorldItem : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                inventory.AddItem(item, quantity);
+                inventory.AddItem(item, quantity, null);
                 Destroy(gameObject);
             }
         }

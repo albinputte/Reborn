@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IitemAction
 {
-    public bool PerformAction(GameObject gameObject);
+    public bool PerformAction(GameObject gameObject,WeaponInstances inst);
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Accessibility;
 using UnityEngine.Rendering.Universal;
 
-[CreateAssetMenu(fileName = "WeaponItemBase", menuName = "WeaponItem", order = 3)]
+[CreateAssetMenu(fileName = "WeaponItemBase", menuName = "Items/WeaponItem", order = 3)]
 
 public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
 {
@@ -36,14 +36,14 @@ public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
     }
 
   
-    public bool PerformAction(GameObject gameObject)
+    public bool PerformAction(GameObject gameObject, WeaponInstances inst)
     {
         Debug.Log("Performing action with weapon: " + gameObject.name);
         PlayerWeaponAgent agent = gameObject.GetComponentInChildren<PlayerWeaponAgent>();
         if (agent != null)
         {
             Debug.Log("Setting weapon: " + gameObject.name);
-            agent.SetWeapon(this);
+            agent.SetWeapon(inst);
             return true;
         }
         Debug.LogWarning("PlayerWeaponAgent component not found in the game object.");

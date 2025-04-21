@@ -32,7 +32,7 @@ public class CraftingManager : MonoBehaviour
             {
                 RemoveItemsFromInventory(ingredient.item, ingredient.quantity);
             }
-            inventory.AddItem(recipe.resultItem, recipe.resultQuantity);
+            inventory.AddItem(recipe.resultItem, recipe.resultQuantity, null);
             Debug.Log("Crafted " + recipe.resultItem.name);
             //delegate add here
         }

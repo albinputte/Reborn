@@ -13,12 +13,15 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private InventorySO inventoryData;
 
+   
+
     [SerializeField]
     private bool InventoryUiActive;
 
     [SerializeField]
     private CraftingUI craftingUI; //temporary
 
+   
     public ItemData testItem;
 
     public GameObject Character;
@@ -27,6 +30,7 @@ public class InventoryController : MonoBehaviour
 
     private void Start()
     {
+     
         PrepareInventoryUI();
         PrepareInventoryData();
 
@@ -52,9 +56,43 @@ public class InventoryController : MonoBehaviour
                 continue;
             Debug.Log(item.ToString());
             inventoryData.AddItem(item);
+         
         }
+        InstantiateWeaponInstances();
+    }
+
+    public void InstantiateWeaponInstances()
+    {
+        //move this to so file instead
+
+      for (int i = 0;i < inventoryData.Inventory.Count; i++)
+        {
+            InventoryItem item1 = inventoryData.GetSpecificItem(i);
+            if (!item1.IsEmpty)
+            {
+                if (item1.item.itemType == ItemType.Weapon)
+                {
+                    Debug.Log("yAY SWORD");
+                    InventoryItem item = inventoryData.GetSpecificItem(i);
+                    WeaponInstances instances = CreateWeaponIntances(item.item, null, 1000 + i);
+                 
+                    Debug.Log(instances.Weapon.Name);
+                    inventoryData.addWeaponinstance(i, instances);
+                }
+            }
+         
         }
-    
+    }
+
+    public WeaponInstances CreateWeaponIntances(ItemData item, ItemData orb, int index)
+    {
+        if (item is WeaponItemData weaponData)
+            return new WeaponInstances(weaponData, orb, index);
+
+        Debug.LogWarning("Tried to create weapon instance with non-weapon item");
+        return null;
+    }
+
 
     private void UpdateInventoryUI(Dictionary<int, InventoryItem> dictionary)
     {
@@ -97,7 +135,8 @@ public class InventoryController : MonoBehaviour
         IitemAction iitemAction = item.item as IitemAction;
         if (iitemAction != null)
         {
-            iitemAction.PerformAction(Character);
+            Debug.Log(item.weaponInstances.Weapon);
+            iitemAction.PerformAction(Character, item.weaponInstances);
         }
      
         
@@ -119,7 +158,7 @@ public class InventoryController : MonoBehaviour
                 foreach(var item in inventoryData.GetInventoryState())
                 {
                     inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
-
+                   
                 }
             }
             else if (InventoryUiActive)

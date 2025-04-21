@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="ItemBase", menuName = "Item", order = 2)]
+[CreateAssetMenu(fileName ="ItemBase", menuName = "Items/BaseItem", order = 2)]
 public class ItemData : ScriptableObject
 {
     public string Name;
@@ -27,7 +27,9 @@ public enum ItemType
     Weapon,
     Armour,
     accessory,
-    Misc
+    Misc,
+    Orbs
+
 }
 [Serializable]
 public struct CraftingRecipe

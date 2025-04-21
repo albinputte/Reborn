@@ -25,7 +25,7 @@ public class InventorySO : ScriptableObject
         }
 
     }
-    public int AddItem(ItemData item, int quantity)
+    public int AddItem(ItemData item, int quantity, WeaponInstances instances)
     {
 
         if (!item.IsStackable)
@@ -37,7 +37,7 @@ public class InventorySO : ScriptableObject
                 while (quantity > 0 && inventoryIsFull() == false)
                 {
                 
-                    FindNearestEmptyItem(item, 1);
+                    FindNearestEmptyItem(item, 1, instances);
                     quantity--;
                 }
                 OnInventoryStateChange();
@@ -55,9 +55,38 @@ public class InventorySO : ScriptableObject
 
     }
 
+    public void addWeaponinstance(int index, WeaponInstances instances)
+    {
+        InventoryItem item = Inventory[index];
+        item.weaponInstances = instances;
+        Debug.Log(item.item.Name);
+        Debug.Log(instances.Weapon.Name);
+        Inventory[index] = item;
+    }
+
+    public void UpdateOrb(int index, ItemData Orb)
+    {
+        InventoryItem item = Inventory[index];
+        item.weaponInstances.UpdateOrb(Orb);
+        Inventory[index] = item;
+    }
+    public WeaponInstances CreateWeaponIntances(ItemData item, ItemData orb, int index)
+    {
+        if (item is WeaponItemData weaponData)
+            return new WeaponInstances(weaponData, orb, index);
+
+        Debug.LogWarning("Tried to create weapon instance with non-weapon item");
+        return null;
+    }
+
     public InventoryItem GetSpecificItem(int index)
     {
-        return Inventory[index];
+       
+            return Inventory[index];
+      
+        
+        
+            
     }
 
     public void RemoveItem(int itemIndex, int amount)
@@ -114,7 +143,7 @@ public class InventorySO : ScriptableObject
      
             quantity -= newQuantity;
           
-            FindNearestEmptyItem(item, newQuantity);
+            FindNearestEmptyItem(item, newQuantity, null);
 
         }
         return quantity;
@@ -131,19 +160,24 @@ public class InventorySO : ScriptableObject
 
     public bool inventoryIsFull() => Inventory.Where(item => item.IsEmpty).Any() == false;
 
-    public int FindNearestEmptyItem(ItemData items, int quantity)
+    public int FindNearestEmptyItem(ItemData items, int quantity, WeaponInstances instances)
     {
         InventoryItem newItem = new InventoryItem
         {
             item = items,
-            quantity = quantity
+            quantity = quantity,
+            weaponInstances = instances
         };
 
         for (int i = 0; i < Inventory.Count; i++)
         {
             if (Inventory[i].IsEmpty)
-            {
+            {    
                 Inventory[i] = newItem;
+                if (newItem.item is WeaponItemData weaponData && newItem.weaponInstances == null)
+                {
+                    addWeaponinstance(i, CreateWeaponIntances(weaponData, null, i));
+                }
                 return quantity;
             }
 
@@ -171,7 +205,7 @@ public class InventorySO : ScriptableObject
 
     internal void AddItem(InventoryItem item)
     {
-        AddItem(item.item, item.quantity);
+        AddItem(item.item, item.quantity, item.weaponInstances);
     }
 }
 [Serializable]
@@ -180,6 +214,7 @@ public struct InventoryItem
     public ItemData item;
     public int quantity;
     public bool IsEmpty => item == null;
+    public WeaponInstances weaponInstances;
 
     public InventoryItem ChangeQuantity(int Newquantity)
     {
