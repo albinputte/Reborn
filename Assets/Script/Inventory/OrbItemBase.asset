@@ -19,4 +19,10 @@ MonoBehaviour:
   IsStackable: 0
   IsCraftable: 0
   craftingRecipe: []
-  Abilties: {fileID: 0}
+  abiltiesOrb:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Scimitar
   Description: 
   Icon: {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-  itemType: 1
+  itemType: 4
   IsStackable: 0
   IsCraftable: 1
   craftingRecipe:
@@ -26,6 +26,7 @@ MonoBehaviour:
       quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
+  buffs: []
   Damage: 5
   KnockbackForce: 20
   WeaponType: 1

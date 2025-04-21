@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WorldItem : MonoBehaviour
@@ -12,10 +13,21 @@ public class WorldItem : MonoBehaviour
 
     [SerializeField] private bool IsADrop;
 
+    [SerializeField] private Collider2D col;
+    private Transform ItemTrans;
+
+    public float hoverAmount;
+    public float hoverCycleTime;
+    public float hoverDelay;
+    public float hoverStepamount;
+
+
 
     public void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
+        ItemTrans = GetComponent<Transform>();  
     }
     public void Start()
     {
@@ -44,7 +56,39 @@ public class WorldItem : MonoBehaviour
 
     }
 
+    public void EnableCollider()
+    {
+        col.enabled = true;
 
+
+    }
+
+    public void StartHover() => StartCoroutine(HoverEffect());
+
+    public IEnumerator HoverEffect()
+    {
+        var HoverStep = hoverAmount / hoverStepamount;
+        var HoverCycle = hoverCycleTime / hoverStepamount;
+        
+        for (int i = 0; i < hoverStepamount; i++)
+        {
+            transform.position += new Vector3(0, HoverStep);
+            yield return new WaitForSeconds(HoverCycle);
+        }
+        yield return new WaitForSeconds(hoverDelay);
+        for (int i = 0;i < hoverStepamount * 2; i++)
+        {
+            transform.position -= new Vector3(0, HoverStep);
+            yield return new WaitForSeconds(HoverCycle);
+        }
+        yield return new WaitForSeconds(hoverDelay);
+        for (int i = 0; i < hoverStepamount; i++)
+        {
+            transform.position += new Vector3(0, HoverStep);
+            yield return new WaitForSeconds(HoverCycle);
+        }
+        StartCoroutine(HoverEffect());
+    }
 
 
 }
