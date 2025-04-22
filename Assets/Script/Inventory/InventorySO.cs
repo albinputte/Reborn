@@ -59,8 +59,6 @@ public class InventorySO : ScriptableObject
     {
         InventoryItem item = Inventory[index];
         item.weaponInstances = instances;
-        Debug.Log(item.item.Name);
-        Debug.Log(instances.Weapon.Name);
         Inventory[index] = item;
     }
 

@@ -13,19 +13,32 @@ public class PlayerState
     protected Vector2 CurrentVelocity;
     protected bool IsAbilityDone;
     protected Directions directions;
-    protected Vector2[] FaceDir =
-    {
-        new Vector2(1, 0),
-        new Vector2(0, 1),
-        new Vector2(0, -1),
-        new Vector2(-1, 0),
-        new Vector2(1, 1),
-        new Vector2(1, -1),
-        new Vector2(-1, 1),
-        new Vector2(-1, -1),
-    }; 
-    
-   
+    private static readonly Dictionary<Vector2, Directions> DirectionMap = new Dictionary<Vector2, Directions>
+{
+    { new Vector2(1, 0), Directions.Right },
+    { new Vector2(0, 1), Directions.Up },
+    { new Vector2(0, -1), Directions.Down },
+    { new Vector2(-1, 0), Directions.Left },
+    { new Vector2(1, 1), Directions.RightUp },
+    { new Vector2(1, -1), Directions.RightDown },
+    { new Vector2(-1, 1), Directions.LeftUp },
+    { new Vector2(-1, -1), Directions.LeftDown }
+};
+
+    private static readonly (float min, float max, Directions dir)[] angleToDirectionMap = new[]
+ {
+    (337.5f, 360f, Directions.Right),
+    (0f, 22.5f, Directions.Right),
+    (22.5f, 67.5f, Directions.RightUp),
+    (67.5f, 112.5f, Directions.Up),
+    (112.5f, 157.5f, Directions.LeftUp),
+    (157.5f, 202.5f, Directions.Left),
+    (202.5f, 247.5f, Directions.LeftDown),
+    (247.5f, 292.5f, Directions.Down),
+    (292.5f, 337.5f, Directions.RightDown)
+};
+
+
 
 
     public PlayerState(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController ) {
@@ -90,87 +103,30 @@ public class PlayerState
     public void HandleFacingDirection()
     {
         Vector2 faceDirCheck = new Vector2(controller.Input.normInputX, controller.Input.normInputY);
-        int Dir = -1;
-        for (int i = 0; i < FaceDir.Length; i++)
-        {
-            if(faceDirCheck == FaceDir[i])
-                Dir = i;
-        }
-        switch(Dir)
-        {
-            case 0:
-                PlayerController.FacingDirection[1] = Directions.Right; break;
-            case 1:
-                PlayerController.FacingDirection[1] = Directions.Up; break;
-            case 2:
-                PlayerController.FacingDirection[1] = Directions.Down; break;
-            case 3:
-                PlayerController.FacingDirection[1] = Directions.Left; break;
-            case 4:
-                PlayerController.FacingDirection[1] = Directions.RightUp; break;
-            case 5:
-                PlayerController.FacingDirection[1] = Directions.RightDown; break;
-            case 6:
-                PlayerController.FacingDirection[1] = Directions.LeftUp; break;
-            case 7:
-                PlayerController.FacingDirection[1] = Directions.LeftDown; break;
-            default:
-                break;
-        }
-      
 
-        
+        if (DirectionMap.TryGetValue(faceDirCheck, out Directions dir))
+        {
+            PlayerController.FacingDirection[1] = dir;
+        }
     }
 
     public Directions CalculateFacingDir(bool ActionCalc)
     {
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - controller.transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle = (angle + 360) % 360; // Normalize angle to 0–360
+        float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 360f) % 360f;
 
-        if (angle >= 337.5f || angle < 22.5f)
+        foreach (var (min, max, dir) in angleToDirectionMap)
         {
-            HandleSpriteFlip(Directions.Right);
-           return Directions.Right;
+            if ((angle >= min && angle < max) || (min > max && (angle >= min || angle < max))) // handles wrapping
+            {
+                HandleSpriteFlip(dir);
+                return dir;
+            }
         }
-        else if (angle >= 22.5f && angle < 67.5f)
-        {
-            HandleSpriteFlip(Directions.RightUp);
-            return Directions.RightUp;
-        }
-        else if (angle >= 67.5f && angle < 112.5f)
-        {
-            HandleSpriteFlip(Directions.Up);
-            return Directions.Up;
-        }
-        else if (angle >= 112.5f && angle < 157.5f)
-        {
-            HandleSpriteFlip(Directions.LeftUp);
-            return Directions.LeftUp;
-        }
-        else if (angle >= 157.5f && angle < 202.5f)
-        {
-            HandleSpriteFlip(Directions.Left);
-            return Directions.Left;
-        }
-        else if (angle >= 202.5f && angle < 247.5f)
-        {
-            HandleSpriteFlip(Directions.LeftDown);
-            return Directions.LeftDown;
-        }
-        else if (angle >= 247.5f && angle < 292.5f)
-        {
-            HandleSpriteFlip(Directions.Down);
-            return Directions.Down;
-        }
-        else if (angle >= 292.5f && angle < 337.5f)
-        {
-            HandleSpriteFlip(Directions.RightDown);
-            return Directions.RightDown;
-        }
-        else { return 0; }
-      
+
+        return Directions.Right; // fallback
     }
+
 
     private void HandleSpriteFlip(Directions dir)
     {

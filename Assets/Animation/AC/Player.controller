@@ -141,31 +141,28 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1169096823556547712}
-    m_Position: {x: 480, y: 520, z: 0}
+    m_Position: {x: 380, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3006154999895520101}
-    m_Position: {x: 515, y: 585, z: 0}
+    m_Position: {x: 380, y: 570, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6734780162050739293}
-    m_Position: {x: 550, y: 650, z: 0}
+    m_Position: {x: 380, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6890603336296785908}
-    m_Position: {x: 585, y: 715, z: 0}
+    m_Position: {x: 380, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2880060815680730062}
-    m_Position: {x: 620, y: 780, z: 0}
+    m_Position: {x: 600, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8980515636529584158}
-    m_Position: {x: 655, y: 845, z: 0}
+    m_Position: {x: 600, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2786281726633759698}
-    m_Position: {x: 690, y: 910, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1658919770332757123}
-    m_Position: {x: 725, y: 975, z: 0}
+    m_Position: {x: 600, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7653082168714842854}
-    m_Position: {x: 760, y: 1040, z: 0}
+    m_Position: {x: 600, y: 570, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3182463428184521535}
     m_Position: {x: 360, y: 30, z: 0}
@@ -373,32 +370,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 7dda31a2696086e4bb0acdc418c391ba, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1658919770332757123
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerRunAnim_6 0
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

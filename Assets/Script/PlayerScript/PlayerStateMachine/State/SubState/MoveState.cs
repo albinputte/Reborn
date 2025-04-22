@@ -12,6 +12,7 @@ public class MoveState : BaseMovementStates
     {
         base.Enter();
         ResetFlip();
+        HandleFacingDirection();
     }
 
     public override void Exit()
@@ -22,7 +23,7 @@ public class MoveState : BaseMovementStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        HandleFacingDirection();
+        
         
     }
 
