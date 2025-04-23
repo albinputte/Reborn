@@ -4,8 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerInputManger : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class PlayerInputManger : MonoBehaviour
     [SerializeField]private Dictionary<string, KeyBuffer> BufferList = new Dictionary<string, KeyBuffer>();
     [SerializeField] private PlayerWeaponAgent agent;
     [SerializeField] public Vector2 moveDir;
+    [SerializeField] private LayerMask UILayer;
 
     public void Start()
     {
@@ -64,16 +67,17 @@ public class PlayerInputManger : MonoBehaviour
     }
     public void OnAttackInput(InputAction.CallbackContext context)
     {
-        
-        if (context.performed && !IsAttacking)
-        {
-            ActionPefromed = true;
-            IsAttacking = true;
+        if (!IsPointerOverUI()) { 
+            if (context.performed && !IsAttacking)
+            {
+                ActionPefromed = true;
+                IsAttacking = true;
            
-        }
-        if (context.canceled)
-        {
-            CanPefromKeyBuffer = true;
+            }
+            if (context.canceled)
+            {
+                CanPefromKeyBuffer = true;
+            }
         }
     }
 
@@ -123,6 +127,11 @@ public class PlayerInputManger : MonoBehaviour
         IsAttacking = true;
         ActionPefromed = true;
   
+    }
+
+    private bool IsPointerOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
 }

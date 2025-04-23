@@ -175,7 +175,6 @@ public class InventoryController : MonoBehaviour
             { 
                 inventoryUi.ShowInventory(); 
                 craftingUI.ShowCraftinUi();
-
                 InventoryUiActive = true;
                 foreach(var item in inventoryData.GetInventoryState())
                 {

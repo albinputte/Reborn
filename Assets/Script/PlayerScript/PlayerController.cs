@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerController : MonoBehaviour
 {
@@ -44,7 +47,11 @@ public class PlayerController : MonoBehaviour
     public void FixedUpdate()
     {
       stateMachine.CurrentState.PhysicsUpdate();
+      
     }
+ 
+
+
 
 
 
