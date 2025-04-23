@@ -79,7 +79,7 @@ public class InventorySO : ScriptableObject
 
     public InventoryItem GetSpecificItem(int index)
     {
-       
+        Debug.Log(index);       
             return Inventory[index];
       
         
