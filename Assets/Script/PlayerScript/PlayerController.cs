@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         move = new MoveState(stateMachine,playerData, "PlayerRunAnim", this);
         idle = new IdleState(stateMachine, playerData, "Idle", this);
         run = new RunState(stateMachine, playerData, "PlayerRunAnim", this);
-        baseAttack = new BaseAttackState(stateMachine, playerData, "", this);
+        baseAttack = new BaseAttackState(stateMachine, playerData, "LightAttack", this);
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
         stateMachine.InisiateState(idle);
        

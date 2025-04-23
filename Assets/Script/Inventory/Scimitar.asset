@@ -32,14 +32,20 @@ MonoBehaviour:
   WeaponType: 1
   WeaponAttackSprites:
   - AttackSprite:
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
-    - {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
+    - {fileID: -1184597493, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1184597493, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1576441036, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -2143557894, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: 1948065272, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1184597493, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1184597493, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1576441036, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -2143557894, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: 1948065272, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1184597493, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1184597493, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1576441036, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -2143557894, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: 1948065272, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
   - AttackSprite: []
   - AttackSprite: []

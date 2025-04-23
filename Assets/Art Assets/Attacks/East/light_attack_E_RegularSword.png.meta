@@ -139,7 +139,7 @@ TextureImporter:
       name: light_attack_E_RegularSword_0
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
         width: 64
         height: 64
@@ -160,7 +160,7 @@ TextureImporter:
       name: light_attack_E_RegularSword_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 0
         width: 64
         height: 64
@@ -181,7 +181,7 @@ TextureImporter:
       name: light_attack_E_RegularSword_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 0
         width: 64
         height: 64
@@ -202,7 +202,7 @@ TextureImporter:
       name: light_attack_E_RegularSword_3
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 0
         width: 64
         height: 64
@@ -215,6 +215,27 @@ TextureImporter:
       bones: []
       spriteID: 09033c2eb7e61d24b894847ee23ceb3e
       internalID: -2143557894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light_attack_E_RegularSword_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044db2500e8776a49995670fd1517a20
+      internalID: 1948065272
       vertices: []
       indices: 
       edges: []
@@ -234,6 +255,7 @@ TextureImporter:
       light_attack_E_RegularSword_1: -1184597493
       light_attack_E_RegularSword_2: -1576441036
       light_attack_E_RegularSword_3: -2143557894
+      light_attack_E_RegularSword_4: 1948065272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

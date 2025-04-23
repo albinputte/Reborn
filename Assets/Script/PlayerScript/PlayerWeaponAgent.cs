@@ -145,7 +145,7 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     public void ApplyKnockbackToPlayer()
     {
-        rb.AddForce(faceDir[tempFaceDir] * 4, ForceMode2D.Impulse);
+        rb.AddForce(faceDir[tempFaceDir] * 0.4f, ForceMode2D.Impulse);
     }
 
     public void UpdateWeaponSprite(SpriteRenderer _)
@@ -207,6 +207,11 @@ public class PlayerWeaponAgent : MonoBehaviour
             currentAttackIndex = 0;
             CurrentAttackSpriteIndex = 0;
         }
+    }
+
+    public void EditSortingLayer(int index)
+    {
+        weaponSpriteRenderer.sortingOrder = index;
     }
 
     public void TriggerHitStop()

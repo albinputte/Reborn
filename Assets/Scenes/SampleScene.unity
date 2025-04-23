@@ -33770,8 +33770,8 @@ MonoBehaviour:
   - {x: 1.375, y: 0.765625, z: 0}
   - {x: 1.375, y: -0.765625, z: 0}
   m_ShapePathHash: 0
-  m_Mesh: {fileID: 1349230418}
-  m_InstanceId: 31090
+  m_Mesh: {fileID: 1351467374}
+  m_InstanceId: 33066
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1.375, y: 0.765625, z: 0}
@@ -34855,7 +34855,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1349230418
+--- !u!43 &1351467374
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40517,12 +40517,36 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 863361216, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
       propertyPath: m_SortingLayerID
       value: -850520811
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971175927831068773, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177449893263193226, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7177449893263193226, guid: 4b9018e8988075e478495679e21de5f7, type: 3}
       propertyPath: m_SortingLayer
