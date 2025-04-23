@@ -149,8 +149,8 @@ public class InventoryUiPage : MonoBehaviour
     }
     public void SetMouse(Sprite sprite, int quantity)
     {
-        mouseFollower.SetData(sprite, quantity);
         mouseFollower.Toggle(true);
+        mouseFollower.SetData(sprite, quantity);
     }
 
     private void ItemSelection(InventoryUiSlot slot)
