@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ab6ab7ba580b624f87217bb5ad6c97f
-      internalID: 863361216
+      spriteID: 0b49610644ecc6c45a379220fba2ac4c
+      internalID: -1285427022
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 577957a6a2ca01345bf8f1239afc319b
-      internalID: -1184597493
+      spriteID: 58ce4f82293b7dd4c841dd1bab8f8d1e
+      internalID: 494485829
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85293aa27902005499988f2f6c1023c4
-      internalID: -1576441036
+      spriteID: 66603915a9742674cb12443b3a6c2395
+      internalID: 1053974555
       vertices: []
       indices: 
       edges: []
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09033c2eb7e61d24b894847ee23ceb3e
-      internalID: -2143557894
+      spriteID: 206387ff1400cbf4fab11703b3ac1b48
+      internalID: -69822517
       vertices: []
       indices: 
       edges: []
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 044db2500e8776a49995670fd1517a20
-      internalID: 1948065272
+      spriteID: c52b01a17bc744447b76458f43b97956
+      internalID: 2050238588
       vertices: []
       indices: 
       edges: []
@@ -251,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      light_attack_E_RegularSword_0: 863361216
-      light_attack_E_RegularSword_1: -1184597493
-      light_attack_E_RegularSword_2: -1576441036
-      light_attack_E_RegularSword_3: -2143557894
-      light_attack_E_RegularSword_4: 1948065272
+      light_attack_E_RegularSword_0: -1285427022
+      light_attack_E_RegularSword_1: 494485829
+      light_attack_E_RegularSword_2: 1053974555
+      light_attack_E_RegularSword_3: -69822517
+      light_attack_E_RegularSword_4: 2050238588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2cd43dc79bee73f4ba9968ae2bfac8f3
+guid: 59d79f1a2a62b064baaabc68f7f4b6ab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: light_attack_E_Character_0
+      name: character_Attack1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4417a144733172043a4f32ed3b0d7f77
-      internalID: -1615481401
+      spriteID: a813215b98c72894dbf3bdc90cdd4972
+      internalID: -1522543798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: light_attack_E_Character_1
+      name: character_Attack1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc38acedfa00154e894fa1f1e1e7e91
-      internalID: 723657067
+      spriteID: d6511cb12b2063347b325441f1139819
+      internalID: 2111680695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: light_attack_E_Character_2
+      name: character_Attack1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b50bcaa739e8d941b8c4071f4cf4044
-      internalID: -501087088
+      spriteID: 08771bde7d2d9ea4fa6cc577fd1e60d1
+      internalID: -1383679573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: light_attack_E_Character_3
+      name: character_Attack1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb21f448dee3eae44b6b6b810c90b199
-      internalID: 1728829695
+      spriteID: 44b0eda425cd8ea4eae4ffb3419ef258
+      internalID: -544224684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: light_attack_E_Character_4
+      name: character_Attack1_4
       rect:
         serializedVersion: 2
         x: 256
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48368d6486ef18468b60f6480db4b51
-      internalID: 1143230048
+      spriteID: 10a3608d4b54f594782b540bac8e6d24
+      internalID: -2037196112
       vertices: []
       indices: 
       edges: []
@@ -251,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      light_attack_E_Character_0: -1615481401
-      light_attack_E_Character_1: 723657067
-      light_attack_E_Character_2: -501087088
-      light_attack_E_Character_3: 1728829695
-      light_attack_E_Character_4: 1143230048
+      character_Attack1_0: -1522543798
+      character_Attack1_1: 2111680695
+      character_Attack1_2: -1383679573
+      character_Attack1_3: -544224684
+      character_Attack1_4: -2037196112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
