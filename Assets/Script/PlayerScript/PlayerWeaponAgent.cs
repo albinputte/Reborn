@@ -9,7 +9,6 @@ public class PlayerWeaponAgent : MonoBehaviour
     [Header("References")]
     [SerializeField] private InventorySO inventory;
     [SerializeField] private WeaponItemData testWeapon;
-    [SerializeField] private GameObject[] slashEffects;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] private Vector2[] faceDir;
@@ -117,7 +116,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         if (facingDirection < 0 || facingDirection >= attackColliders.Length) return;
 
         attackColliders[facingDirection].enabled = true;
-        slashEffects[facingDirection].SetActive(true);
+       
     }
 
     public void DisableCollider()
@@ -125,7 +124,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         if (facingDirection < 0 || facingDirection >= attackColliders.Length) return;
 
         attackColliders[facingDirection].enabled = false;
-        slashEffects[facingDirection].SetActive(false);
+       
     }
 
     public void SetPlayerVelocityZero()
@@ -151,7 +150,11 @@ public class PlayerWeaponAgent : MonoBehaviour
     public void UpdateWeaponSprite(SpriteRenderer _)
     {
         if (CurrentAttackSpriteIndex < attackSprites.Length)
-            weaponSpriteRenderer.sprite = attackSprites[CurrentAttackSpriteIndex++];
+        {
+            Debug.Log(attackSprites[CurrentAttackSpriteIndex]);
+            weaponSpriteRenderer.sprite = attackSprites[CurrentAttackSpriteIndex];
+            CurrentAttackSpriteIndex++;
+        }
     }
 
     private void HandleEnter()

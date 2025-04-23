@@ -89,12 +89,12 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0
-    functionName: EditSortingLayer
+  - time: 0.2
+    functionName: ApplyKnockbackToPlayer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 3
+    intParameter: 0
     messageOptions: 0
   - time: 0.2
     functionName: EnableCollider
@@ -104,18 +104,11 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.2
-    functionName: ApplyKnockbackToPlayer
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.2
     functionName: EditSortingLayer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 1
+    intParameter: 3
     messageOptions: 0
   - time: 0.4
     functionName: DisableCollider
@@ -124,15 +117,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.4
-    functionName: StartAttackResetTimer
+  - time: 0.5
+    functionName: EditSortingLayer
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 3
+    messageOptions: 0
+  - time: 0.5
+    functionName: AnimationFinishedTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.4
-    functionName: AnimationFinishedTrigger
+  - time: 0.5
+    functionName: StartAttackResetTimer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
