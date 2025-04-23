@@ -46,7 +46,7 @@ public class InventorySO : ScriptableObject
             }
 
         }
-
+        Debug.Log(quantity);
         quantity = StackItem(item, quantity);
    
         OnInventoryStateChange();
@@ -79,7 +79,7 @@ public class InventorySO : ScriptableObject
 
     public InventoryItem GetSpecificItem(int index)
     {
-        Debug.Log(index);       
+        
             return Inventory[index];
       
         
@@ -109,6 +109,7 @@ public class InventorySO : ScriptableObject
 
     public int StackItem(ItemData item, int quantity)
     {
+       
         for (int i = 0; i < Inventory.Count; i++)
         {
             if (Inventory[i].IsEmpty)
@@ -116,16 +117,16 @@ public class InventorySO : ScriptableObject
             if (item.ID == Inventory[i].item.ID)
             {
                 int PossibleAmountToTake = MaxItemStack - Inventory[i].quantity;
-
+           
                 if (quantity > PossibleAmountToTake)
                 {
-
+                  
                     Inventory[i] = Inventory[i].ChangeQuantity(MaxItemStack);
                     quantity -= PossibleAmountToTake;
                 }
                 else
                 {
-                    Inventory[i].ChangeQuantity(Inventory[i].quantity + quantity);
+                    Inventory[i] = Inventory[i].ChangeQuantity(Inventory[i].quantity + quantity);
                     OnInventoryStateChange();
                     return 0;
                 }
@@ -203,7 +204,10 @@ public class InventorySO : ScriptableObject
 
     internal void AddItem(InventoryItem item)
     {
-        AddItem(item.item, item.quantity, item.weaponInstances);
+       
+       
+      AddItem(item.item, item.quantity, item.weaponInstances);
+       
     }
 }
 [Serializable]

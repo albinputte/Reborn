@@ -185,6 +185,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   item: {fileID: 11400000, guid: 59ea5602413421a41a00b9deab15c786, type: 2}
   sprite: {fileID: 0}
+  quantity: 1
   IsADrop: 0
   col: {fileID: 0}
   hoverAmount: 0.05

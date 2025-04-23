@@ -8,8 +8,8 @@ public class WorldItem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private InventorySO inventory;
     [SerializeField] private ItemData item;
-    [SerializeField] private Sprite sprite; 
-    private int quantity;
+    [SerializeField] private Sprite sprite;
+    [SerializeField] private int quantity;
 
     [SerializeField] private bool IsADrop;
 

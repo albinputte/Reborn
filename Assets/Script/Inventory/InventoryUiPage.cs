@@ -41,7 +41,6 @@ public class InventoryUiPage : MonoBehaviour
         itemSlot = FindObjectsOfType<InventoryUiSlot>(); //need to find naother way to find the slots bcus multiole other slots are being found
 
         ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
-        Debug.Log(ListOfUIslots.Count);
         foreach (InventoryUiSlot slot in ListOfUIslots)
         {
             slot.OnItemClicked += ItemSelection;
@@ -62,6 +61,7 @@ public class InventoryUiPage : MonoBehaviour
     {
         if(ListOfUIslots.Count > Index)
         {
+            Debug.Log(newQuantity);
             ListOfUIslots[Index].SetData(newSprite, newQuantity);
         }
         else
