@@ -19,9 +19,9 @@ public class InventoryUiPage : MonoBehaviour
 
 
     private int currentDraggingIndex;
-
+    private bool IsSelected;
     public Action<int> OnDrag, OnItemAction;
-
+    private InventoryUiSlot Selectdslot;
     public Action<int, int> OnSwap;
 
 
@@ -68,11 +68,31 @@ public class InventoryUiPage : MonoBehaviour
 
     private void ShowItemActions(InventoryUiSlot slot)
     {
+        IsSelected = slot.IsSelected;
         int index = ListOfUIslots.IndexOf(slot);
         if (index == -1)
             return;
-        OnItemAction?.Invoke(index);
-    }
+
+       
+        if (!IsSelected)
+        {
+            if (Selectdslot == null)
+                Selectdslot = slot;
+            Selectdslot.DeselectBorder();
+            slot.SelectBorder();
+            Selectdslot = slot;
+            slot.IsSelected = true;
+            
+        }
+        else 
+        {
+            Selectdslot.IsSelected = false;
+            Selectdslot.DeselectBorder();
+            OnItemAction?.Invoke(index); 
+          
+        }
+
+        }
 
     private void EndDrag(InventoryUiSlot slot)
     {
@@ -122,7 +142,7 @@ public class InventoryUiPage : MonoBehaviour
 
     private void ItemSelection(InventoryUiSlot slot)
     {
-       
+        //slot.SelectBorder();  
     }
 
     public void ShowInventory()

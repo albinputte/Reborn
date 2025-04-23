@@ -23,7 +23,7 @@ public class BaseMovementStates : PlayerState
     {
         base.LogicUpdate();
 
-        if(controller.rb.velocity.x == 0 && controller.rb.velocity.y == 0)
+        if(controller.Input.normInputX == 0 && controller.Input.normInputY == 0)
         {
             stateMachine.SwitchState(controller.idle);
         }

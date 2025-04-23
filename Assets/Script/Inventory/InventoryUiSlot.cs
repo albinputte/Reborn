@@ -14,12 +14,13 @@ public class InventoryUiSlot : MonoBehaviour
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
     [SerializeField] private Image BorderImage; // the border that will appear when you click on an item slot :)
-
+    public bool IsSelected;
     public event Action<InventoryUiSlot> OnItemClicked,
            OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag,
            OnRightMouseBtnClick;
 
     private bool empty = true;
+
 
     public void Awake()
     {
