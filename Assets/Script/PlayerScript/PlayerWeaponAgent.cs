@@ -93,7 +93,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         weaponSpriteRenderer.enabled = true;
         tempFaceDir = direction;
         facingDirection = TemporaryDirCorrection(direction);
-        CurrentAttackSpriteIndex = 0;
+      
 
         string animName = GetAnimationName(CurrentWeapon, facingDirection, currentAttackIndex);
         attackAnimator.Play(animName);
