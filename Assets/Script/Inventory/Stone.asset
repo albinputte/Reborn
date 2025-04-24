@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Stone
   Description: 
-  Icon: {fileID: -209691129, guid: ce562154e2e12934da37b4e2cee8ca10, type: 3}
+  Icon: {fileID: 1655078183, guid: c6f43df1ec32bc540b04a372dbf8b254, type: 3}
   itemType: 0
   IsStackable: 1
+  IsCraftable: 0
+  craftingRecipe: []
