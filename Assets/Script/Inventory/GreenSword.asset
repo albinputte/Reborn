@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   Icon: {fileID: 754146956, guid: c0c5ee27316c3b94fbe630c9374c6330, type: 3}
   itemType: 4
-  IsStackable: 1
+  IsStackable: 0
   IsCraftable: 1
   craftingRecipe:
   - ingredients:
@@ -26,6 +26,7 @@ MonoBehaviour:
       quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
+  buffs: []
   Damage: 5
   KnockbackForce: 20
   WeaponType: 1
