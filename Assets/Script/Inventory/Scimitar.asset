@@ -50,3 +50,19 @@ MonoBehaviour:
     - {fileID: -1856260842, guid: 253b5a888b990f24e83774fda1043e50, type: 3}
   - AttackSprite: []
   - AttackSprite: []
+  - AttackSprite:
+    - {fileID: 1014310693, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -158408668, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1124448439, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 8446980, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -714926985, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 596068102, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 2060785989, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 310538786, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -2044302358, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -611365149, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 709274222, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1938629429, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1700072608, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1622570740, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 356032306, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}

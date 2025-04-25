@@ -35,8 +35,8 @@ MonoBehaviour:
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 4ffe255b6385f274d891ee14fdc15200, type: 3}
-    useRandomPitch: 0
+    - {fileID: 8300000, guid: f7f96c6e3ac2cc84493308affd9ea7eb, type: 3}
+    useRandomPitch: 1
   - name: MineCoal
     volume: 1
     mixer: {fileID: 0}
