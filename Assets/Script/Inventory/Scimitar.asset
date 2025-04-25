@@ -27,6 +27,7 @@ MonoBehaviour:
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   buffs: []
+  attackSounds: 000000000100000002000000
   Damage: 5
   KnockbackForce: 20
   WeaponType: 1

@@ -15,24 +15,27 @@ MonoBehaviour:
   sounds:
   - name: SwordAttack1
     volume: 1
-    mixer: {fileID: 0}
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3905092cd0e0e9d47b80d250d81bcd8e, type: 3}
     useRandomPitch: 0
   - name: SwordAttack2
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
     useRandomPitch: 0
   - name: SwordAttack3
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 327554770568f97408ffa6457ee758ba, type: 3}
     useRandomPitch: 0
   - name: MonsterHitSound1
     volume: 1
-    mixer: {fileID: 0}
-    sounds: []
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 4ffe255b6385f274d891ee14fdc15200, type: 3}
     useRandomPitch: 0
   - name: MineCoal
     volume: 1
