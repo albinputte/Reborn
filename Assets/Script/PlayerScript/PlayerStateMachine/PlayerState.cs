@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerState 
 {
@@ -146,6 +147,32 @@ public class PlayerState
                 break;
         }
     }
+
+
+    public IInteractable GetNearestInteractable(float detectRadius, LayerMask interactableLayer)
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(controller.transform.position, detectRadius, interactableLayer);
+        IInteractable nearest = null;
+        float minDist = Mathf.Infinity;
+
+        foreach (var hit in hits)
+        {
+            IInteractable interactable = hit.GetComponentInParent<IInteractable>();
+            if (interactable != null)
+            {
+                float dist = Vector2.Distance(controller.transform.position, hit.transform.position);
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    nearest = interactable;
+                }
+            }
+        }
+
+        return nearest;
+    }
+
+
 
 
 

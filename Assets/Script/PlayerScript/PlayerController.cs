@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public PlayerStateMachine stateMachine { get; private set; }
     public PlayerData playerData;
     public PlayerWeaponAgent weaponAgent;
+    public LayerMask InteractionLayer;
 
     [SerializeField]
     public static Directions[] FacingDirection = new Directions[2];
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public RunState run { get; private set; }
     public BaseAttackState baseAttack { get; private set; }
     public PlayerState playerState { get; private set; }
+    public InteractBush interactBush { get; private set; }
+
     void Start()
     {
         stateMachine = new PlayerStateMachine();
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
         run = new RunState(stateMachine, playerData, "PlayerRunAnim", this);
         baseAttack = new BaseAttackState(stateMachine, playerData, "LightAttack", this);
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
+        interactBush = new InteractBush(stateMachine, playerData, "Bush", this );
         stateMachine.InisiateState(idle);
        
      

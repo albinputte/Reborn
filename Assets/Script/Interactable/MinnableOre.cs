@@ -2,47 +2,81 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinnableOre : MonoBehaviour
+public class MinnableOre : MonoBehaviour, IInteractable
 {
-    public Sprite[] VeinSprite;
-    public int OreAmount;
-    public int Hardeness;
-    public int pickaxePower;
-    public float SwingSpeed;
-    public float ChanceToCritical;
-    public float SwingColdown;
-    void Start()
+    public int oreCount = 3; 
+    public GameObject orePrefab;
+    [SerializeField] private ItemData ItemData;
+    private Collider2D col;
+    private SpriteRenderer mineRenderer; 
+    [SerializeField] private float respawnTime; 
+    [SerializeField] private int minOres; 
+    [SerializeField] private int maxOres; 
+
+    public void Start()
     {
-        if (pickaxePower > Hardeness)
+        mineRenderer = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
+        oreCount = Random.Range(minOres, maxOres);
+    }
+
+    public void Interact()
+    {
+        if (oreCount > 0)
         {
-            ChanceToCritical = Mathf.Clamp01((float)(pickaxePower - Hardeness) / Hardeness);
+            
+            GameObject ore = Instantiate(orePrefab, transform.position, Quaternion.identity);
+            ore.GetComponent<WorldItem>().SetItem(ItemData, 1); 
+
+
+            oreCount--;
+            Debug.Log("Mined ore! Ores left: " + oreCount);
+
+            
+            Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
+            if (rb != null)
+                StartCoroutine(ApplyFloatDrop(rb));
+
+          
+            if (oreCount == 0)
+                StartCoroutine(RespawnOres());
         }
         else
         {
-            ChanceToCritical = 0;
-
+            Debug.Log("The mine is empty.");
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public IEnumerator RespawnOres()
     {
-        
-    }
-    public bool TryMine()
-    {
-        if (Random.value <= ChanceToCritical)  // Random.value returns a float between 0 and 1
-        {
-            OreAmount--; // Reduce ore amount when mined successfully
-            if (OreAmount <= 0)
-            {
-                Destroy(gameObject); // Destroy the ore when depleted
-            }
-            return true; // Mining was successful
-        }
-        return false; // Mining failed
+        mineRenderer.enabled = false;
+        col.enabled = false;
+        yield return new WaitForSeconds(respawnTime);
+        oreCount = Random.Range(minOres, maxOres);
+        col.enabled = true;
+        mineRenderer.enabled = true;
     }
 
+    private IEnumerator ApplyFloatDrop(Rigidbody2D rb)
+    {
+       
+        Vector2 force = new Vector2(Random.Range(-1f, 1f), 1.5f).normalized * 4f;
+        if (rb == null)
+            yield break;
+        rb.AddForce(force, ForceMode2D.Impulse);
+
+       
+        yield return new WaitForSeconds(0.2f);
+        if (rb == null)
+            yield break;
+        rb.gravityScale = 1f; 
+
+      
+        yield return new WaitForSeconds(0.7f);
+        if (rb == null)
+            yield break;
+        rb.gravityScale = 0f;
+        rb.velocity = Vector2.zero;
+    }
 }
 
 

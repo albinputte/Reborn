@@ -35,9 +35,14 @@ public class BaseMovementStates : PlayerState
         { stateMachine.SwitchState(controller.move); }
 
         if (controller.Input.IsAttacking)
-        {
             controller.stateMachine.SwitchState(controller.baseAttack);
-        }
+
+      
+        if (controller.Input.isInteracting) 
+            if(GetNearestInteractable(2f, controller.InteractionLayer) != null)
+                controller.stateMachine.SwitchState(controller.interactBush);
+        else
+            controller.Input.isInteracting = false; controller.Input.ActionPefromed = false;
         //HandleFacingDirection();
         //CalculateFacingDir();
         MovementXY();

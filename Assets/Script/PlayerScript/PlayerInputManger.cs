@@ -16,6 +16,7 @@ public class PlayerInputManger : MonoBehaviour
     public float normInputX;
     public float normInputY;
     public bool isSprinting;
+    public bool isInteracting;
     public bool IsAttacking;
     public bool ActionPefromed;
     private bool CanPefromKeyBuffer;
@@ -81,6 +82,15 @@ public class PlayerInputManger : MonoBehaviour
         }
     }
 
+
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isInteracting = true;
+            ActionPefromed = true;
+        }
+    }
     public void OnKeyBuffer(InputAction.CallbackContext context) 
     {
         if (ActionPefromed && CanPefromKeyBuffer)

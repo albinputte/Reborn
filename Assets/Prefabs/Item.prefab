@@ -186,7 +186,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 59ea5602413421a41a00b9deab15c786, type: 2}
   sprite: {fileID: 0}
   quantity: 1
-  IsADrop: 0
+  IsADrop: 1
   col: {fileID: 0}
   hoverAmount: 0.05
   hoverCycleTime: 1
