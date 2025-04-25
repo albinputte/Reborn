@@ -1,6 +1,7 @@
 using SmallHedge.SoundManager;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -14,7 +15,8 @@ public class PlayerWeaponAgent : MonoBehaviour
     [SerializeField] private Vector2[] faceDir;
 
     private BoxCollider2D[] attackColliders;
-    private Sprite[] attackSprites;
+    //private Sprite[] attackSprites;
+    private Dictionary<int, Sprite[]> attackSprites;
     private SpriteRenderer playerSprite;
     private Animator attackAnimator;
     private WeaponAnimationHandler animationHandler;
@@ -80,7 +82,15 @@ public class PlayerWeaponAgent : MonoBehaviour
         CurrentWeapon = newWeapon.Weapon;
         currentOrb = newWeapon.GetOrb();
         WeaponTypeIndex = (int)CurrentWeapon.WeaponType;
-        attackSprites = CurrentWeapon.WeaponAttackSprites[0].AttackSprite;
+        attackSprites = new Dictionary<int, Sprite[]>();
+
+        for (int i = 0; i < CurrentWeapon.WeaponAttackSprites.Length; i++)
+        {
+           
+            attackSprites[i] = CurrentWeapon.WeaponAttackSprites[i].AttackSprite;
+        }
+
+ 
 
     }
 
@@ -92,8 +102,9 @@ public class PlayerWeaponAgent : MonoBehaviour
         weaponSpriteRenderer.enabled = true;
         tempFaceDir = direction;
         facingDirection = TemporaryDirCorrection(direction);
-      
-   
+
+
+
         string animName = GetAnimationName(CurrentWeapon, facingDirection, currentAttackIndex);
         attackAnimator.Play(animName);
 
@@ -149,12 +160,19 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     public void UpdateWeaponSprite(SpriteRenderer _)
     {
-        if (CurrentAttackSpriteIndex < attackSprites.Length)
+        if (attackSprites.ContainsKey(facingDirection))
         {
-            Debug.Log(attackSprites[CurrentAttackSpriteIndex]);
-            weaponSpriteRenderer.sprite = attackSprites[CurrentAttackSpriteIndex];
-            CurrentAttackSpriteIndex++;
+            Sprite[] sprites = attackSprites[facingDirection];
+
+            if (CurrentAttackSpriteIndex < sprites.Length)
+            {
+                Debug.Log(sprites[CurrentAttackSpriteIndex]);
+                weaponSpriteRenderer.sprite = sprites[CurrentAttackSpriteIndex];
+                CurrentAttackSpriteIndex++;
+            }
         }
+
+      
     }
 
     private void HandleEnter()
@@ -236,6 +254,7 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     private int TemporaryDirCorrection(int dir)
     {
+        Debug.Log(dir);
         switch (dir)
         {
             case 0:
@@ -249,7 +268,7 @@ public class PlayerWeaponAgent : MonoBehaviour
                 return 2;
 
             case 3:
-          
+               
                 return 3;
 
             case 4:

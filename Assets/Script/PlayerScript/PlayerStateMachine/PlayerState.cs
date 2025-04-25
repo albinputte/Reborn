@@ -120,7 +120,7 @@ public class PlayerState
         {
             if ((angle >= min && angle < max) || (min > max && (angle >= min || angle < max))) // handles wrapping
             {
-                HandleSpriteFlip(dir);
+                //HandleSpriteFlip(dir);
                 return dir;
             }
         }
