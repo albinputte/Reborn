@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public RunState run { get; private set; }
     public BaseAttackState baseAttack { get; private set; }
     public PlayerState playerState { get; private set; }
+    public InteractState interactState { get; private set; }
     public InteractBush interactBush { get; private set; }
 
     void Start()
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         run = new RunState(stateMachine, playerData, "PlayerRunAnim", this);
         baseAttack = new BaseAttackState(stateMachine, playerData, "LightAttack", this);
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
+        interactState = new InteractState(stateMachine, playerData, "InteractAnim", this);
         interactBush = new InteractBush(stateMachine, playerData, "Bush", this );
         stateMachine.InisiateState(idle);
        

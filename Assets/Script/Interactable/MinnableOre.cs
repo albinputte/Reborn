@@ -11,8 +11,9 @@ public class MinnableOre : MonoBehaviour, IInteractable
     private SpriteRenderer mineRenderer; 
     [SerializeField] private float respawnTime; 
     [SerializeField] private int minOres; 
-    [SerializeField] private int maxOres; 
-
+    [SerializeField] private int maxOres;
+    [SerializeField] public InteractableType Type;
+    public InteractableType type { get => Type; set => Type = value; }
     public void Start()
     {
         mineRenderer = GetComponent<SpriteRenderer>();

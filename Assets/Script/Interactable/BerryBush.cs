@@ -13,6 +13,9 @@ public class BerryBush : MonoBehaviour, IInteractable
     [SerializeField ] private float SpawnTime;
     [SerializeField] private int MinBerries;
     [SerializeField] private int MaxBerries;
+    
+    [SerializeField]public InteractableType Type;
+    public InteractableType type { get => Type; set => Type = value; }
 
     public void Start()
     {

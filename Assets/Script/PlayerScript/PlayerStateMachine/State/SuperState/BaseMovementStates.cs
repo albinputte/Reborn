@@ -40,7 +40,7 @@ public class BaseMovementStates : PlayerState
       
         if (controller.Input.isInteracting) 
             if(GetNearestInteractable(2f, controller.InteractionLayer) != null)
-                controller.stateMachine.SwitchState(controller.interactBush);
+                controller.stateMachine.SwitchState(controller.interactState);
             else
             {
                 controller.Input.isInteracting = false; controller.Input.ActionPefromed = false;
