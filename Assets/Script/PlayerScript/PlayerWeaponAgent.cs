@@ -93,12 +93,12 @@ public class PlayerWeaponAgent : MonoBehaviour
         tempFaceDir = direction;
         facingDirection = TemporaryDirCorrection(direction);
       
-
+   
         string animName = GetAnimationName(CurrentWeapon, facingDirection, currentAttackIndex);
         attackAnimator.Play(animName);
 
         OnEnter?.Invoke();
-        SoundManager.PlaySound(SoundType.SwordAttack1);
+        SoundManager.PlaySound(CurrentWeapon.attackSounds[currentAttackIndex]);
 
         currentAttackIndex++;
     }

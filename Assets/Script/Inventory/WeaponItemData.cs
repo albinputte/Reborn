@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
 
     [SerializeReference, SubclassSelector]
     public List<BuffBase> buffs = new List<BuffBase>();
+    [SerializeField]
+    public SoundType[] attackSounds;
 
     [Serializable]
     public struct WeaponAttackSprite

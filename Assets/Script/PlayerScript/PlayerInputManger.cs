@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class PlayerInputManger : MonoBehaviour
 {
@@ -75,10 +75,10 @@ public class PlayerInputManger : MonoBehaviour
                 IsAttacking = true;
            
             }
-            if (context.canceled)
-            {
-                CanPefromKeyBuffer = true;
-            }
+        }
+        if (context.canceled)
+        {
+            CanPefromKeyBuffer = true;
         }
     }
 

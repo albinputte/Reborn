@@ -10,21 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e80f83df56dde7459610c5dc8883c2d, type: 3}
-  m_Name: SoundManager
+  m_Name: SoundManger
   m_EditorClassIdentifier: 
   sounds:
   - name: SwordAttack1
     volume: 1
-    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: c2d08728c507149498d087a9945d123d, type: 3}
-    useRandomPitch: 1
+    - {fileID: 0}
+    useRandomPitch: 0
+  - name: SwordAttack2
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
+  - name: SwordAttack3
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
   - name: MonsterHitSound1
     volume: 1
-    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
-    sounds:
-    - {fileID: 8300000, guid: f7f96c6e3ac2cc84493308affd9ea7eb, type: 3}
-    useRandomPitch: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
   - name: MineCoal
     volume: 1
     mixer: {fileID: 0}
@@ -32,6 +41,6 @@ MonoBehaviour:
     useRandomPitch: 0
   - name: MineIron
     volume: 1
-    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    mixer: {fileID: 0}
     sounds: []
-    useRandomPitch: 1
+    useRandomPitch: 0
