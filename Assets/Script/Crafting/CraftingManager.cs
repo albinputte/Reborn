@@ -91,6 +91,7 @@ public class CraftingManager : MonoBehaviour
     
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             craftingUI.craftingManager[currentCraftingMangerIndex] = null;
+            craftingUI.ClearRecipeInformation();
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
         }
     }
