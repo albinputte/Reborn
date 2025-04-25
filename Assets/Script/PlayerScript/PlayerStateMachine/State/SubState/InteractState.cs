@@ -18,7 +18,7 @@ public class InteractState : ActionState
                 Debug.Log("Minning");
             //Switch 
             else if (interactable.type == InteractableType.Crafting)
-                Debug.Log("Crafting");
+                stateMachine.SwitchState(controller.interactCrafting);
                   
 
     }

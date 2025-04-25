@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public PlayerState playerState { get; private set; }
     public InteractState interactState { get; private set; }
     public InteractBush interactBush { get; private set; }
+    public InteractCrafting interactCrafting { get; private set; }
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         playerState = new PlayerState(stateMachine,playerData, "Base",this );
         interactState = new InteractState(stateMachine, playerData, "InteractAnim", this);
         interactBush = new InteractBush(stateMachine, playerData, "Bush", this );
+        interactCrafting = new InteractCrafting(stateMachine, playerData, "Crafting", this);
         stateMachine.InisiateState(idle);
        
      

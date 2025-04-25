@@ -71,7 +71,7 @@ public class PlayerInputManger : MonoBehaviour
     public void OnAttackInput(InputAction.CallbackContext context)
     {
         if (!IsPointerOverUI()) { 
-            if (context.performed && !IsAttacking)
+            if (context.performed && !IsAttacking && !ActionPefromed)
             {
                 ActionPefromed = true;
                 IsAttacking = true;
@@ -89,8 +89,9 @@ public class PlayerInputManger : MonoBehaviour
     {
         if (context.performed)
         {
-            isInteracting = true;
             ActionPefromed = true;
+            isInteracting = true;
+           
         }
     }
     public void OnInventoryInput(InputAction.CallbackContext context)

@@ -16,7 +16,7 @@ public class InteractBush : ActionState
         base.Enter();
         delay = 0.5f;
         timer = 0f;
-
+        controller.Input.ActionPefromed = true;
         interactionStarted = true;
         
     }
@@ -48,6 +48,7 @@ public class InteractBush : ActionState
         if (interactable != null)
             interactable.Interact();
         interactionStarted = false;
-        controller.Input.isInteracting = false; controller.Input.ActionPefromed = false; 
+        controller.Input.isInteracting = false;
+    
     }
 }

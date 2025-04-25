@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class InteractCrafting : ActionState
+{
+    public InteractCrafting(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController) : base(StateMachine, data, animName, playerController)
+    {
+    }
+    IInteractable interactable;
+
+
+    public override void Enter()
+    {
+        base.Enter();
+        interactable = GetNearestInteractable(2f, controller.InteractionLayer);
+        if (interactable != null)
+            interactable.Interact();
+        controller.Input.ActionPefromed = true;
+        controller.Input.isInteracting = false;
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        if(controller.Input.isInteracting == true)
+        {
+           IsAbilityDone = true;
+        }
+    }
+    public override void Exit() { base.Exit();
+        if (interactable != null)
+            interactable.Interact();
+        controller.Input.isInteracting = false;
+       
+
+    }
+}

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CraftingManager : MonoBehaviour
+public class CraftingManager : MonoBehaviour, IInteractable
 {
     [SerializeField] private List<ItemData> craftingRecipes;
     private int currentCraftingMangerIndex;
     [SerializeField] private InventorySO inventory;
     [SerializeField] private List<CraftingRecipe> availableRecipes;
     [SerializeField] private CraftingUI craftingUI;
-    
+
+    [SerializeField] private InteractableType Type;
+    public InteractableType type { get => Type; set => Type = value; }
+
     //delegate add here
     public void Start()
     {
@@ -18,6 +21,7 @@ public class CraftingManager : MonoBehaviour
              .Where(item => item.IsCraftable)
              .SelectMany(item => item.craftingRecipe)
              .ToList();
+      
     
     }
    
@@ -82,27 +86,27 @@ public class CraftingManager : MonoBehaviour
         return availableRecipes;
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+  
+
+    public void Interact()
     {
-        if (collision.CompareTag("Player"))
+        Debug.Log("I interact");
+        if (!craftingUI.UiIsActive)
         {
+            Debug.Log("I Open");
             currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
             craftingUI.craftingManager[craftingUI.checkFirstEmptySlotInCraftingManger()] = this;
-            craftingUI.gameObject.SetActive(true);
+            craftingUI.ShowCraftinUi();
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, false);
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        }  
+        else
         {
-    
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-            craftingUI.craftingManager[currentCraftingMangerIndex] = null;
+            Debug.Log("I Close");
+            craftingUI.HideCraftingUi();
             craftingUI.ClearRecipeInformation();
+            craftingUI.craftingManager[currentCraftingMangerIndex] = null;
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
         }
+ 
     }
 }

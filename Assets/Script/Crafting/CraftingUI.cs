@@ -7,6 +7,7 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] public CraftingManager[] craftingManager;
     private Dictionary<int, List<CraftingRecipe>> availableRecipes = new();
     private int AmountOfRecipes;
+    public bool UiIsActive;
 
     [SerializeField] private GameObject ParrentToSpawnRecipeunder;
     [SerializeField] private GameObject RecipePrefab;
@@ -14,6 +15,12 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private Image[] IngrediantSlot;
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
+
+    public void Start()
+    {
+ 
+       
+    }
 
     public void AttemptCrafting(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
@@ -149,10 +156,15 @@ public class CraftingUI : MonoBehaviour
     public void HideCraftingUi()
     {
         gameObject.SetActive(false);
+        UiIsActive = false;
+        
     }
 
     public void ShowCraftinUi()
     {
+        Debug.Log("Test");
         gameObject.SetActive(true);
+        UiIsActive = true;
+    
     }
 }
