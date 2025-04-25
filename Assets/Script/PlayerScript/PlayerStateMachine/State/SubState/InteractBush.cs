@@ -7,16 +7,16 @@ public class InteractBush : ActionState
     public InteractBush(PlayerStateMachine StateMachine, PlayerData data, string animName, PlayerController playerController) : base(StateMachine, data, animName, playerController)
     {
     }
-    float delay = 0.5f;
-    float timer = 0f;
+    float delay;
+    float timer;
     private bool interactionStarted = false;
 
     public override void Enter()
     {
         base.Enter();
-        IInteractable interactable = GetNearestInteractable(2f, controller.InteractionLayer);
-        if (interactable != null)
-            interactable.Interact();
+        delay = 0.5f;
+        timer = 0f;
+
         interactionStarted = true;
         
     }
@@ -32,7 +32,10 @@ public class InteractBush : ActionState
             // If the delay has passed, mark the interaction as complete
             if (timer >= delay)
             {
+               
+              
                 IsAbilityDone = true;
+              
             }
         }
     }
@@ -40,5 +43,11 @@ public class InteractBush : ActionState
 
 
 
-    public override void Exit() { base.Exit(); controller.Input.isInteracting = false; controller.Input.ActionPefromed = false; }
+    public override void Exit() { base.Exit();
+        IInteractable interactable = GetNearestInteractable(2f, controller.InteractionLayer);
+        if (interactable != null)
+            interactable.Interact();
+        interactionStarted = false;
+        controller.Input.isInteracting = false; controller.Input.ActionPefromed = false; 
+    }
 }
