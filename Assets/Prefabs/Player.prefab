@@ -124,7 +124,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -850520811
+  m_SortingLayerID: 1296566859
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1482037230, guid: 179b2c3a06310ec4bb6220b2612ed3b5, type: 3}
@@ -509,7 +509,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -850520811
+  m_SortingLayerID: 1296566859
   m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 2050238588, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
@@ -701,6 +701,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 41032845-5065-4fd3-85aa-caddd063ad62
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8985319236655394079}
+        m_TargetAssemblyTypeName: PlayerInputManger, Assembly-CSharp
+        m_MethodName: OnInventoryInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 19c1a8ff-3c8d-4833-ae39-a895dcd4331b
+    m_ActionName: Player/OpenInventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -809,7 +825,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1395544651, guid: b588aa6ddb8492c4e92a3a9323785b44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
