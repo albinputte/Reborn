@@ -249,8 +249,8 @@ public class PlayerWeaponAgent : MonoBehaviour
                 return 2;
 
             case 3:
-                PlayerTransform.localScale = new Vector3(-1, 1, 0);
-                return 0;
+          
+                return 3;
 
             case 4:
                 PlayerTransform.localScale = new Vector3(1, 1, 0);
