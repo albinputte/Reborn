@@ -94,7 +94,7 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 3
+    intParameter: 1
     messageOptions: 0
   - time: 0.2
     functionName: ApplyKnockbackToPlayer
@@ -115,7 +115,7 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 1
+    intParameter: 3
     messageOptions: 0
   - time: 0.4
     functionName: DisableCollider
