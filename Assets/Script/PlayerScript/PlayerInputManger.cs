@@ -20,6 +20,7 @@ public class PlayerInputManger : MonoBehaviour
     public bool IsAttacking;
     public bool ActionPefromed;
     private bool CanPefromKeyBuffer;
+    private InventoryController inventoryController;
     [SerializeField]private Dictionary<string, KeyBuffer> BufferList = new Dictionary<string, KeyBuffer>();
     [SerializeField] private PlayerWeaponAgent agent;
     [SerializeField] public Vector2 moveDir;
@@ -29,6 +30,7 @@ public class PlayerInputManger : MonoBehaviour
     {
         agent = FindAnyObjectByType<PlayerWeaponAgent>();
         agent.OnExit += () => CheckBufferedInput("Fire");
+        inventoryController = FindAnyObjectByType<InventoryController>();
     }
 
 
@@ -91,6 +93,14 @@ public class PlayerInputManger : MonoBehaviour
             ActionPefromed = true;
         }
     }
+    public void OnInventoryInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            inventoryController.InventoryInput();
+        }
+    }
+
     public void OnKeyBuffer(InputAction.CallbackContext context) 
     {
         if (ActionPefromed && CanPefromKeyBuffer)
@@ -126,9 +136,6 @@ public class PlayerInputManger : MonoBehaviour
 
      
     }
-
-
-
 
     public IEnumerator PeformAttack()
     {

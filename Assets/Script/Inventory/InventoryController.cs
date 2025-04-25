@@ -169,29 +169,27 @@ public class InventoryController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    public void InventoryInput()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
-            if(!InventoryUiActive)
-            { 
-                inventoryUi.ShowInventory(); 
-                craftingUI.ShowCraftinUi();
-                InventoryUiActive = true;
-                foreach(var item in inventoryData.GetInventoryState())
-                {
-                    inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
-                   
-                }
-            }
-            else if (InventoryUiActive)
-            {
-                inventoryUi.HideInventory();
-                craftingUI.HideCraftingUi();
-                InventoryUiActive = false;
-            }
 
+        if (!InventoryUiActive)
+        {
+            inventoryUi.ShowInventory();
+            InventoryUiActive = true;
+            foreach (var item in inventoryData.GetInventoryState())
+            {
+                inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
+
+            }
         }
-     
+        else if (InventoryUiActive)
+        {
+            inventoryUi.HideInventory();
+            InventoryUiActive = false;
+        }
+
+
+
     }
 
 }
