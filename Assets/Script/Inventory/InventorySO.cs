@@ -25,6 +25,18 @@ public class InventorySO : ScriptableObject
         }
 
     }
+
+    public int FindItemInInventory(ItemData item) {
+        InventoryItem ItemToFind = new();
+        ItemToFind.item = item;
+
+        for (int i = 0;i < Inventory.Count ;i++)
+            if(Inventory[i].item == item)
+                return i;
+
+        return -1;
+
+    }
     public int AddItem(ItemData item, int quantity, WeaponInstances instances)
     {
 
@@ -79,12 +91,7 @@ public class InventorySO : ScriptableObject
 
     public InventoryItem GetSpecificItem(int index)
     {
-        
-            return Inventory[index];
-      
-        
-        
-            
+            return Inventory[index]; 
     }
 
     public void RemoveItem(int itemIndex, int amount)
@@ -99,7 +106,7 @@ public class InventorySO : ScriptableObject
             }
             else
             {
-                Inventory[itemIndex].ChangeQuantity(remaningAmount);
+                Inventory[itemIndex] = Inventory[itemIndex].ChangeQuantity(remaningAmount);
             }
             OnInventoryStateChange();
         }

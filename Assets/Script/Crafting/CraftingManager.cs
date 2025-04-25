@@ -30,6 +30,8 @@ public class CraftingManager : MonoBehaviour
         {
             foreach (var ingredient in recipe.ingredients)
             {
+                Debug.Log(ingredient.item.name);
+                Debug.Log(ingredient.quantity);
                 RemoveItemsFromInventory(ingredient.item, ingredient.quantity);
             }
             inventory.AddItem(recipe.resultItem, recipe.resultQuantity, null);
@@ -56,15 +58,23 @@ public class CraftingManager : MonoBehaviour
 
     private void RemoveItemsFromInventory(ItemData item, int quantity)
     {
-        for (int i = 0; i < inventory.Inventory.Count && quantity > 0; i++)
+        while (inventory.FindItemInInventory(item) != -1 && quantity > 0)
         {
-            if (inventory.Inventory[i].item == item)
+            int indexPos = inventory.FindItemInInventory(item);
+            InventoryItem items = inventory.GetSpecificItem(indexPos);
+
+            if (items.quantity <= quantity)
             {
-                int removeAmount = Mathf.Min(quantity, inventory.Inventory[i].quantity);
-                inventory.RemoveItem(i, removeAmount);
-                quantity -= removeAmount;
+                inventory.RemoveItem(indexPos, items.quantity);
+                quantity -= items.quantity;
+            }
+            else
+            {
+                inventory.RemoveItem(indexPos, quantity);
+                quantity = 0;
             }
         }
+
     }
 
     public List<CraftingRecipe> GetAvailableRecipes()
