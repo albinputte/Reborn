@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -114,12 +115,13 @@ public class CraftingUI : MonoBehaviour
 
     public void SetUpRecipeInfiormation(RecipeSlotUi recipe)
     {
-        for (int i = 0; i < IngrediantSlot.Length; i++)
+        for (int i = 0; i < recipe.recipe.ingredients.Count; i++)
         {
+           
             IngrediantSlot[i].gameObject.SetActive(true);
             IngrediantSlot[i].sprite = recipe.recipe.ingredients[i].item.Icon;
             QuanityText[i].text = recipe.recipe.ingredients[i].quantity.ToString();
-
+           
 
             if (!IsItemQuantityInInventory(recipe.recipe.ingredients[i].item, recipe.recipe.ingredients[i].quantity))
             {
@@ -131,7 +133,8 @@ public class CraftingUI : MonoBehaviour
                 IngrediantSlot[i].color = new Color(1f, 1f, 1f, 1f);
                 QuanityText[i].color = new Color(1f, 1f, 1f, 1);
             }
-               
+       
+
         }
 
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
