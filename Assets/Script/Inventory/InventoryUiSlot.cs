@@ -58,18 +58,17 @@ public class InventoryUiSlot : MonoBehaviour
         {
             return;
         }
-        OnItemBeginDrag!.Invoke(this);
+        OnItemBeginDrag?.Invoke(this);
     }
 
     public void OnDrop()
     {
-
-        OnItemDroppedOn.Invoke(this);
+        OnItemDroppedOn?.Invoke(this);
     }
 
     public void OnEndDrag()
     {
-        OnItemEndDrag!.Invoke(this);    
+        OnItemEndDrag?.Invoke(this);    
     }
 
     public void OnPointerClick(BaseEventData data)
