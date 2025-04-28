@@ -21,17 +21,21 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1818558434, guid: 0370ed1ba418ff94ba99db47e8d941f7, type: 3}
-    - time: 0.25
-      value: {fileID: 1818558434, guid: 0370ed1ba418ff94ba99db47e8d941f7, type: 3}
-    - time: 0.375
-      value: {fileID: 1268445928, guid: 0370ed1ba418ff94ba99db47e8d941f7, type: 3}
+      value: {fileID: 761708150, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - time: 0.1
+      value: {fileID: 2037686650, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - time: 0.2
+      value: {fileID: -2023537923, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - time: 0.3
+      value: {fileID: 1239320193, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - time: 0.4
+      value: {fileID: -1063080893, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 8
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -48,9 +52,11 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1818558434, guid: 0370ed1ba418ff94ba99db47e8d941f7, type: 3}
-    - {fileID: 1818558434, guid: 0370ed1ba418ff94ba99db47e8d941f7, type: 3}
-    - {fileID: 1268445928, guid: 0370ed1ba418ff94ba99db47e8d941f7, type: 3}
+    - {fileID: 761708150, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - {fileID: 2037686650, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - {fileID: -2023537923, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - {fileID: 1239320193, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
+    - {fileID: -1063080893, guid: c3d2d9e59a49b1742877a278cdb9fc41, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -83,28 +89,28 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.125
-    functionName: EnableCollider
+  - time: 0
+    functionName: EditSortingLayer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 1
     messageOptions: 0
-  - time: 0.125
+  - time: 0.2
     functionName: ApplyKnockbackToPlayer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
-    functionName: StartAttackResetTimer
+  - time: 0.2
+    functionName: EnableCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.4
     functionName: DisableCollider
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -113,6 +119,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.5
     functionName: AnimationFinishedTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: StartAttackResetTimer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
