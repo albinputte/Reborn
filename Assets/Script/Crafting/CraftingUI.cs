@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private GameObject RecipePrefab;
     [SerializeField, HideInInspector] private List<RecipeSlotUi> recipeSlots;
     [SerializeField] private Image[] IngrediantSlot;
+    [SerializeField] private TextMeshProUGUI[] QuanityText;
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
 
@@ -116,6 +118,20 @@ public class CraftingUI : MonoBehaviour
         {
             IngrediantSlot[i].gameObject.SetActive(true);
             IngrediantSlot[i].sprite = recipe.recipe.ingredients[i].item.Icon;
+            QuanityText[i].text = recipe.recipe.ingredients[i].quantity.ToString();
+
+
+            if (!IsItemQuantityInInventory(recipe.recipe.ingredients[i].item, recipe.recipe.ingredients[i].quantity))
+            {
+                IngrediantSlot[i].color = new Color(1f, 0, 0f, 0.4f);
+                QuanityText[i].color = new Color(1f, 0, 0f, 1);
+            }
+            else
+            {
+                IngrediantSlot[i].color = new Color(1f, 1f, 1f, 1f);
+                QuanityText[i].color = new Color(1f, 1f, 1f, 1);
+            }
+               
         }
 
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
@@ -124,6 +140,24 @@ public class CraftingUI : MonoBehaviour
         craftButtonUi.gameObject.SetActive(true);
         craftButtonUi.SetRecipe(recipe.recipe, recipe.CurrentCraftingMangerIndex);
         craftButtonUi.OnItemClicked += CraftButtonPressed;
+    }
+
+    private bool IsItemQuantityInInventory(ItemData item, int requiredQuantity)
+    {
+        int totalQuantity = 0;
+
+        // Loop through the inventory and add up quantities of matching items
+        for (int i = 0; i < craftingManager[0].inventory.Inventory.Count; i++)
+        {
+            InventoryItem invItem = craftingManager[0].inventory.GetSpecificItem(i);
+            if (invItem.IsEmpty != true && invItem.item == item)
+            {
+                totalQuantity += invItem.quantity;
+            }
+        }
+     
+        // Return true if total quantity meets or exceeds required quantity
+        return totalQuantity >= requiredQuantity;
     }
 
     public void CraftButtonPressed(CraftButtonUi button)

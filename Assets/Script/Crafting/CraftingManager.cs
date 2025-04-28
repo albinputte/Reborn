@@ -7,7 +7,7 @@ public class CraftingManager : MonoBehaviour, IInteractable
 {
     [SerializeField] private List<ItemData> craftingRecipes;
     private int currentCraftingMangerIndex;
-    [SerializeField] private InventorySO inventory;
+    [SerializeField] public InventorySO inventory;
     [SerializeField] private List<CraftingRecipe> availableRecipes;
     [SerializeField] private CraftingUI craftingUI;
 

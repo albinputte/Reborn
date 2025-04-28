@@ -967,7 +967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUi: {fileID: 0}
   inventoryData: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   InventoryUiActive: 0
   craftingUI: {fileID: 0}
   testItem: {fileID: 11400000, guid: 29f92e39860ff5145b52fe62eb2351e6, type: 2}

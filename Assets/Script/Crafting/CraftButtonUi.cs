@@ -10,10 +10,12 @@ public class CraftButtonUi : MonoBehaviour
 
     public CraftingRecipe recipe;
     public int CurrentCraftingMangerIndex;
+    public bool HasBeenClicked;
     public void SetRecipe(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
         this.recipe = recipe;
         this.CurrentCraftingMangerIndex = CurrentCraftingMangerIndex;
+        HasBeenClicked = true;
     }
 
 
@@ -27,8 +29,21 @@ public class CraftButtonUi : MonoBehaviour
         }
         else
         {
-            OnItemClicked?.Invoke(this);
+            if (HasBeenClicked)
+            {
+                OnItemClicked?.Invoke(this);
+                StartCoroutine(ActivateDelay());
+            }
+           
         }
     }
+
+    public IEnumerator ActivateDelay()
+    {
+        HasBeenClicked = false;
+        yield return new WaitForSeconds(0.3f);
+        HasBeenClicked = true;
+    }
+
 
 }
