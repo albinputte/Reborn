@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class BerryBush : MonoBehaviour, IInteractable
         if (berryCount > 0)
         {
             GameObject obj = Instantiate(berryPrefab, transform.position, Quaternion.identity);
+            SoundManager.PlaySound(SoundType.InteractBerryBush);
             obj.GetComponent<WorldItem>().SetItem(ItemData, 1);
             berryCount--;
             Debug.Log("Picked a berry! Berries left: " + berryCount);

@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -157,6 +158,7 @@ public class InventoryController : MonoBehaviour
         InventoryItem item = inventoryData.GetSpecificItem(index);
         inventoryData.RemoveItem(index, item.quantity);
         GameObject obj = Instantiate(itemPrefab, Character.transform.position + direction * 0.5f, Quaternion.identity); // spawn a little offset from character
+        SoundManager.PlaySound(SoundType.ItemDrop);
         obj.GetComponent<WorldItem>().SetItem(item.item, item.quantity);
         Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
         rb.gravityScale = 0;

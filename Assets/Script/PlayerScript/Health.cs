@@ -17,7 +17,7 @@ public class Health : MonoBehaviour, IDamagable
 
 
 
-    private void Start()
+    private void Awake()
     {
         InstantiateHealth(data);
     }
@@ -101,6 +101,16 @@ public class Health : MonoBehaviour, IDamagable
     {
         SoundType type = (SoundType)index;
         SoundManager.PlaySound(type);
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 
 

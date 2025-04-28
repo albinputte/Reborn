@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class InteractBush : ActionState
         timer = 0f;
         controller.Input.ActionPefromed = true;
         interactionStarted = true;
+        
         
     }
     public override void LogicUpdate()

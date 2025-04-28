@@ -36,7 +36,7 @@ public struct CraftingRecipe
 {
     public List<RecipeIngredient> ingredients;
     public ItemData resultItem;
-    public int resultQuantity;
+    public int resultQuantity ;
 }
 
 [Serializable]

@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -50,6 +51,7 @@ public class WorldItem : MonoBehaviour
             if (collision.CompareTag("Player"))
             {
                 inventory.AddItem(item, quantity, null);
+                SoundManager.PlaySound(SoundType.PickUpSound);
                 Destroy(gameObject);
             }
         }

@@ -13,6 +13,10 @@ namespace SmallHedge.SoundManager
         MonsterHitSound1,
         MineCoal,
         MineIron,
+        ItemDrop,
+        InteractBerryBush,
+        PlayerTakeDamage,
+        PickUpSound,
     }
 
     // Call sounds like this:
