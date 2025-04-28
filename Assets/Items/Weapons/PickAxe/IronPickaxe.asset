@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df15f1e129f974149b728be6f1c66a62, type: 3}
-  m_Name: Cooked Meat
+  m_Name: IronPickaxe
   m_EditorClassIdentifier: 
-  Name: Cooked Meat
+  Name: Iron Pickaxe
   Description: 
-  Icon: {fileID: -471951783, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
-  itemType: 2
-  IsStackable: 1
+  Icon: {fileID: -528410937, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
+  itemType: 4
+  IsStackable: 0
   IsCraftable: 1
   craftingRecipe:
   - ingredients:
-    - item: {fileID: 11400000, guid: 43953d99fa21b6044b731b3a864e48ac, type: 2}
+    - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
       quantity: 1
-    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
-      quantity: 1
+    - item: {fileID: 11400000, guid: f3aada6bf78aa5448a1615305eb8f7dc, type: 2}
+      quantity: 2
     resultItem: {fileID: 11400000}
     resultQuantity: 1
