@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mushroom Stew
   Description: 
-  Icon: {fileID: 21300000, guid: 85472a3ca635ad04bb25e613e58c7ac7, type: 3}
+  Icon: {fileID: -809197971, guid: d3c228896fba0644f90af4ecd74e7dec, type: 3}
   itemType: 2
   IsStackable: 1
   IsCraftable: 1
   craftingRecipe:
-  - ingredients: []
-    resultItem: {fileID: 11400000, guid: 596db4878d460654f8e0d0add07790d0, type: 2}
-    resultQuantity: 1
-  - ingredients: []
-    resultItem: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
+  - ingredients:
+    - item: {fileID: 11400000, guid: 596db4878d460654f8e0d0add07790d0, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
+      quantity: 1
+    resultItem: {fileID: 11400000}
     resultQuantity: 1
