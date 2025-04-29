@@ -286,15 +286,15 @@ public class PlayerWeaponAgent : MonoBehaviour
                 PlayerTransform.localScale = new Vector3(1, 1, 0);
                 return 0;
             case 5:
-                PlayerTransform.localScale = new Vector3(1, 1, 0);
-                return 0;
+
+                return 5;
 
             case 6:
                 PlayerTransform.localScale = new Vector3(-1, 1, 0);
                 return 0;
             case 7:
-                PlayerTransform.localScale = new Vector3(-1, 1, 0);
-                return 0;
+
+                return 7;
 
             default:
                 return 0;
