@@ -32,7 +32,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 327554770568f97408ffa6457ee758ba, type: 3}
     useRandomPitch: 0
   - name: MonsterHitSound1
-    volume: 1
+    volume: 0.166
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: f7f96c6e3ac2cc84493308affd9ea7eb, type: 3}
@@ -54,19 +54,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 681e4d72b7ee94a44b29ae85fb7e1dd4, type: 3}
     useRandomPitch: 0
   - name: InteractBerryBush
-    volume: 1
+    volume: 0.304
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 2b79e6a24ca1f3b46a2157948c16b7a1, type: 3}
     useRandomPitch: 0
   - name: PlayerTakeDamage
-    volume: 1
+    volume: 0.128
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 2c0b676082a7cfd44b40898fde54e998, type: 3}
     useRandomPitch: 0
   - name: PickUpSound
-    volume: 1
+    volume: 0.304
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: b392101ca3d3f34448bfd0b9a3980f01, type: 3}
