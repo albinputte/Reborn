@@ -25,7 +25,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     public PlayerInputManger playerInput;
 
     public WeaponItemData CurrentWeapon { get; private set; }
-    public ItemData currentOrb;
+    public OrbsItemData currentOrb;
     public WeaponInstances CurrentWeaponInstances { get; private set; }
 
     
@@ -94,6 +94,12 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     }
 
+    public void EquipOrb(OrbsItemData orb)
+    {
+        CurrentWeaponInstances.UpdateOrb(orb);
+        currentOrb = orb;
+    }
+
     public void Activate(int direction)
     {
         if (IsAttackActive) return;
@@ -127,6 +133,8 @@ public class PlayerWeaponAgent : MonoBehaviour
         if (facingDirection < 0 || facingDirection >= attackColliders.Length) return;
 
         attackColliders[facingDirection].enabled = true;
+        if(currentOrb != null) 
+            currentOrb.abiltiesOrb.ActivateAbilties(PlayerTransform.gameObject);
        
     }
 
@@ -174,6 +182,7 @@ public class PlayerWeaponAgent : MonoBehaviour
 
       
     }
+    
 
     private void HandleEnter()
     {

@@ -8,8 +8,8 @@ public class PlayerDmgCol : MonoBehaviour
     public Rigidbody2D rb;
     private void Start()
     {
-        playerWeaponAgent = GetComponentInParent<PlayerWeaponAgent>();
-        rb = GetComponentInParent<Rigidbody2D>();
+        playerWeaponAgent = FindAnyObjectByType<PlayerWeaponAgent>();
+        //rb = GetComponentInParent<Rigidbody2D>();
     }
 
 

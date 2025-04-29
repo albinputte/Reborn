@@ -89,7 +89,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public WeaponInstances CreateWeaponIntances(ItemData item, ItemData orb, int index)
+    public WeaponInstances CreateWeaponIntances(ItemData item, OrbsItemData orb, int index)
     {
         if (item is WeaponItemData weaponData)
             return new WeaponInstances(weaponData, orb, index);
@@ -141,7 +141,6 @@ public class InventoryController : MonoBehaviour
         IitemAction iitemAction = item.item as IitemAction;
         if (iitemAction != null)
         {
-            Debug.Log(item.weaponInstances.Weapon);
             iitemAction.PerformAction(Character, item.weaponInstances);
         }
      

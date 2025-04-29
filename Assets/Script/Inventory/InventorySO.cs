@@ -74,13 +74,13 @@ public class InventorySO : ScriptableObject
         Inventory[index] = item;
     }
 
-    public void UpdateOrb(int index, ItemData Orb)
+    public void UpdateOrb(int index, OrbsItemData Orb)
     {
         InventoryItem item = Inventory[index];
         item.weaponInstances.UpdateOrb(Orb);
         Inventory[index] = item;
     }
-    public WeaponInstances CreateWeaponIntances(ItemData item, ItemData orb, int index)
+    public WeaponInstances CreateWeaponIntances(ItemData item, OrbsItemData orb, int index)
     {
         if (item is WeaponItemData weaponData)
             return new WeaponInstances(weaponData, orb, index);

@@ -10,6 +10,9 @@ public class Health : MonoBehaviour, IDamagable
     public HealthData data;
     private int currentHealth;
     private int maxHealth;
+    private bool HasInvinsiabilty;
+    private bool IsInvinsiable;
+    private float InvinciableTimer;
     private Vector2 tempKnockBack;
     public UnityEvent OnTakeDamage;
     public UnityEvent OnHeal;
@@ -26,14 +29,21 @@ public class Health : MonoBehaviour, IDamagable
     {
         maxHealth = data.maxHealth;
         currentHealth = maxHealth;
+        HasInvinsiabilty = data.hasInvincibilty;
+        InvinciableTimer = data.invincibiltyTime;
     }
 
 
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
+        if (!IsInvinsiable)
+        {
+            currentHealth -= amount;
+            if (HasInvinsiabilty)
+                StartCoroutine(StartInvinsiabiltyTimer(InvinciableTimer));
 
+        }
         if (currentHealth <= 0 ) {
             OnDeath?.Invoke();
         }
@@ -102,7 +112,12 @@ public class Health : MonoBehaviour, IDamagable
         SoundType type = (SoundType)index;
         SoundManager.PlaySound(type);
     }
-
+    public IEnumerator StartInvinsiabiltyTimer(float index)
+    {
+        IsInvinsiable = true;
+        yield return new WaitForSeconds(index);
+        IsInvinsiable = false;
+    }
     public float GetCurrentHealth()
     {
         return currentHealth;

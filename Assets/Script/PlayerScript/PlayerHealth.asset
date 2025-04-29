@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d458ff95517cb12409cd5c0dccc7d47e, type: 3}
   m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  hasInvincibilty: 0
-  invincibiltyTime: 0
+  health: 100
+  maxHealth: 100
+  hasInvincibilty: 1
+  invincibiltyTime: 0.3

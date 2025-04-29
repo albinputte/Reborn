@@ -14,15 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Description: 
-  Icon: {fileID: 0}
+  Icon: {fileID: -205453613, guid: c7e08e39a7319c5438d78996a9bfb7e5, type: 3}
   itemType: 0
   IsStackable: 0
   IsCraftable: 0
   craftingRecipe: []
   abiltiesOrb:
-    rid: -2
+    rid: 1169380751838806017
+  weaponAgent: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 1169380751838806017
+      type: {class: OrbFireball, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+        Prefab: {fileID: 8894750441638925793, guid: 58f97ffbf3240dc46b0bfaa91c3fcee8, type: 3}
+        Force: 10

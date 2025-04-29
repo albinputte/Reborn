@@ -8,11 +8,11 @@ public class WeaponInstances
 
     public WeaponItemData Weapon;
 
-    private ItemData Orbdata;
+    private OrbsItemData Orbdata;
 
     private int inventoryPos;
 
-    public WeaponInstances(WeaponItemData weapondata, ItemData OrbData, int WeaponIndex) {
+    public WeaponInstances(WeaponItemData weapondata, OrbsItemData OrbData, int WeaponIndex) {
         this.Weapon = weapondata;
         this.Orbdata = OrbData;
         this.WeaponIndex = WeaponIndex;
@@ -20,13 +20,13 @@ public class WeaponInstances
 
     public void UpdateInventoryPos(int inventoryPos) => this.inventoryPos = inventoryPos;
 
-    public void UpdateOrb(ItemData orbdata) => this.Orbdata = orbdata;
+    public void UpdateOrb(OrbsItemData orbdata) => this.Orbdata = orbdata;
 
     public WeaponItemData GetWeapon()
     {
         return this.Weapon;
     }
-    public ItemData GetOrb() => this.Orbdata;
+    public OrbsItemData GetOrb() => this.Orbdata;
 
 
 }

@@ -11,6 +11,8 @@ public class EnemyMovement : MonoBehaviour
 
     private Vector2 position;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,4 +25,24 @@ public class EnemyMovement : MonoBehaviour
         float move = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, move);
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision != null)
+        {
+            IDamagable damagable = collision.GetComponentInChildren<IDamagable>();
+          
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Vector2 dir = (collision.transform.position - gameObject.transform.position).normalized;
+                Debug.Log(damagable);
+                if (damagable != null)
+                    damagable.Hit(10, dir * 10);
+            }
+        }
+
+    }
+
+  
+
 }
