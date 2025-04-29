@@ -6,6 +6,7 @@ public class PlayerDmgCol : MonoBehaviour
 {
     private PlayerWeaponAgent playerWeaponAgent;
     public Rigidbody2D rb;
+    public bool isProjectile;
     private void Start()
     {
         playerWeaponAgent = FindAnyObjectByType<PlayerWeaponAgent>();
@@ -25,9 +26,13 @@ public class PlayerDmgCol : MonoBehaviour
             damagable.Hit(playerWeaponAgent.CurrentWeapon.Damage, knockback);
             //rb.AddForce((direction * 3) * -1, ForceMode2D.Impulse);
             CameraShake.instance.ShakeCamera(2f, 0.3f);
+            if(isProjectile)
+                Destroy(gameObject);
             playerWeaponAgent.TriggerHitStop();
             playerWeaponAgent.DisableCollider();
-           
+          
+
+
 
         }
     }

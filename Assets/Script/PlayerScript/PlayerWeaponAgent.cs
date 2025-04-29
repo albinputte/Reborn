@@ -130,11 +130,13 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     public void EnableCollider()
     {
-        if (facingDirection < 0 || facingDirection >= attackColliders.Length) return;
+        Debug.Log("face " + facingDirection + " faceattackCol " + attackColliders.Length);
+        if (0 > facingDirection || facingDirection > attackColliders.Length) return;
+        if (currentOrb != null)
+            currentOrb.abiltiesOrb.ActivateAbilties(PlayerTransform.gameObject);
 
         attackColliders[facingDirection].enabled = true;
-        if(currentOrb != null) 
-            currentOrb.abiltiesOrb.ActivateAbilties(PlayerTransform.gameObject);
+    
        
     }
 

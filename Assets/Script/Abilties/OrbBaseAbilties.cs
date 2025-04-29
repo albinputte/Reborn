@@ -37,9 +37,10 @@ public class OrbFireball : BaseAbiltiesOrb
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; 
 
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
-
+        Debug.Log("Rotation is " + dir);
         GameObject obj = GameObject.Instantiate(Prefab, Character.transform.position, rotation);
-        GameObject.Destroy(obj, 2f);
+        Debug.Log("Rotation is " + rotation);
+        GameObject.Destroy(obj, 0.5f);
         Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.AddForce(lookDir * Force, ForceMode2D.Impulse);
