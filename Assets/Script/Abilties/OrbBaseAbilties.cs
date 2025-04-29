@@ -40,7 +40,7 @@ public class OrbFireball : BaseAbiltiesOrb
         Debug.Log("Rotation is " + dir);
         GameObject obj = GameObject.Instantiate(Prefab, Character.transform.position, rotation);
         Debug.Log("Rotation is " + rotation);
-        GameObject.Destroy(obj, 0.5f);
+        GameObject.Destroy(obj, 0.3f);
         Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.AddForce(lookDir * Force, ForceMode2D.Impulse);
