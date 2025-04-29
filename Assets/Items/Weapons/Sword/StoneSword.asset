@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f2559047857584cb19c749a65f5e05, type: 3}
+  m_Name: StoneSword
+  m_EditorClassIdentifier: 
+  Name: Scimitar
+  Description: 
+  Icon: {fileID: 21300000, guid: b5845e2778fefbb479c22275ce8ba250, type: 3}
+  itemType: 4
+  IsStackable: 0
+  IsCraftable: 1
+  craftingRecipe:
+  - ingredients:
+    - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
+      quantity: 2
+    resultItem: {fileID: 11400000}
+    resultQuantity: 1
+  buffs: []
+  attackSounds: 000000000100000002000000
+  Damage: 5
+  KnockbackForce: 20
+  WeaponType: 1
+  WeaponAttackSprites:
+  - AttackSprite:
+    - {fileID: -1285427022, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: 494485829, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: 1053974555, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -69822517, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: 2050238588, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
+    - {fileID: -1665493047, guid: 8ee81a9651f03f64ba272d5bb8f2a7f0, type: 3}
+    - {fileID: 1733983521, guid: 8ee81a9651f03f64ba272d5bb8f2a7f0, type: 3}
+    - {fileID: -2122647419, guid: 8ee81a9651f03f64ba272d5bb8f2a7f0, type: 3}
+    - {fileID: -1113972174, guid: 8ee81a9651f03f64ba272d5bb8f2a7f0, type: 3}
+    - {fileID: -1102097533, guid: 8ee81a9651f03f64ba272d5bb8f2a7f0, type: 3}
+    - {fileID: 151606911, guid: 253b5a888b990f24e83774fda1043e50, type: 3}
+    - {fileID: -1982709649, guid: 253b5a888b990f24e83774fda1043e50, type: 3}
+    - {fileID: 1594622386, guid: 253b5a888b990f24e83774fda1043e50, type: 3}
+    - {fileID: 1816238353, guid: 253b5a888b990f24e83774fda1043e50, type: 3}
+    - {fileID: -1856260842, guid: 253b5a888b990f24e83774fda1043e50, type: 3}
+  - AttackSprite:
+    - {fileID: -1373584936, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -520433229, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -1709800557, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 1643596737, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 150420537, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -1149263818, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 803430149, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 782962470, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 800028874, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -840916716, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -1938533209, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 589631105, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -1347948256, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: 899781326, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+    - {fileID: -1166945025, guid: 0b35879ab96f6fd4299dadcbaaca2665, type: 3}
+  - AttackSprite:
+    - {fileID: 1028225761, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 370480234, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: -409136166, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 175577334, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 1153759674, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 819192587, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 1139979859, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 1346178800, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: -1677503322, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: -2029046847, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: -218790467, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: -1162666344, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 915506143, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: -413236114, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+    - {fileID: 459762044, guid: a37796193d5772e40b5f4204dcd69cbf, type: 3}
+  - AttackSprite:
+    - {fileID: 1014310693, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -158408668, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1124448439, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 8446980, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -714926985, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 596068102, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 2060785989, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 310538786, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -2044302358, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -611365149, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 709274222, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1938629429, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1700072608, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: -1622570740, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}
+    - {fileID: 356032306, guid: ddf14c615c26c2340ada8f2254b48bdc, type: 3}

@@ -144,8 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingRecipes:
-  - {fileID: 11400000, guid: 5f4d664978cc04042ad38db2298d7d52, type: 2}
+  - {fileID: 11400000, guid: cbc608c4399f3e54191fd2b1e1b16a3e, type: 2}
   - {fileID: 11400000, guid: 12cafcc49f2ce794384db8474f13e964, type: 2}
+  - {fileID: 11400000, guid: 3d34335f988f01f4684033e470d4f3d4, type: 2}
+  - {fileID: 11400000, guid: a08e1e164d86f2a4491f7db48c42a2d6, type: 2}
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes: []
   craftingUI: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7073632078434268038}
   - component: {fileID: 8344598259808214966}
   - component: {fileID: 7718368542389015661}
-  - component: {fileID: 3624056920227012289}
+  - component: {fileID: 8634502899997073335}
   m_Layer: 6
   m_Name: BerryBush
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e92c43e14b892b14da8bc700ec229788, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &7718368542389015661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +107,8 @@ MonoBehaviour:
   SpawnTime: 30
   MinBerries: 1
   MaxBerries: 4
---- !u!61 &3624056920227012289
+  Type: 0
+--- !u!61 &8634502899997073335
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,10 +140,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.058361053, y: -0.15073061}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.3}
     oldSize: {x: 1.15625, y: 1.34375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -150,5 +151,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15625, y: 1.34375}
+  m_Size: {x: 0.96240234, y: 0.30557728}
   m_EdgeRadius: 0
