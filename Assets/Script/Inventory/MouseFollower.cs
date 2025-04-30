@@ -40,6 +40,18 @@ public class MouseFollower : MonoBehaviour
         transform.position = canvas.transform.TransformPoint(position);
     }
 
+    private void OnEnable()
+    {
+        Vector2 position;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            (RectTransform)canvas.transform,
+            Input.mousePosition,
+            canvas.worldCamera,
+            out position
+                );
+        transform.position = canvas.transform.TransformPoint(position);
+    }
+
 
 
 

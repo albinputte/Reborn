@@ -11,6 +11,7 @@ public class WorldItem : MonoBehaviour
     [SerializeField] private ItemData item;
     [SerializeField] private Sprite sprite;
     [SerializeField] private int quantity;
+    private bool IsPickingUp;
 
     [SerializeField] private bool IsADrop;
 
@@ -28,7 +29,8 @@ public class WorldItem : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
-        ItemTrans = GetComponent<Transform>();  
+        ItemTrans = GetComponent<Transform>();
+        IsPickingUp = false;
     }
     public void Start()
     {
@@ -46,10 +48,14 @@ public class WorldItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision != null)
         {
             if (collision.CompareTag("Player"))
             {
+                if (IsPickingUp)
+                    return;
+                IsPickingUp = true;
                 inventory.AddItem(item, quantity, null);
                 SoundManager.PlaySound(SoundType.PickUpSound);
                 Destroy(gameObject);
