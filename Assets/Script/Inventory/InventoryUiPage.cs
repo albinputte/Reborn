@@ -13,6 +13,8 @@ public class InventoryUiPage : MonoBehaviour
 {
     [SerializeField]
     private InventoryUiSlot[] itemSlot;
+    [SerializeField]
+    private InventoryUiSlot[] HotBarSlots;
 
     List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
 
@@ -96,7 +98,21 @@ public class InventoryUiPage : MonoBehaviour
           
         }
 
-        }
+    }
+
+    public void SelectHotBarSlotScroll(int index)
+    {
+        if(Selectdslot != null)
+            Selectdslot.DeselectBorder();
+        Selectdslot = HotBarSlots[index];
+        HotBarSlots[index].SelectBorder();
+        HotBarSlots[index].IsSelected = true;
+
+
+
+
+
+    }
 
     private void EndDrag(InventoryUiSlot slot)
     {

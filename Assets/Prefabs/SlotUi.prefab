@@ -121,7 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quantityText: {fileID: 827735536248134748}
   itemImage: {fileID: 6673547281599158988}
-  BorderImage: {fileID: 4469285833478479299}
+  BorderSprite:
+  - {fileID: 559839473, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
+  - {fileID: 0}
+  BorderImage: {fileID: 1230405112306717347}
   IsSelected: 0
 --- !u!114 &7417071203544916441
 MonoBehaviour:

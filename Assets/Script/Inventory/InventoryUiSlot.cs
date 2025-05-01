@@ -13,6 +13,7 @@ public class InventoryUiSlot : MonoBehaviour
 
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
+    [SerializeField] private Sprite[] BorderSprite = new Sprite[2];
     [SerializeField] private Image BorderImage; // the border that will appear when you click on an item slot :)
     public bool IsSelected;
     public event Action<InventoryUiSlot> OnItemClicked,
@@ -25,7 +26,10 @@ public class InventoryUiSlot : MonoBehaviour
     public void Awake()
     {
         ResetItemData();
+        BorderSprite[1] = BorderImage.sprite;
         DeselectBorder();
+        
+
     }
 
     public void ResetItemData()
@@ -36,11 +40,13 @@ public class InventoryUiSlot : MonoBehaviour
 
     public void DeselectBorder()
     {
-        BorderImage.gameObject.SetActive(false);
+        BorderImage.sprite = BorderSprite[1];
+        IsSelected = false;
+
     }
     public void SelectBorder()
     {
-        BorderImage.gameObject.SetActive(true);
+        BorderImage.sprite = BorderSprite[0];
     }
     public void SetData(Sprite ItemImage, int Quantity)
     {

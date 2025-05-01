@@ -15,6 +15,9 @@ public class PlayerInputManger : MonoBehaviour
     private Vector3 rawInput;
     public float normInputX;
     public float normInputY;
+    public Vector2 ScrollInput;
+    public int HotbarIndex;
+    public int  Scrolloffset;
     public bool isSprinting;
     public bool isInteracting;
     public bool IsAttacking;
@@ -101,6 +104,68 @@ public class PlayerInputManger : MonoBehaviour
             inventoryController.InventoryInput();
         }
     }
+
+    public void OnScrollInput(InputAction.CallbackContext context)
+    {
+        ScrollInput = context.ReadValue<Vector2>();
+        if(HotbarIndex == -1)
+        {
+            Scrolloffset++;
+            HotbarIndex = 1;
+            inventoryController.ScrollInHotbar(HotbarIndex);
+        }
+           
+        if(ScrollInput.y > 0)
+        {
+            Scrolloffset++;
+            if (Scrolloffset == 2)
+            {
+                Scrolloffset = 0;
+                return;
+            }
+            if (HotbarIndex == 9)
+                HotbarIndex = 0;
+            else
+                HotbarIndex++;
+
+        }
+        else if (ScrollInput.y < 0)
+        {
+
+            Scrolloffset++;
+            if (Scrolloffset == 2)
+            {
+                Scrolloffset = 0;
+                return;
+            }
+               
+            if (HotbarIndex == 0)
+                HotbarIndex = 9;
+            else
+                HotbarIndex--;
+        }
+       
+        inventoryController.ScrollInHotbar(HotbarIndex);
+    }
+
+    public void OnhotkeyHotbar(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        // Get the key that was actually pressed
+        string keyPressed = context.control.displayName; // or context.control.name
+
+        int index;
+        if (int.TryParse(keyPressed, out index))
+        {
+            HotbarIndex = index;
+            inventoryController.ScrollInHotbar(index);
+         
+        }
+        
+    }
+
 
     public void OnKeyBuffer(InputAction.CallbackContext context) 
     {

@@ -193,4 +193,9 @@ public class InventoryController : MonoBehaviour
 
     }
 
+    public void ScrollInHotbar(int index)
+    {
+        inventoryUi.SelectHotBarSlotScroll(index);
+    }
+
 }
