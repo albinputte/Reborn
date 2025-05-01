@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory:
   - item: {fileID: 11400000, guid: f257cb408d4746f48a8582fc18641191, type: 2}
-    quantity: 2
-  - item: {fileID: 11400000, guid: b3f8754b61890bd409e514b39edf7724, type: 2}
+    quantity: 14
+  - item: {fileID: 11400000, guid: 29f92e39860ff5145b52fe62eb2351e6, type: 2}
     quantity: 1
   - item: {fileID: 11400000, guid: b3f8754b61890bd409e514b39edf7724, type: 2}
+    quantity: 3
+  - item: {fileID: 11400000, guid: fb94d54edae74ae4782d34ea92a253f8, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: b3f8754b61890bd409e514b39edf7724, type: 2}
-    quantity: 1
   - item: {fileID: 0}
     quantity: 0
   - item: {fileID: 0}
@@ -81,5 +81,25 @@ MonoBehaviour:
     quantity: 0
   - item: {fileID: 0}
     quantity: 0
-  size: 35
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  size: 45
   MaxItemStack: 99
