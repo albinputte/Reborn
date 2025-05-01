@@ -48,7 +48,7 @@ public class PlayerWeaponAgent : MonoBehaviour
         InitializeComponents();
         WeaponInstances testinst = new WeaponInstances(testWeapon, null, 1212021);
         testinst.Weapon = testWeapon;
-        SetWeapon(testinst);
+        //SetWeapon(testinst);
 
         //CurrentWeapon = testWeapon;
         //attackSprites = CurrentWeapon.WeaponAttackSprites[0].AttackSprite;
@@ -76,8 +76,8 @@ public class PlayerWeaponAgent : MonoBehaviour
 
     public void SetWeapon(WeaponInstances newWeapon)
     {
-        if (CurrentWeapon != null)
-            inventory.AddItem(CurrentWeapon, 1, CurrentWeaponInstances);
+        //if (CurrentWeapon != null)
+            //inventory.AddItem(CurrentWeapon, 1, CurrentWeaponInstances);
         CurrentWeaponInstances = newWeapon;
         CurrentWeapon = newWeapon.Weapon;
         currentOrb = newWeapon.GetOrb();

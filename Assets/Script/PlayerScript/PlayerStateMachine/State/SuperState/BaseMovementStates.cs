@@ -34,8 +34,13 @@ public class BaseMovementStates : PlayerState
         else 
         { stateMachine.SwitchState(controller.move); }
 
-        if (controller.Input.IsAttacking)
+        if (controller.Input.IsAttacking && !InventoryController.NoWeaponEquiped)
             controller.stateMachine.SwitchState(controller.baseAttack);
+        else if (controller.Input.IsAttacking && InventoryController.NoWeaponEquiped)
+        {
+            controller.Input.IsAttacking = false;
+            controller.Input.ActionPefromed = false;
+        }
 
       
         if (controller.Input.isInteracting) 

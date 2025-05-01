@@ -28,7 +28,7 @@ public class InventoryUiPage : MonoBehaviour
     public Action<int> OnDrag, OnItemAction;
     private InventoryUiSlot Selectdslot;
     public Action<int, int> OnSwap;
-    public Action<int> OnDropItem;
+    public Action<int> OnDropItem, OnHotbarAction;
 
 
     private void Start()
@@ -107,11 +107,13 @@ public class InventoryUiPage : MonoBehaviour
         Selectdslot = HotBarSlots[index];
         HotBarSlots[index].SelectBorder();
         HotBarSlots[index].IsSelected = true;
+        SetItemOnHotbar(HotBarSlots[index]);
+    }
 
-
-
-
-
+    public void SetItemOnHotbar(InventoryUiSlot slot)
+    {
+        int index = ListOfUIslots.IndexOf(slot);
+        OnHotbarAction?.Invoke(index);
     }
 
     private void EndDrag(InventoryUiSlot slot)

@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(fileName = "WeaponItemBase", menuName = "Items/WeaponItem", order = 3)]
 
-public class WeaponItemData : ItemData, IitemAction, IDestroyableItem
+public class WeaponItemData : ItemData, IitemAction
 {
 
     [SerializeReference, SubclassSelector]

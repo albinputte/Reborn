@@ -15,6 +15,7 @@ public class InventoryController : MonoBehaviour
 
     [SerializeField]
     private InventorySO inventoryData;
+    public static bool NoWeaponEquiped;
 
     [SerializeField] 
     private GameObject itemPrefab; //For Dropping item
@@ -39,6 +40,10 @@ public class InventoryController : MonoBehaviour
         PrepareInventoryData();
 
     }
+    private void Awake()
+    {
+        InventoryController.NoWeaponEquiped = true;
+    }
 
     private void PrepareInventoryUI()
     {
@@ -48,6 +53,7 @@ public class InventoryController : MonoBehaviour
         inventoryUi.OnDrag += HandleDragging;
         inventoryUi.OnItemAction += HandleItemSelection;
         inventoryUi.OnDropItem += HandleDropIitem;
+        inventoryUi.OnHotbarAction += HandleHotbarAction;
         inventoryUi.HideInventory();
     }
 
@@ -145,6 +151,27 @@ public class InventoryController : MonoBehaviour
         }
      
         
+    }
+
+    public void HandleHotbarAction(int index1)
+    {
+        InventoryItem item = inventoryData.GetSpecificItem(index1);
+        if (item.IsEmpty)
+        {
+            InventoryController.NoWeaponEquiped = true;
+            return;
+        }
+        IitemAction iitemAction = item.item as IitemAction;
+        if (iitemAction != null)
+        {
+            InventoryController.NoWeaponEquiped = false;
+            iitemAction.PerformAction(Character, item.weaponInstances);
+        }
+        else
+        {
+            InventoryController.NoWeaponEquiped = true;
+        }
+
     }
 
     public void HandleDropIitem(int index)
