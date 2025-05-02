@@ -21,6 +21,6 @@ public class StoneGhostAttackChase : StoneGhostState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Move(controller.Speed *1.5f, controller.transform, controller.Target);
+        Move(controller.Speed * 2f, controller.transform, controller.Target);
     }
 }

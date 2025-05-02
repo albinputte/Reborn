@@ -16,7 +16,7 @@ public class StoneGhostHit : StoneGhostState
         base.Enter();
         MaxTime = 0.5f;
         Timer = 0;
-        TimerIsActive = false;
+        TimerIsActive = true;
        
 
     }

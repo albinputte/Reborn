@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5221114921032794271}
   - component: {fileID: 7883466773269392695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HealthComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6853686402827370454}
   - component: {fileID: 7177449893263193226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8063452730730313998}
   - component: {fileID: 2656932899366417342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ControllerComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 2132760004684127137}
   - component: {fileID: 736114083909307354}
   - component: {fileID: 2373633337857988573}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2, y: 0}
+  m_Offset: {x: 0.72617877, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -325,7 +325,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 0.55235744, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &6191620453693720987
 BoxCollider2D:
@@ -359,7 +359,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.2}
+  m_Offset: {x: 0, y: 0.7264439}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -370,7 +370,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.5}
+  m_Size: {x: 2, y: 0.5528877}
   m_EdgeRadius: 0
 --- !u!61 &4200834232544331151
 BoxCollider2D:
@@ -404,7 +404,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.2}
+  m_Offset: {x: 0, y: -0.7262479}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -415,7 +415,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.5}
+  m_Size: {x: 2, y: 0.5524957}
   m_EdgeRadius: 0
 --- !u!61 &854731103269963879
 BoxCollider2D:
@@ -449,7 +449,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2, y: 0}
+  m_Offset: {x: -0.7232014, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -460,7 +460,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 0.5464027, y: 2}
   m_EdgeRadius: 0
 --- !u!61 &2046345953686768293
 BoxCollider2D:
@@ -494,7 +494,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2, y: 1}
+  m_Offset: {x: 0.72524226, y: 0.5004959}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -505,7 +505,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 0.5504844, y: 1.0009918}
   m_EdgeRadius: 0
 --- !u!61 &2132760004684127137
 BoxCollider2D:
@@ -539,7 +539,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2, y: -1}
+  m_Offset: {x: 0.72617877, y: -0.4988408}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -550,7 +550,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 0.55235744, y: 0.9976816}
   m_EdgeRadius: 0
 --- !u!61 &736114083909307354
 BoxCollider2D:
@@ -584,7 +584,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2, y: 1}
+  m_Offset: {x: -0.7264439, y: 0.50373936}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -595,7 +595,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 0.5528877, y: 1.0074787}
   m_EdgeRadius: 0
 --- !u!61 &2373633337857988573
 BoxCollider2D:
@@ -629,7 +629,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2, y: -1}
+  m_Offset: {x: -0.7264439, y: -0.5040288}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -640,7 +640,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 0.5528877, y: 1.0080576}
   m_EdgeRadius: 0
 --- !u!1 &5540870123361775006
 GameObject:
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 1351568451595233480}
   - component: {fileID: 8103080547691185990}
   - component: {fileID: 6971175927831068773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponAgentComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 4964757841035432598}
   - component: {fileID: 1201276971762683986}
   - component: {fileID: 8985319236655394079}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InputMangerComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 4890511945064113185}
   - component: {fileID: 2819428566645820139}
   - component: {fileID: 4123575225222044651}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3123665906901964126}
   - component: {fileID: 9145768298479270975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InventoryComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}

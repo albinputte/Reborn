@@ -17,7 +17,7 @@ public class StoneGhostLooking : StoneGhostState
         base.Enter();
         MaxTime = 0.5f;
         Timer = 0;
-        TimerIsActive = false;
+        TimerIsActive = true;
         CheckIfPlayerIsNearby();
 
     }
@@ -33,6 +33,7 @@ public class StoneGhostLooking : StoneGhostState
         base.LogicUpdate();
         if (TimerIsActive)
         {
+            Debug.Log("hej");
             Timer += Time.deltaTime;
             if (Timer >= MaxTime)
                 CheckIfPlayerIsNearby();
@@ -51,7 +52,8 @@ public class StoneGhostLooking : StoneGhostState
     public void CheckIfPlayerIsNearby()
     {
         TimerIsActive = false;
-        Collider2D hit = Physics2D.OverlapCircle(controller.transform.position, controller.StartRangeRadius, controller.PlayerMask);
+        Collider2D hit = Physics2D.OverlapCircle(controller.transform.position, controller.LookingRadius, controller.PlayerMask);
+        Debug.Log("hej222");
         if (hit != null)
             stateMachine.SwitchState(controller.Rising);
 

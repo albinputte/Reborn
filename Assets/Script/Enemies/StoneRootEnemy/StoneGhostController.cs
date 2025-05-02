@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StoneGhostController : EnemyBaseController 
 {
-   public EnemyStateMachine<StoneGhostController> m_StateMachine;
+    private EnemyStateMachine<StoneGhostController> m_StateMachine;
 
     public float StartRangeRadius;
     public float LookingRadius;
@@ -13,7 +13,9 @@ public class StoneGhostController : EnemyBaseController
     public Transform GhostTransform;
     public Transform Target;
     public LayerMask PlayerMask;
-    public event Action OnAnimationDone;
+    public Animator anim;
+    public event Action OnAnimationDone, onTakeDamage;
+   
 
     public StoneGhostHide Hide {  get; set; }  
     public StoneGhostLooking Looking { get; set; }
@@ -26,14 +28,25 @@ public class StoneGhostController : EnemyBaseController
     public void Start()
     {
         m_StateMachine = new EnemyStateMachine<StoneGhostController>();
-        Hide = new StoneGhostHide(m_StateMachine, this, "Hide");
-        Looking = new StoneGhostLooking(m_StateMachine, this, "Looking");
-        Rising = new StoneGhostRising(m_StateMachine, this, "Rise");
-        NormalChase = new StoneGhostNormalChase(m_StateMachine, this, "NormalChase");
-        EnterAttack = new StoneGhostEnterAttack(m_StateMachine, this, "EnterAttack");
-        AttackChase = new StoneGhostAttackChase(m_StateMachine, this, "AttackChase");
-        Hit = new StoneGhostHit(m_StateMachine, this, "Hit");
+        Hide = new StoneGhostHide(m_StateMachine, this, "StoneGhost_Burried");
+        Looking = new StoneGhostLooking(m_StateMachine, this, "StoneGhost_WakeUp");
+        Rising = new StoneGhostRising(m_StateMachine, this, "StoneGhost_Rising");
+        NormalChase = new StoneGhostNormalChase(m_StateMachine, this, "StoneGhost_Floating");
+        EnterAttack = new StoneGhostEnterAttack(m_StateMachine, this, "StoneGhost_ReadyUp");
+        AttackChase = new StoneGhostAttackChase(m_StateMachine, this, "StoneGhost_Charge");
+        Hit = new StoneGhostHit(m_StateMachine, this, "StoneGhost_TakeDamage");
+        m_StateMachine.InstantiateState(Hide);
 
+
+    }
+    public void OnAnimDone()
+    {
+        OnAnimationDone?.Invoke();
+    }
+
+    public void ontakeDamage()
+    {
+        onTakeDamage?.Invoke();
     }
 
     public void Update()
@@ -44,5 +57,22 @@ public class StoneGhostController : EnemyBaseController
     public void FixedUpdate()
     {
         m_StateMachine.CurrentState.PhysicsUpdate();
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision != null)
+        {
+            IDamagable damagable = collision.GetComponentInChildren<IDamagable>();
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Vector2 dir = (collision.transform.position - gameObject.transform.position).normalized;
+                Debug.Log(damagable);
+                if (damagable != null)
+                    damagable.Hit(10, dir * 10);
+            }
+        }
+
     }
 }
