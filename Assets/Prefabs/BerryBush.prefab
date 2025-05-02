@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   berryCount: 3
   berryPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
-  ItemData: {fileID: 11400000, guid: e42488f171aa0644e841c5e80b7d941e, type: 2}
+  ItemData: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
   BushSprites:
   - {fileID: 21300000, guid: e92c43e14b892b14da8bc700ec229788, type: 3}
   - {fileID: 21300000, guid: 2f88df940fea10d448263678e24d20c3, type: 3}

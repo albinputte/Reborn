@@ -172,6 +172,60 @@ public class PlayerState
         return nearest;
     }
 
+    protected void HandleAttackInput()
+    {
+        if (!controller.Input.IsAttacking) return;
+
+        if (!InventoryController.NoWeaponEquiped)
+        {
+            stateMachine.SwitchState(controller.baseAttack);
+        }
+        else if (InventoryController.IsConsumableEquiped)
+        {
+            stateMachine.SwitchState(controller.consumeState);
+        }
+        else
+        {
+            controller.Input.IsAttacking = false;
+            controller.Input.ActionPefromed = false;
+        }
+    }
+
+    protected void HandleMovementInput()
+    {
+        var inputX = controller.Input.normInputX;
+        var inputY = controller.Input.normInputY;
+
+        if (inputX == 0 && inputY == 0)
+        {
+            stateMachine.SwitchState(controller.idle);
+        }
+        else if (controller.Input.isSprinting)
+        {
+            stateMachine.SwitchState(controller.run);
+        }
+        else
+        {
+            stateMachine.SwitchState(controller.move);
+        }
+    }
+
+    protected void HandleInteractionInput()
+    {
+        if (!controller.Input.isInteracting) return;
+
+        if (GetNearestInteractable(2f, controller.InteractionLayer) != null)
+        {
+            stateMachine.SwitchState(controller.interactState);
+        }
+        else
+        {
+            controller.Input.isInteracting = false;
+            controller.Input.ActionPefromed = false;
+        }
+    }
+
+
 
 
 

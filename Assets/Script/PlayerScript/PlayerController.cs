@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public PlayerData playerData;
     public PlayerWeaponAgent weaponAgent;
     public LayerMask InteractionLayer;
+    public InventoryController inventoryController;
 
     [SerializeField]
     public static Directions[] FacingDirection = new Directions[2];
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public InteractState interactState { get; private set; }
     public InteractBush interactBush { get; private set; }
     public InteractCrafting interactCrafting { get; private set; }
+    public ConsumeState consumeState { get; private set; }
 
     void Start()
     {
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
         interactState = new InteractState(stateMachine, playerData, "InteractAnim", this);
         interactBush = new InteractBush(stateMachine, playerData, "Bush", this );
         interactCrafting = new InteractCrafting(stateMachine, playerData, "Crafting", this);
+        consumeState = new ConsumeState(stateMachine, playerData,"Consume", this );
         stateMachine.InisiateState(idle);
        
      

@@ -16,6 +16,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private InventorySO inventoryData;
     public static bool NoWeaponEquiped;
+    public static bool IsConsumableEquiped;
+    public static bool IsToolEquiped;
 
     [SerializeField] 
     private GameObject itemPrefab; //For Dropping item
@@ -26,6 +28,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private CraftingUI craftingUI; //temporary
 
+    private int CurrentIndex;
    
     public ItemData testItem;
 
@@ -135,9 +138,9 @@ public class InventoryController : MonoBehaviour
     private void HandleItemSelection(int index1)
     {
         InventoryItem item = inventoryData.GetSpecificItem(index1);
+        CurrentIndex = index1;
         if (item.IsEmpty)
             return;
-
         IDestroyableItem iDestroyableItem = item.item as IDestroyableItem;
         if (iDestroyableItem != null)
         {
@@ -153,26 +156,56 @@ public class InventoryController : MonoBehaviour
         
     }
 
-    public void HandleHotbarAction(int index1)
+    public void HandleHotbarAction(int index)
     {
-        InventoryItem item = inventoryData.GetSpecificItem(index1);
-        if (item.IsEmpty)
-        {
-            InventoryController.NoWeaponEquiped = true;
+        InventoryItem item = inventoryData.GetSpecificItem(index);
+        CurrentIndex = index;
+
+        InventoryController.NoWeaponEquiped = true;
+        InventoryController.IsConsumableEquiped = false;
+        InventoryController.IsToolEquiped = false;
+
+        if (item.IsEmpty || item.item == null)
             return;
-        }
-        IitemAction iitemAction = item.item as IitemAction;
-        if (iitemAction != null)
+
+        if (item.item is IWeapon weapon)
         {
             InventoryController.NoWeaponEquiped = false;
-            iitemAction.PerformAction(Character, item.weaponInstances);
-        }
-        else
-        {
-            InventoryController.NoWeaponEquiped = true;
+            if (item.item is IitemAction action)
+            {
+                action.PerformAction(Character, item.weaponInstances);
+            }
+            return;
         }
 
+        if (item.item is IConsumable)
+        {
+            InventoryController.IsConsumableEquiped = true;
+            return;
+        }
+
+        if (item.item is ITools)
+        {
+            InventoryController.IsToolEquiped = true;
+        }
     }
+
+    public void HandleConsumable()
+    {
+        InventoryItem item = inventoryData.GetSpecificItem(CurrentIndex);
+        if (item.item is IConsumable)
+        {
+            if (item.item is IitemAction action)
+                action.PerformAction(Character, item.weaponInstances);
+            if (item.item is IDestroyableItem)
+                inventoryData.RemoveItem(CurrentIndex, 1);
+            if(item.IsEmpty || item.quantity == 0)
+            {
+                InventoryController.IsConsumableEquiped =false;
+            }
+        }
+    }
+
 
     public void HandleDropIitem(int index)
     {

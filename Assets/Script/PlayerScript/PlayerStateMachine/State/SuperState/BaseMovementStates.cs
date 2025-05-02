@@ -23,36 +23,10 @@ public class BaseMovementStates : PlayerState
     {
         base.LogicUpdate();
 
-        if(controller.Input.normInputX == 0 && controller.Input.normInputY == 0)
-        {
-            stateMachine.SwitchState(controller.idle);
-        }
-        else if (controller.Input.isSprinting)
-        {
-            stateMachine.SwitchState(controller.run);
-        }
-        else 
-        { stateMachine.SwitchState(controller.move); }
+        HandleAttackInput();
+        HandleMovementInput();
+        HandleInteractionInput();
 
-        if (controller.Input.IsAttacking && !InventoryController.NoWeaponEquiped)
-            controller.stateMachine.SwitchState(controller.baseAttack);
-        else if (controller.Input.IsAttacking && InventoryController.NoWeaponEquiped)
-        {
-            controller.Input.IsAttacking = false;
-            controller.Input.ActionPefromed = false;
-        }
-
-      
-        if (controller.Input.isInteracting) 
-            if(GetNearestInteractable(2f, controller.InteractionLayer) != null)
-                controller.stateMachine.SwitchState(controller.interactState);
-            else
-            {
-                controller.Input.isInteracting = false; controller.Input.ActionPefromed = false;
-            }
-                
-        //HandleFacingDirection();
-        //CalculateFacingDir();
         MovementXY();
 
 

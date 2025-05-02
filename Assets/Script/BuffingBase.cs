@@ -11,6 +11,7 @@ public class BuffingBase : MonoBehaviour
 
 }
 
+[Serializable]
 public abstract class BaseForBuff
 {
     public abstract void ApplyBuff();
