@@ -116,6 +116,7 @@ public class InventoryController : MonoBehaviour
         {
             inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
         }
+     
     }
 
     private void HandleDragging(int index)
