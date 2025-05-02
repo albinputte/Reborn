@@ -63,6 +63,7 @@ public class PlayerState
     public virtual void LogicUpdate() 
     {
        CurrentVelocity = controller.rb.velocity;
+        Debug.Log(stateMachine.CurrentState);
     }
 
     public virtual void PhysicsUpdate() 

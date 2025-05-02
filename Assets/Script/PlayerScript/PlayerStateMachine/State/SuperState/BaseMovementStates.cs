@@ -22,10 +22,12 @@ public class BaseMovementStates : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        HandleAttackInput();
+        
         HandleMovementInput();
         HandleInteractionInput();
+        HandleAttackInput();
+        
+       
 
         MovementXY();
 
