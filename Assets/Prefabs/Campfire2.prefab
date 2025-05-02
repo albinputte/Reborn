@@ -103,7 +103,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6afbd483936763443a2dfb92b8320986, type: 2}
   - {fileID: 11400000, guid: e8b67511f5d837f4ab2915faa4cd5649, type: 2}
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
-  availableRecipes: []
+  availableRecipes:
+  - ingredients:
+    - item: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
+      quantity: 1
+    resultItem: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
+    resultQuantity: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
+      quantity: 1
+    - item: {fileID: 0}
+      quantity: 0
+    resultItem: {fileID: 11400000, guid: 6afbd483936763443a2dfb92b8320986, type: 2}
+    resultQuantity: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: e8b67511f5d837f4ab2915faa4cd5649, type: 2}
+      quantity: 0
+    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
+      quantity: 1
+    resultItem: {fileID: 11400000, guid: debfac56126519941a8ecaf3de0b0495, type: 2}
+    resultQuantity: 1
   craftingUI: {fileID: 0}
   Type: 2
 --- !u!61 &4929665978537390477
