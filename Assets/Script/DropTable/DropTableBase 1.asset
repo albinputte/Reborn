@@ -20,7 +20,7 @@ MonoBehaviour:
   - Name: common
     ChanceToRoll: 80
     lootTable:
-    - item: {fileID: 11400000, guid: 43953d99fa21b6044b731b3a864e48ac, type: 2}
+    - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
       dropChance: 50
       minDrop: 1
       maxDrop: 3
