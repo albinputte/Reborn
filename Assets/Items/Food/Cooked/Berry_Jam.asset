@@ -16,12 +16,17 @@ MonoBehaviour:
   Description: 
   Icon: {fileID: -1742591288, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 0
-  IsStackable: 0
-  IsCraftable: 0
-  craftingRecipe: []
+  IsStackable: 1
+  IsCraftable: 1
+  craftingRecipe:
+  - ingredients:
+    - item: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
+      quantity: 1
+    resultItem: {fileID: 11400000}
+    resultQuantity: 1
   buffBase:
     rid: -2
-  healAmount: 0
+  healAmount: 25
   references:
     version: 2
     RefIds:
