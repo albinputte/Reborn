@@ -27,7 +27,7 @@ MonoBehaviour:
   buffs: []
   attackSounds: 000000000100000002000000
   Damage: 5
-  KnockbackForce: 20
+  KnockbackForce: 10
   WeaponType: 1
   WeaponAttackSprites:
   - AttackSprite:

@@ -16,7 +16,8 @@ public class StoneGhostController : EnemyBaseController
     public Animator anim;
     public event Action OnAnimationDone, onTakeDamage;
    
-
+    // Gör om så att animationene "rising" tas bort och 
+    //att wake up byter mid animation wid animation trigger till go down om spelaren ej är close
     public StoneGhostHide Hide {  get; set; }  
     public StoneGhostLooking Looking { get; set; }
     public StoneGhostRising Rising { get; set; }
