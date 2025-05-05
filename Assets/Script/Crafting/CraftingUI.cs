@@ -14,8 +14,6 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private GameObject ParrentToSpawnRecipeunder;
     [SerializeField] private GameObject RecipePrefab;
     [SerializeField, HideInInspector] private List<RecipeSlotUi> recipeSlots;
-    [SerializeField] private Image[] IngrediantSlot;
-    [SerializeField] private TextMeshProUGUI[] QuanityText;
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
 
@@ -91,6 +89,7 @@ public class CraftingUI : MonoBehaviour
                 slotUi.SetRecipe(recipes[i], managerIndex);
                 slotUi.SetIndex(recipeSlots.Count);
                 slotUi.OnItemClicked += SetUpRecipeInfiormation;
+                SetIfEnoughResources(slotUi);
 
                 recipeSlots.Add(slotUi);
             }
@@ -115,34 +114,33 @@ public class CraftingUI : MonoBehaviour
 
     public void SetUpRecipeInfiormation(RecipeSlotUi recipe)
     {
-        for (int i = 0; i < recipe.recipe.ingredients.Count; i++)
-        {
-           
-            IngrediantSlot[i].gameObject.SetActive(true);
-            IngrediantSlot[i].sprite = recipe.recipe.ingredients[i].item.Icon;
-            QuanityText[i].text = recipe.recipe.ingredients[i].quantity.ToString();
-           
 
-            if (!IsItemQuantityInInventory(recipe.recipe.ingredients[i].item, recipe.recipe.ingredients[i].quantity))
-            {
-                IngrediantSlot[i].color = new Color(1f, 0, 0f, 0.4f);
-                QuanityText[i].color = new Color(1f, 0, 0f, 1);
-            }
-            else
-            {
-                IngrediantSlot[i].color = new Color(1f, 1f, 1f, 1f);
-                QuanityText[i].color = new Color(1f, 1f, 1f, 1);
-            }
-       
-
-        }
-
+        SetIfEnoughResources(recipe);
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
         ResultSlot.gameObject.SetActive(true);
 
-        craftButtonUi.gameObject.SetActive(true);
+        //craftButtonUi.gameObject.SetActive(true);
         craftButtonUi.SetRecipe(recipe.recipe, recipe.CurrentCraftingMangerIndex);
         craftButtonUi.OnItemClicked += CraftButtonPressed;
+    }
+
+    public void SetIfEnoughResources(RecipeSlotUi recipe)
+    {
+        for (int i = 0; i < recipe.recipe.ingredients.Count; i++)
+        {
+
+            if (!IsItemQuantityInInventory(recipe.recipe.ingredients[i].item, recipe.recipe.ingredients[i].quantity))
+            {
+                recipe.NotEnoughResources(i);
+            }
+            else
+            {
+                recipe.EnoughResource(i);
+            }
+
+
+        }
+
     }
 
     private bool IsItemQuantityInInventory(ItemData item, int requiredQuantity)
@@ -170,13 +168,9 @@ public class CraftingUI : MonoBehaviour
 
     public void ClearRecipeInformation()
     {
-        foreach (var slot in IngrediantSlot)
-        {
-            slot.gameObject.SetActive(false);
-        }
 
         ResultSlot.gameObject.SetActive(false);
-        craftButtonUi.gameObject.SetActive(false);
+        //craftButtonUi.gameObject.SetActive(false);
     }
 
     public int checkFirstEmptySlotInCraftingManger()

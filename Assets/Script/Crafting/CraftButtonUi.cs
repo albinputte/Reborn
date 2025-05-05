@@ -31,8 +31,9 @@ public class CraftButtonUi : MonoBehaviour
         {
             if (HasBeenClicked)
             {
-                OnItemClicked?.Invoke(this);
                 StartCoroutine(ActivateDelay());
+                OnItemClicked?.Invoke(this);
+               
             }
            
         }
@@ -41,7 +42,7 @@ public class CraftButtonUi : MonoBehaviour
     public IEnumerator ActivateDelay()
     {
         HasBeenClicked = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         HasBeenClicked = true;
     }
 
