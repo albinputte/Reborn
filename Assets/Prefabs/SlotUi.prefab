@@ -122,7 +122,7 @@ MonoBehaviour:
   quantityText: {fileID: 827735536248134748}
   itemImage: {fileID: 6673547281599158988}
   BorderSprite:
-  - {fileID: 559839473, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
+  - {fileID: 21300000, guid: de64d28b09db2294a8b33095d000b395, type: 3}
   - {fileID: 0}
   BorderImage: {fileID: 1230405112306717347}
   IsSelected: 0
