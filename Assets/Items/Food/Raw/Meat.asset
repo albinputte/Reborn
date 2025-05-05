@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   Icon: {fileID: -1463829513, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 0
-  IsStackable: 0
+  IsStackable: 1
   IsCraftable: 0
   craftingRecipe: []
   buffBase:
