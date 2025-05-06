@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3227487099498208146}
   - component: {fileID: 5129870901652614927}
   m_Layer: 0
-  m_Name: HitIronSword
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,8 +169,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 60
-      minScalar: 50
+      scalar: 50
+      minScalar: 40
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -682,7 +682,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 17
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -826,7 +826,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 360
       mode: 0
       spread: 0
       speed:
@@ -998,7 +998,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 75
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1402,8 +1402,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.42352942, g: 0.50980395, b: 0.5803922, a: 1}
-        key1: {r: 0.52156866, g: 0.6039216, b: 0.6627451, a: 1}
+        key0: {r: 0.22745098, g: 0.28627452, b: 0.34901962, a: 1}
+        key1: {r: 0.16862746, g: 0.20784314, b: 0.27058825, a: 1}
         key2: {r: 0.60784316, g: 0.38039216, b: 0.30980393, a: 0}
         key3: {r: 0.60784316, g: 0.38039216, b: 0.30980393, a: 0}
         key4: {r: 0.60784316, g: 0.38039216, b: 0.30980393, a: 0}

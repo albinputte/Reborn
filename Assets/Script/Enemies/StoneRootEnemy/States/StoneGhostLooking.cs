@@ -14,7 +14,7 @@ public class StoneGhostLooking : StoneGhostState
     {
         base.Enter();
         controller.onSearch += CheckIfPlayerIsNearby;
-        CheckIfPlayerIsNearby();
+      
 
     }
 

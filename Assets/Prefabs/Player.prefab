@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6853686402827370454}
   - component: {fileID: 7177449893263193226}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: WeaponSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 1351568451595233480}
   - component: {fileID: 8103080547691185990}
   - component: {fileID: 6971175927831068773}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: WeaponAgentComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
