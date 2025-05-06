@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "EscHotkey",
+                    "type": "Button",
+                    "id": "53bbe299-9738-4e6f-b97b-75f2eec22a15",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -461,6 +470,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "HotbarHotkey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "139d1fed-d019-475d-82da-67ef373693c5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "EscHotkey",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

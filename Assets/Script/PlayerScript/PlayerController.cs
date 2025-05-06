@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public PlayerWeaponAgent weaponAgent;
     public LayerMask InteractionLayer;
     public InventoryController inventoryController;
+    public event Action OnUiOpen;   
 
     [SerializeField]
     public static Directions[] FacingDirection = new Directions[2];
@@ -48,6 +50,11 @@ public class PlayerController : MonoBehaviour
         stateMachine.InisiateState(idle);
        
      
+    }
+
+    public void OnUiOpenInvoke()
+    {
+        OnUiOpen?.Invoke();
     }
 
     public void Update()

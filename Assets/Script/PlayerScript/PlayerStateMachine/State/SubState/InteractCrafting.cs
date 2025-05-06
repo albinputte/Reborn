@@ -18,6 +18,7 @@ public class InteractCrafting : ActionState
             interactable.Interact();
         controller.Input.ActionPefromed = true;
         controller.Input.isInteracting = false;
+        controller.OnUiOpen += () => { IsAbilityDone = true; };
     }
 
     public override void LogicUpdate()
@@ -32,7 +33,7 @@ public class InteractCrafting : ActionState
         if (interactable != null)
             interactable.Interact();
         controller.Input.isInteracting = false;
-       
+        controller.OnUiOpen -= () => { IsAbilityDone = true; };
 
     }
 }
