@@ -16,17 +16,14 @@ public class StoneGhostHide : StoneGhostState
     public override void Enter()
     {
         base.Enter();
-        MaxTime = 10F;
+        MaxTime = UnityEngine.Random.Range(3, 6);
         Timer = 0;
         TimerIsActive = false;
         CheckIfPlayerIsNearby();
         
     }
 
-    private void invoke(object v1, float v2)
-    {
-        throw new NotImplementedException();
-    }
+
 
     public override void Exit()
     {
@@ -58,8 +55,8 @@ public class StoneGhostHide : StoneGhostState
         TimerIsActive = false;
       Collider2D hit =  Physics2D.OverlapCircle(controller.transform.position, controller.StartRangeRadius, controller.PlayerMask);
         if (hit != null)
-            Debug.Log("Player found");
             stateMachine.SwitchState(controller.Looking);
+
 
         TimerIsActive = true;
         Timer = 0;

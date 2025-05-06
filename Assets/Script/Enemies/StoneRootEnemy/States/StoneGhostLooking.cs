@@ -8,16 +8,12 @@ public class StoneGhostLooking : StoneGhostState
     public StoneGhostLooking(EnemyStateMachine<StoneGhostController> stateMachine, StoneGhostController controller, string animName) : base(stateMachine, controller, animName)
     {
     }
-    public float MaxTime;
-    public float Timer;
-    public bool TimerIsActive;
+  
 
     public override void Enter()
     {
         base.Enter();
-        MaxTime = 0.5f;
-        Timer = 0;
-        TimerIsActive = true;
+        controller.onSearch += CheckIfPlayerIsNearby;
         CheckIfPlayerIsNearby();
 
     }
@@ -26,18 +22,13 @@ public class StoneGhostLooking : StoneGhostState
     public override void Exit()
     {
         base.Exit();
+        controller.onSearch -= CheckIfPlayerIsNearby;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (TimerIsActive)
-        {
-            Debug.Log("hej");
-            Timer += Time.deltaTime;
-            if (Timer >= MaxTime)
-                CheckIfPlayerIsNearby();
-        }
+    
 
 
     }
@@ -51,14 +42,9 @@ public class StoneGhostLooking : StoneGhostState
 
     public void CheckIfPlayerIsNearby()
     {
-        TimerIsActive = false;
+        
         Collider2D hit = Physics2D.OverlapCircle(controller.transform.position, controller.LookingRadius, controller.PlayerMask);
-        Debug.Log("hej222");
         if (hit != null)
             stateMachine.SwitchState(controller.Rising);
-
-
-        TimerIsActive = true;
-        Timer = 0;
     }
 }

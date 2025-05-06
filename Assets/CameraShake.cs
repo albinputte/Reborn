@@ -27,6 +27,8 @@ public class CameraShake : MonoBehaviour
   
     }
 
+  
+
     public void Update()
     {
         if (_shakeTime > 0)

@@ -14,8 +14,12 @@ public class StoneGhostController : EnemyBaseController
     public Transform Target;
     public LayerMask PlayerMask;
     public Animator anim;
-    public event Action OnAnimationDone, onTakeDamage;
-   
+    public event Action OnAnimationDone, onTakeDamage, onSearch, OnHitPlayer;
+    private Health health;
+    private Rigidbody2D rb;
+    public Collider2D col;
+    [SerializeField] private GameObject HitPrefab;
+
     // Gör om så att animationene "rising" tas bort och 
     //att wake up byter mid animation wid animation trigger till go down om spelaren ej är close
     public StoneGhostHide Hide {  get; set; }  
@@ -37,6 +41,8 @@ public class StoneGhostController : EnemyBaseController
         AttackChase = new StoneGhostAttackChase(m_StateMachine, this, "StoneGhost_Charge");
         Hit = new StoneGhostHit(m_StateMachine, this, "StoneGhost_TakeDamage");
         m_StateMachine.InstantiateState(Hide);
+        health = GetComponent<Health>();
+        rb = GetComponent<Rigidbody2D>();
 
 
     }
@@ -48,6 +54,10 @@ public class StoneGhostController : EnemyBaseController
     public void ontakeDamage()
     {
         onTakeDamage?.Invoke();
+    }
+    public void SearchForPlayer()
+    {
+        onSearch?.Invoke();
     }
 
     public void Update()
@@ -71,9 +81,25 @@ public class StoneGhostController : EnemyBaseController
                 Vector2 dir = (collision.transform.position - gameObject.transform.position).normalized;
                 Debug.Log(damagable);
                 if (damagable != null)
+                {
+                    OnHitPlayer?.Invoke();
                     damagable.Hit(10, dir * 10);
+                    health.TakeKnockBack(rb, (dir * 10) * -1);
+                    health.SpawnParticlesFromTarget(HitPrefab, (dir * 10));
+                    CameraShake.instance.ShakeCamera(2f, 0.3f);
+
+                }
+                    
             }
         }
 
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, LookingRadius);
+        Gizmos.DrawWireSphere(transform.position, StartRangeRadius);
+    }
+
 }

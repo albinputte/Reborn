@@ -11,11 +11,15 @@ public class StoneGhostAttackChase : StoneGhostState
     public override void Enter()
     {
         base.Enter();
+        controller.OnHitPlayer += () => { stateMachine.SwitchState(controller.Hit); };
+        controller.col.enabled = true;
     }
 
     public override void Exit()
     {
         base.Exit();
+        controller.OnHitPlayer -= () => { stateMachine.SwitchState(controller.Hit); };
+        controller.col.enabled = false;
     }
 
     public override void LogicUpdate()

@@ -15,7 +15,7 @@ public class StoneGhostNormalChase : StoneGhostState
     public override void Enter()
     {
         base.Enter();
-        MaxTime = 5f;
+        MaxTime = 2f;
         Timer = 0;
         TimerIsActive = true;
     

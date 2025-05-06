@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d32ef72e6d31e24ca7219ccc258998b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartRangeRadius: 50
-  LookingRadius: 5
+  StartRangeRadius: 15
+  LookingRadius: 4
   Speed: 2
   GhostTransform: {fileID: 6607879790812220685}
   Target: {fileID: 0}
@@ -133,6 +133,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   anim: {fileID: 5347104957413997067}
+  col: {fileID: 1605275061973566931}
+  HitPrefab: {fileID: 0}
 --- !u!114 &6509998896408614522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +302,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4178152724471903008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -350,7 +352,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 192

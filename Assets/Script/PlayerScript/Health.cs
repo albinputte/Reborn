@@ -76,6 +76,11 @@ public class Health : MonoBehaviour, IDamagable
         rb.AddForce(tempKnockBack, ForceMode2D.Impulse);
     }
 
+    public void TakeKnockBack(Rigidbody2D rb, Vector2 Knockback)
+    {
+        rb.AddForce(Knockback, ForceMode2D.Impulse);
+    }
+
     public void Flash(SpriteRenderer sprite)
     {
         StartCoroutine(EnemyFlash(sprite));
@@ -103,6 +108,13 @@ public class Health : MonoBehaviour, IDamagable
     public void SpawnParticlesFromTarget(GameObject ParticlePrefab)
     {
         Vector3 direction = new Vector3(tempKnockBack.x, tempKnockBack.y).normalized;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        Instantiate(ParticlePrefab, transform.position, rotation);
+    }
+
+    public void SpawnParticlesFromTarget(GameObject ParticlePrefab, Vector2 dir)
+    {
+        Vector3 direction = new Vector3(dir.x, dir.y).normalized;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
         Instantiate(ParticlePrefab, transform.position, rotation);
     }
