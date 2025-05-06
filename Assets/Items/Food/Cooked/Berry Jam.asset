@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Berry Jam
   m_EditorClassIdentifier: 
   Name: Berry Jam
-  Description: 
+  Description: MMMMMMmmm very good yes yes
   Icon: {fileID: -1742591288, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 2
   IsStackable: 1
