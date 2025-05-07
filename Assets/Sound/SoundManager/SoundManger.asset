@@ -66,7 +66,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2c0b676082a7cfd44b40898fde54e998, type: 3}
     useRandomPitch: 0
   - name: PickUpSound
-    volume: 0.304
+    volume: 0.176
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: b392101ca3d3f34448bfd0b9a3980f01, type: 3}
@@ -75,7 +75,7 @@ MonoBehaviour:
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: c3ed264881aad8b418c8c4524509a879, type: 3}
+    - {fileID: 8300000, guid: 68e96e104a85bfd41b41ddfba9ce98b4, type: 3}
     useRandomPitch: 0
   - name: AnvilCrafting
     volume: 1
