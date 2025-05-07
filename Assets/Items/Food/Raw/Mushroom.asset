@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mushroom
   Description: 
-  Icon: {fileID: 21300000, guid: 4f4a200abe587ec439d06fb59aca542b, type: 3}
+  Icon: {fileID: 21300000, guid: bdeae3f4cc56afa4698d84619c7f1814, type: 3}
   itemType: 2
   IsStackable: 1
   IsCraftable: 0
