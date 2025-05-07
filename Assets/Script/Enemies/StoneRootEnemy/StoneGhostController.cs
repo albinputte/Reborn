@@ -29,6 +29,7 @@ public class StoneGhostController : EnemyBaseController
     public StoneGhostEnterAttack EnterAttack { get; set; }
     public StoneGhostAttackChase AttackChase { get; set; }
     public StoneGhostHit Hit { get; set; }
+    public StoneGhostDeathState DeathState { get; set; }
 
     public void Start()
     {
@@ -40,9 +41,11 @@ public class StoneGhostController : EnemyBaseController
         EnterAttack = new StoneGhostEnterAttack(m_StateMachine, this, "StoneGhost_ReadyUp");
         AttackChase = new StoneGhostAttackChase(m_StateMachine, this, "StoneGhost_Charge");
         Hit = new StoneGhostHit(m_StateMachine, this, "StoneGhost_TakeDamage");
+        DeathState = new StoneGhostDeathState(m_StateMachine, this, "StoneGhost_Die");
         m_StateMachine.InstantiateState(Hide);
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
+        health.OnDeath.AddListener(() => m_StateMachine.SwitchState(DeathState));
 
 
     }
