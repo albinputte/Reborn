@@ -17,6 +17,9 @@ namespace SmallHedge.SoundManager
         InteractBerryBush,
         PlayerTakeDamage,
         PickUpSound,
+        CampfireCrafting,
+        AnvilCrafting,
+        CraftingBenchCrafting,
     }
 
     // Call sounds like this:

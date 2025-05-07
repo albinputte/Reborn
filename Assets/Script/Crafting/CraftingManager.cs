@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,10 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] private List<CraftingRecipe> availableRecipes;
     [SerializeField] private CraftingUI craftingUI;
 
+
     [SerializeField] private InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
+    public SoundType CraftSound;
 
     //delegate add here
     public void Start()
@@ -32,10 +35,10 @@ public class CraftingManager : MonoBehaviour, IInteractable
     {
         if (CanCraft(recipe))
         {
+            SoundManager.PlaySound(CraftSound);
             foreach (var ingredient in recipe.ingredients)
             {
-                Debug.Log(ingredient.item.name);
-                Debug.Log(ingredient.quantity);
+                
                 RemoveItemsFromInventory(ingredient.item, ingredient.quantity);
             }
             inventory.AddItem(recipe.resultItem, recipe.resultQuantity, null);

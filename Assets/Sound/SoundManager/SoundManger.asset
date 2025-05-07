@@ -71,3 +71,20 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: b392101ca3d3f34448bfd0b9a3980f01, type: 3}
     useRandomPitch: 0
+  - name: CampfireCrafting
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: c3ed264881aad8b418c8c4524509a879, type: 3}
+    useRandomPitch: 0
+  - name: AnvilCrafting
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: a38503c479d33bf47a350eebe100facf, type: 3}
+    useRandomPitch: 0
+  - name: CraftingBenchCrafting
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds: []
+    useRandomPitch: 0

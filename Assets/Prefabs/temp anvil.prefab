@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 85f81091b2b84ce44b23098d703c26e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -152,3 +152,4 @@ MonoBehaviour:
   availableRecipes: []
   craftingUI: {fileID: 0}
   Type: 2
+  CraftSound: 11

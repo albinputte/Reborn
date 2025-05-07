@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5b5edf6da48fd034d97070588cad34be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,9 +103,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c10ec4baf62eba47b8b418d19b9f9ec, type: 2}
   - {fileID: 11400000, guid: debfac56126519941a8ecaf3de0b0495, type: 2}
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
-  availableRecipes: []
+  availableRecipes:
+  - ingredients: []
+    resultItem: {fileID: 0}
+    resultQuantity: 0
+  - ingredients: []
+    resultItem: {fileID: 0}
+    resultQuantity: 1
+  - ingredients:
+    - item: {fileID: 11400000, guid: e8b67511f5d837f4ab2915faa4cd5649, type: 2}
+      quantity: 0
+    - item: {fileID: 0}
+      quantity: 0
+    resultItem: {fileID: 11400000, guid: 6afbd483936763443a2dfb92b8320986, type: 2}
+    resultQuantity: 1
   craftingUI: {fileID: 0}
   Type: 2
+  CraftSound: 12
 --- !u!61 &4929665978537390477
 BoxCollider2D:
   m_ObjectHideFlags: 0
