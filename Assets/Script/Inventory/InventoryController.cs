@@ -238,14 +238,17 @@ public class InventoryController : MonoBehaviour
         {
             inventoryUi.ShowInventory();
             InventoryUiActive = true;
+            TransferHotbarToInventory();
             foreach (var item in inventoryData.GetInventoryState())
             {
+               
                 inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
 
             }
         }
         else if (InventoryUiActive)
         {
+            TransferInventoryToHotbar();
             inventoryUi.HideInventory();
             InventoryUiActive = false;
         }
@@ -258,5 +261,27 @@ public class InventoryController : MonoBehaviour
     {
         inventoryUi.SelectHotBarSlotScroll(index);
     }
+    public void TransferHotbarToInventory()
+    {
+        int count = inventoryData.Inventory.Count - 10;
+        for (int i = 0; i < 10; i++)
+        {
+            HandleItemSwap(count + i, i);
+        }
+        inventoryUi.HideHotbar();
+    }
+
+    public void TransferInventoryToHotbar()
+    {
+        int count = inventoryData.Inventory.Count - 10;
+        for (int i = 0; i < 10; i++)
+        {
+            HandleItemSwap(count + i, i);
+        }
+        inventoryUi.ShowHotbar();
+    }
+
+
+ 
 
 }

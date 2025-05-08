@@ -20,6 +20,7 @@ namespace SmallHedge.SoundManager
         CampfireCrafting,
         AnvilCrafting,
         CraftingBenchCrafting,
+
     }
 
     // Call sounds like this:
