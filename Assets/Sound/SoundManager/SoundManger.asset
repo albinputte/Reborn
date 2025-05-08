@@ -89,3 +89,27 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: ea614b9a8c7ec1944a9ca6f3af5629df, type: 3}
     useRandomPitch: 0
+  - name: StoneGhost_Looking
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: c898e7c79bf076247b458a2037292134, type: 3}
+    useRandomPitch: 0
+  - name: StoneGhost_Rising
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: c2d08728c507149498d087a9945d123d, type: 3}
+    useRandomPitch: 0
+  - name: StoneGhost_StartAttack
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 02bce5fc845f9404394355e46263200e, type: 3}
+    useRandomPitch: 0
+  - name: StoneGhost_Hit
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 1069d929b2afd3e489709ef81ddaa27c, type: 3}
+    useRandomPitch: 0
