@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "OrbItemBase", menuName = "Items/Orbs", order = 3)]
-public class OrbsItemData : ItemData, IitemAction, IDestroyableItem
+public class OrbsItemData : ItemData, IitemAction, IDestroyableItem, IOrb
 {
 
     [SerializeReference, SubclassSelector]

@@ -57,6 +57,8 @@ public class InventoryUiSlot : MonoBehaviour
     }
 
 
+
+
     public void OnBeginDrag()
     {
        

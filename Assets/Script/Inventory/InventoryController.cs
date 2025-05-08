@@ -131,6 +131,20 @@ public class InventoryController : MonoBehaviour
 
     private void HandleItemSwap(int index1,int Index2)
     {
+        InventoryItem item = inventoryData.GetSpecificItem(index1);
+        IOrb orb = item.item as IOrb;
+        if(orb != null)
+        {
+            InventoryItem item2 = inventoryData.GetSpecificItem(Index2);
+            IWeapon weapon = item2.item as IWeapon;
+            if(weapon != null)
+            {
+                OrbsItemData orbData = item.item as OrbsItemData;
+                item2.weaponInstances.UpdateOrb(orbData);
+                inventoryData.RemoveItem(index1,1);
+                return;
+            }
+        }
         Debug.Log(Index2);
         Debug.Log(index1);
         inventoryData.SwapitemPlace(index1,Index2);
@@ -168,6 +182,7 @@ public class InventoryController : MonoBehaviour
 
         if (item.IsEmpty || item.item == null)
             return;
+   
 
         if (item.item is IWeapon weapon)
         {

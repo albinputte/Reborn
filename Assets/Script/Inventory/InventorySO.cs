@@ -94,6 +94,7 @@ public class InventorySO : ScriptableObject
             return Inventory[index]; 
     }
 
+
     public void RemoveItem(int itemIndex, int amount)
     {
         if (Inventory.Count >= itemIndex)
