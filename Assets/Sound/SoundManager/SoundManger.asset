@@ -54,7 +54,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 681e4d72b7ee94a44b29ae85fb7e1dd4, type: 3}
     useRandomPitch: 0
   - name: InteractBerryBush
-    volume: 0.304
+    volume: 0.137
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 2b79e6a24ca1f3b46a2157948c16b7a1, type: 3}
@@ -66,7 +66,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2c0b676082a7cfd44b40898fde54e998, type: 3}
     useRandomPitch: 0
   - name: PickUpSound
-    volume: 0.176
+    volume: 0.065
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: b392101ca3d3f34448bfd0b9a3980f01, type: 3}
@@ -78,13 +78,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 68e96e104a85bfd41b41ddfba9ce98b4, type: 3}
     useRandomPitch: 0
   - name: AnvilCrafting
-    volume: 1
+    volume: 0.347
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: a38503c479d33bf47a350eebe100facf, type: 3}
+    - {fileID: 8300000, guid: cfcd721c82ffdbe48b3e6b039ff3fcff, type: 3}
     useRandomPitch: 0
   - name: CraftingBenchCrafting
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: ea614b9a8c7ec1944a9ca6f3af5629df, type: 3}
     useRandomPitch: 0
