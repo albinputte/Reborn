@@ -1,0 +1,1473 @@
+fileFormatVersion: 2
+guid: 47dd76317240e494fb0d1b8d2d9ec185
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce0461ff80b9c04ea061bb0cc57ca76
+      internalID: -1676743931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7680748bb32bf428259bc155a84f26
+      internalID: -1493487268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9e267d4e5dfbc4db82da3854b06726
+      internalID: 239305275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6473875a5a9ded046ba4170a6e2e86bb
+      internalID: 1731883555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c3843b8723f1e42922b2df51905e55
+      internalID: 664092924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9c25a3952e81a40a5e5059aa5a735d
+      internalID: -1526949764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a99a547f66eca4c894bd07ee0fc6c3
+      internalID: -2070524556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1064
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2989b6d85e7b4047904aa88166519e0
+      internalID: 162772608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7ca57ac3e89b1418eb2f8e8bf051d7
+      internalID: -621753817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac125de40560ef459b94c2e10ab1054
+      internalID: -1271757439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71423d9282a2094f8167e8478877535
+      internalID: 680719513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d3f47c4ce86bf449e8ac03b8714e4f
+      internalID: -231138668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec58a6b81ac6b642820c73a52599eee
+      internalID: 597983562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b804c16c4c26c46409201cf3ad2fb7cf
+      internalID: 1413244425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebe7dbe8f9d2a74d96f9e8d63a26958
+      internalID: 1401726340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 912
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323ca311870f91f499ab5095645aa9a4
+      internalID: -506760092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50db9c5008f62c42aced97b4d965794
+      internalID: -570646971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d847f767eb0ccfa4591b5cdfe4306492
+      internalID: -2037105816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef87b77ed5f8c0a4d9c0491f4a3dc497
+      internalID: -584743586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b3baecaa608d04998bc296c3ecc5da
+      internalID: 300460676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_20
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0fdf88f4f342c4f820aae3dc65d152
+      internalID: -1208105157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_21
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6a3de958550a849b25ad2fdbc16597
+      internalID: 496872183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_22
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea6bd9e5fc29b94fb198eb388a3c156
+      internalID: -2056266375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_23
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 760
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a06533f88e4ab40bf0c95083da6d48
+      internalID: -629121545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8b1186c41606b4b8a926daec2a9c8a
+      internalID: 1862713015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_25
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afc8529db5a1594ab52b7f617e407ea
+      internalID: -1554073128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_26
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100250d918ac752408481dab756e68ff
+      internalID: -1716876741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_27
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05370a63699ee7141b4c5f7567b5f46c
+      internalID: -348070267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_28
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a432fe23fe3e3498f28a62ed3bf0d3
+      internalID: 776551121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_29
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c806a2dbe3cc164ab9c1b4d5d59fb04
+      internalID: 1899009092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_30
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7618fb23e72fa674e9c57f2e517ee5b9
+      internalID: -945833978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_31
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 608
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697d84015063c6442ba81a4dd77483e7
+      internalID: 882444788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9530a3b4f6b75684a9663f0ac44dbea3
+      internalID: -71543596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_33
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade54bd2524ba1c41a7f841156b6256a
+      internalID: -2105511033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_34
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aed1262ba52ac94fbe98872706553f7
+      internalID: -1500343870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_35
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bad0b3841352c4a8abd8f86205bf2b
+      internalID: -1701307682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_36
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d15454243b73243b7a2cac4d1c5877
+      internalID: -2139133907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_37
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525259ee3956b58468a49320b3b07b4b
+      internalID: 222189415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_38
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadc1750865a4f746af98b56c4293dd3
+      internalID: -1352022695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_39
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 456
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7492206d7e0554ca2d1499a8b24c99
+      internalID: 31798034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733670c48e6453947ab6557f9903b57f
+      internalID: 823018873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_41
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d1fd33438078b47a7fea5474f0aced
+      internalID: -1674516545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_42
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1364ead8b0e1546b47899ed250811a
+      internalID: -205590573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_43
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49da48d0303b953448b9097957d6dc53
+      internalID: -711189594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_44
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aefa216414b1b04d98942598948976f
+      internalID: -698351875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_45
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e56184ba0d6444d8964f4cec9485a8
+      internalID: -1864761445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_46
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e353fc2c4d04c8428dd558be960b448
+      internalID: 455064978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_47
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 304
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3510d6c1d1b754e8cff827b4a9f75f
+      internalID: 552740129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25676060e26122b4ca6b30d3e8b7c7fc
+      internalID: 1691593014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_49
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225d9b21b6805e94dbede65f9251bd8d
+      internalID: -1367598583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_50
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d07ef32af592a46bc96cdffdaba007
+      internalID: 627118332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_51
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e659814c261c7d149925532cd51b01c3
+      internalID: 1339219716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_52
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8a67ef14078b44d8231130e1c242b6
+      internalID: -687082627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_53
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc441d389f6d5a48a8aeae7126eeb4e
+      internalID: 2067763716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_54
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf3578d298d64243a4f150b74d72289
+      internalID: 794565587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_55
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 152
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a45e537594d0742bc92fe95b16477a
+      internalID: -1089831263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd1c3b4f9c8651469f4e23d4608f387
+      internalID: -476084221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_57
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aafabed7df448434491e01a196604a67
+      internalID: 319003378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_58
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1b6d71657ecc847ac8d444cd182bae
+      internalID: -1002193727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RebornCharacterIntroAnimation_59
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 0
+        width: 164
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df7a2d4a6d625a468fb7756b3ec1ffb
+      internalID: 1451860917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RebornCharacterIntroAnimation_0: -1676743931
+      RebornCharacterIntroAnimation_1: -1493487268
+      RebornCharacterIntroAnimation_10: 680719513
+      RebornCharacterIntroAnimation_11: -231138668
+      RebornCharacterIntroAnimation_12: 597983562
+      RebornCharacterIntroAnimation_13: 1413244425
+      RebornCharacterIntroAnimation_14: 1401726340
+      RebornCharacterIntroAnimation_15: -506760092
+      RebornCharacterIntroAnimation_16: -570646971
+      RebornCharacterIntroAnimation_17: -2037105816
+      RebornCharacterIntroAnimation_18: -584743586
+      RebornCharacterIntroAnimation_19: 300460676
+      RebornCharacterIntroAnimation_2: 239305275
+      RebornCharacterIntroAnimation_20: -1208105157
+      RebornCharacterIntroAnimation_21: 496872183
+      RebornCharacterIntroAnimation_22: -2056266375
+      RebornCharacterIntroAnimation_23: -629121545
+      RebornCharacterIntroAnimation_24: 1862713015
+      RebornCharacterIntroAnimation_25: -1554073128
+      RebornCharacterIntroAnimation_26: -1716876741
+      RebornCharacterIntroAnimation_27: -348070267
+      RebornCharacterIntroAnimation_28: 776551121
+      RebornCharacterIntroAnimation_29: 1899009092
+      RebornCharacterIntroAnimation_3: 1731883555
+      RebornCharacterIntroAnimation_30: -945833978
+      RebornCharacterIntroAnimation_31: 882444788
+      RebornCharacterIntroAnimation_32: -71543596
+      RebornCharacterIntroAnimation_33: -2105511033
+      RebornCharacterIntroAnimation_34: -1500343870
+      RebornCharacterIntroAnimation_35: -1701307682
+      RebornCharacterIntroAnimation_36: -2139133907
+      RebornCharacterIntroAnimation_37: 222189415
+      RebornCharacterIntroAnimation_38: -1352022695
+      RebornCharacterIntroAnimation_39: 31798034
+      RebornCharacterIntroAnimation_4: 664092924
+      RebornCharacterIntroAnimation_40: 823018873
+      RebornCharacterIntroAnimation_41: -1674516545
+      RebornCharacterIntroAnimation_42: -205590573
+      RebornCharacterIntroAnimation_43: -711189594
+      RebornCharacterIntroAnimation_44: -698351875
+      RebornCharacterIntroAnimation_45: -1864761445
+      RebornCharacterIntroAnimation_46: 455064978
+      RebornCharacterIntroAnimation_47: 552740129
+      RebornCharacterIntroAnimation_48: 1691593014
+      RebornCharacterIntroAnimation_49: -1367598583
+      RebornCharacterIntroAnimation_5: -1526949764
+      RebornCharacterIntroAnimation_50: 627118332
+      RebornCharacterIntroAnimation_51: 1339219716
+      RebornCharacterIntroAnimation_52: -687082627
+      RebornCharacterIntroAnimation_53: 2067763716
+      RebornCharacterIntroAnimation_54: 794565587
+      RebornCharacterIntroAnimation_55: -1089831263
+      RebornCharacterIntroAnimation_56: -476084221
+      RebornCharacterIntroAnimation_57: 319003378
+      RebornCharacterIntroAnimation_58: -1002193727
+      RebornCharacterIntroAnimation_59: 1451860917
+      RebornCharacterIntroAnimation_6: -2070524556
+      RebornCharacterIntroAnimation_7: 162772608
+      RebornCharacterIntroAnimation_8: -621753817
+      RebornCharacterIntroAnimation_9: -1271757439
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
