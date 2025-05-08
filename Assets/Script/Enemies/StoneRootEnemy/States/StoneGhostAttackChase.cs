@@ -14,14 +14,14 @@ public class StoneGhostAttackChase : StoneGhostState
         base.Enter();
         controller.OnHitPlayer += () => { stateMachine.SwitchState(controller.Hit); };
         controller.col.enabled = true;
-        controller.OnPlayAudio += () => { SoundManager.PlaySound(SoundType.StoneGhost_StartAttack); };
+       
     }
 
     public override void Exit()
     {
         base.Exit();
         controller.OnHitPlayer -= () => { stateMachine.SwitchState(controller.Hit); };
-        controller.OnPlayAudio -= () => { SoundManager.PlaySound(SoundType.StoneGhost_StartAttack); };
+   
         controller.col.enabled = false;
     }
 

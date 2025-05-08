@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class StoneGhostEnterAttack : StoneGhostState
     {
         base.Exit();
         controller.OnAnimationDone -= Finished;
+        SoundManager.PlaySound(SoundType.StoneGhost_StartAttack);
     }
 
     public override void LogicUpdate()
