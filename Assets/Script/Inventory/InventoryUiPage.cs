@@ -17,6 +17,7 @@ public class InventoryUiPage : MonoBehaviour
     private InventoryUiSlot[] HotBarSlots;
 
     List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
+    public GameObject Hotbar;
 
     List<InventoryUiSlot> ListOfUIAccesoriesSlots = new List<InventoryUiSlot>();
 
@@ -100,6 +101,8 @@ public class InventoryUiPage : MonoBehaviour
 
     }
 
+  
+
     public void SelectHotBarSlotScroll(int index)
     {
         if(Selectdslot != null)
@@ -179,10 +182,22 @@ public class InventoryUiPage : MonoBehaviour
     public void ShowInventory()
     {
         gameObject.SetActive(true);
+      
     }
     public void HideInventory() 
     {
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
+        
+    }
+
+    public void ShowHotbar()
+    {
+        Hotbar.SetActive(true);
+    }
+
+    public void HideHotbar()
+    {
+        Hotbar.SetActive(false);
     }
 
     private int ExtractNumberFromName(string name)
@@ -193,6 +208,8 @@ public class InventoryUiPage : MonoBehaviour
         int.TryParse(numStr, out number);
         return number;
     }
+
+
 
  
 
