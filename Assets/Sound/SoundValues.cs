@@ -20,6 +20,10 @@ namespace SmallHedge.SoundManager
         CampfireCrafting,
         AnvilCrafting,
         CraftingBenchCrafting,
+        StoneGhost_Looking,
+        StoneGhost_Rising,
+        StoneGhost_StartAttack,
+        StoneGhost_Hit,
 
     }
 

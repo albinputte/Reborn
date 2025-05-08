@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +15,14 @@ public class StoneGhostRising : StoneGhostState
         base.Enter();
         RisingDone = false;
         controller.OnAnimationDone += Finished;
+        controller.OnPlayAudio += () => { SoundManager.PlaySound(SoundType.StoneGhost_Rising); };
     }
 
     public override void Exit()
     {
         base.Exit();
         controller.OnAnimationDone -= Finished;
+        controller.OnPlayAudio -= () => { SoundManager.PlaySound(SoundType.StoneGhost_Rising); };
     }
 
     public override void LogicUpdate()

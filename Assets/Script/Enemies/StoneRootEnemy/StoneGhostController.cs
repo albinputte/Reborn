@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class StoneGhostController : EnemyBaseController
     public Transform Target;
     public LayerMask PlayerMask;
     public Animator anim;
-    public event Action OnAnimationDone, onTakeDamage, onSearch, OnHitPlayer;
+    public event Action OnAnimationDone, onTakeDamage, onSearch, OnHitPlayer, OnPlayAudio;
     private Health health;
     private Rigidbody2D rb;
     public Collider2D col;
@@ -62,6 +63,10 @@ public class StoneGhostController : EnemyBaseController
     {
         onSearch?.Invoke();
     }
+    public void OnAudioInvoke()
+    {
+        OnPlayAudio?.Invoke();
+    }
 
     public void Update()
     {
@@ -86,6 +91,7 @@ public class StoneGhostController : EnemyBaseController
                 if (damagable != null)
                 {
                     OnHitPlayer?.Invoke();
+                    SoundManager.PlaySound(SoundType.StoneGhost_Hit);
                     damagable.Hit(10, dir * 10);
                     health.TakeKnockBack(rb, (dir * 10) * -1);
                     health.SpawnParticlesFromTarget(HitPrefab, (dir * 10));

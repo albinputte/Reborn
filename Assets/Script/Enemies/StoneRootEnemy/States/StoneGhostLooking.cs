@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class StoneGhostLooking : StoneGhostState
     {
         base.Enter();
         controller.onSearch += CheckIfPlayerIsNearby;
-      
+        controller.OnPlayAudio += () => { SoundManager.PlaySound(SoundType.StoneGhost_Looking); };
 
     }
 
@@ -23,6 +24,7 @@ public class StoneGhostLooking : StoneGhostState
     {
         base.Exit();
         controller.onSearch -= CheckIfPlayerIsNearby;
+        controller.OnPlayAudio -= () => { SoundManager.PlaySound(SoundType.StoneGhost_Looking); };
     }
 
     public override void LogicUpdate()
