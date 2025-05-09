@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 330bce56fa7b6cd4c962e6bed7e30b67
+guid: 47585eda242be4c4f8f4359972106c9e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f168677f7dd574b9c9f81d3fedb234
-      internalID: 966186126
+      spriteID: 038ea71f6b7b5174ea5ecf4fdcd9c54c
+      internalID: 437397741
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e3304edb6eac2b4d93e88682d02d22c
-      internalID: 481840997
+      spriteID: 7676c8bf5e2cba24b97ce7869219af58
+      internalID: 902518544
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Holy Grail_0: 966186126
-      Holy Grail_1: 481840997
+      Holy Grail_0: 437397741
+      Holy Grail_1: 902518544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

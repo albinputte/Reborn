@@ -44,15 +44,25 @@ public class RecipeSlotUi : MonoBehaviour
 
     public void NotEnoughResources(int index)
     {
-        ingrediants[index].color = new Color(1f, 1, 1f, 0.1f);
-        QuanityText[index].color = new Color(1f, 0, 0f, 1);
+        Color notEnoughIngredientColor;
+        Color notEnoughTextColor;
+
+        ColorUtility.TryParseHtmlString("#7b253615", out notEnoughIngredientColor); // 0.1 alpha = ~15 in hex
+        ColorUtility.TryParseHtmlString("#7b2536", out notEnoughTextColor);
+
+        ingrediants[index].color = notEnoughIngredientColor;
+        QuanityText[index].color = notEnoughTextColor;
     }
 
     public void EnoughResource(int index)
     {
-        ingrediants[index].color = new Color(1f, 1, 1f, 1f);
-        QuanityText[index].color = new Color(1f, 1, 1f, 1);
+        Color enoughColor;
+        ColorUtility.TryParseHtmlString("#dae1e5", out enoughColor);
+
+        ingrediants[index].color = enoughColor;
+        QuanityText[index].color = enoughColor;
     }
+
 
 
     public Image[] GetIngrediantsSlots()
