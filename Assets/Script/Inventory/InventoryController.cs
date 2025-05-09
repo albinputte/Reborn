@@ -18,12 +18,16 @@ public class InventoryController : MonoBehaviour
     public static bool NoWeaponEquiped;
     public static bool IsConsumableEquiped;
     public static bool IsToolEquiped;
+    public static InventoryController Instance;
 
     [SerializeField] 
     private GameObject itemPrefab; //For Dropping item
 
     [SerializeField]
     private bool InventoryUiActive;
+
+    [SerializeField]
+    private PlayerInputManger inputManger;
 
     [SerializeField]
     private CraftingUI craftingUI; //temporary
@@ -38,9 +42,10 @@ public class InventoryController : MonoBehaviour
 
     private void Start()
     {
-     
+        Instance = this;
         PrepareInventoryUI();
         PrepareInventoryData();
+
 
     }
     private void Awake()
@@ -116,6 +121,9 @@ public class InventoryController : MonoBehaviour
         {
             inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
         }
+        
+       
+        
      
     }
 
@@ -190,6 +198,7 @@ public class InventoryController : MonoBehaviour
             if (item.item is IitemAction action)
             {
                 action.PerformAction(Character, item.weaponInstances);
+               
             }
             return;
         }
@@ -283,6 +292,7 @@ public class InventoryController : MonoBehaviour
         {
             HandleItemSwap(count + i, i);
         }
+        inventoryUi.SwitchHotbarSlot();
         inventoryUi.HideHotbar();
     }
 
@@ -293,7 +303,27 @@ public class InventoryController : MonoBehaviour
         {
             HandleItemSwap(count + i, i);
         }
+        inventoryUi.SwitchHotbarSlot();
         inventoryUi.ShowHotbar();
+    }
+
+    public bool IsWeapon(int index)
+    {
+        InventoryItem item = inventoryData.GetSpecificItem(index);
+        IWeapon weapon = item.item as IWeapon;
+        if (weapon != null)
+            return true;
+        return false;
+
+    }
+    public void SetCurrentHotbarIndex(int index)
+    {
+        inputManger.HotbarIndex = index;
+    }
+
+    public  WeaponInstances GetWeaponInstances(int index)
+    {
+        return inventoryData.GetSpecificItem(index).weaponInstances;
     }
 
 

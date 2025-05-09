@@ -18,7 +18,7 @@ public class InventoryUiSlot : MonoBehaviour
     public bool IsSelected;
     public event Action<InventoryUiSlot> OnItemClicked,
            OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag,
-           OnRightMouseBtnClick;
+           OnRightMouseBtnClick, OnItemSelect;
 
     private bool empty = true;
 
@@ -47,6 +47,7 @@ public class InventoryUiSlot : MonoBehaviour
     public void SelectBorder()
     {
         BorderImage.sprite = BorderSprite[0];
+        OnItemSelect?.Invoke(this);
     }
     public void SetData(Sprite ItemImage, int Quantity)
     {

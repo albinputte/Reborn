@@ -17,7 +17,7 @@ public class PlayerInputManger : MonoBehaviour
     public float normInputY;
     public Vector2 ScrollInput;
     public int HotbarIndex;
-    public int  Scrolloffset;
+    private int  Scrolloffset;
     public bool isSprinting;
     public bool isInteracting;
     public bool IsAttacking;
@@ -126,10 +126,10 @@ public class PlayerInputManger : MonoBehaviour
                 Scrolloffset = 0;
                 return;
             }
-            if (HotbarIndex == 9)
-                HotbarIndex = 0;
+            if (HotbarIndex <= 0)
+                HotbarIndex = 9;
             else
-                HotbarIndex++;
+                HotbarIndex--;
 
         }
         else if (ScrollInput.y < 0)
@@ -142,10 +142,10 @@ public class PlayerInputManger : MonoBehaviour
                 return;
             }
                
-            if (HotbarIndex == 0)
-                HotbarIndex = 9;
+            if (HotbarIndex >= 9)
+                HotbarIndex = 0;
             else
-                HotbarIndex--;
+                HotbarIndex++;
         }
        
         inventoryController.ScrollInHotbar(HotbarIndex);

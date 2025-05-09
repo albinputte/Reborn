@@ -161,7 +161,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1296566859
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1482037230, guid: 179b2c3a06310ec4bb6220b2612ed3b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -778,7 +778,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1296566859
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 2050238588, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1055,7 +1055,6 @@ MonoBehaviour:
   normInputY: 0
   ScrollInput: {x: 0, y: 0}
   HotbarIndex: -1
-  Scrolloffset: 0
   isSprinting: 0
   isInteracting: 0
   IsAttacking: 0
@@ -1148,7 +1147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1395544651, guid: b588aa6ddb8492c4e92a3a9323785b44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1337,6 +1336,7 @@ MonoBehaviour:
   inventoryData: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   itemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   InventoryUiActive: 0
+  inputManger: {fileID: 8985319236655394079}
   craftingUI: {fileID: 0}
   testItem: {fileID: 11400000, guid: 29f92e39860ff5145b52fe62eb2351e6, type: 2}
   Character: {fileID: 6953608451241955459}

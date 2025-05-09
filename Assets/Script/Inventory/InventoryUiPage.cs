@@ -15,14 +15,17 @@ public class InventoryUiPage : MonoBehaviour
     private InventoryUiSlot[] itemSlot;
     [SerializeField]
     private InventoryUiSlot[] HotBarSlots;
+    [SerializeField]
+    private InventoryUiSlot[] HiddenHotbarSlots;
 
     List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
     public GameObject Hotbar;
+    [SerializeField] private InventorySlideInUi SlideInUi;
 
     List<InventoryUiSlot> ListOfUIAccesoriesSlots = new List<InventoryUiSlot>();
 
     [SerializeField] private MouseFollower mouseFollower;
-    [SerializeField]private LayerMask UILayer;
+    [SerializeField] private LayerMask UILayer;
 
     private int currentDraggingIndex;
     private bool IsSelected;
@@ -30,19 +33,21 @@ public class InventoryUiPage : MonoBehaviour
     private InventoryUiSlot Selectdslot;
     public Action<int, int> OnSwap;
     public Action<int> OnDropItem, OnHotbarAction;
+    private int ScrollIndex;
 
-
-    private void Start()
+    private void Awake()
     {
-   
         mouseFollower.Toggle(false);
         currentDraggingIndex = -1;
+        ScrollIndex = -1;
     }
+
+   
 
     public void InstantiateInventory()
     {
         itemSlot = FindObjectsOfType<InventoryUiSlot>(); //need to find naother way to find the slots bcus multiole other slots are being found
-
+        SlideInUi.ResetSlideIcons();
         ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
         foreach (InventoryUiSlot slot in ListOfUIslots)
         {
@@ -51,8 +56,11 @@ public class InventoryUiPage : MonoBehaviour
             slot.OnItemDroppedOn += ItemSwap;
             slot.OnItemEndDrag += EndDrag;
             slot.OnRightMouseBtnClick += ShowItemActions;
-          
+            slot.OnItemSelect += SelectionBorder;
+
+
         }
+
 
         
     
@@ -60,17 +68,24 @@ public class InventoryUiPage : MonoBehaviour
 
     }
 
+    public void SetSlideIn(WeaponInstances inst)
+    {
+        SlideInUi.SetSlideIcons(inst.Weapon.Icon, null);
+        
+    }
+
     public void UpdateData(int Index, Sprite newSprite, int newQuantity)
     {
         if(ListOfUIslots.Count > Index)
         {
-            Debug.Log(newQuantity);
+           
             ListOfUIslots[Index].SetData(newSprite, newQuantity);
         }
         else
         {
             Debug.Log("Mikael wtf did you do");
         }
+      
     }
 
     private void ShowItemActions(InventoryUiSlot slot)
@@ -79,8 +94,9 @@ public class InventoryUiPage : MonoBehaviour
         int index = ListOfUIslots.IndexOf(slot);
         if (index == -1)
             return;
+     
+        InventoryController.Instance.SetCurrentHotbarIndex(correctHotbarIndex(index));
 
-       
         if (!IsSelected)
         {
             if (Selectdslot == null)
@@ -98,17 +114,40 @@ public class InventoryUiPage : MonoBehaviour
             OnItemAction?.Invoke(index); 
           
         }
-
+       
     }
 
-  
+    public int correctHotbarIndex(int index)
+    {
+        int totalSlots = ListOfUIslots.Count;
+        int lastTenStart = totalSlots - 10;
+
+        if (index >= 0 && index <= 9)
+        {
+            return index + 1;
+        }
+        else if (index == 10 || index == totalSlots)
+        {
+            return 0;
+        }
+        else if (index >= lastTenStart && index < totalSlots)
+        {
+            return (index - lastTenStart) + 1 ;
+        }
+
+        return ScrollIndex;
+    }
+
+
 
     public void SelectHotBarSlotScroll(int index)
     {
+     
         if(Selectdslot != null)
             Selectdslot.DeselectBorder();
         Selectdslot = HotBarSlots[index];
         HotBarSlots[index].SelectBorder();
+        ScrollIndex = index;
         HotBarSlots[index].IsSelected = true;
         SetItemOnHotbar(HotBarSlots[index]);
     }
@@ -177,6 +216,38 @@ public class InventoryUiPage : MonoBehaviour
     private void ItemSelection(InventoryUiSlot slot)
     {
         //slot.SelectBorder();  
+    }
+
+    public void SelectionBorder(InventoryUiSlot slot)
+    {
+   
+        int index = ListOfUIslots.IndexOf(slot);
+        if (!InventoryController.Instance.IsWeapon(index))
+        {
+            SlideInUi.ResetSlideIcons();
+            return;
+        }
+           
+        WeaponInstances weaponInst = InventoryController.Instance.GetWeaponInstances(index);
+        OrbsItemData orb = weaponInst.GetOrb();
+        if (orb != null)
+        {
+            SlideInUi.SetSlideIcons(weaponInst.Weapon.Icon, orb.Icon);
+        }
+        else
+        {
+            SlideInUi.SetSlideIcons(weaponInst.Weapon.Icon, null);
+        }
+
+    }
+
+    public void SwitchHotbarSlot()
+    {
+        var Hotbar = HotBarSlots;
+        HotBarSlots = HiddenHotbarSlots;
+        HiddenHotbarSlots = Hotbar;
+        if(ScrollIndex != -1)
+            SelectHotBarSlotScroll(ScrollIndex);
     }
 
     public void ShowInventory()
