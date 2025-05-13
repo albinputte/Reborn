@@ -8,7 +8,17 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
     public List<InventoryItem> ItemToInitialize = new List<InventoryItem>();
     [SerializeField] public InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
+    [SerializeField] private Material NewMaterial;
+    [SerializeField] private Material OldMaterial;
+    [SerializeField] private GameObject Button;
+    public SpriteRenderer ChestRenderer;
 
+
+    public void Start()
+    {
+        controller = GetComponent<ChestController>();
+        ChestRenderer = GetComponent<SpriteRenderer>();
+    }
     public void Interact()
     {
         if (controller.ChestUiIsActive)
@@ -28,6 +38,16 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
     {
         ItemToInitialize = controller.chestData.Inventory;
     }
+    public void NearPlayer()
+    {
+        ChestRenderer.material = NewMaterial;
+        Button.gameObject.SetActive(true);
+    }
 
-   
+    public void LeavingPlayer()
+    {
+        ChestRenderer.material = OldMaterial;
+        Button.gameObject.SetActive(false);
+    }
+
 }

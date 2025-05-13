@@ -14,7 +14,10 @@ public class BerryBush : MonoBehaviour, IInteractable
     [SerializeField ] private float SpawnTime;
     [SerializeField] private int MinBerries;
     [SerializeField] private int MaxBerries;
-    
+    [SerializeField] private Material NewMaterial;
+    [SerializeField] private Material OldMaterial;
+    [SerializeField] private GameObject Button;
+
     [SerializeField]public InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
 
@@ -71,5 +74,16 @@ public class BerryBush : MonoBehaviour, IInteractable
         if (rb == null)
             yield break;
         rb.gravityScale = 0f; rb.velocity = Vector2.zero;
+    }
+    public void NearPlayer()
+    {
+        BushRenderer.material = NewMaterial;
+        Button.gameObject.SetActive(true);
+    }
+
+    public void LeavingPlayer()
+    {
+        BushRenderer.material = OldMaterial;
+        Button.gameObject.SetActive(false);
     }
 }

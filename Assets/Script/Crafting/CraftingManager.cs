@@ -11,7 +11,10 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] public InventorySO inventory;
     [SerializeField] private List<CraftingRecipe> availableRecipes;
     [SerializeField] private CraftingUI craftingUI;
-
+    [SerializeField] private Material NewMaterial;
+    [SerializeField] private Material OldMaterial;
+    [SerializeField] private GameObject Button;
+    [SerializeField] private SpriteRenderer spriteRen;
 
     [SerializeField] private InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
@@ -20,6 +23,7 @@ public class CraftingManager : MonoBehaviour, IInteractable
     //delegate add here
     public void Start()
     {
+        spriteRen = GetComponent<SpriteRenderer>();
         availableRecipes = craftingRecipes
              .Where(item => item.IsCraftable)
              .SelectMany(item => item.craftingRecipe)
@@ -111,5 +115,16 @@ public class CraftingManager : MonoBehaviour, IInteractable
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
         }
  
+    }
+    public void NearPlayer()
+    {
+        spriteRen.material = NewMaterial;
+        Button.gameObject.SetActive(true);
+    }
+
+    public void LeavingPlayer()
+    {
+        spriteRen.material = OldMaterial;
+        Button.gameObject.SetActive(false);
     }
 }

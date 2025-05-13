@@ -29,5 +29,5 @@ MonoBehaviour:
       type: {class: OrbFireball, ns: , asm: Assembly-CSharp}
       data:
         damage: 10
-        Prefab: {fileID: 8894750441638925793, guid: 58f97ffbf3240dc46b0bfaa91c3fcee8, type: 3}
+        Prefab: {fileID: 1472865784597213629, guid: 26328b8c0b926f74d94a6bbd95d76c0a, type: 3}
         Force: 13

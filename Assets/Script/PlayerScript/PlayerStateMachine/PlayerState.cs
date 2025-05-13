@@ -14,6 +14,8 @@ public class PlayerState
     protected Vector2 CurrentVelocity;
     protected bool IsAbilityDone;
     protected Directions directions;
+    private float checkCooldown = 0f;
+    private const float checkInterval = 0.1f;
     private static readonly Dictionary<Vector2, Directions> DirectionMap = new Dictionary<Vector2, Directions>
 {
     { new Vector2(1, 0), Directions.Right },
@@ -54,6 +56,7 @@ public class PlayerState
     {
 
         controller.animator.Play(animationName + "_" + (int)PlayerController.FacingDirection[1]);  //add later when i add player controller script
+
     }
 
     public virtual void Exit()
@@ -62,13 +65,20 @@ public class PlayerState
     }
     public virtual void LogicUpdate() 
     {
-       CurrentVelocity = controller.rb.velocity;
+        checkCooldown -= Time.deltaTime;
+        if (checkCooldown <= 0f)
+        {
+            CheckIfInteractionIsNear();
+            checkCooldown = checkInterval;
+        }
+        CurrentVelocity = controller.rb.velocity;
         Debug.Log(stateMachine.CurrentState);
     }
 
     public virtual void PhysicsUpdate() 
-    { 
+    {
      
+
     }
 
     public void MovementXY()
@@ -171,6 +181,34 @@ public class PlayerState
         }
 
         return nearest;
+    }
+    public void CheckIfInteractionIsNear()
+    {
+        var nearest = GetNearestInteractable(2f, controller.InteractionLayer);
+
+        if (nearest != null)
+        {
+            if (controller.CurrentNearest == null)
+            {
+                controller.CurrentNearest = nearest;
+                controller.CurrentNearest.NearPlayer();
+            }
+            else if (controller.CurrentNearest != nearest)
+            {
+                controller.CurrentNearest.LeavingPlayer();
+                controller.CurrentNearest = nearest;
+                controller.CurrentNearest.NearPlayer();
+            }
+
+        }
+        else
+        {
+            if (controller.CurrentNearest != null)
+                controller.CurrentNearest.LeavingPlayer();
+            controller.CurrentNearest = null;
+        }
+           
+       
     }
 
     protected void HandleAttackInput()

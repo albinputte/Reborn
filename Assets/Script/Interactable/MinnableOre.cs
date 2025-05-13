@@ -13,6 +13,10 @@ public class MinnableOre : MonoBehaviour, IInteractable
     [SerializeField] private int minOres; 
     [SerializeField] private int maxOres;
     [SerializeField] public InteractableType Type;
+    [SerializeField] private GameObject Button;
+    [SerializeField] private Material NewMaterial;
+    [SerializeField] private Material OldMaterial;
+    
     public InteractableType type { get => Type; set => Type = value; }
     public void Start()
     {
@@ -77,6 +81,18 @@ public class MinnableOre : MonoBehaviour, IInteractable
             yield break;
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
+    }
+
+    public void NearPlayer()
+    {
+        mineRenderer.material = NewMaterial;
+        Button.gameObject.SetActive(true);
+    }
+
+    public void LeavingPlayer()
+    {
+        mineRenderer.material = OldMaterial;
+        Button.gameObject.SetActive(false);
     }
 }
 

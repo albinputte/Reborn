@@ -7,6 +7,10 @@ public interface IInteractable
 {
     InteractableType type { get; set; }
     void Interact();
+
+    void NearPlayer();
+
+    void LeavingPlayer();
 }
 
 [Serializable]

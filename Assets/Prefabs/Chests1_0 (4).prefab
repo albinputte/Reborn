@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: -54.19, y: 28.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5956859327813078234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2461149621581244238
@@ -148,3 +149,38 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
     quantity: 1
   Type: 2
+  NewMaterial: {fileID: -876546973899608171, guid: 11c77be3217c99c46bac5339f1e88f7f, type: 3}
+  OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  Button: {fileID: 9045662110124255467}
+  ChestRenderer: {fileID: 0}
+--- !u!1 &9045662110124255467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5956859327813078234}
+  m_Layer: 6
+  m_Name: test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5956859327813078234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045662110124255467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 46112250571837724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

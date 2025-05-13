@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public PlayerData playerData;
     public PlayerWeaponAgent weaponAgent;
     public LayerMask InteractionLayer;
+    public IInteractable CurrentNearest;
+
     public InventoryController inventoryController;
     public event Action OnUiOpen;   
 
