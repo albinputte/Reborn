@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6d6ca4ef49d4f84a8019bc03286ce13
-      internalID: -1453654182
+      spriteID: 8a8682629b8540d4e9f826c78036f830
+      internalID: 987380367
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c502b81bc0afd8a44a8443327af9211b
-      internalID: -792023277
+      spriteID: d9a6f9070c85ba944a10de65dfbf3f05
+      internalID: 1235880240
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49fbaa80f5cbb8a4185c499263f34cd4
-      internalID: -1325197392
+      spriteID: eb5cf32b84b51b041a62d7a86f57c064
+      internalID: 95129405
       vertices: []
       indices: 
       edges: []
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 320a970eb13bab9448399b8d51077919
-      internalID: -275826147
+      spriteID: 4e65739d20bba9c4ca350a0f7a5916c2
+      internalID: -610712275
       vertices: []
       indices: 
       edges: []
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ada2a064f9a35274e881775f4a4d33ac
-      internalID: 664842463
+      spriteID: b3569f08665b9cf4ba11292591a82c60
+      internalID: -385816945
       vertices: []
       indices: 
       edges: []
@@ -251,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Icons_Swords_0: -1453654182
-      Icons_Swords_1: -792023277
-      Icons_Swords_2: -1325197392
-      Icons_Swords_3: -275826147
-      Icons_Swords_4: 664842463
+      Icons_Swords_0: 987380367
+      Icons_Swords_1: 1235880240
+      Icons_Swords_2: 95129405
+      Icons_Swords_3: -610712275
+      Icons_Swords_4: -385816945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
