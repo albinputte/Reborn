@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Crafting Bench
   Description: 
-  Icon: {fileID: 21300000, guid: 22832dcd0ce5f3f45a6f8c95377f3cc6, type: 3}
+  Icon: {fileID: 21300000, guid: ff8d47492be1a304680db89d0eda66d9, type: 3}
   itemType: 7
   IsStackable: 0
   IsCraftable: 1

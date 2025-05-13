@@ -105,6 +105,12 @@ public class PlayerInputManger : MonoBehaviour
         if (context.performed)
         {
             inventoryController.InventoryInput();
+            if (TutorialManger.instance.TutorialIsActive && TutorialManger.instance.currentState == TutorialState.OpenInventory)
+            {
+                TutorialManger.instance.OnInventoryOpened();
+
+
+            }
         }
     }
 

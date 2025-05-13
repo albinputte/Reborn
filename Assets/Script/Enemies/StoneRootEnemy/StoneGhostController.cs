@@ -47,8 +47,7 @@ public class StoneGhostController : EnemyBaseController
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         health.OnDeath.AddListener(() => m_StateMachine.SwitchState(DeathState));
-
-
+        Target = GameObject.FindWithTag("Player").transform;
     }
     public void OnAnimDone()
     {

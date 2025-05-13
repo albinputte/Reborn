@@ -16,11 +16,15 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
 
     public void Start()
     {
-        controller = GetComponent<ChestController>();
+        controller = FindAnyObjectByType<ChestController>();
         ChestRenderer = GetComponent<SpriteRenderer>();
     }
     public void Interact()
     {
+        if (TutorialManger.instance.TutorialIsActive && TutorialManger.instance.currentState == TutorialState.EnemyDefeated) {
+            TutorialManger.instance.OnRewardCollected();
+                }
+
         if (controller.ChestUiIsActive)
         {
             controller.HideChest();

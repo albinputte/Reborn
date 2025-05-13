@@ -66,6 +66,7 @@ public class InventorySO : ScriptableObject
 
 
     }
+ 
 
     public void addWeaponinstance(int index, WeaponInstances instances)
     {
@@ -204,6 +205,62 @@ public class InventorySO : ScriptableObject
         }
 
         return 0;
+    }
+
+    public int AddItemToSpecificPos(ItemData item, int quantity, WeaponInstances instance, int pos)
+    {
+        InventoryItem newItem = new InventoryItem
+        {
+            item = item,
+            quantity = quantity,
+            weaponInstances = instance
+        };
+
+        if (pos < 0 || pos >= Inventory.Count)
+        {
+            return -1;
+        }
+
+        // Try placing at desired position
+        if (Inventory[pos].IsEmpty)
+        {
+            Inventory[pos] = newItem;
+            if (newItem.item is WeaponItemData weaponData && newItem.weaponInstances == null)
+            {
+                addWeaponinstance(pos, CreateWeaponIntances(weaponData, null, pos));
+            }
+            return pos;
+        }
+
+        // Search outward for nearest available slot
+        for (int i = 1; i < Inventory.Count; i++)
+        {
+            int right = pos + i;
+            int left = pos - i;
+
+            if (right < Inventory.Count && Inventory[right].IsEmpty)
+            {
+                Inventory[right] = newItem;
+                if (newItem.item is WeaponItemData weaponData && newItem.weaponInstances == null)
+                {
+                    addWeaponinstance(right, CreateWeaponIntances(weaponData, null, i));
+                }
+                return right;
+            }
+
+            if (left >= 0 && Inventory[left].IsEmpty)
+            {
+                Inventory[left] = newItem;
+                if (newItem.item is WeaponItemData weaponData && newItem.weaponInstances == null)
+                {
+                    addWeaponinstance(left, CreateWeaponIntances(weaponData, null, i));
+                }
+                return left;
+            }
+        }
+
+       
+        return -1; // Inventory full near that region
     }
 
     public void OnInventoryStateChange() { OnInventoryChange?.Invoke(GetInventoryState()); }

@@ -278,6 +278,10 @@ public class InventoryController : MonoBehaviour
                 inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description);
 
             }
+            if (TutorialManger.instance.TutorialIsActive && TutorialManger.instance.currentState == TutorialState.PickedUpSword)
+            {
+                TutorialManger.instance.OnInventoryOpened();
+            }
         }
         else if (InventoryUiActive)
         {

@@ -10,5 +10,7 @@ public class WeaponAnimationHandler : MonoBehaviour
     public void AnimationFinishedTrigger()
     {
         OnAnimationComplete?.Invoke();
+        if (TutorialManger.instance.TutorialIsActive && TutorialManger.instance.currentState == TutorialState.OpenInventory)
+            TutorialManger.instance.OnSwordEquipped();
     }
 }
