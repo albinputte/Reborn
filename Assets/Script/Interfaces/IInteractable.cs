@@ -15,4 +15,5 @@ public enum InteractableType
     Bush = 0,
     Minning = 1,
     Crafting = 2,
+    Chest = 3,
 }

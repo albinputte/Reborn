@@ -179,6 +179,11 @@ public class PlayerInputManger : MonoBehaviour
             controller.OnUiOpenInvoke();
 
         }
+        if (Ui[2].activeSelf)
+        {
+            controller.OnUiOpenInvoke();
+            Ui[2].gameObject.SetActive(false);
+        }
     }
 
 

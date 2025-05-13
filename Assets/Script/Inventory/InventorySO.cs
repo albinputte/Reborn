@@ -58,7 +58,7 @@ public class InventorySO : ScriptableObject
             }
 
         }
-        Debug.Log(quantity);
+
         quantity = StackItem(item, quantity);
    
         OnInventoryStateChange();
@@ -113,6 +113,19 @@ public class InventorySO : ScriptableObject
         }
 
 
+    }
+
+    public void MoveItemToChest(ChestSO chest,int ChestIndex, int InventoryIndex)
+    {
+        InventoryItem item = Inventory[InventoryIndex];
+        InventoryItem item1 = chest.Inventory[ChestIndex];
+        if (!item.IsEmpty)
+        {
+            chest.Inventory[ChestIndex] = item;
+            Inventory[InventoryIndex] = item1;
+            OnInventoryStateChange();
+            chest.OnInventoryStateChange();
+        }
     }
 
     public int StackItem(ItemData item, int quantity)

@@ -15,12 +15,23 @@ public class InventoryUiSlot : MonoBehaviour
     [SerializeField] private Image itemImage;
     [SerializeField] private Sprite[] BorderSprite = new Sprite[2];
     [SerializeField] private Image BorderImage; // the border that will appear when you click on an item slot :)
+    private string ItemName;
+    private string ItemDescription;
     public bool IsSelected;
     public event Action<InventoryUiSlot> OnItemClicked,
            OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag,
            OnRightMouseBtnClick, OnItemSelect;
 
     private bool empty = true;
+
+    public int SlotIndex { get; private set; }
+    public object OwnerPage { get; private set; }
+
+    public void Init(object owner, int index)
+    {
+        OwnerPage = owner;
+        SlotIndex = index;
+    }
 
 
     public void Awake()
@@ -49,13 +60,22 @@ public class InventoryUiSlot : MonoBehaviour
         BorderImage.sprite = BorderSprite[0];
         OnItemSelect?.Invoke(this);
     }
-    public void SetData(Sprite ItemImage, int Quantity)
+    public void SetData(Sprite ItemImage, int Quantity, string name, string Desccription)
     {
         itemImage.gameObject.SetActive(true);
         this.itemImage.sprite = ItemImage;
         quantityText.text = Quantity.ToString();
+        this.ItemDescription = Desccription;
+        this.ItemName = name;
         empty = false;
     }
+
+    public void ShowTooltip()
+    {
+        //ItemToolTip.Instance.ShowTooltip(ItemName, ItemDescription);
+    }
+    public void HideToolTip() {  //ItemToolTip.Instance.HideTooltip();
+                                 }
 
 
 

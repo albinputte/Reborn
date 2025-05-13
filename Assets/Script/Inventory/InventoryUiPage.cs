@@ -31,9 +31,10 @@ public class InventoryUiPage : MonoBehaviour
     private bool IsSelected;
     public Action<int> OnDrag, OnItemAction;
     private InventoryUiSlot Selectdslot;
-    public Action<int, int> OnSwap;
+    public Action<InventoryUiSlot> OnSwap;
     public Action<int> OnDropItem, OnHotbarAction;
     private int ScrollIndex;
+
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class InventoryUiPage : MonoBehaviour
 
     public void InstantiateInventory()
     {
-        itemSlot = FindObjectsOfType<InventoryUiSlot>(); //need to find naother way to find the slots bcus multiole other slots are being found
+        AddNewSlots();
         SlideInUi.ResetSlideIcons();
         ListOfUIslots = itemSlot.OrderBy(slot => ExtractNumberFromName(slot.name)).ToList();
         foreach (InventoryUiSlot slot in ListOfUIslots)
@@ -57,15 +58,25 @@ public class InventoryUiPage : MonoBehaviour
             slot.OnItemEndDrag += EndDrag;
             slot.OnRightMouseBtnClick += ShowItemActions;
             slot.OnItemSelect += SelectionBorder;
+            slot.Init(this, ExtractNumberFromName(slot.name));
 
 
         }
 
-
-        
-    
+    }
 
 
+    private void AddNewSlots()
+    {
+        InventoryUiSlot[] existingSlots = HotBarSlots;
+        InventoryUiSlot[] newSlots = GetComponentsInChildren<InventoryUiSlot>();
+
+     
+        var combinedSlots = existingSlots
+            .Concat(newSlots.Where(slot => !existingSlots.Contains(slot)))
+            .ToArray();
+
+        itemSlot = combinedSlots;
     }
 
     public void SetSlideIn(WeaponInstances inst)
@@ -74,12 +85,12 @@ public class InventoryUiPage : MonoBehaviour
         
     }
 
-    public void UpdateData(int Index, Sprite newSprite, int newQuantity)
+    public void UpdateData(int Index, Sprite newSprite, int newQuantity,string itemname, string itemDesciption)
     {
         if(ListOfUIslots.Count > Index)
         {
            
-            ListOfUIslots[Index].SetData(newSprite, newQuantity);
+            ListOfUIslots[Index].SetData(newSprite, newQuantity, itemname, itemDesciption);
         }
         else
         {
@@ -174,10 +185,8 @@ public class InventoryUiPage : MonoBehaviour
 
     private void ItemSwap(InventoryUiSlot slot)
     {
-        int index = ListOfUIslots.IndexOf(slot);
-        if (index == -1 || currentDraggingIndex == -1)
-            return;
-        OnSwap?.Invoke(currentDraggingIndex, index);
+
+        OnSwap?.Invoke(slot);
        
 
     }
@@ -187,10 +196,10 @@ public class InventoryUiPage : MonoBehaviour
        int index = ListOfUIslots.IndexOf(slot);
         if (index == -1) 
             return;
-       
-       currentDraggingIndex = index;
-        Debug.Log(currentDraggingIndex);
-       OnDrag?.Invoke(currentDraggingIndex);
+
+        DragContext.SourceType = DragSourceType.Inventory;
+        DragContext.SourceIndex = index;
+        OnDrag?.Invoke(DragContext.SourceIndex);
     }
 
    public void ResetMouse()

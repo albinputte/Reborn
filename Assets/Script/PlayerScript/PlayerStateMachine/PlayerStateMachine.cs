@@ -20,6 +20,6 @@ public class PlayerStateMachine : MonoBehaviour
         CurrentState.Exit();
         CurrentState = NewState;
         CurrentState.Enter();
-        Debug.Log(NewState.ToString());
+ 
     }
 }

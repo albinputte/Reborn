@@ -19,6 +19,7 @@ public class InteractState : ActionState
             //Switch 
             else if (interactable.type == InteractableType.Crafting)
                 stateMachine.SwitchState(controller.interactCrafting);
+            
                   
 
     }

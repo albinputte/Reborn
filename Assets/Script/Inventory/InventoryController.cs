@@ -14,11 +14,12 @@ public class InventoryController : MonoBehaviour
     private InventoryUiPage inventoryUi;
 
     [SerializeField]
-    private InventorySO inventoryData;
+    public InventorySO inventoryData;
     public static bool NoWeaponEquiped;
     public static bool IsConsumableEquiped;
     public static bool IsToolEquiped;
     public static InventoryController Instance;
+    public ChestController Chest;
 
     [SerializeField] 
     private GameObject itemPrefab; //For Dropping item
@@ -119,7 +120,7 @@ public class InventoryController : MonoBehaviour
         inventoryUi.ResetInventory();
         foreach(var item in dictionary)
         {
-            inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
+            inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description);
         }
         
        
@@ -137,25 +138,33 @@ public class InventoryController : MonoBehaviour
         inventoryUi.SetMouse(item.item.Icon,item.quantity);
     }
 
-    private void HandleItemSwap(int index1,int Index2)
+    private void HandleItemSwap(InventoryUiSlot slot)
     {
-        InventoryItem item = inventoryData.GetSpecificItem(index1);
-        IOrb orb = item.item as IOrb;
-        if(orb != null)
+       
+        if (DragContext.SourceType == DragSourceType.Chest && slot.OwnerPage is InventoryUiPage)
         {
-            InventoryItem item2 = inventoryData.GetSpecificItem(Index2);
-            IWeapon weapon = item2.item as IWeapon;
-            if(weapon != null)
-            {
-                OrbsItemData orbData = item.item as OrbsItemData;
-                item2.weaponInstances.UpdateOrb(orbData);
-                inventoryData.RemoveItem(index1,1);
-                return;
-            }
+            Chest.chestData.MoveItemToInventory( slot.SlotIndex, DragContext.SourceIndex);
+       
         }
-        Debug.Log(Index2);
-        Debug.Log(index1);
-        inventoryData.SwapitemPlace(index1,Index2);
+        else if(DragContext.SourceType == DragSourceType.Inventory && slot.OwnerPage is InventoryUiPage
+        ){
+
+            InventoryItem item = inventoryData.GetSpecificItem(DragContext.SourceIndex);
+            IOrb orb = item.item as IOrb;
+            if (orb != null)
+            {
+                InventoryItem item2 = inventoryData.GetSpecificItem(slot.SlotIndex);
+                IWeapon weapon = item2.item as IWeapon;
+                if (weapon != null)
+                {
+                    OrbsItemData orbData = item.item as OrbsItemData;
+                    item2.weaponInstances.UpdateOrb(orbData);
+                    inventoryData.RemoveItem(DragContext.SourceIndex, 1);
+                    return;
+                }
+            }
+            inventoryData.SwapitemPlace(DragContext.SourceIndex, slot.SlotIndex);
+        }
     }
 
     private void HandleItemSelection(int index1)
@@ -266,7 +275,7 @@ public class InventoryController : MonoBehaviour
             foreach (var item in inventoryData.GetInventoryState())
             {
                
-                inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity);
+                inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description);
 
             }
         }
@@ -280,6 +289,7 @@ public class InventoryController : MonoBehaviour
 
 
     }
+    public void HandleItemSwap(int index, int index1) => inventoryData.SwapitemPlace(index, index1);
 
     public void ScrollInHotbar(int index)
     {
@@ -325,8 +335,19 @@ public class InventoryController : MonoBehaviour
     {
         return inventoryData.GetSpecificItem(index).weaponInstances;
     }
+    public void TransferItemToChest(int inventoryIndex, int chestIndex)
+    {
+        InventoryItem item = inventoryData.GetSpecificItem(inventoryIndex);
+        if (item.IsEmpty) return;
+
+        int remainingQuantity = Chest.chestData.AddItem(item.item, item.quantity, item.weaponInstances);
+        if (remainingQuantity < item.quantity)
+        {
+            inventoryData.RemoveItem(inventoryIndex, item.quantity - remainingQuantity);
+           
+        }
+    }
 
 
- 
 
 }

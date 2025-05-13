@@ -25,7 +25,7 @@ public class MouseFollower : MonoBehaviour
     {
 
         item.gameObject.SetActive(true);
-        item.SetData(sprite, quantity);
+        item.SetData(sprite, quantity,"", "");
 
     }
     void Update()
