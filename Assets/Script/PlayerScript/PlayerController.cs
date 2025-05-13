@@ -21,7 +21,8 @@ public class PlayerController : MonoBehaviour
     public IInteractable CurrentNearest;
 
     public InventoryController inventoryController;
-    public event Action OnUiOpen;   
+    public event Action OnUiOpen; 
+    public event Action OnAnimationDone;
 
     [SerializeField]
     public static Directions[] FacingDirection = new Directions[2];
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     public InteractBush interactBush { get; private set; }
     public InteractCrafting interactCrafting { get; private set; }
     public ConsumeState consumeState { get; private set; }
-
+    public RebornStartState StartState { get; private set; }
     void Start()
     {
         stateMachine = new PlayerStateMachine();
@@ -49,7 +50,8 @@ public class PlayerController : MonoBehaviour
         interactBush = new InteractBush(stateMachine, playerData, "Bush", this );
         interactCrafting = new InteractCrafting(stateMachine, playerData, "Crafting", this);
         consumeState = new ConsumeState(stateMachine, playerData,"Consume", this );
-        stateMachine.InisiateState(idle);
+        StartState = new RebornStartState(stateMachine, playerData, "RebornStartIntro", this);
+        stateMachine.InisiateState(StartState);
        
      
     }
@@ -57,6 +59,10 @@ public class PlayerController : MonoBehaviour
     public void OnUiOpenInvoke()
     {
         OnUiOpen?.Invoke();
+    }
+    public void OnAnimationTrigger()
+    {
+        OnAnimationDone?.Invoke();
     }
 
     public void Update()
