@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Description: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 1235880240, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
   itemType: 4
   IsStackable: 0
   IsCraftable: 0
   craftingRecipe: []
   buffs: []
+  attackSounds: 
   Damage: 0
   KnockbackForce: 0
   WeaponType: 0

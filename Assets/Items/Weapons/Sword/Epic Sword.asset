@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Scimitar
   Description: 
-  Icon: {fileID: -275826147, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
+  Icon: {fileID: -610712275, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
   itemType: 4
   IsStackable: 0
   IsCraftable: 1
