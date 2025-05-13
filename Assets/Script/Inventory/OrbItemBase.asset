@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Description: 
-  Icon: {fileID: -205453613, guid: c7e08e39a7319c5438d78996a9bfb7e5, type: 3}
+  Icon: {fileID: 21300000, guid: e49e428c08b0a8e4e9e37f7d984de09a, type: 3}
   itemType: 0
   IsStackable: 0
   IsCraftable: 0
