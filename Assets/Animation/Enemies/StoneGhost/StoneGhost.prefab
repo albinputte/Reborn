@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d32ef72e6d31e24ca7219ccc258998b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartRangeRadius: 10
-  LookingRadius: 4
+  StartRangeRadius: 5
+  LookingRadius: 2.5
   Speed: 2
   GhostTransform: {fileID: 6607879790812220685}
   Target: {fileID: 0}
