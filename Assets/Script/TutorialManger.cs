@@ -31,31 +31,7 @@ public class TutorialManger : MonoBehaviour
 
         switch (state)
         {
-            case TutorialState.Start:
-                TutorialUiManger.Instance.ShowMessage(Messages[0]);
-                break;
-
-            case TutorialState.PickedUpSword:
-                TutorialUiManger.Instance.ShowMessage(Messages[1]);
-                break;
-
-            case TutorialState.OpenInventory:
-                TutorialUiManger.Instance.ShowMessage(Messages[2]);
-                break;
-
-            case TutorialState.EquipSword:
-                TutorialUiManger.Instance.ShowMessage(Messages[3]);
-
-                // Spawn enemy and subscribe to death event
-                if (EnemyPrefab && EnemySpawnPos)
-                {
-                    GameObject enemy = Instantiate(EnemyPrefab, EnemySpawnPos.position, Quaternion.identity);
-                    Health enemyHealth = enemy.GetComponent<Health>();
-
-                    if (enemyHealth != null)
-                        enemyHealth.OnDeath.AddListener(OnEnemyDefeated);
-                }
-                break;
+           
 
             case TutorialState.EnemyDefeated:
                 TutorialUiManger.Instance.ShowMessage(Messages[4]);
