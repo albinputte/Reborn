@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingRecipes:
-  - {fileID: 11400000, guid: 9cfd880476590be42ad94b7686b920a9, type: 2}
-  - {fileID: 11400000, guid: c381d61c554528645bc42d11d04b4712, type: 2}
-  - {fileID: 11400000, guid: 89237ddfee661dc4e803eec8262cadf3, type: 2}
-  - {fileID: 11400000, guid: 1866c66f9fa7ba6488de2ca8c044f91d, type: 2}
+  - {fileID: 11400000, guid: 73ad38785d50e3d4cb3588ca8d9363f5, type: 2}
+  - {fileID: 11400000, guid: 3e907b909a8f9da4a8d91cf6606573d3, type: 2}
+  - {fileID: 11400000, guid: 11ea40fa36e9e24468bf8d106ded7a28, type: 2}
+  - {fileID: 11400000, guid: a1d251aafd3e48245a60a562c0bfc0fb, type: 2}
   - {fileID: 11400000, guid: 5fe35d4cd083d2d4fb23e15d9a7413a6, type: 2}
   - {fileID: 11400000, guid: 6b5102b559c07c24eaf9ecab6c99d63e, type: 2}
   - {fileID: 11400000, guid: 5f4d664978cc04042ad38db2298d7d52, type: 2}

@@ -10,26 +10,17 @@ public class CraftingUI : MonoBehaviour
     private Dictionary<int, List<CraftingRecipe>> availableRecipes = new();
     private int AmountOfRecipes;
     public bool UiIsActive;
-    [SerializeField] private GameObject Frame;
+
     [SerializeField] private GameObject ParrentToSpawnRecipeunder;
     [SerializeField] private GameObject RecipePrefab;
     [SerializeField, HideInInspector] private List<RecipeSlotUi> recipeSlots;
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
-    public static CraftingUI Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-            Destroy(this);
-        else
-            Instance = this;
-    }
 
     public void Start()
     {
  
-      
+       
     }
 
     public void AttemptCrafting(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
@@ -123,12 +114,12 @@ public class CraftingUI : MonoBehaviour
 
     public void SetUpRecipeInfiormation(RecipeSlotUi recipe)
     {
+
         SetIfEnoughResources(recipe);
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
         ResultSlot.gameObject.SetActive(true);
 
-        // Remove old listeners before assigning new one
-        craftButtonUi.OnItemClicked -= CraftButtonPressed;
+        //craftButtonUi.gameObject.SetActive(true);
         craftButtonUi.SetRecipe(recipe.recipe, recipe.CurrentCraftingMangerIndex);
         craftButtonUi.OnItemClicked += CraftButtonPressed;
     }
@@ -195,7 +186,7 @@ public class CraftingUI : MonoBehaviour
 
     public void HideCraftingUi()
     {
-        Frame.SetActive(false);
+        gameObject.SetActive(false);
         UiIsActive = false;
         
     }
@@ -203,7 +194,7 @@ public class CraftingUI : MonoBehaviour
     public void ShowCraftinUi()
     {
         Debug.Log("Test");
-        Frame.SetActive(true);
+        gameObject.SetActive(true);
         UiIsActive = true;
     
     }

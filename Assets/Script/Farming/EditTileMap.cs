@@ -177,27 +177,6 @@ public class EditTileMap : MonoBehaviour
         UpdateTile(position + Vector3Int.left);
         UpdateTile(position + Vector3Int.right);
     }
-    public List<GameObject> GetObjectsInTile(Vector3 tileCenter, Vector3 tileSize, LayerMask layerMask)
-    {
-        List<GameObject> objectsInTile = new List<GameObject>();
-        Bounds tileBounds = new Bounds(tileCenter, tileSize);
-
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.layer == layerMask)
-            {
-                Vector3 objPos = obj.transform.position;
-                if (tileBounds.Contains(objPos))
-                {
-                    objectsInTile.Add(obj);
-                }
-            }
-        }
-
-        return objectsInTile;
-    }
 
     TileBase GetRandomGrass()
     {

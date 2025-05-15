@@ -19,16 +19,11 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] private InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
     public SoundType CraftSound;
-    public void Awake()
-    {
-        spriteRen = GetComponent<SpriteRenderer>();
-       
-    }
- 
+
     //delegate add here
     public void Start()
     {
-        craftingUI = CraftingUI.Instance;
+        spriteRen = GetComponent<SpriteRenderer>();
         availableRecipes = craftingRecipes
              .Where(item => item.IsCraftable)
              .SelectMany(item => item.craftingRecipe)
@@ -102,7 +97,6 @@ public class CraftingManager : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-      
         Debug.Log("I interact");
         if (!craftingUI.UiIsActive)
         {
@@ -133,5 +127,4 @@ public class CraftingManager : MonoBehaviour, IInteractable
         spriteRen.material = OldMaterial;
         Button.gameObject.SetActive(false);
     }
-
 }

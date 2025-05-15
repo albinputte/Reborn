@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fba7b253798373419d8f578b9c9d594, type: 3}
-  m_Name: Chest 1
+  m_Script: {fileID: 11500000, guid: df15f1e129f974149b728be6f1c66a62, type: 3}
+  m_Name: Chest
   m_EditorClassIdentifier: 
   Name: Chest
   Description: 
   Icon: {fileID: 1243854082, guid: 2b6368cce7b578647b8a8989dd45ad2c, type: 3}
-  itemType: 0
+  itemType: 7
   IsStackable: 0
   IsCraftable: 1
   craftingRecipe:
@@ -26,4 +26,3 @@ MonoBehaviour:
       quantity: 2
     resultItem: {fileID: 11400000}
     resultQuantity: 1
-  PlacablePrefab: {fileID: 273403053461843678, guid: a0e459374b30a2b4cab5768e9461accd, type: 3}
