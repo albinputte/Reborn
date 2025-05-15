@@ -25,7 +25,7 @@ public class InventoryController : MonoBehaviour
     private GameObject itemPrefab; //For Dropping item
 
     [SerializeField]
-    private bool InventoryUiActive;
+    public bool InventoryUiActive;
 
     [SerializeField]
     private PlayerInputManger inputManger;
