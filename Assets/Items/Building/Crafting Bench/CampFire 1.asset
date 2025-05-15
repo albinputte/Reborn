@@ -9,18 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df15f1e129f974149b728be6f1c66a62, type: 3}
-  m_Name: CraftinBench
+  m_Script: {fileID: 11500000, guid: 1fba7b253798373419d8f578b9c9d594, type: 3}
+  m_Name: CampFire 1
   m_EditorClassIdentifier: 
-  Name: Crafting Bench
+  Name: CampFire
   Description: 
-  Icon: {fileID: 21300000, guid: ff8d47492be1a304680db89d0eda66d9, type: 3}
+  Icon: {fileID: 21300000, guid: 208cd3536b668094087b1de2afb8ac41, type: 3}
   itemType: 7
   IsStackable: 0
   IsCraftable: 1
   craftingRecipe:
   - ingredients:
     - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
+      quantity: 2
+    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
       quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
+  PlacablePrefab: {fileID: 6095298373504159686, guid: 4b192c0c550d0d04cbfc92c4dc4420b3, type: 3}
