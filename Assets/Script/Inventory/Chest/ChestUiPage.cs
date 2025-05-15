@@ -36,8 +36,9 @@ public class ChestUiPage : MonoBehaviour
             slot.OnRightMouseBtnClick += ShowItemActions;
             slot.Init(this, ExtractNumberFromName(slot.name));
             //slot.OnItemSelect += SelectionBorder;
-        }
 
+        }
+        HideChest();
     }
 
     public void UpdateChestData(int Index, Sprite newSprite, int newQuantity, string itemname, string itemDesciption)

@@ -107,6 +107,7 @@ public class ChestController : MonoBehaviour
         chestUi.ResetChest();
         foreach (var item in dictionary)
         {
+      
             chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description);
         }
 
