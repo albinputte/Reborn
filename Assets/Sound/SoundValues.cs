@@ -24,7 +24,7 @@ namespace SmallHedge.SoundManager
         StoneGhost_Rising,
         StoneGhost_StartAttack,
         StoneGhost_Hit,
-
+        CutGrass,
     }
 
     // Call sounds like this:

@@ -18,6 +18,8 @@ public class Health : MonoBehaviour, IDamagable
     public UnityEvent OnHeal;
     public UnityEvent OnDeath;
 
+    [SerializeField] private bool isGrass = false;
+
 
 
     private void Awake()
@@ -97,7 +99,15 @@ public class Health : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        Destroy(gameObject, 0.35f);
+        if (isGrass)
+        { 
+            return;
+        }
+        else
+        {
+            Destroy(gameObject, 0.35f);
+        }
+        
     }
 
     public void SpawnParticles(GameObject ParticlePrefab)
