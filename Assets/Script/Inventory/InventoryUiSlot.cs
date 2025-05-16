@@ -106,11 +106,12 @@ public class InventoryUiSlot : MonoBehaviour
         PointerEventData pointerData = data as PointerEventData;
         if (pointerData.button == PointerEventData.InputButton.Right)
         {
-            OnRightMouseBtnClick?.Invoke(this);
+            OnItemClicked?.Invoke(this);
+          
         }
         else
         {
-            OnItemClicked?.Invoke(this);
+            OnRightMouseBtnClick?.Invoke(this);
         }
     }
 
