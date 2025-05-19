@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9653bf8a8e69fc498328272cd2dc2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassEffectPrefab: {fileID: 3538030968406719317, guid: 153dd56a2e71127488d66cfc45a99d9d, type: 3}
 --- !u!114 &376733699136713255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +188,18 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 376733699136713255}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: SpawnParticles
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3538030968406719317, guid: 153dd56a2e71127488d66cfc45a99d9d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 9061419019223145419}
         m_TargetAssemblyTypeName: CutGrass, Assembly-CSharp
         m_MethodName: CutGrassEffect

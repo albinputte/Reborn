@@ -13,6 +13,8 @@ public class TileManger : MonoBehaviour
     [SerializeField] private TileBase[] GrassTiles;
     [SerializeField] private TileBase FarmLand;
     [SerializeField] private LayerMask NonPlacableLayers;
+    private ItemData CurrentItem;
+    private InventoryController inventoryController;
 
     private Dictionary<Vector3Int, GameObject> placedObjects = new();
     private Dictionary<Vector3Int, float> objectTimers = new();
@@ -22,6 +24,7 @@ public class TileManger : MonoBehaviour
     public bool BuildMode;
     private void Start()
     {
+        inventoryController = InventoryController.Instance;
         tileRules.Add(new TileRule(
             (tile, pos) => IsGrassTile(tile),
             (pos) => PlaceTile(pos, FarmLand)
@@ -44,7 +47,10 @@ public class TileManger : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            ProcessTilePlacement(pos);
+                disableBuildMode();
+                inventoryController.inventoryData.AddItem(CurrentItem,1, null);
+
+
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -89,9 +95,10 @@ public class TileManger : MonoBehaviour
             }
         }
     }
-    public void ActivateBuildMode(GameObject prefab)
+    public void ActivateBuildMode(GameObject prefab, ItemData item)
     {
         CreatePreviewObject(prefab);
+        CurrentItem = item;
         seedPrefab = prefab;
         BuildMode = true;
         previewObject.SetActive(true);

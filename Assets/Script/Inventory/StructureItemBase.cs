@@ -16,7 +16,7 @@ public class StructureItemBase : ItemData, IitemAction, IDestroyableItem
         manger = FindAnyObjectByType<TileManger>();
         if (manger != null)
         {
-            manger.ActivateBuildMode(PlacablePrefab);
+            manger.ActivateBuildMode(PlacablePrefab, this);
             if(inventoryController.InventoryUiActive)
                 inventoryController.InventoryInput();
             return true;
