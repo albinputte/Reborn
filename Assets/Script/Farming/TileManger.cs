@@ -49,8 +49,6 @@ public class TileManger : MonoBehaviour
         {
                 disableBuildMode();
                 inventoryController.inventoryData.AddItem(CurrentItem,1, null);
-
-
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -97,7 +95,7 @@ public class TileManger : MonoBehaviour
     }
     public void ActivateBuildMode(GameObject prefab, ItemData item)
     {
-        CreatePreviewObject(prefab);
+        changePreviewSprite(prefab);
         CurrentItem = item;
         seedPrefab = prefab;
         BuildMode = true;
@@ -183,9 +181,24 @@ public class TileManger : MonoBehaviour
         sr.sortingLayerName = "Foreground";
         sr.sortingOrder = 5;
 
-        //previewObject.SetActive(false);
+        previewObject.SetActive(false);
     }
 
+    public void changePreviewSprite(GameObject Prefab)
+    {
+        if (sr.sprite == null)
+        {
+            CreatePreviewObject(Prefab);
+            return;
+        }
+        if (Prefab == null || Prefab.GetComponent<SpriteRenderer>() == null)
+        {
+            Debug.LogWarning("Seed prefab or its SpriteRenderer is missing.");
+            return;
+        }
+        sr.sprite = Prefab.GetComponent<SpriteRenderer>().sprite;
+        sr.color = new Color(1f, 1f, 1f, 0.5f); // Semi-transparent
+    }
     private void UpdatePreviewPosition(Vector3Int cellPosition)
     {
         if (IsObjectPlaced(cellPosition) || GetObjectsInTile(cellPosition, NonPlacableLayers).Count > 0)

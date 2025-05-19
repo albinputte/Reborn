@@ -28,7 +28,7 @@ public class CraftingUI : MonoBehaviour
 
     public void Start()
     {
- 
+        HideCraftingUi();
       
     }
 

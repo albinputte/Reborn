@@ -211,6 +211,13 @@ public class InventoryController : MonoBehaviour
             }
             return;
         }
+        if (item.item is IStructure structure) {
+            if (item.item is IitemAction action)
+            {
+                action.PerformAction(Character, item.weaponInstances);
+
+            }
+        }
 
         if (item.item is IConsumable)
         {
@@ -249,6 +256,8 @@ public class InventoryController : MonoBehaviour
         Vector3 direction = (mouseWorldPos - Character.transform.position).normalized;
 
         InventoryItem item = inventoryData.GetSpecificItem(index);
+        if(item.IsEmpty)
+            return;
         inventoryData.RemoveItem(index, item.quantity);
         GameObject obj = Instantiate(itemPrefab, Character.transform.position + direction * 0.5f, Quaternion.identity); // spawn a little offset from character
         SoundManager.PlaySound(SoundType.ItemDrop);

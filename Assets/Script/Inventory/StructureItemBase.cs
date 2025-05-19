@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "StructureBase", menuName = "Items/Structure", order = 4)]
-public class StructureItemBase : ItemData, IitemAction, IDestroyableItem
+public class StructureItemBase : ItemData, IitemAction, IStructure
 {
 
     public GameObject PlacablePrefab;
