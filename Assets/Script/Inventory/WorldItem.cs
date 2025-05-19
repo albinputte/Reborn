@@ -14,16 +14,19 @@ public class WorldItem : MonoBehaviour
     private bool IsPickingUp;
 
     [SerializeField] private bool IsADrop;
-
     [SerializeField] private Collider2D col;
     private Transform ItemTrans;
 
+    [Header("Hover Settings")]
     public float hoverAmount;
     public float hoverCycleTime;
     public float hoverDelay;
     public float hoverStepamount;
 
-
+    [Header("Magnet Settings")]
+    public float pickupRadius = 3f;
+    public float moveSpeed = 5f;
+    private Transform player;
 
     public void Awake()
     {
@@ -32,10 +35,15 @@ public class WorldItem : MonoBehaviour
         ItemTrans = GetComponent<Transform>();
         IsPickingUp = false;
     }
+
     public void Start()
     {
         if (!IsADrop && item != null)
             SetItem(item, quantity);
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+            player = playerObj.transform;
     }
 
     public void SetItem(ItemData item, int Quantity)
@@ -46,29 +54,41 @@ public class WorldItem : MonoBehaviour
         this.quantity = Quantity;
     }
 
+    private void Update()
+    {
+        if (player == null || IsPickingUp) return;
+
+        float distance = Vector2.Distance(transform.position, player.position);
+        if (distance < pickupRadius)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+            // Optional: Auto-pickup when very close
+            if (distance < 0.2f)
+                TriggerPickup();
+        }
+    }
+
+    private void TriggerPickup()
+    {
+        if (IsPickingUp) return;
+        IsPickingUp = true;
+        inventory.AddItem(item, quantity, null);
+        SoundManager.PlaySound(SoundType.PickUpSound);
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision != null)
+        if (collision != null && collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-                if (IsPickingUp)
-                    return;
-                IsPickingUp = true;
-                inventory.AddItem(item, quantity, null);
-                SoundManager.PlaySound(SoundType.PickUpSound);
-                Destroy(gameObject);
-            }
+            TriggerPickup(); // fallback in case collider is used
         }
-
     }
 
     public void EnableCollider()
     {
         col.enabled = true;
-
-
     }
 
     public void StartHover() => StartCoroutine(HoverEffect());
@@ -77,14 +97,14 @@ public class WorldItem : MonoBehaviour
     {
         var HoverStep = hoverAmount / hoverStepamount;
         var HoverCycle = hoverCycleTime / hoverStepamount;
-        
+
         for (int i = 0; i < hoverStepamount; i++)
         {
             transform.position += new Vector3(0, HoverStep);
             yield return new WaitForSeconds(HoverCycle);
         }
         yield return new WaitForSeconds(hoverDelay);
-        for (int i = 0;i < hoverStepamount * 2; i++)
+        for (int i = 0; i < hoverStepamount * 2; i++)
         {
             transform.position -= new Vector3(0, HoverStep);
             yield return new WaitForSeconds(HoverCycle);
@@ -97,6 +117,4 @@ public class WorldItem : MonoBehaviour
         }
         StartCoroutine(HoverEffect());
     }
-
-
 }

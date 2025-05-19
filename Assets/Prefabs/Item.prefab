@@ -192,6 +192,8 @@ MonoBehaviour:
   hoverCycleTime: 1
   hoverDelay: 0.05
   hoverStepamount: 100
+  pickupRadius: 1.4
+  moveSpeed: 2
 --- !u!61 &5788161787525419817
 BoxCollider2D:
   m_ObjectHideFlags: 0
