@@ -45,7 +45,7 @@ public class TileManger : MonoBehaviour
         Vector3Int pos = GroundLayer.WorldToCell(cam.ScreenToWorldPoint(Input.mousePosition));
         UpdatePreviewPosition(pos);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
                 disableBuildMode();
                 inventoryController.inventoryData.AddItem(CurrentItem,1, null);
@@ -53,7 +53,7 @@ public class TileManger : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             HandleObjectPlacement(pos);
         }
