@@ -85,6 +85,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrasCutEffect 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5129870901652614927, guid: d97cb557a6f35ad42bc54c9177daef4a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -150,6 +154,10 @@ PrefabInstance:
     - target: {fileID: 3227487099498208146, guid: 0fb2c4c874096bf4488434f9f07a8460, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129870901652614927, guid: 0fb2c4c874096bf4488434f9f07a8460, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
