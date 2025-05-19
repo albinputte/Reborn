@@ -14,5 +14,9 @@ public class SpeedBuff : BuffBase
         throw new System.NotImplementedException();
     }
 
-   
+    public override void RemoveBuff()
+    {
+        throw new NotImplementedException();
+    }
+
 }

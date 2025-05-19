@@ -25,6 +25,7 @@ public class Health : MonoBehaviour, IDamagable
     private void Awake()
     {
         InstantiateHealth(data);
+        
     }
 
     public void InstantiateHealth(HealthData data)
@@ -143,6 +144,10 @@ public class Health : MonoBehaviour, IDamagable
     public float GetCurrentHealth()
     {
         return currentHealth;
+    }
+    public void SetCurrentHealth(int health)
+    {
+        currentHealth = health;
     }
 
     public float GetMaxHealth()
