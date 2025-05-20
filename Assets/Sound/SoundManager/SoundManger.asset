@@ -18,19 +18,19 @@ MonoBehaviour:
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 3905092cd0e0e9d47b80d250d81bcd8e, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: SwordAttack2
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: SwordAttack3
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 327554770568f97408ffa6457ee758ba, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: MonsterHitSound1
     volume: 0.166
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
@@ -52,7 +52,7 @@ MonoBehaviour:
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 681e4d72b7ee94a44b29ae85fb7e1dd4, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: InteractBerryBush
     volume: 0.137
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
@@ -70,7 +70,7 @@ MonoBehaviour:
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: b392101ca3d3f34448bfd0b9a3980f01, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: CampfireCrafting
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
@@ -112,4 +112,9 @@ MonoBehaviour:
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 1069d929b2afd3e489709ef81ddaa27c, type: 3}
+    useRandomPitch: 1
+  - name: CutGrass
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds: []
     useRandomPitch: 0
