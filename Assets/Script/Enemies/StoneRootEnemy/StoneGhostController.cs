@@ -20,6 +20,7 @@ public class StoneGhostController : EnemyBaseController
     private Rigidbody2D rb;
     public Collider2D col;
     [SerializeField] private GameObject HitPrefab;
+    [SerializeField] private bool isConquestEnemy = false;
 
     // Gör om så att animationene "rising" tas bort och 
     //att wake up byter mid animation wid animation trigger till go down om spelaren ej är close
@@ -43,7 +44,14 @@ public class StoneGhostController : EnemyBaseController
         AttackChase = new StoneGhostAttackChase(m_StateMachine, this, "StoneGhost_Charge");
         Hit = new StoneGhostHit(m_StateMachine, this, "StoneGhost_TakeDamage");
         DeathState = new StoneGhostDeathState(m_StateMachine, this, "StoneGhost_Die");
-        m_StateMachine.InstantiateState(Hide);
+        if (isConquestEnemy)
+        {
+            m_StateMachine.InstantiateState(Rising);
+        }
+        else
+        {
+            m_StateMachine.InstantiateState(Hide);
+        }
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         health.OnDeath.AddListener(() => m_StateMachine.SwitchState(DeathState));

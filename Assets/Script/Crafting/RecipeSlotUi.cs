@@ -47,7 +47,7 @@ public class RecipeSlotUi : MonoBehaviour
         Color notEnoughIngredientColor;
         Color notEnoughTextColor;
 
-        ColorUtility.TryParseHtmlString("#7b253615", out notEnoughIngredientColor); // 0.1 alpha = ~15 in hex
+        ColorUtility.TryParseHtmlString("#FFFFFF60", out notEnoughIngredientColor);
         ColorUtility.TryParseHtmlString("#7b2536", out notEnoughTextColor);
 
         ingrediants[index].color = notEnoughIngredientColor;

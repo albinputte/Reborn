@@ -31,25 +31,19 @@ public class TutorialManger : MonoBehaviour
 
         switch (state)
         {
+            case TutorialState.PickedUpSword:
+                TutorialUiManger.Instance.ShowMessage(Messages[0]);
+                break;
+
+            case TutorialState.OpenInventory:
+           TutorialEnd();
+                break;
+
+          
+
            
 
-            case TutorialState.EnemyDefeated:
-                TutorialUiManger.Instance.ShowMessage(Messages[4]);
-
-                if (chestPrefab && chestSpawnPos)
-                {
-                    Instantiate(chestPrefab, chestSpawnPos.position, Quaternion.identity);
-                }
-                break;
-
-            case TutorialState.RewardCollected:
-                TutorialUiManger.Instance.ShowMessage(Messages[5]);
-                StartCoroutine(TutorialEnd());
-                break;
-
-            case TutorialState.Complete:
-                // Could fade out or show "Tutorial Complete!"
-                break;
+            
         }
     }
 
@@ -84,10 +78,10 @@ public class TutorialManger : MonoBehaviour
         EnterState(TutorialState.RewardCollected);
     }
 
-    private IEnumerator TutorialEnd()
+    private void TutorialEnd()
     {
 
-        yield return new WaitForSeconds(8f);
+        
         TutorialUiManger.Instance.ClearMessage();
         TutorialIsActive = false;
         currentState = TutorialState.Complete;

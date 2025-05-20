@@ -146,9 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  ItemToInitialize:
-  - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
-    quantity: 1
+  ItemToInitialize: []
   Type: 2
   NewMaterial: {fileID: -876546973899608171, guid: 11c77be3217c99c46bac5339f1e88f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
