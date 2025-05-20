@@ -41,6 +41,9 @@ public class InventoryController : MonoBehaviour
 
     public List<InventoryItem> ItemToInitialize  = new List<InventoryItem>();
 
+    private bool BuildItemEquiped;
+    private StructureItemBase BuildItem;
+
     private void Start()
     {
         Instance = this;
@@ -196,11 +199,15 @@ public class InventoryController : MonoBehaviour
         InventoryController.NoWeaponEquiped = true;
         InventoryController.IsConsumableEquiped = false;
         InventoryController.IsToolEquiped = false;
+        if (BuildItemEquiped)
+        {
+            BuildItem.CancelBuild(0);
+        }
+        BuildItemEquiped = false;
 
         if (item.IsEmpty || item.item == null)
             return;
-   
-
+      
         if (item.item is IWeapon weapon)
         {
             InventoryController.NoWeaponEquiped = false;
@@ -212,11 +219,10 @@ public class InventoryController : MonoBehaviour
             return;
         }
         if (item.item is IStructure structure) {
-            if (item.item is IitemAction action)
-            {
-                action.PerformAction(Character, item.weaponInstances);
-
-            }
+            BuildItemEquiped = true;
+            BuildItem = item.item as StructureItemBase;
+            structure.PerformBuild(index);
+    
         }
 
         if (item.item is IConsumable)

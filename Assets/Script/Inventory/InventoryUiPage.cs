@@ -107,13 +107,16 @@ public class InventoryUiPage : MonoBehaviour
             return;
      
         InventoryController.Instance.SetCurrentHotbarIndex(correctHotbarIndex(index));
+      
 
+      
         if (!IsSelected)
         {
             if (Selectdslot == null)
                 Selectdslot = slot;
             Selectdslot.DeselectBorder();
             slot.SelectBorder();
+            OnHotbarAction?.Invoke(index);
             Selectdslot = slot;
             slot.IsSelected = true;
             
@@ -122,10 +125,10 @@ public class InventoryUiPage : MonoBehaviour
         {
             Selectdslot.IsSelected = false;
             Selectdslot.DeselectBorder();
-            OnItemAction?.Invoke(index); 
-          
+            //OnItemAction?.Invoke(index); 
+     
         }
-       
+      
     }
 
     public int correctHotbarIndex(int index)

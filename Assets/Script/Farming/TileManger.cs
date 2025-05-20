@@ -15,6 +15,7 @@ public class TileManger : MonoBehaviour
     [SerializeField] private LayerMask NonPlacableLayers;
     private ItemData CurrentItem;
     private InventoryController inventoryController;
+    private int ItemIndex;
 
     private Dictionary<Vector3Int, GameObject> placedObjects = new();
     private Dictionary<Vector3Int, float> objectTimers = new();
@@ -47,8 +48,8 @@ public class TileManger : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-                disableBuildMode();
-                inventoryController.inventoryData.AddItem(CurrentItem,1, null);
+                disableBuildMode(0);
+                //inventoryController.inventoryData.AddItem(CurrentItem,1, null);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -89,20 +90,22 @@ public class TileManger : MonoBehaviour
         {
             if (GetObjectsInTile(cellPosition, NonPlacableLayers).Count == 0)
             {
+
                 PlaceObject(cellPosition);
             }
         }
     }
-    public void ActivateBuildMode(GameObject prefab, ItemData item)
+    public void ActivateBuildMode(GameObject prefab, ItemData item, int index)
     {
         changePreviewSprite(prefab);
         CurrentItem = item;
         seedPrefab = prefab;
         BuildMode = true;
+        ItemIndex = index;
         previewObject.SetActive(true);
     }
 
-    public void disableBuildMode()
+    public void disableBuildMode(int index)
     {
         BuildMode = false;
         previewObject.SetActive(false);
@@ -119,7 +122,9 @@ public class TileManger : MonoBehaviour
         GameObject newObj = Instantiate(seedPrefab, objPos, Quaternion.identity);
         placedObjects[cellPosition] = newObj;
         objectTimers[cellPosition] = Time.time;
-        disableBuildMode();
+        if(!inventoryController.inventoryData.GetSpecificItem(ItemIndex).IsEmpty)
+            inventoryController.inventoryData.RemoveItem(ItemIndex, 1);
+        disableBuildMode(0);
     }
 
     private void RemoveObject(Vector3Int cellPosition)
