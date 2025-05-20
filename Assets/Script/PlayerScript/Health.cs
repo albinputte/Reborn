@@ -73,6 +73,10 @@ public class Health : MonoBehaviour, IDamagable
         tempKnockBack = Knockback;
         TakeDamage(Damage);
     }
+    public void TurnOffCollider(Collider2D other)
+    {
+        other.enabled = false;
+    }
 
     public void TakeKnockBack(Rigidbody2D rb)
     {
