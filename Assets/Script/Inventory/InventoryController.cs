@@ -43,10 +43,10 @@ public class InventoryController : MonoBehaviour
 
     private bool BuildItemEquiped;
     private StructureItemBase BuildItem;
-
+ 
     private void Start()
     {
-        Instance = this;
+      
         PrepareInventoryUI();
         PrepareInventoryData();
 
@@ -54,6 +54,7 @@ public class InventoryController : MonoBehaviour
     }
     private void Awake()
     {
+        Instance = this;
         InventoryController.NoWeaponEquiped = true;
     }
 
