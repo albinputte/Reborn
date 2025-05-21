@@ -8,10 +8,11 @@ public class Respawn : MonoBehaviour
 
     public Transform respawnPoint;
     public float respawnDelay = 3f;
-
+    private SliderUi Healthui;
     private void Awake()
     {
         instance = this;
+        Healthui = FindAnyObjectByType<SliderUi>();
     }
 
     public void RespawnPlayer(GameObject player)
@@ -32,6 +33,9 @@ public class Respawn : MonoBehaviour
         if (health != null)
         {
             health.SetCurrentHealth((int)health.GetMaxHealth() / 2); 
+            if(Healthui != null)
+                Healthui.UpdateHealth();
+            
         }
 
         Debug.Log("Player respawned.");

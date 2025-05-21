@@ -43,18 +43,31 @@ public class Health : MonoBehaviour, IDamagable
         if (!IsInvinsiable)
         {
             currentHealth -= amount;
-            if (HasInvinsiabilty)
-                StartCoroutine(StartInvinsiabiltyTimer(InvinciableTimer));
+          
+            if (currentHealth <= 0)
+            {
+                IsInvinsiable = false;
+                
+                OnDeath?.Invoke();
+              
+            }
+            else
+            {
+                if(HasInvinsiabilty)
+                    StartCoroutine(StartInvinsiabiltyTimer(InvinciableTimer));
+                OnTakeDamage?.Invoke();
 
-        }
-        if (currentHealth <= 0 ) {
-            OnDeath?.Invoke();
-        }
-        else
-        {
-            OnTakeDamage?.Invoke();
-        }
+            }
 
+            
+        }
+     
+
+    }
+    public void StopCouritnes()
+    {
+        StopCoroutine(StartInvinsiabiltyTimer(InvinciableTimer));
+      
     }
 
     public void heal(int amount)
