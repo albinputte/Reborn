@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IAccesories 
 {
-  
+    public void EquipAccesorie();
+    public void RemoveAccesorie();
 }

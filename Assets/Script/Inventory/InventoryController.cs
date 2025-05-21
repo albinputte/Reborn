@@ -18,6 +18,7 @@ public class InventoryController : MonoBehaviour
     public static bool NoWeaponEquiped;
     public static bool IsConsumableEquiped;
     public static bool IsToolEquiped;
+    public static bool IsAccesoireInHand;
     public static InventoryController Instance;
     public ChestController Chest;
 
@@ -74,13 +75,20 @@ public class InventoryController : MonoBehaviour
     {
         inventoryData.InstantiateInventory();
         inventoryData.OnInventoryChange += UpdateInventoryUI;
-        foreach(var item in ItemToInitialize)
+        ItemData NewFillItem = new ItemData();
+        NewFillItem.IsStackable = false;
+        foreach (var item in ItemToInitialize)
         {
             if(item.IsEmpty)
                 continue;
             Debug.Log(item.ToString());
             inventoryData.AddItem(item);
          
+        }
+        for(int i = inventoryData.Inventory.Count - 10; i <= inventoryData.Inventory.Count; i++)
+        {
+          
+            inventoryData.AddItemToSpecificPos(NewFillItem, 1, null, i);
         }
         InstantiateWeaponInstances();
     }
@@ -177,6 +185,11 @@ public class InventoryController : MonoBehaviour
         CurrentIndex = index1;
         if (item.IsEmpty)
             return;
+        if(InventoryController.IsAccesoireInHand)
+        {
+            OnAccesoires();
+            return;
+        }
         IDestroyableItem iDestroyableItem = item.item as IDestroyableItem;
         if (iDestroyableItem != null)
         {
@@ -200,6 +213,7 @@ public class InventoryController : MonoBehaviour
         InventoryController.NoWeaponEquiped = true;
         InventoryController.IsConsumableEquiped = false;
         InventoryController.IsToolEquiped = false;
+        InventoryController.IsAccesoireInHand = false;
         if (BuildItemEquiped)
         {
             BuildItem.CancelBuild(0);
@@ -225,8 +239,13 @@ public class InventoryController : MonoBehaviour
             structure.PerformBuild(index);
     
         }
+        if (item.item is IAccesories accesories)
+        {
+            InventoryController.IsAccesoireInHand = true;
+            return;
+        }
 
-        if (item.item is IConsumable)
+            if (item.item is IConsumable)
         {
             InventoryController.IsConsumableEquiped = true;
             return;
@@ -235,6 +254,17 @@ public class InventoryController : MonoBehaviour
         if (item.item is ITools)
         {
             InventoryController.IsToolEquiped = true;
+        }
+    }
+
+    public void OnAccesoires()
+    {
+        InventoryItem item = inventoryData.GetSpecificItem(CurrentIndex);
+        if (item.item is IAccesories accesories)
+        {
+            accesories.EquipAccesorie();
+            inventoryUi.SetAccesoire(item.item as AccesoriesItemBase);
+            inventoryData.RemoveItem(CurrentIndex, 1);
         }
     }
 

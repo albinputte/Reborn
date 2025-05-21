@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[Serializable]
-public abstract class BuffBase : MonoBehaviour
+
+public abstract class BuffBase 
 {
     public abstract void ApplyBuff();
     public abstract void RemoveBuff();

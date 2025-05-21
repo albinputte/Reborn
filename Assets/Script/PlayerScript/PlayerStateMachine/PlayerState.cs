@@ -219,7 +219,7 @@ public class PlayerState
         {
             stateMachine.SwitchState(controller.baseAttack);
         }
-        else if (InventoryController.IsConsumableEquiped)
+        else if (InventoryController.IsConsumableEquiped || InventoryController.IsAccesoireInHand)
         {
             stateMachine.SwitchState(controller.consumeState);
         }

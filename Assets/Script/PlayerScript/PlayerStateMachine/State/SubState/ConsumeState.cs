@@ -11,7 +11,14 @@ public class ConsumeState : ActionState
     public override void Enter()
     {
         base.Enter();
-        controller.inventoryController.HandleConsumable();
+        if(InventoryController.IsAccesoireInHand)
+        {
+            controller.inventoryController.OnAccesoires();
+        }
+        else
+        {
+            controller.inventoryController.HandleConsumable();
+        }
         controller.Input.IsAttacking = false;
         controller.Input.ActionPefromed = false;
         IsAbilityDone = true;

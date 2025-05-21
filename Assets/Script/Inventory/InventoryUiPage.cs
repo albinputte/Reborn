@@ -17,8 +17,10 @@ public class InventoryUiPage : MonoBehaviour
     private InventoryUiSlot[] HotBarSlots;
     [SerializeField]
     private InventoryUiSlot[] HiddenHotbarSlots;
+    [SerializeField]
+    private AccesorieSlotManger accesorieSlots;
 
-    List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
+   List<InventoryUiSlot> ListOfUIslots = new List<InventoryUiSlot>();
     public GameObject Hotbar;
     [SerializeField] private InventorySlideInUi SlideInUi;
 
@@ -26,6 +28,7 @@ public class InventoryUiPage : MonoBehaviour
 
     [SerializeField] private MouseFollower mouseFollower;
     [SerializeField] private LayerMask UILayer;
+   
 
     private int currentDraggingIndex;
     private bool IsSelected;
@@ -99,6 +102,11 @@ public class InventoryUiPage : MonoBehaviour
       
     }
 
+    public void SetAccesoire(AccesoriesItemBase accesories)
+    {
+        accesorieSlots.SetSlot(accesories);
+    }
+
     private void ShowItemActions(InventoryUiSlot slot)
     {
         IsSelected = slot.IsSelected;
@@ -117,6 +125,7 @@ public class InventoryUiPage : MonoBehaviour
             Selectdslot.DeselectBorder();
             slot.SelectBorder();
             OnHotbarAction?.Invoke(index);
+            
             Selectdslot = slot;
             slot.IsSelected = true;
             
@@ -125,7 +134,7 @@ public class InventoryUiPage : MonoBehaviour
         {
             Selectdslot.IsSelected = false;
             Selectdslot.DeselectBorder();
-            //OnItemAction?.Invoke(index); 
+            OnItemAction?.Invoke(index); 
      
         }
       
@@ -239,6 +248,7 @@ public class InventoryUiPage : MonoBehaviour
             SlideInUi.ResetSlideIcons();
             return;
         }
+        
            
         WeaponInstances weaponInst = InventoryController.Instance.GetWeaponInstances(index);
         OrbsItemData orb = weaponInst.GetOrb();

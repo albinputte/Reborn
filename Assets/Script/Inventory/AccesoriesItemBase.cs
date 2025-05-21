@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AccesoriesItemBase : ItemData, IitemAction, IDestroyableItem, IAccesories
+
+
+[CreateAssetMenu(fileName = "AccesoriesBase", menuName = "Items/Accesories", order = 5)]
+public class AccesoriesItemBase : ItemData, IDestroyableItem, IAccesories
 {
 
     [SerializeReference, SubclassSelector]
     public BuffBase BuffBase;
-    public PlayerWeaponAgent weaponAgent;
 
-    public bool PerformAction(GameObject gameObject, WeaponInstances inst)
+    public void EquipAccesorie()
     {
+        BuffBase.ApplyBuff();
+    }
 
-        return false;
+    public void RemoveAccesorie()
+    {
+        BuffBase.RemoveBuff();
     }
 }
