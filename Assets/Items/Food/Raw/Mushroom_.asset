@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f5f3499ef49b24590cef4988d0b7fb, type: 3}
+  m_Name: Mushroom_
+  m_EditorClassIdentifier: 
+  Name: 
+  Description: 
+  Icon: {fileID: 21300000, guid: bdeae3f4cc56afa4698d84619c7f1814, type: 3}
+  itemType: 0
+  IsStackable: 1
+  IsCraftable: 0
+  craftingRecipe:
+  - ingredients: []
+    resultItem: {fileID: 11400000}
+    resultQuantity: 1
+  buffBase:
+    rid: -2
+  healAmount: 6
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
