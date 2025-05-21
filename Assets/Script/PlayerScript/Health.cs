@@ -91,7 +91,33 @@ public class Health : MonoBehaviour, IDamagable
     public void Flash(SpriteRenderer sprite)
     {
         StartCoroutine(EnemyFlash(sprite));
-    }   
+    }
+    public void FlashPlayer(SpriteRenderer sprite)
+    {
+        StartCoroutine(PlayerFlash(sprite));
+    }
+    public IEnumerator PlayerFlash(SpriteRenderer sprite, float duration = 1f, float blinkInterval = 0.1f)
+    {
+        float elapsed = 0f;
+        Color originalColor = sprite.color;
+
+        while (elapsed < duration)
+        {
+            // Toggle alpha between 1 and 0 (visible and invisible)
+            Color c = sprite.color;
+            c.a = (c.a == 1f) ? 0f : 1f;
+            sprite.color = c;
+
+            yield return new WaitForSeconds(blinkInterval);
+            elapsed += blinkInterval;
+        }
+
+        // Ensure sprite is fully visible at the end
+        originalColor.a = 1f;
+        sprite.color = originalColor;
+    }
+
+
 
     public IEnumerator EnemyFlash(SpriteRenderer sprite)
     {
