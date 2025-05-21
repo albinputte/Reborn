@@ -16,9 +16,13 @@ public class RecipeSlotUi : MonoBehaviour
     public int CurrentCraftingMangerIndex;
     public Image[] ingrediants;
     [SerializeField] private TextMeshProUGUI[] QuanityText;
+    public UIToolTipTrigger[] toolTipTrigger;
+    public UIToolTipTrigger ResultItemToolTip;
     public void SetRecipe(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
         recipeIconImage.sprite = recipe.resultItem.Icon;
+        ResultItemToolTip.header = recipe.resultItem.Name;
+        ResultItemToolTip.content = recipe.resultItem.Description;
         this.recipe = recipe;
         this.CurrentCraftingMangerIndex = CurrentCraftingMangerIndex;
         SetIngrediants(recipe);
@@ -38,6 +42,10 @@ public class RecipeSlotUi : MonoBehaviour
                 QuanityText[i].gameObject.SetActive(true) ;
                 ingrediants[i].sprite = recipe.ingredients[i].item.Icon;
                 QuanityText[i].text = recipe.ingredients[i].quantity.ToString();
+                toolTipTrigger[i].header = recipe.ingredients[i].item.Name;
+                toolTipTrigger[i].content = recipe.ingredients[i].item.Description;
+
+
             }
         }
     }

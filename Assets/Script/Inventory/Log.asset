@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df15f1e129f974149b728be6f1c66a62, type: 3}
   m_Name: Log
   m_EditorClassIdentifier: 
-  Name: Stick
-  Description: This is a stick
+  Name: 
+  Description: 
   Icon: {fileID: 1655078183, guid: c6f43df1ec32bc540b04a372dbf8b254, type: 3}
   itemType: 0
-  IsStackable: 1
+  IsStackable: 0
   IsCraftable: 0
   craftingRecipe: []
