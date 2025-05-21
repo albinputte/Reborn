@@ -21,7 +21,7 @@ MonoBehaviour:
   craftingRecipe: []
   buffBase:
     rid: -2
-  healAmount: 0
+  healAmount: 10
   references:
     version: 2
     RefIds:
