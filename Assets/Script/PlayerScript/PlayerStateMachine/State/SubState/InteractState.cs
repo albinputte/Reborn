@@ -10,7 +10,7 @@ public class InteractState : ActionState
     public override void Enter()
     {
         base.Enter();
-        IInteractable interactable = GetNearestInteractable(2f, controller.InteractionLayer);
+        IInteractable interactable = GetNearestInteractable(1f, controller.InteractionLayer);
         if (interactable != null)
             if (interactable.type == InteractableType.Bush)
                 stateMachine.SwitchState(controller.interactBush);

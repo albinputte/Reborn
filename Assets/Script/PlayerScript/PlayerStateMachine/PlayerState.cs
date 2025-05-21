@@ -184,7 +184,7 @@ public class PlayerState
     }
     public void CheckIfInteractionIsNear()
     {
-        var nearest = GetNearestInteractable(2f, controller.InteractionLayer);
+        var nearest = GetNearestInteractable(1f, controller.InteractionLayer);
 
         if (nearest != null)
         {
@@ -253,7 +253,7 @@ public class PlayerState
     {
         if (!controller.Input.isInteracting) return;
 
-        if (GetNearestInteractable(2f, controller.InteractionLayer) != null)
+        if (GetNearestInteractable(1f, controller.InteractionLayer) != null)
         {
             stateMachine.SwitchState(controller.interactState);
         }
