@@ -21,9 +21,10 @@ public class InventoryUiSlot : MonoBehaviour
     public event Action<InventoryUiSlot> OnItemClicked,
            OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag,
            OnRightMouseBtnClick, OnItemSelect;
+    public bool IsHotbar;
 
     private bool empty = true;
-
+    public UIToolTipTrigger uitipTrigger;
     public int SlotIndex { get; private set; }
     public object OwnerPage { get; private set; }
 
@@ -39,7 +40,7 @@ public class InventoryUiSlot : MonoBehaviour
         ResetItemData();
         BorderSprite[1] = BorderImage.sprite;
         DeselectBorder();
-        
+        uitipTrigger = GetComponent<UIToolTipTrigger>();
 
     }
 
@@ -67,15 +68,18 @@ public class InventoryUiSlot : MonoBehaviour
         quantityText.text = Quantity.ToString();
         this.ItemDescription = Desccription;
         this.ItemName = name;
+
+        if (uitipTrigger != null && !IsHotbar)
+        {
+            uitipTrigger.header = name;
+            uitipTrigger.content = Desccription;
+        }
+     
+
         empty = false;
     }
 
-    public void ShowTooltip()
-    {
-        //ItemToolTip.Instance.ShowTooltip(ItemName, ItemDescription);
-    }
-    public void HideToolTip() {  //ItemToolTip.Instance.HideTooltip();
-                                 }
+
 
 
 
@@ -87,16 +91,19 @@ public class InventoryUiSlot : MonoBehaviour
         {
             return;
         }
+        uitipTrigger.Dragging();
         OnItemBeginDrag?.Invoke(this);
     }
 
     public void OnDrop()
     {
+        
         OnItemDroppedOn?.Invoke(this);
     }
 
     public void OnEndDrag()
     {
+        UIToolTipTrigger.IsDragging = false;
         OnItemEndDrag?.Invoke(this);    
     }
 

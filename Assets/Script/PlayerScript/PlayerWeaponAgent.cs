@@ -176,7 +176,7 @@ public class PlayerWeaponAgent : MonoBehaviour
 
             if (CurrentAttackSpriteIndex < sprites.Length)
             {
-                Debug.Log(sprites[CurrentAttackSpriteIndex]);
+             
                 weaponSpriteRenderer.sprite = sprites[CurrentAttackSpriteIndex];
                 CurrentAttackSpriteIndex++;
             }

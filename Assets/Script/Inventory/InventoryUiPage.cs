@@ -62,9 +62,10 @@ public class InventoryUiPage : MonoBehaviour
             slot.OnRightMouseBtnClick += ShowItemActions;
             slot.OnItemSelect += SelectionBorder;
             slot.Init(this, ExtractNumberFromName(slot.name));
-
+            slot.IsHotbar = false;
 
         }
+        foreach (var slot in HotBarSlots) { slot.IsHotbar = true; }
 
     }
 

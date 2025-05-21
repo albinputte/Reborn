@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 
 public class InventoryController : MonoBehaviour
 {
     [SerializeField]
     private InventoryUiPage inventoryUi;
-
+    public ItemData TrashItem;
     [SerializeField]
     public InventorySO inventoryData;
     public static bool NoWeaponEquiped;
@@ -75,8 +76,11 @@ public class InventoryController : MonoBehaviour
     {
         inventoryData.InstantiateInventory();
         inventoryData.OnInventoryChange += UpdateInventoryUI;
-        ItemData NewFillItem = new ItemData();
-        NewFillItem.IsStackable = false;
+      
+        for (int i = inventoryData.Inventory.Count -10; i <= inventoryData.Inventory.Count -1; i++)
+        {
+            inventoryData.AddItemToSpecificPos(TrashItem, 1, null, i);
+        }
         foreach (var item in ItemToInitialize)
         {
             if(item.IsEmpty)
@@ -85,11 +89,7 @@ public class InventoryController : MonoBehaviour
             inventoryData.AddItem(item);
          
         }
-        for(int i = inventoryData.Inventory.Count - 10; i <= inventoryData.Inventory.Count; i++)
-        {
-          
-            inventoryData.AddItemToSpecificPos(NewFillItem, 1, null, i);
-        }
+     
         InstantiateWeaponInstances();
     }
 
