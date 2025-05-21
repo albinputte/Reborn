@@ -17,6 +17,7 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
     public static CraftingUI Instance { get; private set; }
+    private RecipeSlotUi CurrentSlot;
 
     private void Awake()
     {
@@ -127,11 +128,12 @@ public class CraftingUI : MonoBehaviour
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
         ResultSlot.gameObject.SetActive(true);
 
-        // Remove old listeners before assigning new one
+        // Update craft button logic
         craftButtonUi.OnItemClicked -= CraftButtonPressed;
         craftButtonUi.SetRecipe(recipe.recipe, recipe.CurrentCraftingMangerIndex);
         craftButtonUi.OnItemClicked += CraftButtonPressed;
     }
+
 
     public void SetIfEnoughResources(RecipeSlotUi recipe)
     {

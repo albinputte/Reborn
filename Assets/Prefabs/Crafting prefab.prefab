@@ -561,6 +561,10 @@ MonoBehaviour:
   - {fileID: 4221815151557170353}
   - {fileID: 4949962703009196071}
   - {fileID: 3160026038057057159}
+  Border: {fileID: 3116847275709405027}
+  HighLightBorderSprite:
+  - {fileID: 1314418771, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
+  - {fileID: 21300000, guid: de64d28b09db2294a8b33095d000b395, type: 3}
   toolTipTrigger:
   - {fileID: 6977837303693425671}
   - {fileID: 8701710620970799694}
