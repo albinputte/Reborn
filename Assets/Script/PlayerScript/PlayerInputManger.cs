@@ -64,11 +64,11 @@ public class PlayerInputManger : MonoBehaviour
         {
             if(isSprinting)
             {
-                isSprinting = false;
+                //isSprinting = false;
             }
             else
             {
-                isSprinting = true;
+                //isSprinting = true;
             }
            
         }
