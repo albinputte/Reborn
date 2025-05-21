@@ -16,8 +16,12 @@ public class RecipeSlotUi : MonoBehaviour
     public int CurrentCraftingMangerIndex;
     public Image[] ingrediants;
     [SerializeField] private TextMeshProUGUI[] QuanityText;
+    [SerializeField] private Image Border;
+    [SerializeField] private Sprite[] HighLightBorderSprite;
+    public bool IsSelected;
     public UIToolTipTrigger[] toolTipTrigger;
     public UIToolTipTrigger ResultItemToolTip;
+    
     public void SetRecipe(CraftingRecipe recipe, int CurrentCraftingMangerIndex)
     {
         recipeIconImage.sprite = recipe.resultItem.Icon;
@@ -48,6 +52,18 @@ public class RecipeSlotUi : MonoBehaviour
 
             }
         }
+    }
+
+    public void SetBorder()
+    {
+        Border.sprite = HighLightBorderSprite[1];
+        IsSelected = true;
+       
+    }
+    public void DeselectBorder()
+    {
+        Border.sprite = HighLightBorderSprite[0];
+        IsSelected = false;
     }
 
     public void NotEnoughResources(int index)
