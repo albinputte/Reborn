@@ -36,7 +36,7 @@ public class OrbFireball : BaseAbiltiesOrb
         Vector3 lookDir = (dir - Character.transform.position).normalized;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; 
 
-        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        Quaternion rotation = Quaternion.Euler(0, 0, angle -90);
         Debug.Log("Rotation is " + dir);
         GameObject obj = GameObject.Instantiate(Prefab, Character.transform.position, rotation);
         Debug.Log("Rotation is " + rotation);
