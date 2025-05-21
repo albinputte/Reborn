@@ -166,8 +166,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemImage: {fileID: 3595642565352479205}
+  FrameImage:
+  - {fileID: 1007523123, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
+  - {fileID: 1314418771, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
+  ItemFrame: {fileID: 0}
   IsEmpty: 1
-  Item: {fileID: 0}
 --- !u!114 &2787315427053276667
 MonoBehaviour:
   m_ObjectHideFlags: 0

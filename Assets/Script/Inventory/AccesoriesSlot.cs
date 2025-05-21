@@ -7,21 +7,26 @@ using UnityEngine.UI;
 public class AccesoriesSlot : MonoBehaviour
 {
     public Image ItemImage;
+    public Sprite[] FrameImage;
+    [SerializeField] private Image ItemFrame; 
     public bool IsEmpty = true;
-    public AccesoriesItemBase Item;
+    private AccesoriesItemBase Item;
     private InventoryController inventoryController;
+    
 
     public void Awake()
     {
         inventoryController = InventoryController.Instance;
         ItemImage.sprite = null;
         ItemImage.enabled = false;
+        ItemFrame = GetComponent<Image>();
     }
     public void SetAccesorie(AccesoriesItemBase item1)
     {
         Item = item1;
         ItemImage.enabled = true;
         ItemImage.sprite = Item.Icon;
+        ItemFrame.sprite = FrameImage[1];
         IsEmpty = false;
     }
 
@@ -30,6 +35,7 @@ public class AccesoriesSlot : MonoBehaviour
         inventoryController.inventoryData.AddItem(Item, 1,null);
         ItemImage.sprite = null;
         ItemImage.enabled = false;
+        ItemFrame.sprite = FrameImage[0];
         IsEmpty = true;
     }
 
