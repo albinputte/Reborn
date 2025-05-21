@@ -538,7 +538,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7465903240834735903}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
@@ -554,8 +554,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!1 &7552431852720845950
 GameObject:
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6395327026703988489}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.56206554
+  m_Size: 0.5620655
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -940,9 +940,9 @@ RectTransform:
   - {fileID: 2824086363395863617}
   m_Father: {fileID: 6829780443440198495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -88.5}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7701415706750278925
@@ -973,8 +973,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9086c9047fbccd54ba5ef60dc2e17205, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2952e7c5e47aaf34083768f48fe9eac4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1017,9 +1017,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
-    m_Right: 0
+    m_Right: 15
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 10
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -1041,6 +1041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89538e9d5d5f4dc4fbba34265a24cb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonSprites:
+  - {fileID: 21300000, guid: 2952e7c5e47aaf34083768f48fe9eac4, type: 3}
+  - {fileID: 21300000, guid: 16ed8fba4706ccf48aba59f25d697120, type: 3}
+  Buttonimage: {fileID: 0}
   recipe:
     ingredients: []
     resultItem: {fileID: 0}
@@ -1110,9 +1114,9 @@ RectTransform:
   - {fileID: 2704988732144665541}
   m_Father: {fileID: 6829780443440198495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 410, y: -88.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5452674569197645574
@@ -1304,7 +1308,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.2
-  m_ScrollSensitivity: 5
+  m_ScrollSensitivity: 40
   m_Viewport: {fileID: 2835297024630503229}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 733114102369237277}
@@ -1474,7 +1478,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 16
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
