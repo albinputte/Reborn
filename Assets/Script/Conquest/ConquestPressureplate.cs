@@ -100,23 +100,24 @@ public class ConquestPressureplate : MonoBehaviour
 
     public void PlaydingSound(int index)
     {
-      switch(index) {
+        switch (index)
+        {
             case 0:
                 SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_1);
                 break;
-        case 1:
+            case 1:
                 SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_2);
                 break;
             case 2:
                 SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_3);
                 break;
-                case 3:
+            case 3:
                 SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_4);
                 break;
-        default: 
+            default:
                 return;
         }
-
+    }
     private IEnumerator SpawnChestWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
