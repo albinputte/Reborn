@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051d6e42bbdc0c346afe23bbbba6fc3e, type: 3}
   m_Name: AccesoriesBase 3
   m_EditorClassIdentifier: 
-  Name: Damage Artificat
-  Description: 
+  Name: Ruby Necklace
+  Description: Restore some health when dealing damage
   Icon: {fileID: 21300000, guid: 16eadeec33b7d4d4bab9cfeac2c94592, type: 3}
   itemType: 6
   IsStackable: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
     - rid: 6313147755047419904
       type: {class: AddetiveBuff, ns: , asm: Assembly-CSharp}
       data:
-        bonusMultiplier: 5
-        statType: 2
+        bonusMultiplier: 1
+        statType: 4
