@@ -14567,7 +14567,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.4
   m_Color: {r: 0.98823535, g: 0.909804, b: 0.5294118, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000005fea7ff815154ecd4b0a484dcbb11d9f
@@ -14612,12 +14612,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9272dc84988496468201e771dcfabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flickerEnabled: 0
-  minIntensity: 0.5
-  maxIntensity: 1.5
-  minTimeBetweenIntensity: 0.05
-  maxTimeBetweenIntensity: 0.2
-  minChangeAmount: 0.1
+  minIntensity: 0.7
+  maxIntensity: 1
+  minTimeBetweenIntensity: 0.1
+  maxTimeBetweenIntensity: 0.6
+  minChangeAmount: 0.05
+  flickerRadius: 1
+  radiusMultiplier: 0.1
 --- !u!1 &4005667769223556229
 GameObject:
   m_ObjectHideFlags: 0

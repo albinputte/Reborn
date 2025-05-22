@@ -8,42 +8,54 @@ public class TorchFlicker : MonoBehaviour
     private Light2D lightToFlicker;
 
     [Header("Flicker Settings")]
-    public bool flickerEnabled = true;
     [Range(0.3f, 3f)] public float minIntensity = 0.5f;
     [Range(0.3f, 3f)] public float maxIntensity = 1.2f;
     [Min(0f)] public float minTimeBetweenIntensity = 0.05f;
     [Min(0f)] public float maxTimeBetweenIntensity = 0.2f;
     [Min(0f)] public float minChangeAmount = 0.1f;
+    [Header("Radius Flicker Settings")]
+    public bool flickerRadius = true;
+    [Range(0.1f, 2f)] public float radiusMultiplier = 0.1f; // amount of radius change based on intensity
 
     private float currentTimer;
     private float nextFlickerDelay;
     private float lastUpdateTime;
     private float lastIntensity;
+    private float baseOuterRadius;
+    private float baseInnerRadius;
 
     private void OnEnable()
     {
         lightToFlicker = GetComponent<Light2D>();
         ValidateIntensityBounds();
+
         lastUpdateTime = Time.realtimeSinceStartup;
         lastIntensity = minIntensity;
+
+        // Store base radius
+        baseOuterRadius = lightToFlicker.pointLightOuterRadius;
+        baseInnerRadius = lightToFlicker.pointLightInnerRadius;
+
         SetNextFlickerDelay();
     }
 
     private void Update()
     {
-        if (lightToFlicker == null || !flickerEnabled)
+        if (lightToFlicker == null)
+            return;
+
+        if (!Application.isPlaying)
         {
-            if (lightToFlicker != null)
-                lightToFlicker.intensity = minIntensity;
+            lightToFlicker.intensity = minIntensity;
+            if (flickerRadius)
+            {
+                lightToFlicker.pointLightOuterRadius = baseOuterRadius;
+                lightToFlicker.pointLightInnerRadius = baseInnerRadius;
+            }
             return;
         }
 
-#if UNITY_EDITOR
-        float deltaTime = Application.isPlaying ? Time.deltaTime : (Time.realtimeSinceStartup - lastUpdateTime);
-#else
         float deltaTime = Time.deltaTime;
-#endif
-
         currentTimer += deltaTime;
 
         if (currentTimer >= nextFlickerDelay)
@@ -58,13 +70,21 @@ public class TorchFlicker : MonoBehaviour
             }
             while (Mathf.Abs(newIntensity - lastIntensity) < minChangeAmount && safetyCounter < 10);
 
+            // Set intensity
             lightToFlicker.intensity = newIntensity;
+
+            // Optionally set radius
+            if (flickerRadius)
+            {
+                float flickerOffset = (newIntensity - minIntensity) * radiusMultiplier;
+                lightToFlicker.pointLightOuterRadius = baseOuterRadius + flickerOffset;
+                lightToFlicker.pointLightInnerRadius = baseInnerRadius + flickerOffset * 0.6f;
+            }
+
             lastIntensity = newIntensity;
             currentTimer = 0f;
             SetNextFlickerDelay();
         }
-
-
     }
 
     private void SetNextFlickerDelay()
