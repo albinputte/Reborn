@@ -118,3 +118,33 @@ MonoBehaviour:
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds: []
     useRandomPitch: 0
+  - name: Conquest_Finish_Ding_1
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds: []
+    useRandomPitch: 0
+  - name: Conquest_Finish_Ding_2
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
+  - name: Conquest_Finish_Ding_3
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
+  - name: Conquest_Finish_Ding_4
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
+  - name: Torch_LitUp
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0
+  - name: Conquest_Chest_Landing
+    volume: 1
+    mixer: {fileID: 0}
+    sounds: []
+    useRandomPitch: 0

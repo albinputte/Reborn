@@ -136,7 +136,7 @@ public class PlayerState
             }
         }
 
-        return Directions.Right; // fallback
+        return Directions.RightDown; // fallback
     }
 
 

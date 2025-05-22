@@ -25,6 +25,14 @@ namespace SmallHedge.SoundManager
         StoneGhost_StartAttack,
         StoneGhost_Hit,
         CutGrass,
+        Conquest_Finish_Ding_1,
+        Conquest_Finish_Ding_2,
+        Conquest_Finish_Ding_3,
+        Conquest_Finish_Ding_4,
+        Torch_LitUp,
+        Conquest_Chest_Landing,
+
+
     }
 
     // Call sounds like this:
