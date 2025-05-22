@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f2559047857584cb19c749a65f5e05, type: 3}
   m_Name: WoodenSword
   m_EditorClassIdentifier: 
-  Name: Scimitar
+  Name: Wooden Sword
   Description: 
   Icon: {fileID: 987380367, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
   itemType: 4
@@ -24,7 +24,6 @@ MonoBehaviour:
       quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
-  buffs: []
   attackSounds: 000000000100000002000000
   Damage: 5
   KnockbackForce: 10

@@ -20,7 +20,7 @@ MonoBehaviour:
   IsCraftable: 1
   craftingRecipe:
   - ingredients:
-    - item: {fileID: 11400000, guid: 596db4878d460654f8e0d0add07790d0, type: 2}
+    - item: {fileID: 11400000, guid: 5712b0ff2ce6bed4face90e76dd2ffd1, type: 2}
       quantity: 2
     - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
       quantity: 1
