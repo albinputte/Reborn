@@ -16,7 +16,7 @@ public class UIToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public string values;
     public bool IsActive;
     public static bool IsDragging;
-
+    
     public void Dragging()
     {
         UIToolTipTrigger.IsDragging =true;

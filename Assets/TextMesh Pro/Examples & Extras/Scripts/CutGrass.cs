@@ -15,7 +15,7 @@ public class CutGrass : MonoBehaviour
     }
     public void CutGrassEffect()
     {
-       // SoundManager.PlaySound(SoundType.CutGrass);
+        SoundManager.PlaySound(SoundType.CutGrass);
         grassAnimator.SetTrigger("cut");
         // Disable the collider to prevent further interactions
         if (grassCollider != null)

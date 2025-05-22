@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class ConquestPressureplate : MonoBehaviour
 
         isPlateLocked = true;
         ppSprite.sprite = closedSprite;
+        PlaydingSound(currentStage);
         StartCoroutine(SpawnEnemiesWithDelay());
 
     }
@@ -78,13 +80,15 @@ public class ConquestPressureplate : MonoBehaviour
     private IEnumerator HandleStageCompleteWithDelay()
     {
         yield return new WaitForSeconds(Random.Range(1f, 2f)); //  Delay before lighting torch
-
+      
         if (currentStage < torches.Length)
         {
             torches[currentStage].SetActive(true);
+            SoundManager.PlaySound(SoundType.Torch_LitUp);
         }
 
         currentStage++;
+        PlaydingSound(currentStage);
         isPlateLocked = false;
         ppSprite.sprite = openSprite;
 
@@ -94,11 +98,31 @@ public class ConquestPressureplate : MonoBehaviour
         }
     }
 
+    public void PlaydingSound(int index)
+    {
+      switch(index) {
+            case 0:
+                SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_1);
+                break;
+        case 1:
+                SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_2);
+                break;
+            case 2:
+                SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_3);
+                break;
+                case 3:
+                SoundManager.PlaySound(SoundType.Conquest_Finish_Ding_4);
+                break;
+        default: 
+                return;
+        }
+
     private IEnumerator SpawnChestWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
        
         Instantiate(rewardChest, chestSpawnPoint.position, Quaternion.identity);
+        SoundManager.PlaySound(SoundType.Conquest_Chest_Landing);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     }
 
 }
