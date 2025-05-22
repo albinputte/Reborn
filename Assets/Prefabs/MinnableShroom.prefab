@@ -218,7 +218,7 @@ MonoBehaviour:
   oreCount: 3
   orePrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   ItemData: {fileID: 11400000, guid: 5712b0ff2ce6bed4face90e76dd2ffd1, type: 2}
-  respawnTime: 30
+  respawnTime: 120
   minOres: 3
   maxOres: 5
   Type: 0
