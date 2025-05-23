@@ -188,8 +188,8 @@ MonoBehaviour:
   quantity: 1
   IsADrop: 1
   col: {fileID: 0}
-  hoverAmount: 0.05
-  hoverCycleTime: 1
+  hoverAmount: 0.1
+  hoverCycleTime: 0.5
   hoverDelay: 0.05
   hoverStepamount: 100
   pickupRadius: 1.4

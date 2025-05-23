@@ -4965,12 +4965,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9272dc84988496468201e771dcfabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flickerEnabled: 0
-  minIntensity: 0.5
-  maxIntensity: 1.5
-  minTimeBetweenIntensity: 0.05
-  maxTimeBetweenIntensity: 0.2
-  minChangeAmount: 0.1
+  minIntensity: 0.7
+  maxIntensity: 1
+  minTimeBetweenIntensity: 0.1
+  maxTimeBetweenIntensity: 0.6
+  minChangeAmount: 0.05
+  flickerRadius: 1
+  radiusMultiplier: 0.1
 --- !u!1 &4716837664305830283
 GameObject:
   m_ObjectHideFlags: 0

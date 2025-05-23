@@ -24,9 +24,11 @@ public class WorldItem : MonoBehaviour
     public float hoverStepamount;
 
     [Header("Magnet Settings")]
+  
     public float pickupRadius = 3f;
     public float moveSpeed = 5f;
     private Transform player;
+    private bool CanBeSucked = false;
 
     public void Awake()
     {
@@ -59,7 +61,7 @@ public class WorldItem : MonoBehaviour
         if (player == null || IsPickingUp) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance < pickupRadius)
+        if (distance < pickupRadius && CanBeSucked)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
@@ -95,6 +97,7 @@ public class WorldItem : MonoBehaviour
 
     public IEnumerator HoverEffect()
     {
+        CanBeSucked = true;
         var HoverStep = hoverAmount / hoverStepamount;
         var HoverCycle = hoverCycleTime / hoverStepamount;
 
