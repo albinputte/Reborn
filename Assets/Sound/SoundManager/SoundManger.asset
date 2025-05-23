@@ -96,7 +96,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c898e7c79bf076247b458a2037292134, type: 3}
     useRandomPitch: 0
   - name: StoneGhost_Rising
-    volume: 0.247
+    volume: 0.015
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 756f91524c0c245469cca4972e6ed199, type: 3}
@@ -156,13 +156,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9834694392e492a4bad91868e8356252, type: 3}
     useRandomPitch: 0
   - name: ChestOpen
-    volume: 1
+    volume: 0.636
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: a086392aa3e0e36459b7a9a7630d367b, type: 3}
     useRandomPitch: 0
   - name: ChestClose
-    volume: 1
+    volume: 0.184
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 83d3a7ea2457db641bc4fa7eadc81bde, type: 3}
