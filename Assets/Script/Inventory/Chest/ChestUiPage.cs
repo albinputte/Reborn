@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -140,12 +141,14 @@ public class ChestUiPage : MonoBehaviour
     public void ShowChest()
     {
         chestPanel.SetActive(true);
+        SoundManager.PlaySound(SoundType.ChestOpen);
  
     }
 
     public void HideChest()
     {
         chestPanel.SetActive(false);
+        SoundManager.PlaySound(SoundType.ChestClose);
 
     }
 

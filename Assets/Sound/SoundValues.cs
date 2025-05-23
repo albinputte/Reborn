@@ -31,6 +31,9 @@ namespace SmallHedge.SoundManager
         Conquest_Finish_Ding_4,
         Torch_LitUp,
         Conquest_Chest_Landing,
+        ChestOpen,
+        ChestClose,
+
 
 
     }

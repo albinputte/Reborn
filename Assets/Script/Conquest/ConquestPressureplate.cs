@@ -29,7 +29,7 @@ public class ConquestPressureplate : MonoBehaviour
 
         isPlateLocked = true;
         ppSprite.sprite = closedSprite;
-        PlaydingSound(currentStage);
+        //PlaydingSound(currentStage);
         StartCoroutine(SpawnEnemiesWithDelay());
 
     }
@@ -79,6 +79,7 @@ public class ConquestPressureplate : MonoBehaviour
     }
     private IEnumerator HandleStageCompleteWithDelay()
     {
+        PlaydingSound(currentStage);
         yield return new WaitForSeconds(Random.Range(1f, 2f)); //  Delay before lighting torch
       
         if (currentStage < torches.Length)
@@ -88,7 +89,6 @@ public class ConquestPressureplate : MonoBehaviour
         }
 
         currentStage++;
-        PlaydingSound(currentStage);
         isPlateLocked = false;
         ppSprite.sprite = openSprite;
 
