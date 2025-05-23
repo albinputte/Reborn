@@ -45,6 +45,7 @@ public class InventoryController : MonoBehaviour
 
     private bool BuildItemEquiped;
     private StructureItemBase BuildItem;
+    private bool CanEat = true;
  
     private void Start()
     {
@@ -272,8 +273,9 @@ public class InventoryController : MonoBehaviour
     public void HandleConsumable()
     {
         InventoryItem item = inventoryData.GetSpecificItem(CurrentIndex);
-        if (item.item is IConsumable)
+        if (item.item is IConsumable && CanEat)
         {
+            StartCoroutine(EatCooldown());
             if (item.item is IitemAction action)
                 action.PerformAction(Character, item.weaponInstances);
             if (item.item is IDestroyableItem)
@@ -284,6 +286,16 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
+    public IEnumerator EatCooldown()
+    {
+        if (CanEat)
+        {
+            CanEat = false;
+            yield return new WaitForSeconds(0.5f);
+            CanEat = true;
+        }
+    }
+
 
 
     public void HandleDropIitem(int index)
