@@ -32,7 +32,7 @@ public class TutorialManger : MonoBehaviour
         switch (state)
         {
             case TutorialState.PickedUpSword:
-                TutorialUiManger.Instance.ShowMessage(Messages[0]);
+               StartCoroutine(OpenInventoryTimer());
                 break;
 
             case TutorialState.OpenInventory:
@@ -47,6 +47,14 @@ public class TutorialManger : MonoBehaviour
         }
     }
 
+    public IEnumerator OpenInventoryTimer()
+    {
+        yield return new WaitForSeconds(8f);
+        if (currentState == TutorialState.PickedUpSword)
+            TutorialUiManger.Instance.ShowMessage(Messages[0]);
+
+    }
+
     // External event triggers:
     public void OnSwordPickedUp()
     {
@@ -56,6 +64,7 @@ public class TutorialManger : MonoBehaviour
 
     public void OnInventoryOpened()
     {
+      
         currentState = TutorialState.OpenInventory;
         EnterState(TutorialState.OpenInventory);
     }
