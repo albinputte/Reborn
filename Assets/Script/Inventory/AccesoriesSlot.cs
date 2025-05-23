@@ -33,6 +33,7 @@ public class AccesoriesSlot : MonoBehaviour
     public void RemoveAccesoires()
     {
         inventoryController.inventoryData.AddItem(Item, 1,null);
+        Item.RemoveAccesorie();
         ItemImage.sprite = null;
         ItemImage.enabled = false;
         ItemFrame.sprite = FrameImage[0];

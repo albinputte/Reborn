@@ -15,7 +15,16 @@ public class InteractState : ActionState
             if (interactable.type == InteractableType.Bush)
                 stateMachine.SwitchState(controller.interactBush);
             else if (interactable.type == InteractableType.Minning)
-                Debug.Log("Minning");
+            {
+                if (interactable is MonoBehaviour interactableComponent)
+                {
+                    GameObject obj = interactableComponent.gameObject;
+                    PlayerController.FacingDirection[1] = GetPlayerQuadrant(controller.transform, obj.transform);
+                    stateMachine.SwitchState(controller.MinningState);
+                }
+               
+            }
+             
             //Switch 
             else if (interactable.type == InteractableType.Crafting)
                 stateMachine.SwitchState(controller.interactCrafting);

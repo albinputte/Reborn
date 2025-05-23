@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
 public class PlayerState 
 {
@@ -54,7 +54,7 @@ public class PlayerState
 
     public virtual void Enter()
     {
-
+      
         controller.animator.Play(animationName + "_" + (int)PlayerController.FacingDirection[1]);  //add later when i add player controller script
 
     }
@@ -182,6 +182,27 @@ public class PlayerState
 
         return nearest;
     }
+
+public Directions GetPlayerQuadrant(Transform player, Transform origin)
+{
+    Vector2 relativePos = player.position - origin.position;
+    Vector2 forward = origin.up; 
+
+    float angle = Vector2.Angle(forward, relativePos);
+    float cross = Vector3.Cross(forward, relativePos).z;
+
+    bool isRight = cross < 0;  
+    bool isFront = angle < 90;
+
+    if (isRight && isFront)
+        return Directions.LeftDown;  // NE
+    else if (isRight && !isFront)
+        return Directions.LeftUp;    // SE
+    else if (!isRight && !isFront)
+        return Directions.RightUp;     // SW
+    else
+        return Directions.RightDown;   // NW
+}
     public void CheckIfInteractionIsNear()
     {
         var nearest = GetNearestInteractable(1f, controller.InteractionLayer);

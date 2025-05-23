@@ -12,4 +12,6 @@ public class AnimtionPlayerTrigger : MonoBehaviour
 
     public void InvokeAnimationEvent() => playerController.OnAnimationTrigger();
 
+    public void InvokeAnimationEventTrigger() => playerController.OnAnimationEventTrigger();
+
 }

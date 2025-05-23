@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public InventoryController inventoryController;
     public event Action OnUiOpen; 
-    public event Action OnAnimationDone;
+    public event Action OnAnimationDone, OnAnimationEvent;
 
     [SerializeField]
     public static Directions[] FacingDirection = new Directions[2];
@@ -37,7 +37,9 @@ public class PlayerController : MonoBehaviour
     public InteractBush interactBush { get; private set; }
     public InteractCrafting interactCrafting { get; private set; }
     public ConsumeState consumeState { get; private set; }
+    public InteractMinning MinningState { get; private set; }
     public RebornStartState StartState { get; private set; }
+
     void Start()
     {
         stateMachine = new PlayerStateMachine();
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         interactCrafting = new InteractCrafting(stateMachine, playerData, "Idle", this);
         consumeState = new ConsumeState(stateMachine, playerData,"Consume", this );
         StartState = new RebornStartState(stateMachine, playerData, "RebornStartIntro", this);
+        MinningState = new InteractMinning(stateMachine, playerData, "MiningAnim", this);
         stateMachine.InisiateState(StartState);
        
      
@@ -63,6 +66,10 @@ public class PlayerController : MonoBehaviour
     public void OnAnimationTrigger()
     {
         OnAnimationDone?.Invoke();
+    }
+    public void OnAnimationEventTrigger()
+    {
+        OnAnimationEvent?.Invoke();
     }
 
     public void Update()
