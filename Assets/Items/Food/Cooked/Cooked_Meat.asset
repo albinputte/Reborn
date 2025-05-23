@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f5f3499ef49b24590cef4988d0b7fb, type: 3}
   m_Name: Cooked_Meat
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Cooked Meat
   Description: 
   Icon: {fileID: -471951783, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 0

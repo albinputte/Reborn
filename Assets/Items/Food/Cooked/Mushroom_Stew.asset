@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f5f3499ef49b24590cef4988d0b7fb, type: 3}
   m_Name: Mushroom_Stew
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Mushroom Stew
   Description: 
   Icon: {fileID: -809197971, guid: d3c228896fba0644f90af4ecd74e7dec, type: 3}
   itemType: 0
