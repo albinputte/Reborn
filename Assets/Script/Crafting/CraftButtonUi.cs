@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CraftButtonUi : MonoBehaviour
 {
     public event Action<CraftButtonUi> OnItemClicked;
+    public event Action RefreshCrafting;
     [SerializeField] private Sprite[] ButtonSprites;
     [SerializeField] private Image Buttonimage; 
     public CraftingRecipe recipe;
@@ -39,6 +40,7 @@ public class CraftButtonUi : MonoBehaviour
             {
                 StartCoroutine(ActivateDelay());
                 OnItemClicked?.Invoke(this);
+                RefreshCrafting?.Invoke();
                
             }
            

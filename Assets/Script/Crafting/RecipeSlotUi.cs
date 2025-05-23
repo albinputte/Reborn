@@ -18,7 +18,7 @@ public class RecipeSlotUi : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] QuanityText;
     [SerializeField] private Image Border;
     [SerializeField] private Sprite[] HighLightBorderSprite;
-    public bool IsSelected;
+   
     public UIToolTipTrigger[] toolTipTrigger;
     public UIToolTipTrigger ResultItemToolTip;
     
@@ -56,14 +56,20 @@ public class RecipeSlotUi : MonoBehaviour
 
     public void SetBorder()
     {
-        Border.sprite = HighLightBorderSprite[1];
-        IsSelected = true;
-       
+        if (Border.sprite != HighLightBorderSprite[1])
+        {
+            Border.sprite = HighLightBorderSprite[1];
+        }
+
+
     }
     public void DeselectBorder()
     {
-        Border.sprite = HighLightBorderSprite[0];
-        IsSelected = false;
+        if (Border.sprite != HighLightBorderSprite[0])
+        {
+            Border.sprite = HighLightBorderSprite[0];
+        }
+
     }
 
     public void NotEnoughResources(int index)

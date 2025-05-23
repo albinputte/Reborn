@@ -16,6 +16,7 @@ public class CraftingUI : MonoBehaviour
     [SerializeField, HideInInspector] private List<RecipeSlotUi> recipeSlots;
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
+    [SerializeField] private VerticalLayoutGroup layoutGroup;
     public static CraftingUI Instance { get; private set; }
     private RecipeSlotUi CurrentSlot;
 
@@ -29,7 +30,7 @@ public class CraftingUI : MonoBehaviour
 
     public void Start()
     {
-        HideCraftingUi();
+        HideAtStart();
       
     }
 
@@ -40,6 +41,7 @@ public class CraftingUI : MonoBehaviour
 
     public void UpdateUi(CraftingManager crafting, int CurrentCraftingMangerIndex, bool IsActive)
     {
+        layoutGroup.enabled = true;
         if (IsActive)
         {
             // Deactivate/remove this manager
@@ -104,7 +106,20 @@ public class CraftingUI : MonoBehaviour
                 recipeSlots.Add(slotUi);
             }
         }
+    
     }
+    private void RefreshUiWithoutResteting()
+    {
+
+        {
+            foreach (var slotUi in recipeSlots)
+            {
+                SetIfEnoughResources(slotUi);
+            }
+        }
+
+    }
+
 
 
 
@@ -124,14 +139,31 @@ public class CraftingUI : MonoBehaviour
 
     public void SetUpRecipeInfiormation(RecipeSlotUi recipe)
     {
+
+        layoutGroup.enabled = false;
+        if (CurrentSlot == null)
+        {
+            CurrentSlot = recipe;
+            CurrentSlot.SetBorder();
+        }
+        else
+        {
+            CurrentSlot.DeselectBorder();
+            CurrentSlot = recipe;
+            CurrentSlot.SetBorder();
+        }
+
         SetIfEnoughResources(recipe);
         ResultSlot.sprite = recipe.recipe.resultItem.Icon;
         ResultSlot.gameObject.SetActive(true);
 
         // Update craft button logic
+        craftButtonUi.RefreshCrafting -= RefreshUiWithoutResteting;
         craftButtonUi.OnItemClicked -= CraftButtonPressed;
         craftButtonUi.SetRecipe(recipe.recipe, recipe.CurrentCraftingMangerIndex);
+        craftButtonUi.RefreshCrafting += RefreshUiWithoutResteting;
         craftButtonUi.OnItemClicked += CraftButtonPressed;
+       
     }
 
 
@@ -201,10 +233,14 @@ public class CraftingUI : MonoBehaviour
         UiIsActive = false;
         
     }
+    public void HideAtStart()
+    {
+        Frame.SetActive(false);
+    }
 
     public void ShowCraftinUi()
     {
-        Debug.Log("Test");
+        layoutGroup.enabled = true;
         Frame.SetActive(true);
         UiIsActive = true;
     
