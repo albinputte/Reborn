@@ -165,5 +165,5 @@ MonoBehaviour:
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 83d3a7ea2457db641bc4fa7eadc81bde, type: 3}
     useRandomPitch: 0
