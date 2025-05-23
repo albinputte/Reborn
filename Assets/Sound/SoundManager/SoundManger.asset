@@ -66,7 +66,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2c0b676082a7cfd44b40898fde54e998, type: 3}
     useRandomPitch: 0
   - name: PickUpSound
-    volume: 0.065
+    volume: 0.184
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: b392101ca3d3f34448bfd0b9a3980f01, type: 3}
@@ -90,13 +90,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ea614b9a8c7ec1944a9ca6f3af5629df, type: 3}
     useRandomPitch: 0
   - name: StoneGhost_Looking
-    volume: 0.063
+    volume: 0.019
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: c898e7c79bf076247b458a2037292134, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: StoneGhost_Rising
-    volume: 0.247
+    volume: 0.015
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 756f91524c0c245469cca4972e6ed199, type: 3}
@@ -117,7 +117,7 @@ MonoBehaviour:
     volume: 0.316
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 0b743b961a156d544947037d1f337894, type: 3}
+    - {fileID: 8300000, guid: 3645cbc6aa153ee48be117f9f9211f84, type: 3}
     useRandomPitch: 1
   - name: Conquest_Finish_Ding_1
     volume: 1
@@ -156,14 +156,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9834694392e492a4bad91868e8356252, type: 3}
     useRandomPitch: 0
   - name: ChestOpen
-    volume: 1
+    volume: 0.702
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: a086392aa3e0e36459b7a9a7630d367b, type: 3}
-    useRandomPitch: 0
+    useRandomPitch: 1
   - name: ChestClose
-    volume: 1
+    volume: 0.664
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 83d3a7ea2457db641bc4fa7eadc81bde, type: 3}
-    useRandomPitch: 0
+    - {fileID: 8300000, guid: a086392aa3e0e36459b7a9a7630d367b, type: 3}
+    useRandomPitch: 1
