@@ -162,6 +162,8 @@ public class PlayerState
 
     public IInteractable GetNearestInteractable(float detectRadius, LayerMask interactableLayer)
     {
+
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(controller.transform.position, detectRadius, interactableLayer);
         IInteractable nearest = null;
         float minDist = Mathf.Infinity;
@@ -205,6 +207,9 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
 }
     public void CheckIfInteractionIsNear()
     {
+        
+
+
         var nearest = GetNearestInteractable(1f, controller.InteractionLayer);
 
         if (nearest != null)
@@ -273,6 +278,12 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
     protected void HandleInteractionInput()
     {
         if (!controller.Input.isInteracting) return;
+        if (InventoryController.IsConsumableEquiped)
+        {
+            stateMachine.SwitchState(controller.consumeState);
+            return;
+        }
+           
 
         if (GetNearestInteractable(1f, controller.InteractionLayer) != null)
         {
