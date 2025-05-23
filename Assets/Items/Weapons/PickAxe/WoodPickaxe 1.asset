@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df15f1e129f974149b728be6f1c66a62, type: 3}
-  m_Name: WoodPickaxe
+  m_Script: {fileID: 11500000, guid: 77b9b3db0658f2e4b93a1eb0cf303c6f, type: 3}
+  m_Name: WoodPickaxe 1
   m_EditorClassIdentifier: 
   Name: Wood Pickaxe
   Description: 

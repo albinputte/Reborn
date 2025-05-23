@@ -19,6 +19,7 @@ public class InventoryController : MonoBehaviour
     public static bool IsConsumableEquiped;
     public static bool IsToolEquiped;
     public static bool IsAccesoireInHand;
+ 
     public static InventoryController Instance;
     public ChestController Chest;
 
@@ -253,6 +254,7 @@ public class InventoryController : MonoBehaviour
         if (item.item is ITools)
         {
             InventoryController.IsToolEquiped = true;
+            return;
         }
     }
 

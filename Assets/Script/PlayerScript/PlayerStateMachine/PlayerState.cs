@@ -283,10 +283,22 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
             stateMachine.SwitchState(controller.consumeState);
             return;
         }
-           
+        IInteractable inter = GetNearestInteractable(1f, controller.InteractionLayer);
 
-        if (GetNearestInteractable(1f, controller.InteractionLayer) != null)
+
+        if (inter != null)
         {
+            if(inter.type == InteractableType.Minning)
+            {
+                if (!InventoryController.IsToolEquiped)
+                {
+                    controller.Input.isInteracting = false;
+                    controller.Input.ActionPefromed = false;
+                    return;
+                }
+                   
+            }
+
             stateMachine.SwitchState(controller.interactState);
         }
         else
