@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 5474090005863533684}
   m_Layer: 0
   m_Name: StoneGhost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   anim: {fileID: 5347104957413997067}
   col: {fileID: 1605275061973566931}
   HitPrefab: {fileID: 3172483201822507954, guid: 6c12cbd756fff4043b87fd8003426f5e, type: 3}
+  isConquestEnemy: 0
 --- !u!114 &6509998896408614522
 MonoBehaviour:
   m_ObjectHideFlags: 0

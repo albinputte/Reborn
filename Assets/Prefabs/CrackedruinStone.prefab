@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 5322504507647189891}
   - component: {fileID: 606894298711349227}
   - component: {fileID: 4165190204187952000}
-  - component: {fileID: 6908761557451527679}
+  - component: {fileID: -6650876955928524184}
   - component: {fileID: 471584147947595253}
   m_Layer: 7
   m_Name: CrackedruinStone
-  m_TagString: Untagged
+  m_TagString: CrackedStone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +200,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6908761557451527679
+--- !u!114 &-6650876955928524184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,20 +209,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6014515077244522492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c6f93da05f553b4b81427f842797f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9e0d5073a58b31b408cf042596010bcb, type: 2}
-  OnTakeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  isGrass: 0
+  rewardChest: {fileID: 0}
 --- !u!61 &471584147947595253
 BoxCollider2D:
   m_ObjectHideFlags: 0
