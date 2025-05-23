@@ -76,7 +76,7 @@ public class PlayerInputManger : MonoBehaviour
     }
     public void OnAttackInput(InputAction.CallbackContext context)
     {
-        if (!IsPointerOverUI()) { 
+        if (!IsPointerOverUI() && !Respawn.instance.isRespawning) { 
             if (context.performed && !IsAttacking && !ActionPefromed)
             {
                 ActionPefromed = true;
@@ -93,7 +93,7 @@ public class PlayerInputManger : MonoBehaviour
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !Respawn.instance.isRespawning)
         {
             ActionPefromed = true;
             isInteracting = true;
@@ -102,7 +102,7 @@ public class PlayerInputManger : MonoBehaviour
     }
     public void OnInventoryInput(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !Respawn.instance.isRespawning)
         {
             inventoryController.InventoryInput();
           
