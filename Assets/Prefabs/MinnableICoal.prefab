@@ -136,7 +136,7 @@ MonoBehaviour:
   respawnTime: 90
   minOres: 3
   maxOres: 5
-  Type: 0
+  Type: 1
   Button: {fileID: 1541133556392835442}
   NewMaterial: {fileID: 2100000, guid: 5f94eaec9085fea4da60e0a388fe6a21, type: 2}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
