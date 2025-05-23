@@ -17,13 +17,14 @@ public class ChestController : MonoBehaviour
     public void Start()
     {
         InitializeChest();
-        HideChest();
+       
     }
 
     public void InitializeChest()
     {
     
         chestUi.InstantiateChest();
+        ChestUiIsActive = false;
         chestUi.OnSwap += HandleItemSwap;
         chestUi.OnDrag += HandleDragging;
         chestUi.OnItemAction += HandleItemAction;
@@ -90,7 +91,7 @@ public class ChestController : MonoBehaviour
         ChestUiIsActive = false;
 
     }
-
+    
     public void UpdateChestUI()
     {
         chestUi.ResetChest();

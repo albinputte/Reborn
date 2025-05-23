@@ -39,7 +39,7 @@ public class ChestUiPage : MonoBehaviour
             //slot.OnItemSelect += SelectionBorder;
 
         }
-        HideChest();
+        HideChestAtStart();
     }
 
     public void UpdateChestData(int Index, Sprite newSprite, int newQuantity, string itemname, string itemDesciption)
@@ -144,7 +144,10 @@ public class ChestUiPage : MonoBehaviour
         SoundManager.PlaySound(SoundType.ChestOpen);
  
     }
-
+    public void HideChestAtStart()
+    {
+        chestPanel.SetActive(false);
+    }
     public void HideChest()
     {
         chestPanel.SetActive(false);
