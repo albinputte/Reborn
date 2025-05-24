@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
-    // This method can be called from a UI Button
+    // Load the game scene
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
+    }
+
+    // Exit the game
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting..."); // This will show in the editor but not in a built game
     }
 }
