@@ -12,12 +12,14 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
     [SerializeField] private Material OldMaterial;
     [SerializeField] private GameObject Button;
     public SpriteRenderer ChestRenderer;
+    private Animator animator;
 
 
     public void Start()
     {
         controller = FindAnyObjectByType<ChestController>();
         ChestRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
     public void Interact()
     {
@@ -28,12 +30,14 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
         if (controller.ChestUiIsActive)
         {
             controller.HideChest();
+            animator.SetTrigger("ChestInteraction");
             UpdateItems();
         }
         else
         {
             controller.PrepareChestData(ItemToInitialize);
             controller.ShowChest();
+            animator.SetTrigger("ChestInteraction");
 
         }
     }
