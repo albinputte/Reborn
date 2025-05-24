@@ -29,7 +29,7 @@ public class PlayerDmgCol : MonoBehaviour
             //rb.AddForce((direction * 3) * -1, ForceMode2D.Impulse);
             CameraShake.instance.ShakeCamera(2f, 0.3f);
             if (StatSystem.instance.GetStat(StatsType.Lifesteal) > 0)
-                health.heal((int)StatSystem.instance.GetStat(StatsType.Lifesteal));
+                health.heal((int)StatSystem.instance.GetStat(StatsType.Lifesteal), false);
             if(isProjectile)
                 Destroy(gameObject);
             

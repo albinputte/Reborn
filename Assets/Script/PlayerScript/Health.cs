@@ -17,15 +17,15 @@ public class Health : MonoBehaviour, IDamagable
     public UnityEvent OnTakeDamage;
     public UnityEvent OnHeal;
     public UnityEvent OnDeath;
-
-    [SerializeField] private bool isGrass = false;
+    public UnityEvent OnPassivRegen;
+    [SerializeField] private bool IsPlayer;
 
 
 
     private void Awake()
     {
         InstantiateHealth(data);
-        
+      
     }
 
     public void InstantiateHealth(HealthData data)
@@ -34,6 +34,9 @@ public class Health : MonoBehaviour, IDamagable
         currentHealth = maxHealth;
         HasInvinsiabilty = data.hasInvincibilty;
         InvinciableTimer = data.invincibiltyTime;
+
+        if (IsPlayer)
+            InvokeHealthRegen();
     }
 
 
@@ -70,15 +73,29 @@ public class Health : MonoBehaviour, IDamagable
       
     }
 
-    public void heal(int amount)
+    public void heal(int amount, bool PassivRegen)
     {
         currentHealth += amount;
 
         if (currentHealth > maxHealth ) {
         currentHealth = maxHealth;
         }
-        OnHeal?.Invoke();
+        if(!PassivRegen)
+            OnHeal?.Invoke();
+        else
+            OnPassivRegen?.Invoke();
     }
+    public void InvokeHealthRegen()
+    {
+        StartCoroutine(HealthRegen());
+    }
+    public IEnumerator HealthRegen()
+    {
+        yield return new WaitForSeconds(2);
+        if(StatSystem.instance.GetStat(StatsType.HealthRegen) > 0)
+            heal((int)StatSystem.instance.GetStat(StatsType.HealthRegen), true);
+        Invoke("InvokeHealthRegen",1);
+    } 
 
     public void Hit(int Damage,Vector2 Knockback)
     {
@@ -143,14 +160,9 @@ public class Health : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        if (isGrass)
-        { 
-            return;
-        }
-        else
-        {
+      
             Destroy(gameObject, 0.35f);
-        }
+   
         
     }
 

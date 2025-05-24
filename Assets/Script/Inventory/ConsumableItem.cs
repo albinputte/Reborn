@@ -14,7 +14,7 @@ public class ConsumableItem : ItemData, IitemAction, IConsumable, IDestroyableIt
     {
         Health health = Player.GetComponentInChildren<Health>();
         if (health != null) {
-            health.heal(healAmount);
+            health.heal(healAmount, false);
             if (buffBase != null)
                 buffBase.ApplyBuff();
             return true;
