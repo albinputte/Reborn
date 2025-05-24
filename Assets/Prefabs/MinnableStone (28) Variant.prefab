@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: ItemData
       value: 
       objectReference: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
+    - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: StoneParticles
+      value: 
+      objectReference: {fileID: 4349876612542236215, guid: 076f135364b1f7e4bba39a5c306218bf, type: 3}
     - target: {fileID: 5938805785456044729, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -140,6 +140,7 @@ MonoBehaviour:
   Button: {fileID: 1541133556392835442}
   NewMaterial: {fileID: 2100000, guid: 5f94eaec9085fea4da60e0a388fe6a21, type: 2}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  StoneParticles: {fileID: 4349876612542236215, guid: 076f135364b1f7e4bba39a5c306218bf, type: 3}
 --- !u!61 &7399015159688242347
 BoxCollider2D:
   m_ObjectHideFlags: 0

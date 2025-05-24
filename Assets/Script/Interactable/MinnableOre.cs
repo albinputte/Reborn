@@ -16,7 +16,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
     [SerializeField] private GameObject Button;
     [SerializeField] private Material NewMaterial;
     [SerializeField] private Material OldMaterial;
-    
+    [SerializeField] private GameObject StoneParticles;
     public InteractableType type { get => Type; set => Type = value; }
     public void Start()
     {
@@ -32,7 +32,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
             
             GameObject ore = Instantiate(orePrefab, transform.position, Quaternion.identity);
             ore.GetComponent<WorldItem>().SetItem(ItemData, 1); 
-
+            Instantiate(StoneParticles, transform.position, Quaternion.identity);
 
             oreCount--;
             Debug.Log("Mined ore! Ores left: " + oreCount);
