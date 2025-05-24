@@ -281,10 +281,11 @@ public class InventoryController : MonoBehaviour
                 action.PerformAction(Character, item.weaponInstances);
             if (item.item is IDestroyableItem)
                 inventoryData.RemoveItem(CurrentIndex, 1);
-            if(item.IsEmpty || item.quantity == 0)
-            {
-                InventoryController.IsConsumableEquiped =false;
-            }
+           
+        }
+        if (item.IsEmpty || item.quantity == 0)
+        {
+            InventoryController.IsConsumableEquiped = false;
         }
     }
     public IEnumerator EatCooldown()
