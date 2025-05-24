@@ -15,6 +15,9 @@ public class InventoryUiSlot : MonoBehaviour
     [SerializeField] private Image itemImage;
     [SerializeField] private Sprite[] BorderSprite = new Sprite[2];
     [SerializeField] private Image BorderImage; // the border that will appear when you click on an item slot :)
+    [SerializeField] private Image FillImage;
+    private bool ShouldFill;
+    private float fillAmount, filltimer, Timer;
     private string ItemName;
     private string ItemDescription;
     public bool IsSelected;
@@ -32,6 +35,21 @@ public class InventoryUiSlot : MonoBehaviour
     {
         OwnerPage = owner;
         SlotIndex = index;
+    }
+    public void Update()
+    {
+        if (ShouldFill && FillImage != null)
+        {
+            if (FillImage.fillAmount > 0)
+            {
+                FillImage.fillAmount -= fillAmount * Time.deltaTime * 100;
+            }
+            else
+            {
+                FillImage.fillAmount = 0;
+                ShouldFill = false;
+            }
+        }
     }
 
 
@@ -80,7 +98,13 @@ public class InventoryUiSlot : MonoBehaviour
     }
 
 
-
+    public void SetTimer(float Timer)
+    {
+        FillImage.fillAmount = 1;
+        filltimer = Timer;
+        fillAmount = 1 / (float) (filltimer * 100);
+        ShouldFill = true;
+    }
 
 
 

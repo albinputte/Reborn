@@ -276,6 +276,7 @@ public class InventoryController : MonoBehaviour
         if (item.item is IConsumable && CanEat)
         {
             StartCoroutine(EatCooldown());
+            inventoryUi.EatCooldownTimer(CurrentIndex, 0.5f);
             if (item.item is IitemAction action)
                 action.PerformAction(Character, item.weaponInstances);
             if (item.item is IDestroyableItem)

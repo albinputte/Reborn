@@ -103,6 +103,15 @@ public class InventoryUiPage : MonoBehaviour
       
     }
 
+    public void EatCooldownTimer(int index, float time)
+    {
+        InventoryUiSlot slot = ListOfUIslots[index];
+        if (slot != null)
+        {
+            slot.SetTimer(time);
+        }
+    }
+
     public void SetAccesoire(AccesoriesItemBase accesories)
     {
         accesorieSlots.SetSlot(accesories);

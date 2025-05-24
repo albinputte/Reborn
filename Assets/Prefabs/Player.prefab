@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5221114921032794271}
   - component: {fileID: 7883466773269392695}
+  - component: {fileID: 9478522594115534}
   m_Layer: 8
   m_Name: HealthComponent
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7883466773269392695}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: Flash
+        m_MethodName: FlashPlayer
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 9190127250093791536}
@@ -87,9 +88,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7883466773269392695}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: SpawnParticlesFromTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4349876612542236215, guid: 1c902cdb77fe99a488e69924bd754a8e, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Respawn, Assembly-CSharp
+        m_MethodName: RespawnPlayer
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6953608451241955459}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isGrass: 0
+--- !u!114 &9478522594115534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29638728142560027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faeb427a363f5c341ace92bbe36a7725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2475405733756871580
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +484,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.7232014, y: 0}
@@ -491,7 +529,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.72524226, y: 0.5004959}
@@ -536,7 +574,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.72617877, y: -0.4988408}
@@ -581,7 +619,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.7264439, y: 0.50373936}
@@ -626,7 +664,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.7264439, y: -0.5040288}
@@ -1062,6 +1100,7 @@ MonoBehaviour:
   Ui:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   agent: {fileID: 0}
   moveDir: {x: 0, y: 0}
   UILayer:
@@ -1081,6 +1120,7 @@ GameObject:
   - component: {fileID: 4890511945064113185}
   - component: {fileID: 2819428566645820139}
   - component: {fileID: 4123575225222044651}
+  - component: {fileID: 5378288257652547935}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1288,6 +1328,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5013695, y: 0.22252178}
   m_EdgeRadius: 0
+--- !u!114 &5378288257652547935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953608451241955459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2f6f7918348734995d4c8b6eeda12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7694298801782400001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,23 +1385,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUi: {fileID: 0}
+  TrashItem: {fileID: 11400000, guid: 59ea5602413421a41a00b9deab15c786, type: 2}
   inventoryData: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
+  Chest: {fileID: 0}
   itemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   InventoryUiActive: 0
   inputManger: {fileID: 8985319236655394079}
   craftingUI: {fileID: 0}
   testItem: {fileID: 11400000, guid: 29f92e39860ff5145b52fe62eb2351e6, type: 2}
   Character: {fileID: 6953608451241955459}
-  ItemToInitialize:
-  - item: {fileID: 11400000, guid: 5f4d664978cc04042ad38db2298d7d52, type: 2}
-    quantity: 1
-  - item: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
-    quantity: 2
-  - item: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
-    quantity: 12
-  - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
-    quantity: 3
-  - item: {fileID: 11400000, guid: fb94d54edae74ae4782d34ea92a253f8, type: 2}
-    quantity: 1
-  - item: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
-    quantity: 2
+  ItemToInitialize: []
