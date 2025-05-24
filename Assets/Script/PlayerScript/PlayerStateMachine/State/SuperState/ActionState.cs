@@ -20,6 +20,7 @@ public class ActionState : PlayerState
     {
         base.Exit();
         controller.Input.ActionPefromed = false;
+        controller.Input.isInteracting = false;
         SetDrag(5);
         
     }

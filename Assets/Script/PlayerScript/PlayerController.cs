@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         interactState = new InteractState(stateMachine, playerData, "InteractAnim", this);
         interactBush = new InteractBush(stateMachine, playerData, "Idle", this );
         interactCrafting = new InteractCrafting(stateMachine, playerData, "Idle", this);
-        consumeState = new ConsumeState(stateMachine, playerData,"Consume", this );
+        consumeState = new ConsumeState(stateMachine, playerData,"", this );
         StartState = new RebornStartState(stateMachine, playerData, "RebornStartIntro", this);
         MinningState = new InteractMinning(stateMachine, playerData, "MiningAnim", this);
         stateMachine.InisiateState(StartState);

@@ -19,9 +19,16 @@ public class ConsumeState : ActionState
         {
             controller.inventoryController.HandleConsumable();
         }
-        controller.Input.IsAttacking = false;
-        controller.Input.ActionPefromed = false;
+  
         IsAbilityDone = true;
+
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        controller.Input.IsAttacking = false;
+   
     }
 
  
