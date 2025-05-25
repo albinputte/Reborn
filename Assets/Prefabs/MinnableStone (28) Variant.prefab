@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: StoneParticles
       value: 
-      objectReference: {fileID: 4349876612542236215, guid: 076f135364b1f7e4bba39a5c306218bf, type: 3}
+      objectReference: {fileID: 4614288602200262478, guid: b37dc70a50aed0b44954328aeaf1ba4d, type: 3}
     - target: {fileID: 5938805785456044729, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -149,12 +149,16 @@ PrefabInstance:
       value: 1.21875
       objectReference: {fileID: 0}
     - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.752228
+      value: -16.14
       objectReference: {fileID: 0}
     - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.179024
+      value: 2.11
       objectReference: {fileID: 0}
     - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_LocalPosition.z
