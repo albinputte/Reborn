@@ -17,7 +17,7 @@ public class RebornStartState : PlayerState
     public override void Exit()
     {
         base.Exit();
-        directions = Directions.Down;
+        PlayerController.FacingDirection[1] = Directions.RightDown;
         controller.OnAnimationDone -= () => { stateMachine.SwitchState(controller.idle); };
     }
 }

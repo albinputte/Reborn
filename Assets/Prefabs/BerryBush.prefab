@@ -110,7 +110,7 @@ MonoBehaviour:
   SpawnTime: 30
   MinBerries: 1
   MaxBerries: 4
-  NewMaterial: {fileID: 2100000, guid: 5f94eaec9085fea4da60e0a388fe6a21, type: 2}
+  NewMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   Button: {fileID: 8039949595478192764}
   Type: 0

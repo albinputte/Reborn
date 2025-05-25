@@ -32,7 +32,8 @@ public class MinnableOre : MonoBehaviour, IInteractable
             
             GameObject ore = Instantiate(orePrefab, transform.position, Quaternion.identity);
             ore.GetComponent<WorldItem>().SetItem(ItemData, 1); 
-            Instantiate(StoneParticles, transform.position, Quaternion.identity);
+            if(type == InteractableType.Minning)
+                Instantiate(StoneParticles, transform.position, Quaternion.identity);
 
             oreCount--;
             Debug.Log("Mined ore! Ores left: " + oreCount);
