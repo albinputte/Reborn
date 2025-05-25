@@ -47,10 +47,10 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.8718866, b: 0.4669811, a: 1}
-  m_Intensity: 2
-  m_LightVolumeIntensity: 1
+  m_FalloffIntensity: 0.6
+  m_Color: {r: 0.9882353, g: 0.9098039, b: 0.5294118, a: 1}
+  m_Intensity: 0.81
+  m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000005fea7ff815154ecd
   m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
@@ -70,8 +70,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightInnerRadius: 0.5
+  m_PointLightOuterRadius: 2.5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: -850520811
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 241947505, guid: c6f43df1ec32bc540b04a372dbf8b254, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,10 +183,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
-  item: {fileID: 11400000, guid: 59ea5602413421a41a00b9deab15c786, type: 2}
+  item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
   sprite: {fileID: 0}
   quantity: 1
-  IsADrop: 1
+  IsADrop: 0
   col: {fileID: 0}
   hoverAmount: 0.1
   hoverCycleTime: 0.5
@@ -230,7 +230,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
