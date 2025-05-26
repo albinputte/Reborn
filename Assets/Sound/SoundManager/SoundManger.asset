@@ -167,3 +167,33 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 83d3a7ea2457db641bc4fa7eadc81bde, type: 3}
     useRandomPitch: 1
+  - name: PickAxe_Sound
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
+    useRandomPitch: 0
+  - name: Eat_sound
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
+    useRandomPitch: 0
+  - name: Fail_Craft
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
+    useRandomPitch: 0
+  - name: Preasure_Plate
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
+    useRandomPitch: 0
+  - name: Stone_Puzzle_Destroy
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 327554770568f97408ffa6457ee758ba, type: 3}
+    useRandomPitch: 0

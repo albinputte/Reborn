@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,7 @@ public class CrackedStone : MonoBehaviour
     }
     public void DestroyCrackedStone()
     {
-        //play sound
+        SoundManager.PlaySound(SoundType.Stone_Puzzle_Destroy);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

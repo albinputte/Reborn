@@ -33,6 +33,11 @@ namespace SmallHedge.SoundManager
         Conquest_Chest_Landing,
         ChestOpen,
         ChestClose,
+        PickAxe_Sound,
+        Eat_sound,
+        Fail_Craft,
+        Preasure_Plate,
+        Stone_Puzzle_Destroy,
 
 
 

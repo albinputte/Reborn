@@ -99,6 +99,7 @@ public class PlayerInputManger : MonoBehaviour
             isInteracting = true;
            
         }
+        
     }
     public void OnInventoryInput(InputAction.CallbackContext context)
     {

@@ -275,6 +275,7 @@ public class InventoryController : MonoBehaviour
         InventoryItem item = inventoryData.GetSpecificItem(CurrentIndex);
         if (item.item is IConsumable && CanEat)
         {
+            SoundManager.PlaySound(SoundType.Eat_sound);
             StartCoroutine(EatCooldown());
             inventoryUi.EatCooldownTimer(CurrentIndex, 0.5f);
             if (item.item is IitemAction action)

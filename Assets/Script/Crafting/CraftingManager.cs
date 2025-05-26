@@ -56,7 +56,7 @@ public class CraftingManager : MonoBehaviour, IInteractable
         }
         else
         {
-            //delegate add here
+            SoundManager.PlaySound(SoundType.Fail_Craft);
             Debug.Log("failed");
         }
     }

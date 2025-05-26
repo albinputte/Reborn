@@ -140,25 +140,7 @@ public class PlayerState
     }
 
 
-    private void HandleSpriteFlip(Directions dir)
-    {
-        // Flip the parent sprite depending on direction
-        switch (dir)
-        {
-            case Directions.Left:
-            case Directions.LeftUp:
-            case Directions.LeftDown:
-                controller.Parrent.transform.localScale = new Vector3(-1, 1, 1);
-                break;
-
-            case Directions.Right:
-            case Directions.RightUp:
-            case Directions.RightDown:
-                controller.Parrent.transform.localScale = new Vector3(1, 1, 1);
-                break;
-        }
-    }
-
+    
 
     public IInteractable GetNearestInteractable(float detectRadius, LayerMask interactableLayer)
     {

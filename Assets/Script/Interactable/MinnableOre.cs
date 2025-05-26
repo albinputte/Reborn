@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
 
             if (type == InteractableType.Minning)
             {
+                SoundManager.PlaySound(SoundType.PickAxe_Sound);
                 GameObject Particle = Instantiate(StoneParticles, transform.position, Quaternion.identity);
             }
              

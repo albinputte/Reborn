@@ -29,7 +29,7 @@ public class ConquestPressureplate : MonoBehaviour
 
         isPlateLocked = true;
         ppSprite.sprite = closedSprite;
-        //PlaydingSound(currentStage);
+        SoundManager.PlaySound(SoundType.Preasure_Plate);
         StartCoroutine(SpawnEnemiesWithDelay());
 
     }
