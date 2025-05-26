@@ -18,7 +18,8 @@ public class BerryBush : MonoBehaviour, IInteractable
     [SerializeField] private Material OldMaterial;
     [SerializeField] private GameObject Button;
 
-    [SerializeField]public InteractableType Type;
+
+   [SerializeField]public InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
 
     public void Start()
