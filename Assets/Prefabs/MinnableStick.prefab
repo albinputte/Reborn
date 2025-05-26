@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8794193996218034587}
   - component: {fileID: 5938805785456044729}
   - component: {fileID: 3497596950225550430}
-  - component: {fileID: 7399015159688242347}
+  - component: {fileID: 4801250495992800027}
   m_Layer: 6
   m_Name: MinnableStick
   m_TagString: Untagged
@@ -195,8 +195,8 @@ MonoBehaviour:
   NewMaterial: {fileID: 2100000, guid: 5f94eaec9085fea4da60e0a388fe6a21, type: 2}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   StoneParticles: {fileID: 0}
---- !u!61 &7399015159688242347
-BoxCollider2D:
+--- !u!58 &4801250495992800027
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,19 +227,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08143091}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0625, y: 1.03125}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.08651519, y: -0.26165295}
   serializedVersion: 2
-  m_Size: {x: 1.03125, y: 0.18635082}
-  m_EdgeRadius: 0
+  m_Radius: 0.13032818
 --- !u!1001 &687803300569783330
 PrefabInstance:
   m_ObjectHideFlags: 0
