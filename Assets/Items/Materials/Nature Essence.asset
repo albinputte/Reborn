@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df15f1e129f974149b728be6f1c66a62, type: 3}
   m_Name: Nature Essence
   m_EditorClassIdentifier: 
-  Name: Nature Essence
-  Description: 
+  Name: <color=#D86A9F>Nature Essence</color>
+  Description: A key component for upgrading swords into deadly masterpieces.
   Icon: {fileID: 429145071, guid: d3c228896fba0644f90af4ecd74e7dec, type: 3}
   itemType: 0
   IsStackable: 1

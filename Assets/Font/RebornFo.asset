@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: RebornFo
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -1168424689
   material: {fileID: -188429470461840304}
-  materialHashCode: 0
+  materialHashCode: -1699079089
   m_Version: 1.1.0
   m_SourceFontFileGUID: 337f52d34eea57a458188e7cef836da7
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 337f52d34eea57a458188e7cef836da7, type: 3}

@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingRecipes:
+  - {fileID: 11400000, guid: 4c289086236e22d43befd33a37abeb34, type: 2}
   - {fileID: 11400000, guid: 56bf7f914ec3b964c9c143567d12cf6f, type: 2}
   - {fileID: 11400000, guid: ce27fa171c6da2446ac08205573206eb, type: 2}
   - {fileID: 11400000, guid: cbc608c4399f3e54191fd2b1e1b16a3e, type: 2}

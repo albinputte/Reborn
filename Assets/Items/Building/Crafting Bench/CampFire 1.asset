@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CampFire 1
   m_EditorClassIdentifier: 
   Name: CampFire
-  Description: 
+  Description: A station used to cook food.
   Icon: {fileID: 21300000, guid: 208cd3536b668094087b1de2afb8ac41, type: 3}
   itemType: 7
   IsStackable: 0

@@ -10,28 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2f5f3499ef49b24590cef4988d0b7fb, type: 3}
-  m_Name: Cooked_Meat
+  m_Name: Magic_Mushroom_stew
   m_EditorClassIdentifier: 
-  Name: <color=#49B2D3>Cooked Meat</color>
-  Description: Think raw meat, but better!
-  Icon: {fileID: -471951783, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
+  Name: <color=#D86A9F>Magic Mushroom Stew</color>
+  Description: Tastes like soup. Feels like a spell
+  Icon: {fileID: 21300000, guid: 85472a3ca635ad04bb25e613e58c7ac7, type: 3}
   itemType: 0
   IsStackable: 1
   IsCraftable: 1
   craftingRecipe:
   - ingredients:
-    - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
+    - item: {fileID: 11400000, guid: debfac56126519941a8ecaf3de0b0495, type: 2}
       quantity: 1
     - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: aa370e136fc4e164b8b8539af1bf0447, type: 2}
       quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   buffBase:
-    rid: 5482896750252916739
-  healAmount: 20
+    rid: 5482896750252916737
+  healAmount: 30
   references:
     version: 2
     RefIds:
-    - rid: 5482896750252916739
+    - rid: 5482896750252916737
       type: {class: HealthBuff, ns: , asm: Assembly-CSharp}
       data: 

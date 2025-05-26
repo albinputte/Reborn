@@ -13,20 +13,18 @@ MonoBehaviour:
   m_Name: Mushroom_
   m_EditorClassIdentifier: 
   Name: Brown Mushroom
-  Description: 
+  Description: Not the poisonous kind, commonly used in cooking
   Icon: {fileID: 21300000, guid: bdeae3f4cc56afa4698d84619c7f1814, type: 3}
   itemType: 0
   IsStackable: 1
   IsCraftable: 0
-  craftingRecipe:
-  - ingredients: []
-    resultItem: {fileID: 11400000}
-    resultQuantity: 1
+  craftingRecipe: []
   buffBase:
-    rid: -2
-  healAmount: 6
+    rid: 5482896750252916744
+  healAmount: 5
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 5482896750252916744
+      type: {class: HealthBuff, ns: , asm: Assembly-CSharp}
+      data: 

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f2559047857584cb19c749a65f5e05, type: 3}
   m_Name: IronSword
   m_EditorClassIdentifier: 
-  Name: Iron Sword
-  Description: 
+  Name: <color=#D86A9F>Iron Sowrd</color>
+  Description: A Sword sharp enough to deal significant damage
   Icon: {fileID: 95129405, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
   itemType: 4
   IsStackable: 0
@@ -27,8 +27,8 @@ MonoBehaviour:
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   attackSounds: 000000000100000002000000
-  Damage: 5
-  KnockbackForce: 20
+  Damage: 8
+  KnockbackForce: 15
   WeaponType: 1
   WeaponAttackSprites:
   - AttackSprite:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chest 1
   m_EditorClassIdentifier: 
   Name: Chest
-  Description: 
+  Description: Usefull for storing items
   Icon: {fileID: 1243854082, guid: 2b6368cce7b578647b8a8989dd45ad2c, type: 3}
   itemType: 0
   IsStackable: 0

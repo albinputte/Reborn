@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Anvill 1
   m_EditorClassIdentifier: 
   Name: Anvil
-  Description: 
+  Description: Used in the creation of various tools and weapons
   Icon: {fileID: 21300000, guid: 6dac7a057011310419cf54adf343447d, type: 3}
   itemType: 7
   IsStackable: 0

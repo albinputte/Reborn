@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Coal
   m_EditorClassIdentifier: 
   Name: Coal
-  Description: 
+  Description: A requrment for cooking the best meals
   Icon: {fileID: 21300000, guid: 2f97fa93a5ee6e34b86aabc48a200125, type: 3}
   itemType: 0
   IsStackable: 1

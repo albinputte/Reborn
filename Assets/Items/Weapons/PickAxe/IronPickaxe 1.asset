@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b9b3db0658f2e4b93a1eb0cf303c6f, type: 3}
   m_Name: IronPickaxe 1
   m_EditorClassIdentifier: 
-  Name: Iron Pickaxe
-  Description: 
+  Name: <color=#D86A9F>Iron pickaxe</color>
+  Description: An advanced pixckaxe used to mine resources effectively
   Icon: {fileID: 393236885, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 4
   IsStackable: 0

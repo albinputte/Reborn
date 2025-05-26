@@ -14791,6 +14791,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 12d6b3b2b3e1ab744ac280bab8be42b0, type: 2}
   - {fileID: 11400000, guid: 0c10ec4baf62eba47b8b418d19b9f9ec, type: 2}
   - {fileID: 11400000, guid: debfac56126519941a8ecaf3de0b0495, type: 2}
+  - {fileID: 11400000, guid: 0a8a7241439a3024bbe48c5639c25607, type: 2}
+  - {fileID: 11400000, guid: e9c82806b274238419d683f313c418a4, type: 2}
+  - {fileID: 11400000, guid: 36665f620e44d4b49a75c0bcc8620d66, type: 2}
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes:
   - ingredients: []

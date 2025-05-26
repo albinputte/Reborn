@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WoodenSword
   m_EditorClassIdentifier: 
   Name: Wooden Sword
-  Description: 
+  Description: simple sword enough to defend yourself
   Icon: {fileID: 987380367, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
   itemType: 4
   IsStackable: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     resultQuantity: 1
   attackSounds: 000000000100000002000000
   Damage: 5
-  KnockbackForce: 10
+  KnockbackForce: 5
   WeaponType: 1
   WeaponAttackSprites:
   - AttackSprite:
