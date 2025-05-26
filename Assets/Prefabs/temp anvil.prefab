@@ -181,6 +181,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce27fa171c6da2446ac08205573206eb, type: 2}
   - {fileID: 11400000, guid: cbc608c4399f3e54191fd2b1e1b16a3e, type: 2}
   - {fileID: 11400000, guid: 3d34335f988f01f4684033e470d4f3d4, type: 2}
+  - {fileID: 11400000, guid: 811ae1a94e89c1248a36b867507bbe7a, type: 2}
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes: []
   craftingUI: {fileID: 0}

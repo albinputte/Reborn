@@ -15,8 +15,17 @@ MonoBehaviour:
   Name: <color=#f08e39>Grail</color>
   Description: A magical grail that can be filled with magical water to unluck it's
     full potential
-  Icon: {fileID: 437397741, guid: 47585eda242be4c4f8f4359972106c9e, type: 3}
+  Icon: {fileID: 782376372, guid: 990fe6c632bf0514984d47d7037ec6e7, type: 3}
   itemType: 7
   IsStackable: 1
-  IsCraftable: 0
-  craftingRecipe: []
+  IsCraftable: 1
+  craftingRecipe:
+  - ingredients:
+    - item: {fileID: 11400000, guid: 798b25c7d25ab784e8875bf7c588d304, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: f3aada6bf78aa5448a1615305eb8f7dc, type: 2}
+      quantity: 1
+    - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
+      quantity: 2
+    resultItem: {fileID: 11400000}
+    resultQuantity: 1
