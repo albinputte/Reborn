@@ -28,7 +28,7 @@ MonoBehaviour:
     resultQuantity: 1
   attackSounds: 000000000100000002000000
   Damage: 8
-  KnockbackForce: 15
+  KnockbackForce: 20
   WeaponType: 1
   WeaponAttackSprites:
   - AttackSprite:

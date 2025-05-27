@@ -14,6 +14,8 @@ public class Health : MonoBehaviour, IDamagable
     private bool IsInvinsiable;
     private float InvinciableTimer;
     private Vector2 tempKnockBack;
+    private float DamageAmount;
+    private float healAmount;
     public UnityEvent OnTakeDamage;
     public UnityEvent OnHeal;
     public UnityEvent OnDeath;
@@ -76,7 +78,7 @@ public class Health : MonoBehaviour, IDamagable
     public void heal(int amount, bool PassivRegen)
     {
         currentHealth += amount;
-
+        healAmount = amount;
         if (currentHealth > maxHealth ) {
         currentHealth = maxHealth;
         }
@@ -101,6 +103,7 @@ public class Health : MonoBehaviour, IDamagable
     {
         Debug.Log("Hit");
         tempKnockBack = Knockback;
+        DamageAmount = Damage;
         TakeDamage(Damage);
     }
     public void TurnOffCollider(Collider2D other)
@@ -209,6 +212,19 @@ public class Health : MonoBehaviour, IDamagable
     {
         return maxHealth;
     }
+    public void OnDamagePopUp(Transform transform)
+    {
+        DamagePopup.Create(transform.position, DamageAmount);
+    }
 
-   
+    public void OnHealPopUp(Transform transform)
+    {
+        DamagePopup.CreateForPlayerHeal(transform.position, healAmount);
+    }
+    public void OnDamagePlayerPopUp(Transform transform)
+    {
+        DamagePopup.CreateForPlayer(transform.position, DamageAmount);
+    }
+
+
 }
