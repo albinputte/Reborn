@@ -13,6 +13,6 @@ public class ConquestEnemy : MonoBehaviour
     {
         // Your enemy's death logic...
         originPlate?.NotifyEnemyDied(gameObject);
-        Destroy(gameObject);
+
     }
 }

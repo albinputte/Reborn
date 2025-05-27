@@ -94,8 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8794193996218034587}
   - component: {fileID: 5938805785456044729}
+  - component: {fileID: 6407698220069748866}
   - component: {fileID: 3497596950225550430}
   - component: {fileID: 4801250495992800027}
+  - component: {fileID: 1514167076335447766}
   m_Layer: 6
   m_Name: MinnableStick
   m_TagString: Untagged
@@ -172,6 +174,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6407698220069748866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324889754127627277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5764bcf0e639edf4583a1cda9340f1a3, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3497596950225550430}
+        m_TargetAssemblyTypeName: MinnableOre, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!114 &3497596950225550430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +232,7 @@ MonoBehaviour:
   maxOres: 5
   Type: 0
   Button: {fileID: 488526568015001308}
-  NewMaterial: {fileID: 2100000, guid: 5f94eaec9085fea4da60e0a388fe6a21, type: 2}
+  NewMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   StoneParticles: {fileID: 0}
 --- !u!58 &4801250495992800027
@@ -210,7 +250,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -230,6 +270,63 @@ CircleCollider2D:
   m_Offset: {x: -0.08651519, y: -0.26165295}
   serializedVersion: 2
   m_Radius: 0.13032818
+--- !u!60 &1514167076335447766
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324889754127627277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1535
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0625, y: 1.03125}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.53125, y: 0.203125}
+      - {x: 0.40625, y: 0.484375}
+      - {x: 0.34375, y: 0.515625}
+      - {x: -0.03125, y: 0.515625}
+      - {x: -0.375, y: 0.421875}
+      - {x: -0.53125, y: 0.390625}
+      - {x: -0.53125, y: -0.140625}
+      - {x: -0.21875, y: -0.453125}
+      - {x: 0.03125, y: -0.453125}
+      - {x: 0.25, y: -0.390625}
+      - {x: 0.375, y: -0.328125}
+      - {x: 0.53125, y: -0.015625}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &687803300569783330
 PrefabInstance:
   m_ObjectHideFlags: 0

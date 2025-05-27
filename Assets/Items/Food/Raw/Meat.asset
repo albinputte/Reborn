@@ -20,11 +20,10 @@ MonoBehaviour:
   IsCraftable: 0
   craftingRecipe: []
   buffBase:
-    rid: 5482896750252916742
+    rid: -2
   healAmount: 5
   references:
     version: 2
     RefIds:
-    - rid: 5482896750252916742
-      type: {class: HealthBuff, ns: , asm: Assembly-CSharp}
-      data: 
+    - rid: -2
+      type: {class: , ns: , asm: }

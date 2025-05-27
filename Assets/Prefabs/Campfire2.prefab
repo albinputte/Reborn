@@ -14697,6 +14697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6955537328212403403}
   - component: {fileID: 8406529299693591031}
+  - component: {fileID: 5453877616459074481}
   - component: {fileID: 7366564813299108890}
   - component: {fileID: 4929665978537390477}
   m_Layer: 6
@@ -14775,6 +14776,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5453877616459074481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095298373504159686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 0eda0e67ff6678e408948927e17b1cf9, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7366564813299108890}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: DestroyCraftingTable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!114 &7366564813299108890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14814,6 +14853,9 @@ MonoBehaviour:
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   Button: {fileID: 2560919804723773231}
   spriteRen: {fileID: 0}
+  Col: {fileID: 4929665978537390477}
+  ItemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
+  structureItem: {fileID: 11400000, guid: c381d61c554528645bc42d11d04b4712, type: 2}
   Type: 2
   CraftSound: 10
 --- !u!61 &4929665978537390477

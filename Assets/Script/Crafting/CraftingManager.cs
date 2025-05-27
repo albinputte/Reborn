@@ -15,7 +15,9 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] private Material OldMaterial;
     [SerializeField] private GameObject Button;
     [SerializeField] private SpriteRenderer spriteRen;
-
+    [SerializeField] private Collider2D Col;
+    [SerializeField] private GameObject ItemPrefab;
+    [SerializeField] private StructureItemBase structureItem;
     [SerializeField] private InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
     public SoundType CraftSound;
@@ -122,6 +124,29 @@ public class CraftingManager : MonoBehaviour, IInteractable
         }
  
     }
+
+    public void DestroyCraftingTable()
+    {
+        if (craftingUI.UiIsActive)
+        {
+            craftingUI.HideCraftingUi();
+            craftingUI.ClearRecipeInformation();
+            craftingUI.craftingManager[currentCraftingMangerIndex] = null;
+            craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
+
+        }
+
+        GameObject obj = Instantiate(ItemPrefab, transform.position, Quaternion.identity);
+        SoundManager.PlaySound(SoundType.InteractBerryBush);
+        obj.GetComponent<WorldItem>().SetItem(structureItem, 1);
+ 
+        Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
+        if (rb != null)
+            StartCoroutine(ApplyFloatDrop(rb));
+        spriteRen.enabled = false;
+        Col.enabled = false;
+
+    }
     public void NearPlayer()
     {
         spriteRen.material = NewMaterial;
@@ -132,6 +157,28 @@ public class CraftingManager : MonoBehaviour, IInteractable
     {
         spriteRen.material = OldMaterial;
         Button.gameObject.SetActive(false);
+    }
+    private IEnumerator ApplyFloatDrop(Rigidbody2D rb)
+    {
+
+        Vector2 force = new Vector2(Random.Range(-1f, 1f), 1.5f).normalized * 4f;
+        if (rb == null)
+            yield break;
+        rb.AddForce(force, ForceMode2D.Impulse);
+
+
+        yield return new WaitForSeconds(0.2f);
+        if (rb == null)
+            yield break;
+        rb.gravityScale = 1f;
+
+
+        yield return new WaitForSeconds(0.7f);
+        rb.velocity = Vector2.zero;
+        rb.gravityScale = 0;
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
+   
     }
 
 }

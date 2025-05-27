@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7073632078434268038}
   - component: {fileID: 8344598259808214966}
+  - component: {fileID: 8038529375813387606}
   - component: {fileID: 7718368542389015661}
   - component: {fileID: 8634502899997073335}
   - component: {fileID: 6619221385186334564}
@@ -90,6 +91,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &8038529375813387606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023418283248417547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5764bcf0e639edf4583a1cda9340f1a3, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7718368542389015661}
+        m_TargetAssemblyTypeName: BerryBush, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!114 &7718368542389015661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,13 +143,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   berryCount: 3
   berryPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
-  ItemData: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
+  ItemData: {fileID: 11400000, guid: aa370e136fc4e164b8b8539af1bf0447, type: 2}
   BushSprites:
-  - {fileID: 21300000, guid: e92c43e14b892b14da8bc700ec229788, type: 3}
-  - {fileID: 21300000, guid: 2f88df940fea10d448263678e24d20c3, type: 3}
+  - {fileID: 21300000, guid: 4cd5882da8e6ad047be013f99bc8aea5, type: 3}
+  - {fileID: 21300000, guid: c9f26b6a9e359a44bb964185c6aab0ec, type: 3}
   SpawnTime: 30
   MinBerries: 1
-  MaxBerries: 4
+  MaxBerries: 1
   NewMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   Button: {fileID: 2575669291001070838}

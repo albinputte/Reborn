@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4830912049697066259}
   - component: {fileID: 975363528721808874}
   - component: {fileID: 2706072496368731822}
+  - component: {fileID: 4783524037399885109}
   - component: {fileID: 6787255143748759638}
   m_Layer: 6
   m_Name: CraftingTable
@@ -115,8 +116,49 @@ MonoBehaviour:
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   Button: {fileID: 4384255266050982828}
   spriteRen: {fileID: 0}
+  Col: {fileID: 6787255143748759638}
+  ItemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
+  structureItem: {fileID: 11400000, guid: 1866c66f9fa7ba6488de2ca8c044f91d, type: 2}
   Type: 2
   CraftSound: 12
+--- !u!114 &4783524037399885109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214116684826118879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 0eda0e67ff6678e408948927e17b1cf9, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2706072496368731822}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: DestroyCraftingTable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!61 &6787255143748759638
 BoxCollider2D:
   m_ObjectHideFlags: 0

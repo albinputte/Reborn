@@ -27,11 +27,10 @@ MonoBehaviour:
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   buffBase:
-    rid: 5482896750252916740
+    rid: -2
   healAmount: 20
   references:
     version: 2
     RefIds:
-    - rid: 5482896750252916740
-      type: {class: HealthBuff, ns: , asm: Assembly-CSharp}
-      data: 
+    - rid: -2
+      type: {class: , ns: , asm: }
