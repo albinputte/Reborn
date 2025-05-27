@@ -165,25 +165,25 @@ MonoBehaviour:
     volume: 0.664
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 83d3a7ea2457db641bc4fa7eadc81bde, type: 3}
+    - {fileID: 8300000, guid: a086392aa3e0e36459b7a9a7630d367b, type: 3}
     useRandomPitch: 1
   - name: PickAxe_Sound
-    volume: 1
+    volume: 0.669
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
-    useRandomPitch: 0
+    - {fileID: 8300000, guid: ed2d630eeef50ec40a59c650e4aa7807, type: 3}
+    useRandomPitch: 1
   - name: Eat_sound
-    volume: 1
+    volume: 0.151
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
-    useRandomPitch: 0
+    - {fileID: 8300000, guid: 8a64b4d9098642d42a98d369bb903c9f, type: 3}
+    useRandomPitch: 1
   - name: Fail_Craft
-    volume: 1
+    volume: 0.747
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
+    - {fileID: 8300000, guid: 937c36df60eb98a4cb6948ce04711309, type: 3}
     useRandomPitch: 0
   - name: Preasure_Plate
     volume: 1
