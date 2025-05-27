@@ -16,15 +16,20 @@ public class TileManger : MonoBehaviour
     private ItemData CurrentItem;
     private InventoryController inventoryController;
     private int ItemIndex;
-
+    public static TileManger Instance;
     private Dictionary<Vector3Int, GameObject> placedObjects = new();
     private Dictionary<Vector3Int, float> objectTimers = new();
     private List<TileRule> tileRules = new();
 
     private GameObject previewObject;
     public bool BuildMode;
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
+
         inventoryController = InventoryController.Instance;
         tileRules.Add(new TileRule(
             (tile, pos) => IsGrassTile(tile),

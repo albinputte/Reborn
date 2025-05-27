@@ -22,8 +22,6 @@ public class StructureItemBase : ItemData, IitemAction, IStructure
         if (manger != null)
         {
             manger.ActivateBuildMode(PlacablePrefab, this, index);
-            if (inventoryController.InventoryUiActive)
-                inventoryController.InventoryInput();
             return true;
         }
 

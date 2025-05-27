@@ -280,7 +280,11 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
                 }
                    
             }
-
+            if (TileManger.Instance.BuildMode)
+            {
+                    TileManger.Instance.disableBuildMode(0);
+            }
+                
             stateMachine.SwitchState(controller.interactState);
         }
         else

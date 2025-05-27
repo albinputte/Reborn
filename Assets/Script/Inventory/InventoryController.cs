@@ -129,7 +129,7 @@ public class InventoryController : MonoBehaviour
 
     private void UpdateInventoryUI(Dictionary<int, InventoryItem> dictionary)
     {
-       
+
         inventoryUi.ResetInventory();
         foreach(var item in dictionary)
         {

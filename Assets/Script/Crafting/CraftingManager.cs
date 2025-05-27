@@ -105,8 +105,10 @@ public class CraftingManager : MonoBehaviour, IInteractable
     public void Interact()
     {
       
+
+      
         Debug.Log("I interact");
-        if (!craftingUI.UiIsActive)
+        if (!craftingUI.UiIsActive )
         {
             Debug.Log("I Open");
             currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
