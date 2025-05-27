@@ -105,8 +105,19 @@ public class PlayerInputManger : MonoBehaviour
     {
         if (context.performed && !Respawn.instance.isRespawning)
         {
-            inventoryController.InventoryInput();
-          
+            inventoryController.InventoryInput();;
+            if (Ui[1].activeSelf)
+            {
+                Ui[1].gameObject.SetActive(false);
+                controller.OnUiOpenInvoke();
+
+            }
+            if (Ui[2].activeSelf)
+            {
+                controller.OnUiOpenInvoke();
+                Ui[2].gameObject.SetActive(false);
+            }
+
         }
     }
 
