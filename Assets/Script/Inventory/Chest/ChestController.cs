@@ -82,12 +82,16 @@ public class ChestController : MonoBehaviour
     {
         chestUi.ShowChest();
         ChestUiIsActive = true;
+        if(!InventoryController.Instance.InventoryUiActive)
+            InventoryController.Instance.InventoryInput();
         UpdateChestUI();
     }
 
     public void HideChest()
     {
         chestUi.HideChest();
+        if (InventoryController.Instance.InventoryUiActive)
+            InventoryController.Instance.InventoryInput();
         ChestUiIsActive = false;
 
     }

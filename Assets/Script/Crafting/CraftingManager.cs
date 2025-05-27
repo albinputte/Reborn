@@ -112,12 +112,16 @@ public class CraftingManager : MonoBehaviour, IInteractable
             currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
             craftingUI.craftingManager[craftingUI.checkFirstEmptySlotInCraftingManger()] = this;
             craftingUI.ShowCraftinUi();
+            if (!InventoryController.Instance.InventoryUiActive)
+                InventoryController.Instance.InventoryInput();
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, false);
         }  
         else
         {
             Debug.Log("I Close");
             craftingUI.HideCraftingUi();
+            if (InventoryController.Instance.InventoryUiActive)
+                InventoryController.Instance.InventoryInput();
             craftingUI.ClearRecipeInformation();
             craftingUI.craftingManager[currentCraftingMangerIndex] = null;
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
