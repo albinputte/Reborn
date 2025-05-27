@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Berry Jam</color>
   Description: A jar of berry magic, sweetness with a hint of healing
-  Icon: {fileID: -1742591288, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
+  Icon: {fileID: -325810438, guid: dd66c368d749e154fb89263655e2f719, type: 3}
   itemType: 0
   IsStackable: 1
   IsCraftable: 1

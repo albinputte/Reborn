@@ -24,7 +24,7 @@ public class ConquestPressureplate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player") || isPlateLocked || currentStage >= 4)
+        if (!other.CompareTag("Player") || isPlateLocked)
             return;
 
         isPlateLocked = true;
@@ -86,12 +86,11 @@ public class ConquestPressureplate : MonoBehaviour
         {
             torches[currentStage].SetActive(true);
             SoundManager.PlaySound(SoundType.Torch_LitUp);
+            currentStage++;
+            isPlateLocked = false;
+            ppSprite.sprite = openSprite;
+
         }
-
-        currentStage++;
-        isPlateLocked = false;
-        ppSprite.sprite = openSprite;
-
         if (currentStage >= 4)
         {
             StartCoroutine(SpawnChestWithDelay(1.5f));

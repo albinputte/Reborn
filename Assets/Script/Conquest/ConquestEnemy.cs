@@ -3,7 +3,7 @@ using UnityEngine;
 public class ConquestEnemy : MonoBehaviour
 {
     private ConquestPressureplate originPlate;
-
+    private bool CanNotify = true;
     public void Init(ConquestPressureplate plate)
     {
         originPlate = plate;
@@ -11,8 +11,10 @@ public class ConquestEnemy : MonoBehaviour
 
     public void Die()
     {
-        // Your enemy's death logic...
-        originPlate?.NotifyEnemyDied(gameObject);
-
+        if (CanNotify)
+        {
+            CanNotify = false;
+            originPlate?.NotifyEnemyDied(gameObject);
+        }
     }
 }
