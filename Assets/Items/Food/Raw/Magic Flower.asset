@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Magic Flower</color>
   Description: A rare ingredient said to elevate even the simplest food to greatness.
-  Icon: {fileID: 21300000, guid: 85472a3ca635ad04bb25e613e58c7ac7, type: 3}
+  Icon: {fileID: 21300000, guid: dd0077bfc7e188d44bf3931e4f625fb4, type: 3}
   itemType: 0
   IsStackable: 1
   IsCraftable: 0
