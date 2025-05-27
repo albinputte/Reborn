@@ -267,7 +267,7 @@ public class InventorySO : ScriptableObject
         return -1; // Inventory full near that region
     }
 
-    public void OnInventoryStateChange() { OnInventoryChange?.Invoke(GetInventoryState()); Debug.Log("I update now"); }
+    public void OnInventoryStateChange() { OnInventoryChange?.Invoke(GetInventoryState());}
 
 
     public Dictionary<int, InventoryItem> GetInventoryState()
