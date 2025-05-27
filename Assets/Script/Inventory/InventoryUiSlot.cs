@@ -64,8 +64,18 @@ public class InventoryUiSlot : MonoBehaviour
 
     public void ResetItemData()
     {
-        this.itemImage.gameObject.SetActive(false);
         empty = true;
+        this.itemImage.sprite = null;
+        ItemDescription = "";
+        ItemName = "";
+        this.itemImage.gameObject.SetActive(false);
+        if (uitipTrigger != null && !IsHotbar)
+        {
+            uitipTrigger.header = "";
+            uitipTrigger.content = "";
+        }
+
+
     }
 
     public void DeselectBorder()

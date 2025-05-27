@@ -49,9 +49,9 @@ public class InventoryController : MonoBehaviour
  
     private void Start()
     {
-      
-        PrepareInventoryUI();
         PrepareInventoryData();
+        PrepareInventoryUI();
+       
 
 
     }
@@ -333,7 +333,7 @@ public class InventoryController : MonoBehaviour
         {
             inventoryUi.ShowInventory();
             InventoryUiActive = true;
-            TransferHotbarToInventory();
+      
             foreach (var item in inventoryData.GetInventoryState())
             {
                
@@ -344,9 +344,11 @@ public class InventoryController : MonoBehaviour
             {
                 TutorialManger.instance.OnInventoryOpened();
             }
+            TransferHotbarToInventory();
         }
         else if (InventoryUiActive)
         {
+
             TransferInventoryToHotbar();
             inventoryUi.HideInventory();
             InventoryUiActive = false;

@@ -229,6 +229,7 @@ public class InventorySO : ScriptableObject
             {
                 addWeaponinstance(pos, CreateWeaponIntances(weaponData, null, pos));
             }
+            OnInventoryStateChange();
             return pos;
         }
 
@@ -245,7 +246,9 @@ public class InventorySO : ScriptableObject
                 {
                     addWeaponinstance(right, CreateWeaponIntances(weaponData, null, i));
                 }
+                OnInventoryStateChange();
                 return right;
+              
             }
 
             if (left >= 0 && Inventory[left].IsEmpty)
@@ -255,6 +258,7 @@ public class InventorySO : ScriptableObject
                 {
                     addWeaponinstance(left, CreateWeaponIntances(weaponData, null, i));
                 }
+                OnInventoryStateChange();
                 return left;
             }
         }
@@ -263,7 +267,7 @@ public class InventorySO : ScriptableObject
         return -1; // Inventory full near that region
     }
 
-    public void OnInventoryStateChange() { OnInventoryChange?.Invoke(GetInventoryState()); }
+    public void OnInventoryStateChange() { OnInventoryChange?.Invoke(GetInventoryState()); Debug.Log("I update now"); }
 
 
     public Dictionary<int, InventoryItem> GetInventoryState()

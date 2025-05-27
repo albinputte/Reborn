@@ -207,8 +207,8 @@ public class InventoryUiPage : MonoBehaviour
 
     private void ItemSwap(InventoryUiSlot slot)
     {
-
-        OnSwap?.Invoke(slot);
+        if(DragContext.SourceIndex != -1)
+            OnSwap?.Invoke(slot);
        
 
     }
@@ -226,7 +226,7 @@ public class InventoryUiPage : MonoBehaviour
 
    public void ResetMouse()
     {
-        currentDraggingIndex = -1;
+        DragContext.SourceIndex = -1;
         mouseFollower.Toggle(false);
     }
 
@@ -235,7 +235,6 @@ public class InventoryUiPage : MonoBehaviour
         foreach(var item in ListOfUIslots)
         {
             item.ResetItemData();
-            item.DeselectBorder();
         }
     }
     public void SetMouse(Sprite sprite, int quantity)
