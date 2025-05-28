@@ -57,7 +57,7 @@ public class Respawn : MonoBehaviour
         }
 
         spriteRenderer.sortingLayerName = "Foreground";
-        attackSprites.sortingLayerName = "WeaponAnim";
+        attackSprites.sortingLayerName = "Foreground";
         isRespawning = false;
         Debug.Log("Player respawned.");
     }

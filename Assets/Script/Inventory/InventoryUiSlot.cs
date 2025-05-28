@@ -102,6 +102,10 @@ public class InventoryUiSlot : MonoBehaviour
             uitipTrigger.header = name;
             uitipTrigger.content = Desccription;
         }
+        else if(uitipTrigger != null)
+        {
+            uitipTrigger.header = name;
+        }
      
 
         empty = false;
