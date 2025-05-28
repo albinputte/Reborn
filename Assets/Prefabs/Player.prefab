@@ -322,7 +322,7 @@ SpriteRenderer:
   m_SortingLayerID: 1296566859
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1482037230, guid: 179b2c3a06310ec4bb6220b2612ed3b5, type: 3}
+  m_Sprite: {fileID: 1053974555, guid: 2527bfef297f27c47914e84c89c014d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -473,7 +473,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.72617877, y: 0}
+  m_Offset: {x: 0.5481728, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -484,7 +484,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55235744, y: 2}
+  m_Size: {x: 1.1036545, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &6191620453693720987
 BoxCollider2D:
@@ -518,7 +518,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7264439}
+  m_Offset: {x: 0, y: 0.54887205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -529,7 +529,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.5528877}
+  m_Size: {x: 1, y: 1.1053203}
   m_EdgeRadius: 0
 --- !u!61 &4200834232544331151
 BoxCollider2D:
@@ -563,7 +563,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7262479}
+  m_Offset: {x: 0, y: -0.55185777}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -574,7 +574,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.5524957}
+  m_Size: {x: 1, y: 1.0962845}
   m_EdgeRadius: 0
 --- !u!61 &854731103269963879
 BoxCollider2D:
@@ -608,7 +608,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7232014, y: 0}
+  m_Offset: {x: -0.55029297, y: 0.00000017881393}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -619,7 +619,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5464027, y: 2}
+  m_Size: {x: 1.0934143, y: 0.99999964}
   m_EdgeRadius: 0
 --- !u!61 &2046345953686768293
 BoxCollider2D:
@@ -653,7 +653,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.72524226, y: 0.5004959}
+  m_Offset: {x: 0.54818803, y: 0.5474132}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -664,7 +664,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5504844, y: 1.0009918}
+  m_Size: {x: 1.103624, y: 1.1051737}
   m_EdgeRadius: 0
 --- !u!61 &2132760004684127137
 BoxCollider2D:
@@ -698,7 +698,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.72617877, y: -0.4988408}
+  m_Offset: {x: 0.547097, y: -0.5496791}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -709,7 +709,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55235744, y: 0.9976816}
+  m_Size: {x: 1.105806, y: 1.1006418}
   m_EdgeRadius: 0
 --- !u!61 &736114083909307354
 BoxCollider2D:
@@ -743,7 +743,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7264439, y: 0.50373936}
+  m_Offset: {x: -0.55075914, y: 0.54739064}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -754,7 +754,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5528877, y: 1.0074787}
+  m_Size: {x: 1.0984818, y: 1.1052188}
   m_EdgeRadius: 0
 --- !u!61 &2373633337857988573
 BoxCollider2D:
@@ -788,7 +788,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7264439, y: -0.5040288}
+  m_Offset: {x: -0.55223924, y: -0.5521457}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -799,7 +799,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5528877, y: 1.0080576}
+  m_Size: {x: 1.0955216, y: 1.0957086}
   m_EdgeRadius: 0
 --- !u!1 &5540870123361775006
 GameObject:
