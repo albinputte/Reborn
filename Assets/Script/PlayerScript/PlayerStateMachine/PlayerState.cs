@@ -72,7 +72,7 @@ public class PlayerState
             checkCooldown = checkInterval;
         }
         CurrentVelocity = controller.rb.velocity;
-        Debug.Log(stateMachine.CurrentState);
+      
     }
 
     public virtual void PhysicsUpdate() 
@@ -85,8 +85,9 @@ public class PlayerState
     {
         if(!controller.Input.isSprinting) 
         {
-            controller.rb.velocity = new Vector2(controller.Input.moveDir.x * Mathf.Lerp(0, playerData.moveSpeed,1f), controller.Input.moveDir.y * Mathf.Lerp(0, playerData.moveSpeed, 1f));
-            CurrentVelocity = new Vector2(controller.Input.moveDir.x * Mathf.Lerp(0, playerData.moveSpeed, 1f), controller.Input.moveDir.y * Mathf.Lerp(0, playerData.moveSpeed, 1f));
+         
+            controller.rb.velocity = new Vector2(controller.Input.moveDir.x * Mathf.Lerp(0, (playerData.moveSpeed + StatSystem.instance.GetStat(StatsType.Speed)),1f), controller.Input.moveDir.y * Mathf.Lerp(0, (playerData.moveSpeed + StatSystem.instance.GetStat(StatsType.Speed)) , 1f));
+            CurrentVelocity = new Vector2(controller.Input.moveDir.x * Mathf.Lerp(0, (playerData.moveSpeed + StatSystem.instance.GetStat(StatsType.Speed)), 1f), controller.Input.moveDir.y * Mathf.Lerp(0, (playerData.moveSpeed + StatSystem.instance.GetStat(StatsType.Speed)), 1f));
         }
         else
         {

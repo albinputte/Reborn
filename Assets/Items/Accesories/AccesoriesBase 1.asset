@@ -27,5 +27,5 @@ MonoBehaviour:
     - rid: 5482896750252916745
       type: {class: AddetiveBuff, ns: , asm: Assembly-CSharp}
       data:
-        bonusMultiplier: 2
+        bonusMultiplier: 1
         statType: 1
