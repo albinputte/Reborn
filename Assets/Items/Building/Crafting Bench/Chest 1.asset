@@ -26,4 +26,4 @@ MonoBehaviour:
       quantity: 2
     resultItem: {fileID: 11400000}
     resultQuantity: 1
-  PlacablePrefab: {fileID: 273403053461843678, guid: a0e459374b30a2b4cab5768e9461accd, type: 3}
+  PlacablePrefab: {fileID: 273403053461843678, guid: bb4225485c825134798125a1837c0659, type: 3}
