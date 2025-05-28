@@ -17,11 +17,13 @@ public class AddetiveBuff : BuffBase
 
     public override void ApplyBuff()
     {
+        Debug.Log("i Add " + StatSystem.instance.GetStat(statType));
         StatSystem.instance.AddStats(statType, bonusMultiplier);
     }
 
     public override void RemoveBuff()
     {
+        Debug.Log("i Remove " + StatSystem.instance.GetStat(statType));
         StatSystem.instance.RemoveStats(statType, bonusMultiplier);
      
     }

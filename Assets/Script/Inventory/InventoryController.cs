@@ -197,7 +197,7 @@ public class InventoryController : MonoBehaviour
             }
             else
             {
-                Debug.Log("I add");
+                
                 inventoryData.AddItemToSpecificPos(item2, 1, null, slot.SlotIndex);
                 return;
             }
@@ -309,7 +309,7 @@ public class InventoryController : MonoBehaviour
         InventoryItem item = inventoryData.GetSpecificItem(CurrentIndex);
         if (item.item is IAccesories accesories)
         {
-            accesories.EquipAccesorie();
+            //accesories.EquipAccesorie();
             inventoryUi.SetAccesoire(item.item as AccesoriesItemBase);
             inventoryData.RemoveItem(CurrentIndex, 1);
         }

@@ -18,6 +18,7 @@ public class AccesoriesItemBase : ItemData, IDestroyableItem, IAccesories
 
     public void RemoveAccesorie()
     {
+        Debug.Log("remove buff");
         BuffBase.RemoveBuff();
     }
 }
