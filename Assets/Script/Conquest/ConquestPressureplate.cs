@@ -120,9 +120,12 @@ public class ConquestPressureplate : MonoBehaviour
     private IEnumerator SpawnChestWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-       
         Instantiate(rewardChest, chestSpawnPoint.position, Quaternion.identity);
-        SoundManager.PlaySound(SoundType.Conquest_Chest_Landing);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-    }
+        SoundManager.PlaySound(SoundType.Conquest_Chest_Landing);
 
+        // <-- ADD THIS:
+        GetComponent<Collider2D>().enabled = false;    // no more stepping
+                                                       // or: gameObject.SetActive(false);
+                                                       // -->
+    }
 }

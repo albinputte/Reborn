@@ -30,7 +30,7 @@ MonoBehaviour:
     resultQuantity: 1
   buffBase:
     rid: -2
-  healAmount: 30
+  healAmount: 35
   references:
     version: 2
     RefIds:
