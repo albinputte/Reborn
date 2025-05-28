@@ -186,20 +186,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 76fd01c55735f4741990e1ac8c90500c, type: 3}
     useRandomPitch: 0
   - name: Preasure_Plate
-    volume: 1
+    volume: 0.425
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 78a0f9aa8544d994bb35f9d842dc297f, type: 3}
+    - {fileID: 8300000, guid: 2f09052e2093e364ebc25c628dde5fc1, type: 3}
     useRandomPitch: 1
   - name: Stone_Puzzle_Destroy
-    volume: 0.135
+    volume: 0.035
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 140baa903ee01574c9e1d5240f0b7c56, type: 3}
+    - {fileID: 8300000, guid: 0d9abc3d6eb1b984c881a9d6c7db4a72, type: 3}
     useRandomPitch: 0
   - name: SwapItem_Inventory
-    volume: 1
-    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    volume: 0.414
+    mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: c1673b4652fa12948858be571bc327b6, type: 3}
-    useRandomPitch: 0
+    - {fileID: 8300000, guid: 0b2cadd2514f37b4692afdca88bbc3d9, type: 3}
+    useRandomPitch: 1
