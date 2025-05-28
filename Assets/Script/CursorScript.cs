@@ -5,31 +5,34 @@ using UnityEngine.UI;
 
 public class CursorScript : MonoBehaviour
 {
-    public Image CursorImage;
-    public Sprite[] CursorSprite;
-    private Transform transform;
-    void Awake()
+    [SerializeField] private Image cursorImage;
+    [SerializeField] private Sprite[] cursorSprites; // 0: default, 1: weapon equipped
+
+    private RectTransform rectTransform;
+    private int currentCursorIndex = -1;
+
+    private void Awake()
     {
         Cursor.visible = false;
-        CursorImage = GetComponent<Image>();
-        transform = GetComponent<Transform>();
+
+        if (cursorImage == null)
+            cursorImage = GetComponent<Image>();
+
+        rectTransform = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position = Input.mousePosition;
-        if(InventoryController.NoWeaponEquiped)
-        {
-            if (CursorImage.sprite != CursorSprite[0])
-                CursorImage.sprite = CursorSprite[0];
-        }
+        // Move cursor
+        rectTransform.position = Input.mousePosition;
 
-        else
+        // Determine which sprite to show
+        int targetIndex = InventoryController.NoWeaponEquiped ? 0 : 1;
+
+        if (targetIndex != currentCursorIndex && targetIndex < cursorSprites.Length)
         {
-            if (CursorImage.sprite != CursorSprite[1])
-                CursorImage.sprite = CursorSprite[1];
+            cursorImage.sprite = cursorSprites[targetIndex];
+            currentCursorIndex = targetIndex;
         }
     }
-          
 }
