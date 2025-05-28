@@ -36,7 +36,7 @@ public class CrackedStone : MonoBehaviour
     }
     public void DestroyCrackedStone()
     {
-        SoundManager.PlaySound(SoundType.Stone_Puzzle_Destroy);
+   
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +45,7 @@ public class CrackedStone : MonoBehaviour
         // Check if the object that entered the trigger is tagged as "MagicSphere"
         if (collision.CompareTag("MagicSphere"))
         {
-            
+        
             animator.SetTrigger("Hit");
             hasBeenHit = true;
         }

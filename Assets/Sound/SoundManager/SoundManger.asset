@@ -197,3 +197,9 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 140baa903ee01574c9e1d5240f0b7c56, type: 3}
     useRandomPitch: 0
+  - name: SwapItem_Inventory
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: c1673b4652fa12948858be571bc327b6, type: 3}
+    useRandomPitch: 0

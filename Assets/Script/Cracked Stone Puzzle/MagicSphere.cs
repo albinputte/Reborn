@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using SmallHedge.SoundManager;
 public class MagicSphere : MonoBehaviour
 {
     [HideInInspector] public PressurePlateMagicSpawner originPlate;
@@ -66,6 +67,7 @@ public class MagicSphere : MonoBehaviour
 
         if (collision.CompareTag("CrackedStone"))
         {
+            SoundManager.PlaySound(SoundType.Stone_Puzzle_Destroy);
             collision.GetComponent<CrackedStone>().HitBySphere();
             Destroy(gameObject);
 

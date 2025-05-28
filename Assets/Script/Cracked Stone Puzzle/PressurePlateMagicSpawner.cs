@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using UnityEngine;
 
 public class PressurePlateMagicSpawner : MonoBehaviour
@@ -26,6 +27,7 @@ public class PressurePlateMagicSpawner : MonoBehaviour
         {
             if (spawnedMagicSphere == null)
             {
+                SoundManager.PlaySound(SoundType.Preasure_Plate);
                 // Spawn the magic sphere
                 spawnedMagicSphere = Instantiate(magicSpherePrefab, spawnPoint.position, Quaternion.identity);
                 // Assign reference to this pressure plate
