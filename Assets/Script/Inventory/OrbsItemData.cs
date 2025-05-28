@@ -8,6 +8,7 @@ public class OrbsItemData : ItemData, IitemAction, IDestroyableItem, IOrb
     [SerializeReference, SubclassSelector]
     public BaseAbiltiesOrb abiltiesOrb;
     public PlayerWeaponAgent weaponAgent;
+  
 
     public bool PerformAction(GameObject gameObject, WeaponInstances inst)
     {
@@ -20,5 +21,14 @@ public class OrbsItemData : ItemData, IitemAction, IDestroyableItem, IOrb
         }
   
         return false;
+    }
+
+    public void RemoveOrb()
+    {
+        weaponAgent = FindAnyObjectByType<PlayerWeaponAgent>();
+        if (weaponAgent != null)
+        {
+            weaponAgent.DeEquipOrb();
+        }
     }
 }

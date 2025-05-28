@@ -153,14 +153,15 @@ public class InventoryController : MonoBehaviour
 
     private void HandleItemSwap(InventoryUiSlot slot)
     {
-       
+
         if (DragContext.SourceType == DragSourceType.Chest && slot.OwnerPage is InventoryUiPage)
         {
-            Chest.chestData.MoveItemToInventory( slot.SlotIndex, DragContext.SourceIndex);
-       
+            Chest.chestData.MoveItemToInventory(slot.SlotIndex, DragContext.SourceIndex);
+
         }
-        else if(DragContext.SourceType == DragSourceType.Inventory && slot.OwnerPage is InventoryUiPage
-        ){
+        else if (DragContext.SourceType == DragSourceType.Inventory && slot.OwnerPage is InventoryUiPage
+        )
+        {
 
             InventoryItem item = inventoryData.GetSpecificItem(DragContext.SourceIndex);
             IOrb orb = item.item as IOrb;
@@ -178,17 +179,17 @@ public class InventoryController : MonoBehaviour
             }
             inventoryData.SwapitemPlace(DragContext.SourceIndex, slot.SlotIndex);
         }
-        else if(DragContext.SourceType == DragSourceType.AccesorieSlot)
+        else if (DragContext.SourceType == DragSourceType.AccesorieSlot)
         {
-            
+
             InventoryItem item = inventoryData.GetSpecificItem(slot.SlotIndex);
             ItemData item2 = AccesorieSlotManger.Instance.GetItemAndRemove(DragContext.SourceIndex);
-            if(item.item is AccesoriesItemBase)
+            if (item.item is AccesoriesItemBase)
             {
                 inventoryData.RemoveItem(slot.SlotIndex, 1);
                 AccesorieSlotManger.Instance.Slots[DragContext.SourceIndex].SetAccesorie(item.item as AccesoriesItemBase);
                 inventoryData.AddItemToSpecificPos(item2, 1, null, slot.SlotIndex);
-                
+
                 return;
             }
             else
@@ -197,7 +198,25 @@ public class InventoryController : MonoBehaviour
                 inventoryData.AddItemToSpecificPos(item2, 1, null, slot.SlotIndex);
                 return;
             }
+
+        }
+        else if (DragContext.SourceType == DragSourceType.OrbSlot) 
+        {
+            InventoryItem item = inventoryData.GetSpecificItem(slot.SlotIndex);
+            ItemData item1 = InventorySlideInUi.Instance.GetItemAndRemove(DragContext.SourceIndex);
+            if (item.item is OrbsItemData) {
+                inventoryData.RemoveItem(slot.SlotIndex, 1);
+                InventorySlideInUi.Instance.Slot[DragContext.SourceIndex].SetOrb(item.item as OrbsItemData);
+                inventoryData.AddItemToSpecificPos(item1, 1, null, slot.SlotIndex);
+                return;
             
+            }
+            else
+            {
+                inventoryData.AddItemToSpecificPos(item1, 1, null, slot.SlotIndex);
+                return;
+            }
+
         }
 
     }

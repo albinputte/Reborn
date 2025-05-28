@@ -6,7 +6,7 @@ using UnityEngine;
 public class ConquestPressureplate : MonoBehaviour
 {
     [Header("Visuals")]
-    [ SerializeField] private SpriteRenderer ppSprite;
+    [SerializeField] private SpriteRenderer ppSprite;
     [SerializeField] private  Sprite openSprite;
    [SerializeField] private Sprite closedSprite;
 

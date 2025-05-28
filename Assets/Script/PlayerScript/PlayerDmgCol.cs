@@ -42,9 +42,13 @@ public class PlayerDmgCol : MonoBehaviour
                 playerWeaponAgent.TriggerHitStop();
                 lastEffectTime = Time.time; // Reset cooldown timer
             }
-
+            Debug.Log(StatSystem.instance.GetStat(StatsType.Lifesteal));
             if (StatSystem.instance.GetStat(StatsType.Lifesteal) > 0 && other.gameObject.CompareTag("Enemy"))
+            {
+
                 health.heal((int)StatSystem.instance.GetStat(StatsType.Lifesteal), false);
+            }
+            
 
             if (isProjectile)
                 Destroy(gameObject);

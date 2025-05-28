@@ -27,6 +27,7 @@ public class AccesoriesSlot : MonoBehaviour
     public void SetAccesorie(AccesoriesItemBase item1)
     {
         Item = item1;
+        Item.EquipAccesorie();
         ItemImage.enabled = true;
         ItemImage.sprite = Item.Icon;
         ItemFrame.sprite = FrameImage[1];

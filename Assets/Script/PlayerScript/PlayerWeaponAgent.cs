@@ -99,6 +99,11 @@ public class PlayerWeaponAgent : MonoBehaviour
         CurrentWeaponInstances.UpdateOrb(orb);
         currentOrb = orb;
     }
+    public void DeEquipOrb()
+    {
+        CurrentWeaponInstances.UpdateOrb(null);
+        currentOrb = null;
+    }
 
     public void Activate(int direction)
     {

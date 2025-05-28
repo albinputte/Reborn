@@ -85,7 +85,7 @@ public class InventoryUiPage : MonoBehaviour
 
     public void SetSlideIn(WeaponInstances inst)
     {
-        SlideInUi.SetSlideIcons(inst.Weapon.Icon, null);
+        SlideInUi.SetSlideIcons(inst);
         
     }
 
@@ -263,11 +263,11 @@ public class InventoryUiPage : MonoBehaviour
         OrbsItemData orb = weaponInst.GetOrb();
         if (orb != null)
         {
-            SlideInUi.SetSlideIcons(weaponInst.Weapon.Icon, orb.Icon);
+            SlideInUi.SetSlideIcons(weaponInst);
         }
         else
         {
-            SlideInUi.SetSlideIcons(weaponInst.Weapon.Icon, null);
+            SlideInUi.SetSlideIcons(weaponInst);
         }
 
     }

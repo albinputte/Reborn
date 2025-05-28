@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1211592975334033269}
   - component: {fileID: 1351856006137148757}
   - component: {fileID: 9138941955998043549}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 2161612871268168302}
   - component: {fileID: 2300538898141757518}
   - component: {fileID: 8357534502185105542}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9690,7 +9690,7 @@ GameObject:
   - component: {fileID: 2152596333225785194}
   - component: {fileID: 6341750764633445154}
   - component: {fileID: 1869960165352056354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlameArc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9842,7 +9842,7 @@ GameObject:
   - component: {fileID: 776041039873213282}
   - component: {fileID: 637186446958539074}
   - component: {fileID: 7260215034122144138}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14681,7 +14681,7 @@ GameObject:
   - component: {fileID: 2629386611386108789}
   - component: {fileID: 2769649678759426389}
   - component: {fileID: 5366337046101082525}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19520,7 +19520,7 @@ GameObject:
   - component: {fileID: 2903729150973846982}
   - component: {fileID: 3053069751922366438}
   - component: {fileID: 5064408189868945198}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24359,7 +24359,7 @@ GameObject:
   - component: {fileID: 6594064281600940150}
   - component: {fileID: 6453766029847226966}
   - component: {fileID: 3856955584891048606}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29198,7 +29198,7 @@ GameObject:
   - component: {fileID: 4805569100219336765}
   - component: {fileID: 4657424770005367325}
   - component: {fileID: 3221399259784102613}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: FlameParticles (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34036,7 +34036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9176603844003701312}
   - component: {fileID: 5974865042831374299}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

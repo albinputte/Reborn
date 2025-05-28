@@ -1,34 +1,85 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class InventorySlideInUi : MonoBehaviour
 {
     public Image WeaponIcon;
     public Image Orbicon;
+    public OrbSlotUi[] Slot;
+    public static InventorySlideInUi Instance;
+    [SerializeField] private InventoryUiPage InvUiPage;
+    public void Awake()
+    {
+        Instance = this;
+        InvUiPage = GetComponentInParent<InventoryUiPage>();
+    }
+    private void Start()
+    {
+        for (int i = 0; i < Slot.Length; i++)
+        {
+            Slot[i].OnItemBeginDrag += OnItemDrag;
+            Slot[i].OnItemEndDrag += OnEndDrag;
+        }
+    }
 
-    public void SetSlideIcons(Sprite WeaponIcon, Sprite  Orbicon)
+    public void SetSlideIcons(WeaponInstances Instances)
     {
         this.WeaponIcon.color = new Color(1f, 1f, 1f, 1f);
-        this.WeaponIcon.sprite = WeaponIcon;
-        if(Orbicon != null) { 
-        this.Orbicon.color = new Color(1f, 1f, 1f, 1f);
-        this.Orbicon.sprite = Orbicon;
+        this.WeaponIcon.sprite = Instances.Weapon.Icon;
+        for (int i = 0; i < Slot.Length; i++)
+        {
+            if (Slot[i].IsEmpty)
+            {
+                if (Instances.GetOrb() != null)
+                    Slot[i].SetOrb(Instances.GetOrb());
+                return;
+            }
         }
+
+        
+      
     }
     public void ResetSlideIcons()
     {
         this.WeaponIcon.color = new Color(1f, 1f, 1f, 0f);
         this.WeaponIcon.sprite = null;
-        this.Orbicon.color = new Color(1f, 1f, 1f, 0f); 
-        this.Orbicon.sprite = null;
+        for (int i = 0; i < Slot.Length; i++)
+        {
+
+            if (Slot[i].GetItemFromSlot() != null)
+                Slot[i].RemoveOrb(false, false);
+        }
     }
 
-    public void RemoveOrbIcon()
+    public ItemData GetItemAndRemove(int slot)
     {
-        this.Orbicon.sprite = null;
+        ItemData item = Slot[slot].GetItemFromSlot();
+        Slot[slot].RemoveOrb(false, true);
+        return item;
     }
+
+    public void OnItemDrag(OrbSlotUi slot)
+    {
+        int index = Array.IndexOf(Slot, slot);
+
+        DragContext.SourceType = DragSourceType.OrbSlot;
+        DragContext.SourceIndex = index;
+        InvUiPage.SetMouse(Slot[index].GetItemFromSlot().Icon, 1);
+
+    }
+
+    public void OnEndDrag(OrbSlotUi slot)
+    {
+        DragContext.SourceIndex = -1;
+        InvUiPage.ResetMouse();
+    }
+
+
 
 
 }
