@@ -7,4 +7,4 @@ public class DragContext
     public static DragSourceType SourceType;
     public static int SourceIndex = -1;
 }
-public enum DragSourceType { Inventory, Chest }
+public enum DragSourceType { Inventory, Chest, AccesorieSlot }

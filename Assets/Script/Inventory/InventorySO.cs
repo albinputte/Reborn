@@ -224,15 +224,18 @@ public class InventorySO : ScriptableObject
         // Try placing at desired position
         if (Inventory[pos].IsEmpty)
         {
+    
             Inventory[pos] = newItem;
+            Debug.Log("hej");
             if (newItem.item is WeaponItemData weaponData && newItem.weaponInstances == null)
             {
                 addWeaponinstance(pos, CreateWeaponIntances(weaponData, null, pos));
             }
+         
             OnInventoryStateChange();
             return pos;
         }
-
+        Debug.Log("wtf");
         // Search outward for nearest available slot
         for (int i = 1; i < Inventory.Count; i++)
         {

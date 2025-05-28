@@ -178,6 +178,28 @@ public class InventoryController : MonoBehaviour
             }
             inventoryData.SwapitemPlace(DragContext.SourceIndex, slot.SlotIndex);
         }
+        else if(DragContext.SourceType == DragSourceType.AccesorieSlot)
+        {
+            
+            InventoryItem item = inventoryData.GetSpecificItem(slot.SlotIndex);
+            ItemData item2 = AccesorieSlotManger.Instance.GetItemAndRemove(DragContext.SourceIndex);
+            if(item.item is AccesoriesItemBase)
+            {
+                inventoryData.RemoveItem(slot.SlotIndex, 1);
+                AccesorieSlotManger.Instance.Slots[DragContext.SourceIndex].SetAccesorie(item.item as AccesoriesItemBase);
+                inventoryData.AddItemToSpecificPos(item2, 1, null, slot.SlotIndex);
+                
+                return;
+            }
+            else
+            {
+                Debug.Log("I add");
+                inventoryData.AddItemToSpecificPos(item2, 1, null, slot.SlotIndex);
+                return;
+            }
+            
+        }
+
     }
 
     private void HandleItemSelection(int index1)

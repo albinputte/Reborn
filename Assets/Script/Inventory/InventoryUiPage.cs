@@ -284,11 +284,15 @@ public class InventoryUiPage : MonoBehaviour
     public void ShowInventory()
     {
         gameObject.SetActive(true);
-      
+        DragContext.SourceIndex = -1;
+        ResetMouse();
+
     }
     public void HideInventory() 
     {
         gameObject.SetActive(false);
+        DragContext.SourceIndex = -1;
+        ResetMouse();
         
     }
 
