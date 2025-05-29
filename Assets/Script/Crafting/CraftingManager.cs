@@ -178,6 +178,8 @@ public class CraftingManager : MonoBehaviour, IInteractable
 
     public void DestroyCraftingTable()
     {
+        Col.enabled = false;
+        spriteRen.enabled = false;
         if (craftingUI.UiIsActive)
         {
             craftingUI.HideCraftingUi();
@@ -194,8 +196,8 @@ public class CraftingManager : MonoBehaviour, IInteractable
         Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
         if (rb != null)
             StartCoroutine(ApplyFloatDrop(rb));
-        spriteRen.enabled = false;
-        Col.enabled = false;
+   
+   
 
     }
     public void NearPlayer()
