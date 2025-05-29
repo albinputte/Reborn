@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2605652254191419403}
   - component: {fileID: 4196292151403652937}
+  - component: {fileID: 3220713818058747215}
   m_Layer: 5
   m_Name: CraftingUI
   m_TagString: Untagged
@@ -51,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingManager:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3220713818058747215}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -67,6 +68,37 @@ MonoBehaviour:
   recipeSlots: []
   ResultSlot: {fileID: 1514580021798425359}
   craftButtonUi: {fileID: 903783066484094877}
+  layoutGroup: {fileID: 4407862134222539615}
+  IsInteractingCrafting: 0
+  InteractButtonClicked: 0
+--- !u!114 &3220713818058747215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014364371425827282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4518c49baf227db4fb7279290dabc1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftingRecipes:
+  - {fileID: 11400000, guid: 1866c66f9fa7ba6488de2ca8c044f91d, type: 2}
+  - {fileID: 11400000, guid: 5f4d664978cc04042ad38db2298d7d52, type: 2}
+  - {fileID: 11400000, guid: 003260bafd67aa842a4514606c184e75, type: 2}
+  inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
+  availableRecipes: []
+  craftingUI: {fileID: 4196292151403652937}
+  NewMaterial: {fileID: 0}
+  OldMaterial: {fileID: 0}
+  Button: {fileID: 0}
+  spriteRen: {fileID: 0}
+  Col: {fileID: 0}
+  ItemPrefab: {fileID: 0}
+  structureItem: {fileID: 0}
+  Type: 0
+  CraftSound: 10
 --- !u!1 &3612185498213809555
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -4.680011}
+  m_AnchoredPosition: {x: 0, y: -4.680008}
   m_SizeDelta: {x: 0, y: -21.960022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7465903240834735903
@@ -648,8 +680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: 0
+  m_MinWidth: 440
+  m_MinHeight: 600
   m_PreferredWidth: 440
   m_PreferredHeight: 600
   m_FlexibleWidth: -1
@@ -877,8 +909,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1846549334969541588}
   m_HandleRect: {fileID: 6395327026703988489}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.5620655
+  m_Value: 1
+  m_Size: 0.56206554
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1147,8 +1179,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 559839473, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 448666599, guid: 42b12184024d98d4fb9bd90500389dbe, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1224,7 +1256,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8852928036078030429
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1313,7 +1345,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 733114102369237277}
   m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 1
   m_HorizontalScrollbarSpacing: 0
   m_VerticalScrollbarSpacing: 0
   m_OnValueChanged:
@@ -1348,8 +1380,8 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: 0
   m_MinHeight: 402.8
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
+  m_PreferredWidth: 440
+  m_PreferredHeight: 2000
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1

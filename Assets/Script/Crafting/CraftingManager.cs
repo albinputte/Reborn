@@ -19,11 +19,15 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] private GameObject ItemPrefab;
     [SerializeField] private StructureItemBase structureItem;
     [SerializeField] private InteractableType Type;
+    private PlayerInputManger input;
+    
+
     public InteractableType type { get => Type; set => Type = value; }
     public SoundType CraftSound;
     public void Awake()
     {
         spriteRen = GetComponent<SpriteRenderer>();
+        input = FindAnyObjectByType<PlayerInputManger>();
        
     }
  
@@ -35,7 +39,7 @@ public class CraftingManager : MonoBehaviour, IInteractable
              .Where(item => item.IsCraftable)
              .SelectMany(item => item.craftingRecipe)
              .ToList();
-      
+   
     
     }
    
@@ -104,13 +108,12 @@ public class CraftingManager : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-      
 
-      
-        Debug.Log("I interact");
+        Debug.Log("hej");
+
         if (!craftingUI.UiIsActive )
         {
-            Debug.Log("I Open");
+            craftingUI.IsInteractingCrafting = true;
             currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
             craftingUI.craftingManager[craftingUI.checkFirstEmptySlotInCraftingManger()] = this;
             craftingUI.ShowCraftinUi();
@@ -120,15 +123,46 @@ public class CraftingManager : MonoBehaviour, IInteractable
         }  
         else
         {
-            Debug.Log("I Close");
+            craftingUI.IsInteractingCrafting = false;
             craftingUI.HideCraftingUi();
-            if (InventoryController.Instance.InventoryUiActive)
+            if (InventoryController.Instance.InventoryUiActive && !craftingUI.InteractButtonClicked)
                 InventoryController.Instance.InventoryInput();
+            else
+                craftingUI.InteractButtonClicked = false;
+            craftingUI.ClearRecipeInformation();
+            craftingUI.craftingManager[currentCraftingMangerIndex] = null;
+            craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
+            
+        }
+ 
+    }
+    public void InventoryCrafting()
+    {
+
+        if (!craftingUI.UiIsActive && !craftingUI.IsInteractingCrafting)
+        {
+
+            currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
+            craftingUI.craftingManager[craftingUI.checkFirstEmptySlotInCraftingManger()] = this;
+            craftingUI.ShowCraftinUi();
+            craftingUI.UpdateUi(this, currentCraftingMangerIndex, false);
+        }
+        else if (!craftingUI.IsInteractingCrafting && craftingUI.UiIsActive)
+        {
+
+            craftingUI.HideCraftingUi();
             craftingUI.ClearRecipeInformation();
             craftingUI.craftingManager[currentCraftingMangerIndex] = null;
             craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
         }
- 
+        else if (craftingUI.IsInteractingCrafting && craftingUI.UiIsActive) {
+            input.isInteracting = true;
+            input.ActionPefromed = true;
+            craftingUI.InteractButtonClicked = true;
+            craftingUI.IsInteractingCrafting = false;
+       
+   
+        }
     }
 
     public void DestroyCraftingTable()
