@@ -31,14 +31,20 @@ public class PlayerInputManger : MonoBehaviour
     [SerializeField] private PlayerWeaponAgent agent;
     [SerializeField] public Vector2 moveDir;
     [SerializeField] private LayerMask UILayer;
+    private void Awake()
+    {
+        craftUi = FindAnyObjectByType<CraftingUI>();
+    }
+
 
     public void Start()
     {
+    
         agent = FindAnyObjectByType<PlayerWeaponAgent>();
         agent.OnExit += () => CheckBufferedInput("Fire");
         inventoryController = FindAnyObjectByType<InventoryController>();
         controller = FindAnyObjectByType<PlayerController>();
-        craftUi = FindAnyObjectByType<CraftingUI>();
+      
     }
 
 

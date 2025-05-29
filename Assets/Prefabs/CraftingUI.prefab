@@ -62,7 +62,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   UiIsActive: 0
-  Frame: {fileID: 3014364371425827282}
+  Frame: {fileID: 7250977514865487627}
   ParrentToSpawnRecipeunder: {fileID: 3612185498213809555}
   RecipePrefab: {fileID: 2554617334233116183, guid: 1dc6e4ce9a1bfb244aaee559ce68a6ad, type: 3}
   recipeSlots: []
@@ -87,6 +87,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1866c66f9fa7ba6488de2ca8c044f91d, type: 2}
   - {fileID: 11400000, guid: 5f4d664978cc04042ad38db2298d7d52, type: 2}
   - {fileID: 11400000, guid: 003260bafd67aa842a4514606c184e75, type: 2}
+  currentCraftingMangerIndex: 0
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes: []
   craftingUI: {fileID: 4196292151403652937}
@@ -98,7 +99,8 @@ MonoBehaviour:
   ItemPrefab: {fileID: 0}
   structureItem: {fileID: 0}
   Type: 0
-  CraftSound: 10
+  IsInventoryUi: 1
+  CraftSound: 12
 --- !u!1 &3612185498213809555
 GameObject:
   m_ObjectHideFlags: 0
