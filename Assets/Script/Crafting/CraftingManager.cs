@@ -7,7 +7,7 @@ using UnityEngine;
 public class CraftingManager : MonoBehaviour, IInteractable
 {
     [SerializeField] private List<ItemData> craftingRecipes;
-    private int currentCraftingMangerIndex;
+    public int currentCraftingMangerIndex;
     [SerializeField] public InventorySO inventory;
     [SerializeField] private List<CraftingRecipe> availableRecipes;
     [SerializeField] private CraftingUI craftingUI;

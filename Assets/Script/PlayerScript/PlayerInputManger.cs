@@ -114,7 +114,17 @@ public class PlayerInputManger : MonoBehaviour
                 if (controller.stateMachine.CurrentState == controller.interactCrafting)
                     controller.OnUiOpenInvoke();
                 else
+                {
                     craftUi.HideCraftingUi();
+                    craftUi.ClearRecipeInformation();
+                    CraftingManager[] managers = craftUi.GetCurrentCraftingMangers();
+                    foreach (var manager in managers)
+                    {
+                        craftUi.UpdateUi(manager, manager.currentCraftingMangerIndex, true);
+                    }
+                 
+                }
+              
 
             }
             if (Ui[2].activeSelf)
@@ -193,11 +203,23 @@ public class PlayerInputManger : MonoBehaviour
             inventoryController.InventoryInput();
         if (Ui[1].activeSelf)
         {
-            Ui[1].gameObject.SetActive(false);
-            controller.OnUiOpenInvoke();
 
-        }
-        if (Ui[2].activeSelf)
+            if (controller.stateMachine.CurrentState == controller.interactCrafting)
+                controller.OnUiOpenInvoke();
+            else
+            {
+                craftUi.HideCraftingUi();
+                craftUi.ClearRecipeInformation();
+                CraftingManager[] managers = craftUi.GetCurrentCraftingMangers();
+                foreach (var manager in managers)
+                {
+                    craftUi.UpdateUi(manager, manager.currentCraftingMangerIndex, true);
+                }
+            }
+
+
+            }
+            if (Ui[2].activeSelf)
         {
             controller.OnUiOpenInvoke();
             Ui[2].gameObject.SetActive(false);

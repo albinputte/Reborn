@@ -77,6 +77,20 @@ public class CraftingUI : MonoBehaviour
         // Update the UI from all active managers
         RefreshCraftingUI();
     }
+    public CraftingManager[] GetCurrentCraftingMangers()
+    {
+        List<CraftingManager> tempList = new List<CraftingManager>();
+        for (int i = 0; i < craftingManager.Length; i++)
+        {
+            if(craftingManager[i] != null)
+            {
+                tempList.Add(craftingManager[i]);
+            }
+
+        }
+        return tempList.ToArray();
+    }
+
 
     private void RefreshCraftingUI()
     {
