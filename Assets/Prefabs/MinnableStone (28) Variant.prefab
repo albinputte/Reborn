@@ -188,6 +188,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: MaxHitCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: NewMaterial
       value: 
       objectReference: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}

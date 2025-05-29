@@ -11,4 +11,6 @@ public enum StatsType
     Damage,
     HealthRegen,
     Lifesteal,
+    PickaxePower,
+    Multi_OreChance,
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class MinnableOre : MonoBehaviour, IInteractable
 {
-    public int oreCount = 3; 
+    public int oreCount = 3;
+    private int HitCount;
+    public int MaxHitCount;
     public GameObject orePrefab;
     [SerializeField] private ItemData ItemData;
     private Collider2D col;
@@ -20,12 +22,15 @@ public class MinnableOre : MonoBehaviour, IInteractable
     [SerializeField] private GameObject StoneParticles;
     [SerializeField] private bool HasShadow;
     [SerializeField] private GameObject Shadow;
+
+
     public InteractableType type { get => Type; set => Type = value; }
     public void Start()
     {
         mineRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
         oreCount = Random.Range(minOres, maxOres);
+        HitCount = MaxHitCount;
     }
 
     public void Interact()
@@ -37,6 +42,9 @@ public class MinnableOre : MonoBehaviour, IInteractable
             {
                 SoundManager.PlaySound(SoundType.PickAxe_Sound);
                 GameObject Particle = Instantiate(StoneParticles, transform.position, Quaternion.identity);
+                Mine();
+                if (HitCount > 0)
+                    return;
             }
              
 
@@ -45,7 +53,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
           
 
             oreCount--;
-            Debug.Log("Mined ore! Ores left: " + oreCount);
+            HitCount = MaxHitCount;
 
             
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
@@ -60,6 +68,69 @@ public class MinnableOre : MonoBehaviour, IInteractable
         {
             Debug.Log("The mine is empty.");
         }
+    }
+
+    public void Mine()
+    {
+        int pickaxePower = (int)StatSystem.instance.GetStat(StatsType.PickaxePower);
+        float multiChance = StatSystem.instance.GetStat(StatsType.Multi_OreChance);
+        bool shouldMulti = Random.value < multiChance;
+        bool didDoubleHit = Random.value < 0.5;
+        Debug.Log(didDoubleHit);
+
+        // Tier 1: Insta-break (feels super powerful)
+        if (pickaxePower >= MaxHitCount * 3)
+        {
+            SpawnOre(2, false); // Guaranteed 2 ores
+            if (shouldMulti)
+                SpawnOre(1, true); // Bonus ore
+            StartCoroutine(RespawnIfDepleted());
+            return;
+        }
+
+        // Tier 2: Medium break (1 hit = 2 HP)
+        if (pickaxePower >= MaxHitCount * 2)
+        {
+       
+            SpawnOre(1, false);
+            if(didDoubleHit)
+                SpawnOre(1, false);
+            if (shouldMulti)
+                SpawnOre(1, true);
+            StartCoroutine(RespawnIfDepleted());
+            return;
+        }
+
+        // Tier 3: Regular mining (needs multiple hits)
+        HitCount -= pickaxePower;
+        if (HitCount <= 0)
+        {
+            SpawnOre(1, false);
+            if (shouldMulti)
+                SpawnOre(1,true );
+            StartCoroutine(RespawnIfDepleted());
+            HitCount = MaxHitCount;
+        }
+    }
+
+    void SpawnOre(int amount, bool ShouldMulti)
+    {
+        for (int i = 0; i < amount && oreCount > 0; i++)
+        {
+            GameObject ore = Instantiate(orePrefab, transform.position, Quaternion.identity);
+            ore.GetComponent<WorldItem>().SetItem(ItemData, 1);
+            Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
+            if (rb != null)
+                StartCoroutine(ApplyFloatDrop(rb));
+            if(!ShouldMulti)
+                oreCount--;
+        }
+    }
+
+    IEnumerator RespawnIfDepleted()
+    {
+        if (oreCount <= 0)
+            yield return StartCoroutine(RespawnOres());
     }
     public IEnumerator RespawnOres()
     {

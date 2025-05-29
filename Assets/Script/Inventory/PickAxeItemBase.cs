@@ -6,5 +6,5 @@ using UnityEngine;
 
 public class PickAxeItemBase : ItemData, ITools
 {
-  
+    public int PickAxePower;
 }

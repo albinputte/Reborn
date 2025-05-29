@@ -20,6 +20,7 @@ public class InventoryController : MonoBehaviour
     public static bool IsToolEquiped;
     public static bool IsAccesoireInHand;
  
+ 
     public static InventoryController Instance;
     public ChestController Chest;
 
@@ -266,6 +267,10 @@ public class InventoryController : MonoBehaviour
 
         InventoryController.NoWeaponEquiped = true;
         InventoryController.IsConsumableEquiped = false;
+        if (InventoryController.IsToolEquiped)
+        {
+            StatSystem.instance.RemoveStats(StatsType.PickaxePower, StatSystem.instance.GetStat(StatsType.PickaxePower));
+        }
         InventoryController.IsToolEquiped = false;
         InventoryController.IsAccesoireInHand = false;
         if (BuildItemEquiped)
@@ -305,7 +310,7 @@ public class InventoryController : MonoBehaviour
         if (item.item is IAccesories accesories)
         {
             InventoryController.IsAccesoireInHand = true;
-            return;
+         
         }
 
             if (item.item is IConsumable)
@@ -314,10 +319,13 @@ public class InventoryController : MonoBehaviour
             return;
         }
 
-        if (item.item is ITools)
+        if (item.item is ITools tool)
         {
             InventoryController.IsToolEquiped = true;
+            PickAxeItemBase pickAxe = (PickAxeItemBase)item.item;
+            StatSystem.instance.AddStats(StatsType.PickaxePower, pickAxe.PickAxePower);
             return;
+         
         }
     }
 
