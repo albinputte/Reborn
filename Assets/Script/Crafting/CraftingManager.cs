@@ -20,6 +20,7 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] private StructureItemBase structureItem;
     [SerializeField] private InteractableType Type;
     private PlayerInputManger input;
+    public bool IsInventoryUi;
     
 
     public InteractableType type { get => Type; set => Type = value; }
@@ -162,6 +163,16 @@ public class CraftingManager : MonoBehaviour, IInteractable
             craftingUI.IsInteractingCrafting = false;
        
    
+        }
+    }
+    private void OnDisable()
+    {
+        if (IsInventoryUi)
+        {
+            craftingUI.HideCraftingUi();
+            craftingUI.ClearRecipeInformation();
+            craftingUI.craftingManager[currentCraftingMangerIndex] = null;
+            craftingUI.UpdateUi(this, currentCraftingMangerIndex, true);
         }
     }
 

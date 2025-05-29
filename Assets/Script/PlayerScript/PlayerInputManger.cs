@@ -25,6 +25,7 @@ public class PlayerInputManger : MonoBehaviour
     private bool CanPefromKeyBuffer;
     public GameObject[] Ui;
     private PlayerController controller;
+    private CraftingUI craftUi;
     private InventoryController inventoryController;
     [SerializeField] private Dictionary<string, KeyBuffer> BufferList = new Dictionary<string, KeyBuffer>();
     [SerializeField] private PlayerWeaponAgent agent;
@@ -37,6 +38,7 @@ public class PlayerInputManger : MonoBehaviour
         agent.OnExit += () => CheckBufferedInput("Fire");
         inventoryController = FindAnyObjectByType<InventoryController>();
         controller = FindAnyObjectByType<PlayerController>();
+        craftUi = FindAnyObjectByType<CraftingUI>();
     }
 
 
@@ -108,8 +110,11 @@ public class PlayerInputManger : MonoBehaviour
             inventoryController.InventoryInput();;
             if (Ui[1].activeSelf)
             {
-                Ui[1].gameObject.SetActive(false);
-                controller.OnUiOpenInvoke();
+               
+                if (controller.stateMachine.CurrentState == controller.interactCrafting)
+                    controller.OnUiOpenInvoke();
+                else
+                    craftUi.HideCraftingUi();
 
             }
             if (Ui[2].activeSelf)

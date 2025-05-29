@@ -17,8 +17,8 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private Image ResultSlot;
     [SerializeField] private CraftButtonUi craftButtonUi;
     [SerializeField] private VerticalLayoutGroup layoutGroup;
-    [HideInInspector]public bool IsInteractingCrafting;
-    [HideInInspector] public bool InteractButtonClicked;
+   public bool IsInteractingCrafting;
+  public bool InteractButtonClicked;
     public static CraftingUI Instance { get; private set; }
     private RecipeSlotUi CurrentSlot;
 
