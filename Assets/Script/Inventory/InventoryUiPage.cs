@@ -111,6 +111,10 @@ public class InventoryUiPage : MonoBehaviour
             slot.SetTimer(time);
         }
     }
+    public int GetCurrentSlotIndex()
+    {
+        return ListOfUIslots.IndexOf(Selectdslot);
+    }
 
     public void SetAccesoire(AccesoriesItemBase accesories)
     {
@@ -286,6 +290,7 @@ public class InventoryUiPage : MonoBehaviour
         gameObject.SetActive(true);
         DragContext.SourceIndex = -1;
         ResetMouse();
+        
 
     }
     public void HideInventory() 

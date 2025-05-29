@@ -13,9 +13,12 @@ public class InventorySlideInUi : MonoBehaviour
     public OrbSlotUi[] Slot;
     public static InventorySlideInUi Instance;
     [SerializeField] private InventoryUiPage InvUiPage;
+    private Animator anim;
+    private bool IsOpen;
     public void Awake()
     {
         Instance = this;
+        anim = GetComponent<Animator>();
         InvUiPage = GetComponentInParent<InventoryUiPage>();
     }
     private void Start()
@@ -24,6 +27,32 @@ public class InventorySlideInUi : MonoBehaviour
         {
             Slot[i].OnItemBeginDrag += OnItemDrag;
             Slot[i].OnItemEndDrag += OnEndDrag;
+        }
+    }
+    public void OpenSlider()
+    {
+        if(!IsOpen)
+            anim.SetTrigger("Open");
+        IsOpen = true;
+    }
+    public void CloseSlider()
+    {
+        if(IsOpen)
+            anim.SetTrigger("Close");
+        IsOpen = false;
+    }
+
+    public void OpenAndCloseSliderButton()
+    {
+        if (!IsOpen)
+        {
+            anim.SetTrigger("Open");
+            IsOpen = true;
+        }
+        else
+        {
+            anim.SetTrigger("Close");
+            IsOpen = false;
         }
     }
 

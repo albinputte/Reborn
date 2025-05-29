@@ -236,6 +236,14 @@ public class InventoryController : MonoBehaviour
             OnAccesoires();
             return;
         }
+        IWeapon weapon = item.item as IWeapon;
+        if (weapon != null)
+        {
+            InventorySlideInUi.Instance.OpenSlider();
+        }
+        else {
+            InventorySlideInUi.Instance.CloseSlider();
+        }
         IDestroyableItem iDestroyableItem = item.item as IDestroyableItem;
         if (iDestroyableItem != null)
         {
@@ -265,9 +273,14 @@ public class InventoryController : MonoBehaviour
             BuildItem.CancelBuild(0);
         }
         BuildItemEquiped = false;
-
+      
         if (item.IsEmpty || item.item == null)
+        {
+            if (InventoryUiActive)
+                InventorySlideInUi.Instance.CloseSlider();
             return;
+        }
+         
       
         if (item.item is IWeapon weapon)
         {
@@ -275,10 +288,14 @@ public class InventoryController : MonoBehaviour
             if (item.item is IitemAction action)
             {
                 action.PerformAction(Character, item.weaponInstances);
+                if (InventoryUiActive)
+                    InventorySlideInUi.Instance.OpenSlider();
                
             }
             return;
         }
+        if(InventoryUiActive)
+            InventorySlideInUi.Instance.CloseSlider();
         if (item.item is IStructure structure) {
             BuildItemEquiped = true;
             BuildItem = item.item as StructureItemBase;
@@ -378,7 +395,7 @@ public class InventoryController : MonoBehaviour
         {
             inventoryUi.ShowInventory();
             InventoryUiActive = true;
-      
+            
             foreach (var item in inventoryData.GetInventoryState())
             {
                
@@ -390,6 +407,7 @@ public class InventoryController : MonoBehaviour
                 TutorialManger.instance.OnInventoryOpened();
             }
             TransferHotbarToInventory();
+           
         }
         else if (InventoryUiActive)
         {
@@ -397,6 +415,7 @@ public class InventoryController : MonoBehaviour
             TransferInventoryToHotbar();
             inventoryUi.HideInventory();
             InventoryUiActive = false;
+
         }
 
 
