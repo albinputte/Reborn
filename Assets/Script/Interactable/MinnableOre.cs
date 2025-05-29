@@ -18,6 +18,8 @@ public class MinnableOre : MonoBehaviour, IInteractable
     [SerializeField] private Material NewMaterial;
     [SerializeField] private Material OldMaterial;
     [SerializeField] private GameObject StoneParticles;
+    [SerializeField] private bool HasShadow;
+    [SerializeField] private GameObject Shadow;
     public InteractableType type { get => Type; set => Type = value; }
     public void Start()
     {
@@ -61,12 +63,16 @@ public class MinnableOre : MonoBehaviour, IInteractable
     }
     public IEnumerator RespawnOres()
     {
+        if (HasShadow)
+            Shadow.SetActive(false);
         mineRenderer.enabled = false;
         col.enabled = false;
         yield return new WaitForSeconds(respawnTime);
         oreCount = Random.Range(minOres, maxOres);
         col.enabled = true;
         mineRenderer.enabled = true;
+        if(HasShadow)
+            Shadow.SetActive(true);
     }
 
     private IEnumerator ApplyFloatDrop(Rigidbody2D rb)

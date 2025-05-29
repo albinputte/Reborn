@@ -172,6 +172,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 483559460640386774}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: Shadow
+      value: 
+      objectReference: {fileID: 9163878345522933557}
+    - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: minOres
       value: 2
       objectReference: {fileID: 0}
@@ -179,6 +183,10 @@ PrefabInstance:
       propertyPath: ItemData
       value: 
       objectReference: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
+    - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: HasShadow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: NewMaterial
       value: 

@@ -235,6 +235,8 @@ MonoBehaviour:
   NewMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   StoneParticles: {fileID: 0}
+  HasShadow: 1
+  Shadow: {fileID: 3357101700934851416}
 --- !u!58 &4801250495992800027
 CircleCollider2D:
   m_ObjectHideFlags: 0
