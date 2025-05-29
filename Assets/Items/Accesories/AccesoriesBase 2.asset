@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AccesoriesBase 2
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Ancient Ring</color>
-  Description: Bound with strengthening powers
-  Icon: {fileID: 1788010562, guid: d081efe397add7e4293be2c521f39ffd, type: 3}
+  Description: '"Blessed" with health regen powers'
+  Icon: {fileID: 959809117, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 6
   IsStackable: 0
   IsCraftable: 0
