@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 051d6e42bbdc0c346afe23bbbba6fc3e, type: 3}
-  m_Name: AccesoriesBase
+  m_Name: Accesories_HpSteal
   m_EditorClassIdentifier: 
-  Name: <color=#D86A9F>Blood pendant</color>
-  Description: shoul not give damage wink wink
-  Icon: {fileID: 320151946, guid: d081efe397add7e4293be2c521f39ffd, type: 3}
+  Name: <color=#D86A9F>Ruby Necklace</color>
+  Description: forged with magical lifestealing powers
+  Icon: {fileID: 21300000, guid: 16eadeec33b7d4d4bab9cfeac2c94592, type: 3}
   itemType: 6
   IsStackable: 0
   IsCraftable: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
     - rid: 6313147755047419904
       type: {class: AddetiveBuff, ns: , asm: Assembly-CSharp}
       data:
-        bonusMultiplier: 2
-        statType: 2
+        bonusMultiplier: 1
+        statType: 4

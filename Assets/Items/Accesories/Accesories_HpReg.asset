@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 051d6e42bbdc0c346afe23bbbba6fc3e, type: 3}
-  m_Name: AccesoriesBase 3
+  m_Name: Accesories_HpReg
   m_EditorClassIdentifier: 
-  Name: <color=#D86A9F>Ruby Necklace</color>
-  Description: forged with magical lifestealing powers
-  Icon: {fileID: 21300000, guid: 16eadeec33b7d4d4bab9cfeac2c94592, type: 3}
+  Name: <color=#D86A9F>Ancient Ring</color>
+  Description: '"Blessed" with health regen powers'
+  Icon: {fileID: 959809117, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 6
   IsStackable: 0
   IsCraftable: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
     - rid: 6313147755047419904
       type: {class: AddetiveBuff, ns: , asm: Assembly-CSharp}
       data:
-        bonusMultiplier: 1
-        statType: 4
+        bonusMultiplier: 2
+        statType: 3

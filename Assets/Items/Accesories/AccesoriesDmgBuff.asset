@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 051d6e42bbdc0c346afe23bbbba6fc3e, type: 3}
-  m_Name: AccesoriesBase 1
+  m_Name: AccesoriesDmgBuff
   m_EditorClassIdentifier: 
-  Name: <color=#D86A9F>Saphire Necklace</color>
-  Description: A necklace forged by magical saphire
-  Icon: {fileID: -1792453461, guid: d081efe397add7e4293be2c521f39ffd, type: 3}
+  Name: <color=#D86A9F>Blood pendant</color>
+  Description: shoul not give damage wink wink
+  Icon: {fileID: 320151946, guid: d081efe397add7e4293be2c521f39ffd, type: 3}
   itemType: 6
   IsStackable: 0
   IsCraftable: 0
   craftingRecipe: []
   BuffBase:
-    rid: 5482896750252916745
+    rid: 6313147755047419904
   references:
     version: 2
     RefIds:
-    - rid: 5482896750252916745
+    - rid: 6313147755047419904
       type: {class: AddetiveBuff, ns: , asm: Assembly-CSharp}
       data:
-        bonusMultiplier: 1
-        statType: 1
+        bonusMultiplier: 2
+        statType: 2
