@@ -16,7 +16,14 @@ public class UIToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public string values;
     public bool IsActive;
     public static bool IsDragging;
-    
+
+    private RectTransform rectTransform;
+    private void Awake()
+    {
+        if (rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
+    }
+
     public void Dragging()
     {
         UIToolTipTrigger.IsDragging =true;
@@ -48,8 +55,9 @@ public class UIToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private IEnumerator ShowTooltipAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        ToolTipSystem.Show(values, content, header);
+        ToolTipSystem.Show(values, content, header, rectTransform); // Add rectTransform parameter
     }
+
     private void OnDisable()
     {
         if (IsActive)

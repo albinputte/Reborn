@@ -29,10 +29,25 @@ public class ToolTipSystem : MonoBehaviour
     {
         HideImmediate();
     }
-    public static void Show(string values, string content, string header = "")
+    public static void Show(string values, string content, string header = "", RectTransform targetRect = null)
     {
         current.tooltip.SetText(values, content, header);
-        current.tooltip.transform.position = Input.mousePosition;
+
+        if (targetRect != null)
+        {
+            Vector3[] corners = new Vector3[4];
+            targetRect.GetWorldCorners(corners);
+            // corners[1] = Top Left, corners[2] = Top Right
+            current.tooltip.GetComponent<RectTransform>().pivot = new Vector2(0f, 0f); // Bottom left
+
+            Vector3 offset = new Vector3(-20f, -20f, 0f); // 10 pixels right, 10 pixels down
+            current.tooltip.transform.position = corners[2] + offset;
+
+        }
+        else
+        {
+            current.tooltip.transform.position = Input.mousePosition;
+        }
 
         if (current.currentAnimationCoroutine != null)
             current.StopCoroutine(current.currentAnimationCoroutine);
@@ -40,6 +55,7 @@ public class ToolTipSystem : MonoBehaviour
         current.currentAnimationCoroutine = current.StartCoroutine(current.FadeInAndShowTooltip());
         current.tooltip.gameObject.SetActive(true);
     }
+
 
     public static void HideImmediate()
     {

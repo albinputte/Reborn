@@ -63,34 +63,23 @@ public class ToolTip : MonoBehaviour
 
         layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit || valuesLength > characterWrapLimit) ? true : false;
         UnlockPivot();
-        UpdatePivotAndPosition();
+
     }
     private void Update()
     {
 
     }
-    private void UpdatePivotAndPosition()
-    {
-        Vector2 position = Input.mousePosition;
 
-        // Calculate the new pivot based on mouse position
-        var normalizedPosition = new Vector2(position.x / Screen.width, position.y / Screen.height);
-        currentPivot = CalculatePivot(normalizedPosition);
-        rectTransform.pivot = currentPivot;
-
-        // Set the tooltip position to follow the mouse
-        transform.position = position;
-    }
 
     private Vector2 CalculatePivot(Vector2 normalizedPosition)
     {
         // Adjusted pivots to bring tooltip closer with rounded corners
-        var pivotTopLeft = new Vector2(0.05f, 0.95f);
-        var pivotTopRight = new Vector2(0.95f, 0.95f);
-        var pivotBottomLeft = new Vector2(0.05f, 0.05f);
-        var pivotBottomRight = new Vector2(0.95f, 0.05f);
+        var pivotTopLeft = new Vector2(0, 1);
+        var pivotTopRight = new Vector2(1, 1);
+        var pivotBottomLeft = new Vector2(0, 0);
+        var pivotBottomRight = new Vector2(1, 0.05f);
 
-        if (normalizedPosition.x < 0.5f && normalizedPosition.y >= 0.5f)
+        if (normalizedPosition.x <= 0.5f && normalizedPosition.y >= 0.5f)
         {
             return pivotTopLeft;
         }
