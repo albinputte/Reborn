@@ -15,6 +15,9 @@ public class TutorialManger : MonoBehaviour
     public Transform EnemySpawnPos;
     public GameObject chestPrefab;
     public Transform chestSpawnPos;
+    private bool EisInteractedEnough;
+    private int InteractionTimes;
+    private string Lastinteractedname;
 
     public TutorialState currentState = TutorialState.Start;
 
@@ -22,6 +25,7 @@ public class TutorialManger : MonoBehaviour
     {
         instance = this;
         TutorialIsActive = true;
+        EisInteractedEnough = true;
         EnterState(currentState);
     }
 
@@ -46,7 +50,20 @@ public class TutorialManger : MonoBehaviour
             
         }
     }
-
+    public bool EshouldAppear()
+    {
+        return EisInteractedEnough;
+    }
+    public void EwasInteractedWith(string ObjectName)
+    {
+        if (ObjectName != Lastinteractedname) {
+            InteractionTimes++;
+            Lastinteractedname = ObjectName;
+        }
+     
+        if(InteractionTimes >= 2)
+            EisInteractedEnough = false;
+    }
     public void OpenInventoryTimer()
     {
         

@@ -23,9 +23,7 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        if (TutorialManger.instance.TutorialIsActive && TutorialManger.instance.currentState == TutorialState.EnemyDefeated) {
-            TutorialManger.instance.OnRewardCollected();
-                }
+      
 
         if (controller.ChestUiIsActive)
         {
@@ -35,6 +33,10 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
         }
         else
         {
+            if (TutorialManger.instance.EshouldAppear())
+            {
+                TutorialManger.instance.EwasInteractedWith(gameObject.name);
+            }
             controller.PrepareChestData(ItemToInitialize);
             controller.ShowChest();
             animator.SetTrigger("ChestInteraction");
@@ -49,7 +51,10 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
     public void NearPlayer()
     {
         ChestRenderer.material = NewMaterial;
+        if (TutorialManger.instance.EshouldAppear())
+        {
         Button.gameObject.SetActive(true);
+            }
     }
 
     public void LeavingPlayer()

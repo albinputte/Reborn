@@ -110,10 +110,15 @@ public class CraftingManager : MonoBehaviour, IInteractable
     public void Interact()
     {
 
-        Debug.Log("hej");
+        
 
         if (!craftingUI.UiIsActive )
         {
+            if (TutorialManger.instance.EshouldAppear())
+            {
+                TutorialManger.instance.EwasInteractedWith(gameObject.name);
+            }
+
             craftingUI.IsInteractingCrafting = true;
             currentCraftingMangerIndex = craftingUI.checkFirstEmptySlotInCraftingManger();
             craftingUI.craftingManager[craftingUI.checkFirstEmptySlotInCraftingManger()] = this;
@@ -203,7 +208,10 @@ public class CraftingManager : MonoBehaviour, IInteractable
     public void NearPlayer()
     {
         spriteRen.material = NewMaterial;
-        Button.gameObject.SetActive(true);
+        if (TutorialManger.instance.EshouldAppear())
+        {
+            Button.gameObject.SetActive(true);
+        }
     }
 
     public void LeavingPlayer()

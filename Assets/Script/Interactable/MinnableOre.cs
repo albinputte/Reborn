@@ -37,6 +37,10 @@ public class MinnableOre : MonoBehaviour, IInteractable
     {
         if (oreCount > 0)
         {
+            if (TutorialManger.instance.EshouldAppear())
+            {
+                TutorialManger.instance.EwasInteractedWith(gameObject.name);
+            }
 
             if (type == InteractableType.Minning)
             {
@@ -171,7 +175,11 @@ public class MinnableOre : MonoBehaviour, IInteractable
     public void NearPlayer()
     {
         mineRenderer.material = NewMaterial;
-        Button.gameObject.SetActive(true);
+        if (TutorialManger.instance.EshouldAppear())
+        {
+            Button.gameObject.SetActive(true);
+        }
+        
     }
 
     public void LeavingPlayer()

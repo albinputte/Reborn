@@ -32,6 +32,10 @@ public class BerryBush : MonoBehaviour, IInteractable
     {
         if (berryCount > 0)
         {
+            if (TutorialManger.instance.EshouldAppear())
+            {
+                TutorialManger.instance.EwasInteractedWith(gameObject.name);
+            }
             GameObject obj = Instantiate(berryPrefab, transform.position, Quaternion.identity);
             SoundManager.PlaySound(SoundType.InteractBerryBush);
             obj.GetComponent<WorldItem>().SetItem(ItemData, 1);
@@ -79,7 +83,10 @@ public class BerryBush : MonoBehaviour, IInteractable
     public void NearPlayer()
     {
         BushRenderer.material = NewMaterial;
-        Button.gameObject.SetActive(true);
+        if (TutorialManger.instance.EshouldAppear())
+        {
+            Button.gameObject.SetActive(true);
+        }
     }
 
     public void LeavingPlayer()
