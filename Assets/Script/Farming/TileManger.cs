@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class TileManger : MonoBehaviour
@@ -57,7 +58,7 @@ public class TileManger : MonoBehaviour
                 //inventoryController.inventoryData.AddItem(CurrentItem,1, null);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
         {
             HandleObjectPlacement(pos);
         }
@@ -211,7 +212,7 @@ public class TileManger : MonoBehaviour
     }
     private void UpdatePreviewPosition(Vector3Int cellPosition)
     {
-        if (IsObjectPlaced(cellPosition) || GetObjectsInTile(cellPosition, NonPlacableLayers).Count > 0)
+        if (IsObjectPlaced(cellPosition) || GetObjectsInTile(cellPosition, NonPlacableLayers).Count > 0 || IsPointerOverUI())
         {
             sr.color = new Color(1f, 0f, 0f, 0.5f);
             //previewObject.SetActive(false);
@@ -225,6 +226,11 @@ public class TileManger : MonoBehaviour
 
       
           
+    }
+
+    private bool IsPointerOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 }
 
