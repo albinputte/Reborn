@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072b9ee32a032504fb809636cf7b88ea, type: 3}
+  m_Name: DropTable_Berries
+  m_EditorClassIdentifier: 
+  GurantedLoot:
+    Name: 
+    ChanceToRoll: 0
+    lootTable: []
+  LootingTable:
+  - Name: common
+    ChanceToRoll: 100
+    lootTable:
+    - item: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
+      dropChance: 100
+      minDrop: 1
+      maxDrop: 3
+  - Name: rare
+    ChanceToRoll: 50
+    lootTable:
+    - item: {fileID: 11400000, guid: 476ad0f6ba992574b9efb5b06d186c0e, type: 2}
+      dropChance: 100
+      minDrop: 1
+      maxDrop: 1
