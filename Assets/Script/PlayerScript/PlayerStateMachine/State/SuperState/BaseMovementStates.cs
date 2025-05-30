@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseMovementStates : PlayerState
@@ -22,11 +23,12 @@ public class BaseMovementStates : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
-        HandleMovementInput();
-        HandleInteractionInput();
-        HandleAttackInput();
-        
+        if (!Respawn.instance.isRespawning)
+        {
+            HandleMovementInput();
+            HandleInteractionInput();
+            HandleAttackInput();
+        }
        
 
         MovementXY();

@@ -72,6 +72,15 @@ public class PlayerState
             checkCooldown = checkInterval;
         }
         CurrentVelocity = controller.rb.velocity;
+        if (Respawn.instance.isRespawning) {
+            Debug.Log(stateMachine.CurrentState);
+            if (stateMachine.CurrentState == controller.playerDeathState)
+                return;
+             
+            stateMachine.SwitchState(controller.playerDeathState);
+            
+              
+        }
       
     }
 

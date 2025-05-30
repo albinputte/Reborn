@@ -9,6 +9,7 @@ public class Respawn : MonoBehaviour
     public Transform respawnPoint;
     public float respawnDelay = 3f;
     private SliderUi Healthui;
+    private GameObject Player;
     private PlayerWeaponAgent agent;
     private void Awake()
     {
@@ -19,46 +20,44 @@ public class Respawn : MonoBehaviour
 
     public void RespawnPlayer(GameObject player)
     {
-        StartCoroutine(RespawnCoroutine(player));
-    }
-
-    private IEnumerator RespawnCoroutine(GameObject player)
-    {
         isRespawning = true;
+        Player = player;
+        PlayerWeaponAgent.Instance.OnRespawn();
         Collider2D[] collider = player.GetComponents<Collider2D>();
-        SpriteRenderer spriteRenderer = player.GetComponent<SpriteRenderer>();
-        SpriteRenderer attackSprites = player.GetComponentInChildren<SpriteRenderer>();
         for (int i = 0; i < collider.Length; i++)
         {
             collider[i].enabled = false;
         }
-        spriteRenderer.sortingLayerName = "Background";
-        attackSprites.sortingLayerName = "Background";
+    }
+
+    public void RespawnDone()
+    {
+       
+  
 
 
-        yield return new WaitForSeconds(respawnDelay);
-
-        player.transform.position = respawnPoint.position;
-        player.SetActive(true);
-
-        
-        Health health = player.GetComponentInChildren<Health>();
+        Health health = Player.GetComponentInChildren<Health>();
         if (health != null)
         {
-            health.SetCurrentHealth((int)health.GetMaxHealth() / 2); 
-            if(Healthui != null)
+            health.SetCurrentHealth((int)health.GetMaxHealth() / 2);
+            if (Healthui != null)
                 Healthui.UpdateHealth();
-            
-        }
 
+        }
+        Collider2D[] collider = Player.GetComponents<Collider2D>();
         for (int i = 0; i < collider.Length; i++)
         {
             collider[i].enabled = true;
         }
 
-        spriteRenderer.sortingLayerName = "Foreground";
-        attackSprites.sortingLayerName = "Foreground";
+
         isRespawning = false;
-        Debug.Log("Player respawned.");
     }
+
+    public void MoveCharacterToRespawn()
+    {
+        Player.transform.position = respawnPoint.position;
+    }
+
+ 
 }

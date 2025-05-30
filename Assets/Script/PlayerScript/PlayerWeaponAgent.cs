@@ -74,7 +74,11 @@ public class PlayerWeaponAgent : MonoBehaviour
         if (!attackAnimator)
             Debug.LogError("AttackAnimator is missing!");
     }
-
+    public void OnRespawn()
+    {
+        Deactivate();
+        DisableCollider();
+    }
     public void SetWeapon(WeaponInstances newWeapon)
     {
         //if (CurrentWeapon != null)

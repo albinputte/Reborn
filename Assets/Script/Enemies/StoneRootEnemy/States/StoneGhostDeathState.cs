@@ -11,6 +11,7 @@ public class StoneGhostDeathState : StoneGhostState
     public override void Enter()
     {
         base.Enter();
+
         controller.OnAnimationDone += () => { GameObject.Destroy(controller.gameObject); };
     }
 
