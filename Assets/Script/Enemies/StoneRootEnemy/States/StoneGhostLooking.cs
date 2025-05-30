@@ -9,13 +9,14 @@ public class StoneGhostLooking : StoneGhostState
     public StoneGhostLooking(EnemyStateMachine<StoneGhostController> stateMachine, StoneGhostController controller, string animName) : base(stateMachine, controller, animName)
     {
     }
-  
+    private int LookTimes;
 
     public override void Enter()
     {
         base.Enter();
+        LookTimes = 0;
         controller.onSearch += CheckIfPlayerIsNearby;
-        controller.OnPlayAudio += () => { SoundManager.PlaySound(SoundType.StoneGhost_Looking); };
+        controller.OnPlayAudio += SwitchToBuried;
 
     }
 
@@ -24,7 +25,7 @@ public class StoneGhostLooking : StoneGhostState
     {
         base.Exit();
         controller.onSearch -= CheckIfPlayerIsNearby;
-        controller.OnPlayAudio -= () => { SoundManager.PlaySound(SoundType.StoneGhost_Looking); };
+        controller.OnPlayAudio -= SwitchToBuried;
     }
 
     public override void LogicUpdate()
@@ -40,12 +41,18 @@ public class StoneGhostLooking : StoneGhostState
         base.PhysicsUpdate();
     }
 
+    public void SwitchToBuried()
+    {
+        if (LookTimes >= 12)
+            stateMachine.SwitchState(controller.Hide);
+    }
 
 
     public void CheckIfPlayerIsNearby()
     {
         
         Collider2D hit = Physics2D.OverlapCircle(controller.transform.position, controller.LookingRadius, controller.PlayerMask);
+        LookTimes++;
         if (hit != null)
             stateMachine.SwitchState(controller.Rising);
     }

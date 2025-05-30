@@ -33,6 +33,8 @@ public class StoneGhostController : EnemyBaseController
     public StoneGhostHit Hit { get; set; }
     public StoneGhostDeathState DeathState { get; set; }
 
+    public StoneGhostPlayerDied PlayerDied { get; set; }
+
     public void Start()
     {
         m_StateMachine = new EnemyStateMachine<StoneGhostController>();
@@ -44,6 +46,7 @@ public class StoneGhostController : EnemyBaseController
         AttackChase = new StoneGhostAttackChase(m_StateMachine, this, "StoneGhost_Charge");
         Hit = new StoneGhostHit(m_StateMachine, this, "StoneGhost_TakeDamage");
         DeathState = new StoneGhostDeathState(m_StateMachine, this, "StoneGhost_Die");
+        PlayerDied = new StoneGhostPlayerDied(m_StateMachine, this, "StoneGhostPlayerDead");
         if (isConquestEnemy)
         {
             m_StateMachine.InstantiateState(Rising);
