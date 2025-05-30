@@ -24,15 +24,15 @@ public class ConquestPressureplate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player") || isPlateLocked)
+        if (!other.CompareTag("Player") || isPlateLocked || currentStage >= 4)
             return;
 
         isPlateLocked = true;
         ppSprite.sprite = closedSprite;
         SoundManager.PlaySound(SoundType.Preasure_Plate);
         StartCoroutine(SpawnEnemiesWithDelay());
-
     }
+
     private IEnumerator SpawnEnemiesWithDelay()
     {
         int enemiesToSpawn = currentStage + 1;
