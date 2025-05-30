@@ -180,6 +180,12 @@ public class Health : MonoBehaviour, IDamagable
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
         Instantiate(ParticlePrefab, transform.position, rotation);
     }
+    public void SpawnParticlesFromTargetWithWeapon ()
+    {
+        Vector3 direction = new Vector3(tempKnockBack.x, tempKnockBack.y).normalized;
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        Instantiate(PlayerWeaponAgent.Instance.CurrentWeapon.AttackParticle, transform.position, rotation);
+    }
 
     public void SpawnParticlesFromTarget(GameObject ParticlePrefab, Vector2 dir)
     {

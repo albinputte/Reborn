@@ -10,7 +10,7 @@ using UnityEngine.Rendering.Universal;
 
 public class WeaponItemData : ItemData, IitemAction, IWeapon
 {
-
+    public GameObject AttackParticle;
     [SerializeReference, SubclassSelector]
     public List<BuffBase> buffs = new List<BuffBase>();
     [SerializeField]

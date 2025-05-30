@@ -26,6 +26,7 @@ MonoBehaviour:
       quantity: 4
     resultItem: {fileID: 11400000}
     resultQuantity: 1
+  AttackParticle: {fileID: 3172483201822507954, guid: 4724eb3223acdb44dbf54d288743bce8, type: 3}
   attackSounds: 000000000100000002000000
   Damage: 12
   KnockbackForce: 20

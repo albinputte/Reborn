@@ -13,7 +13,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] private Vector2[] faceDir;
-
+    public static PlayerWeaponAgent Instance { get; private set; }
     private BoxCollider2D[] attackColliders;
     //private Sprite[] attackSprites;
     private Dictionary<int, Sprite[]> attackSprites;
@@ -46,6 +46,7 @@ public class PlayerWeaponAgent : MonoBehaviour
     private void Awake()
     {
         InitializeComponents();
+        Instance = this;
         WeaponInstances testinst = new WeaponInstances(testWeapon, null, 1212021);
         testinst.Weapon = testWeapon;
         //SetWeapon(testinst);
