@@ -19,6 +19,7 @@ public class CursorScript : MonoBehaviour
             cursorImage = GetComponent<Image>();
 
         rectTransform = GetComponent<RectTransform>();
+        rectTransform.localScale = new Vector3(1.5f, 1.5f, 1f);
     }
 
     private void Update()
