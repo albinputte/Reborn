@@ -46,6 +46,10 @@ public class InteractMinning : ActionState
         base.Exit();
         controller.OnAnimationEvent -= Mine;
         controller.OnAnimationDone -= EndMine;
+        if (controller.Input.IsAttacking) {
+            controller.Input.IsAttacking  = false;
+            controller.Input.ActionPefromed = false;
+        }
 
 
 

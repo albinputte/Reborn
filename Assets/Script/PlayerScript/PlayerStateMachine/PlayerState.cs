@@ -241,6 +241,30 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
         {
             stateMachine.SwitchState(controller.consumeState);
         }
+        else if (InventoryController.IsToolEquiped)
+        {
+            IInteractable inter = GetNearestInteractable(1f, controller.InteractionLayer);
+
+
+            if (inter != null)
+            {
+                if (inter.type == InteractableType.Minning)
+                {
+                    stateMachine.SwitchState(controller.interactState);
+                }
+                else
+                {
+                    controller.Input.IsAttacking = false;
+                    controller.Input.ActionPefromed = false;
+                }
+               
+            }
+            else
+            {
+                controller.Input.IsAttacking = false;
+                controller.Input.ActionPefromed = false;
+            }
+        }
         else
         {
             controller.Input.IsAttacking = false;
