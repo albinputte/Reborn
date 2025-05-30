@@ -158,7 +158,7 @@ public class InventoryController : MonoBehaviour
         if (DragContext.SourceType == DragSourceType.Chest && slot.OwnerPage is InventoryUiPage)
         {
             Chest.chestData.MoveItemToInventory(slot.SlotIndex, DragContext.SourceIndex);
-            SoundManager.PlaySound(SoundType.SwapItem_Inventory);
+            //SoundManager.PlaySound(SoundType.SwapItem_Inventory);
 
         }
         else if (DragContext.SourceType == DragSourceType.Inventory && slot.OwnerPage is InventoryUiPage
@@ -180,12 +180,12 @@ public class InventoryController : MonoBehaviour
                 }
             }
             if(DragContext.SourceIndex != slot.SlotIndex)
-                SoundManager.PlaySound(SoundType.SwapItem_Inventory);
+                //SoundManager.PlaySound(SoundType.SwapItem_Inventory);
             inventoryData.SwapitemPlace(DragContext.SourceIndex, slot.SlotIndex);
         }
         else if (DragContext.SourceType == DragSourceType.AccesorieSlot)
         {
-            SoundManager.PlaySound(SoundType.SwapItem_Inventory);
+            //SoundManager.PlaySound(SoundType.SwapItem_Inventory);
             InventoryItem item = inventoryData.GetSpecificItem(slot.SlotIndex);
             ItemData item2 = AccesorieSlotManger.Instance.GetItemAndRemove(DragContext.SourceIndex);
             if (item.item is AccesoriesItemBase)
@@ -206,7 +206,7 @@ public class InventoryController : MonoBehaviour
         }
         else if (DragContext.SourceType == DragSourceType.OrbSlot) 
         {
-            SoundManager.PlaySound(SoundType.SwapItem_Inventory);
+            //SoundManager.PlaySound(SoundType.SwapItem_Inventory);
             InventoryItem item = inventoryData.GetSpecificItem(slot.SlotIndex);
             ItemData item1 = InventorySlideInUi.Instance.GetItemAndRemove(DragContext.SourceIndex);
             if (item.item is OrbsItemData) {
