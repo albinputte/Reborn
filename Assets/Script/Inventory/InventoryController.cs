@@ -134,13 +134,54 @@ public class InventoryController : MonoBehaviour
         inventoryUi.ResetInventory();
         foreach(var item in dictionary)
         {
-            inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description);
+            
+            inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, GetStatsForTooltip(item.Value));
         }
         
        
         
      
     }
+
+    public string GetStatsForTooltip(InventoryItem item)
+    {
+        if (item.IsEmpty)
+            return "";
+        if (item.item is WeaponItemData weapon)
+        {
+            return "Damage " + weapon.Damage.ToString();
+        }
+        if (item.item is StructureItemBase structure)
+        {
+            return "Placable";
+        }
+        if (item.item is AccesoriesItemBase accesories)
+        {
+            BuffBase buffBase = accesories.BuffBase;
+            if(buffBase is AddetiveBuff buff)
+            {
+                return buff.statType.ToString() + " +" + buff.bonusMultiplier;
+            }
+       
+        }
+
+        if (item.item is ConsumableItem food)
+        {
+           
+            return "Heal " + food.healAmount;
+        }
+
+        if (item.item is PickAxeItemBase tool)
+        {
+            return "Pickaxe Power " + tool.PickAxePower;
+
+        }
+        return "";
+
+
+    }
+
+
 
     private void HandleDragging(int index)
     {
@@ -407,7 +448,7 @@ public class InventoryController : MonoBehaviour
             foreach (var item in inventoryData.GetInventoryState())
             {
                
-                inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description);
+                inventoryUi.UpdateData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, GetStatsForTooltip(item.Value));
 
             }
             if (TutorialManger.instance.TutorialIsActive && TutorialManger.instance.currentState == TutorialState.PickedUpSword)

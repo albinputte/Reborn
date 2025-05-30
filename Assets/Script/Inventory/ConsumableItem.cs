@@ -8,7 +8,7 @@ public class ConsumableItem : ItemData, IitemAction, IConsumable, IDestroyableIt
     
     [SerializeReference, SubclassSelector]
     private BaseForBuff buffBase;
-    [SerializeField] private int healAmount;
+    [SerializeField] public int healAmount;
 
     public bool PerformAction(GameObject Player, WeaponInstances inst)
     {

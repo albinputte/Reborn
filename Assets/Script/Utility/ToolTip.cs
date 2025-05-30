@@ -90,7 +90,7 @@ public class ToolTip : MonoBehaviour
         var pivotBottomLeft = new Vector2(0.05f, 0.05f);
         var pivotBottomRight = new Vector2(0.95f, 0.05f);
 
-        if (normalizedPosition.x < 0.5f && normalizedPosition.y >= 0.5f)
+        if (normalizedPosition.x < 0.5f && normalizedPosition.y <= 0.5f)
         {
             return pivotTopLeft;
         }
@@ -100,11 +100,11 @@ public class ToolTip : MonoBehaviour
         }
         else if (normalizedPosition.x <= 0.5f && normalizedPosition.y < 0.5f)
         {
-            return pivotBottomLeft;
+            return pivotTopLeft;
         }
         else
         {
-            return pivotBottomRight;
+            return pivotTopRight;
         }
     }
 

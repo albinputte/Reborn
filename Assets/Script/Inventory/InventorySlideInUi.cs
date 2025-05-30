@@ -31,15 +31,21 @@ public class InventorySlideInUi : MonoBehaviour
     }
     public void OpenSlider()
     {
-        if(!IsOpen)
+        if (!IsOpen)
+        {
             anim.SetTrigger("Open");
-        IsOpen = true;
+            IsOpen = true;
+        }
+          
     }
     public void CloseSlider()
     {
-        if(IsOpen)
+        if (IsOpen)
+        {
             anim.SetTrigger("Close");
-        IsOpen = false;
+            IsOpen = false;
+        }
+       
     }
 
     public void OpenAndCloseSliderButton()

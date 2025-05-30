@@ -42,12 +42,12 @@ public class ChestUiPage : MonoBehaviour
         HideChestAtStart();
     }
 
-    public void UpdateChestData(int Index, Sprite newSprite, int newQuantity, string itemname, string itemDesciption)
+    public void UpdateChestData(int Index, Sprite newSprite, int newQuantity, string itemname, string itemDesciption, string stats)
     {
         if (chestSlotList.Count >= Index)
         {
             Debug.Log("added " +  Index);
-            chestSlotList[Index].SetData(newSprite, newQuantity, itemname, itemDesciption);
+            chestSlotList[Index].SetData(newSprite, newQuantity, itemname, itemDesciption, stats);
         }
         else
         {
@@ -63,7 +63,7 @@ public class ChestUiPage : MonoBehaviour
         }
     }
 
-
+  
 
     private void ItemSelection(InventoryUiSlot slot)
     {

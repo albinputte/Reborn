@@ -89,12 +89,12 @@ public class InventoryUiPage : MonoBehaviour
         
     }
 
-    public void UpdateData(int Index, Sprite newSprite, int newQuantity,string itemname, string itemDesciption)
+    public void UpdateData(int Index, Sprite newSprite, int newQuantity,string itemname, string itemDesciption, string stats)
     {
         if(ListOfUIslots.Count > Index)
         {
            
-            ListOfUIslots[Index].SetData(newSprite, newQuantity, itemname, itemDesciption);
+            ListOfUIslots[Index].SetData(newSprite, newQuantity, itemname, itemDesciption, stats);
         }
         else
         {

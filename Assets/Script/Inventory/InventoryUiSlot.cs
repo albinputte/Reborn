@@ -89,7 +89,7 @@ public class InventoryUiSlot : MonoBehaviour
         BorderImage.sprite = BorderSprite[0];
         OnItemSelect?.Invoke(this);
     }
-    public void SetData(Sprite ItemImage, int Quantity, string name, string Desccription)
+    public void SetData(Sprite ItemImage, int Quantity, string name, string Desccription, string Stats)
     {
         itemImage.gameObject.SetActive(true);
         this.itemImage.sprite = ItemImage;
@@ -101,6 +101,7 @@ public class InventoryUiSlot : MonoBehaviour
         {
             uitipTrigger.header = name;
             uitipTrigger.content = Desccription;
+            uitipTrigger.values = Stats;
         }
         else if(uitipTrigger != null)
         {
