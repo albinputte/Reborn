@@ -220,7 +220,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce27fa171c6da2446ac08205573206eb, type: 2}
   - {fileID: 11400000, guid: cbc608c4399f3e54191fd2b1e1b16a3e, type: 2}
   - {fileID: 11400000, guid: 3d34335f988f01f4684033e470d4f3d4, type: 2}
+  - {fileID: 11400000, guid: 9183a7f904ce44849847383c1facbd07, type: 2}
   - {fileID: 11400000, guid: 811ae1a94e89c1248a36b867507bbe7a, type: 2}
+  currentCraftingMangerIndex: 0
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes: []
   craftingUI: {fileID: 0}
@@ -232,4 +234,5 @@ MonoBehaviour:
   ItemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   structureItem: {fileID: 11400000, guid: 9cfd880476590be42ad94b7686b920a9, type: 2}
   Type: 2
+  IsInventoryUi: 0
   CraftSound: 11
