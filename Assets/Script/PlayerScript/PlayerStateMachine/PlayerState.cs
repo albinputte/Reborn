@@ -81,6 +81,7 @@ public class PlayerState
             
               
         }
+        Debug.Log(stateMachine.CurrentState);
       
     }
 
