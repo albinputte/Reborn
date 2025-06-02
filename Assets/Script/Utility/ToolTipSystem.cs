@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ToolTipSystem : MonoBehaviour
 {
@@ -32,22 +33,40 @@ public class ToolTipSystem : MonoBehaviour
     public static void Show(string values, string content, string header = "", RectTransform targetRect = null)
     {
         current.tooltip.SetText(values, content, header);
+        RectTransform tooltipRect = current.tooltip.GetComponent<RectTransform>();
+        Vector3 desiredPosition = Vector3.zero;
+        Vector2 newPivot;
 
         if (targetRect != null)
         {
             Vector3[] corners = new Vector3[4];
-            targetRect.GetWorldCorners(corners);
-            // corners[1] = Top Left, corners[2] = Top Right
-            current.tooltip.GetComponent<RectTransform>().pivot = new Vector2(0f, 0f); // Bottom left
+            targetRect.GetWorldCorners(corners); // [0]=BL, [1]=TL, [2]=TR, [3]=BR
 
-            Vector3 offset = new Vector3(-20f, -20f, 0f); // 10 pixels right, 10 pixels down
-            current.tooltip.transform.position = corners[2] + offset;
+            // Use screen midpoint comparison
+            Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, targetRect.position);
+            bool isRightSide = screenPos.x > (Screen.width / 2f);
 
+            if (isRightSide)
+            {
+                newPivot = new Vector2(1f, 0f); // bottom-right
+                desiredPosition = corners[1] + new Vector3(20f, -20f, 0f); // TopLeft
+            }
+            else
+            {
+                newPivot = new Vector2(0f, 0f); // bottom-left
+                desiredPosition = corners[2] + new Vector3(-20f, -20f, 0f); // TopRight
+            }
         }
         else
         {
-            current.tooltip.transform.position = Input.mousePosition;
+            desiredPosition = Input.mousePosition;
+            newPivot = new Vector2(0f, 0f);
         }
+
+        tooltipRect.pivot = newPivot;
+        tooltipRect.position = desiredPosition;
+
+        tooltipRect.localScale = Vector3.zero;
 
         if (current.currentAnimationCoroutine != null)
             current.StopCoroutine(current.currentAnimationCoroutine);
@@ -55,6 +74,13 @@ public class ToolTipSystem : MonoBehaviour
         current.currentAnimationCoroutine = current.StartCoroutine(current.FadeInAndShowTooltip());
         current.tooltip.gameObject.SetActive(true);
     }
+
+
+
+
+
+
+
 
 
     public static void HideImmediate()
