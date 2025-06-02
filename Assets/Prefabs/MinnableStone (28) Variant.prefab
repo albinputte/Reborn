@@ -176,6 +176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9163878345522933557}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: maxOres
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: minOres
       value: 2
       objectReference: {fileID: 0}
