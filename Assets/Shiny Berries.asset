@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Shiny Berries
   m_EditorClassIdentifier: 
   Name: Red Berries
-  Description: A rare variant of the red Berries. Taste wonderful
+  Description: 'U actually found one. It exist only 3. A rare variant of the red
+    Berries. '
   Icon: {fileID: 1429030801, guid: 8b216b193a50ca84fbfc57d961a89dbb, type: 3}
   itemType: 2
   IsStackable: 1
@@ -21,7 +22,7 @@ MonoBehaviour:
   craftingRecipe: []
   buffBase:
     rid: -2
-  healAmount: 10
+  healAmount: 24
   references:
     version: 2
     RefIds:
