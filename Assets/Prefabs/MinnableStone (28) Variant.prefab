@@ -200,6 +200,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      propertyPath: respawnTime
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: StoneParticles
       value: 
       objectReference: {fileID: 4614288602200262478, guid: b37dc70a50aed0b44954328aeaf1ba4d, type: 3}
@@ -245,11 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.752228
+      value: 47.611
       objectReference: {fileID: 0}
     - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.179024
+      value: -12.223
       objectReference: {fileID: 0}
     - target: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: m_LocalPosition.z
