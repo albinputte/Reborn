@@ -16,7 +16,8 @@ public class StoneGhostController : EnemyBaseController
     public LayerMask PlayerMask;
     public Animator anim;
     public event Action OnAnimationDone, onTakeDamage, onSearch, OnHitPlayer, OnPlayAudio;
-    private Health health;
+    public Health health;
+    public LayerMask Layer;
     private Rigidbody2D rb;
     public Collider2D col;
     [SerializeField] private GameObject HitPrefab;

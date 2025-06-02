@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1605275061973566931}
   - component: {fileID: 5419291693713139998}
   - component: {fileID: 5474090005863533684}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Conquest StoneGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +147,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   anim: {fileID: 5347104957413997067}
+  health: {fileID: 0}
+  Layer:
+    serializedVersion: 2
+    m_Bits: 128
   col: {fileID: 1605275061973566931}
   HitPrefab: {fileID: 3172483201822507954, guid: 6c12cbd756fff4043b87fd8003426f5e, type: 3}
   isConquestEnemy: 1
@@ -350,7 +354,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -395,10 +399,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 2240
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

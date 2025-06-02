@@ -134,6 +134,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   anim: {fileID: 5347104957413997067}
+  Layer:
+    serializedVersion: 2
+    m_Bits: 128
   col: {fileID: 1605275061973566931}
   HitPrefab: {fileID: 3172483201822507954, guid: 6c12cbd756fff4043b87fd8003426f5e, type: 3}
   isConquestEnemy: 0

@@ -34,7 +34,20 @@ public class StoneGhostHit : StoneGhostState
         {
             Timer += Time.deltaTime;
             if (Timer >= MaxTime)
-                stateMachine.SwitchState(controller.NormalChase);
+            {
+                if ( WasAttacked == 0)
+                {
+                    stateMachine.SwitchState(controller.NormalChase);
+                }
+                else
+                {
+                    stateMachine.SwitchState(controller.EnterAttack);
+                    WasAttacked = 0;
+                }
+
+            }
+              
+         
         }
 
 
