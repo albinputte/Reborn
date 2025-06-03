@@ -76,8 +76,10 @@ public class PlayerWeaponAgent : MonoBehaviour
     }
     public void OnRespawn()
     {
+        OnExit?.Invoke();
         Deactivate();
         DisableCollider();
+        StartAttackResetTimer();
     }
     public void SetWeapon(WeaponInstances newWeapon)
     {
@@ -118,14 +120,14 @@ public class PlayerWeaponAgent : MonoBehaviour
         weaponSpriteRenderer.enabled = true;
         tempFaceDir = direction;
         facingDirection = TemporaryDirCorrection(direction);
-
+        SoundManager.PlaySound(CurrentWeapon.attackSounds[currentAttackIndex]);
 
 
         string animName = GetAnimationName(CurrentWeapon, facingDirection, currentAttackIndex);
         attackAnimator.Play(animName);
 
         OnEnter?.Invoke();
-        SoundManager.PlaySound(CurrentWeapon.attackSounds[currentAttackIndex]);
+      
 
         currentAttackIndex++;
     }

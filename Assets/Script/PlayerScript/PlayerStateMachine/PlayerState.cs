@@ -16,6 +16,7 @@ public class PlayerState
     protected Directions directions;
     private float checkCooldown = 0f;
     private const float checkInterval = 0.1f;
+    public bool IsAttacking = false;
     private static readonly Dictionary<Vector2, Directions> DirectionMap = new Dictionary<Vector2, Directions>
 {
     { new Vector2(1, 0), Directions.Right },
@@ -72,7 +73,7 @@ public class PlayerState
             checkCooldown = checkInterval;
         }
         CurrentVelocity = controller.rb.velocity;
-        if (Respawn.instance.isRespawning) {
+        if (Respawn.instance.isRespawning && !IsAbilityDone) {
             Debug.Log(stateMachine.CurrentState);
             if (stateMachine.CurrentState == controller.playerDeathState)
                 return;
