@@ -2,90 +2,93 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour
 {
-    [SerializeField] private GameObject runeTilePrefab;
-    [SerializeField] private int gridWidth = 3;
-    [SerializeField] private int gridHeight = 3;
-    [SerializeField] private Transform startPos;
-    [SerializeField] private float tileSpacing = 1.1f;
+    [Header("Manual Tile Assignment")]
+    public RuneTile topLeft;
+    public RuneTile top;
+    public RuneTile topRight;
+    public RuneTile left;
+    public RuneTile middle;
+    public RuneTile right;
+    public RuneTile bottomLeft;
+    public RuneTile bottom;
+    public RuneTile bottomRight;
 
-    private RuneTile[,] grid;
+    [Header("Treasure")]
+    public GameObject treasurePrefab;
+    public Transform treasureSpawnPoint;
+
+    private RuneTile[,] grid = new RuneTile[3, 3];
+    private bool puzzleComplete = false;
 
     void Start()
     {
-        GenerateTiles();
-    }
+        grid[0, 2] = topLeft;
+        grid[1, 2] = top;
+        grid[2, 2] = topRight;
 
-    void GenerateTiles()
-    {
-        grid = new RuneTile[gridWidth, gridHeight];
+        grid[0, 1] = left;
+        grid[1, 1] = middle;
+        grid[2, 1] = right;
 
-        for (int x = 0; x < gridWidth; x++)
+        grid[0, 0] = bottomLeft;
+        grid[1, 0] = bottom;
+        grid[2, 0] = bottomRight;
+
+        for (int x = 0; x < 3; x++)
         {
-            for (int y = 0; y < gridHeight; y++)
+            for (int y = 0; y < 3; y++)
             {
-                Vector3 pos = startPos.position + new Vector3(x * tileSpacing, y * tileSpacing, 0);
-                GameObject tileObj = Instantiate(runeTilePrefab, pos, Quaternion.identity);
-                RuneTile tile = tileObj.GetComponent<RuneTile>();
-
-                if (tile == null)
-                {
-                    Debug.LogError("RuneTile component missing on prefab!");
-                    continue;
-                }
-
-                tile.Init(this, new Vector2Int(x, y)); // Assign controller and position
-                grid[x, y] = tile;
+                if (grid[x, y] != null)
+                    grid[x, y].Init(this, new Vector2Int(x, y));
             }
         }
+
+        middle.SetLit(true);
     }
 
     public void OnTileStepped(Vector2Int pos)
     {
+        if (puzzleComplete) return;
+
+        // First toggle the tile you stepped on
         ToggleTile(pos);
 
-        // Toggle neighbors (up/down/left/right)
-        Vector2Int[] neighbors = {
-            new Vector2Int(0, 1),
-            new Vector2Int(0, -1),
-            new Vector2Int(1, 0),
-            new Vector2Int(-1, 0)
-        };
+        // Check puzzle immediately after toggling the current tile
+        if (IsPuzzleNowSolved())
+        {
+            CompletePuzzle();
+            return;
+        }
+
+        // Then toggle neighbors (only if not yet solved)
+        Vector2Int[] neighbors = GetCustomNeighbors(pos);
 
         foreach (var offset in neighbors)
         {
             Vector2Int neighborPos = pos + offset;
             if (IsInBounds(neighborPos))
-            {
                 ToggleTile(neighborPos);
-            }
+        }
+
+        // Final check after neighbors are toggled (just in case)
+        if (IsPuzzleNowSolved())
+        {
+            CompletePuzzle();
         }
     }
-
-    private void ToggleTile(Vector2Int pos)
+    private bool IsPuzzleNowSolved()
     {
-        if (grid == null) return;
-        if (pos.x < 0 || pos.x >= gridWidth || pos.y < 0 || pos.y >= gridHeight) return;
-
-        if (grid[pos.x, pos.y] != null)
-            grid[pos.x, pos.y].Toggle();
-    }
-
-    private bool IsInBounds(Vector2Int pos)
-    {
-        return pos.x >= 0 && pos.x < gridWidth && pos.y >= 0 && pos.y < gridHeight;
-    }
-
-    public void CheckPuzzleSolved()
-    {
-        if (grid == null) return;
-
         foreach (var tile in grid)
         {
             if (tile == null || !tile.isLit)
-                return; // Puzzle not complete yet
+                return false;
         }
+        return true;
+    }
+    private void CompletePuzzle()
+    {
+        puzzleComplete = true;
 
-        // Puzzle complete!
         foreach (var tile in grid)
         {
             if (tile != null)
@@ -93,6 +96,112 @@ public class PuzzleController : MonoBehaviour
         }
 
         Debug.Log("Puzzle Complete!");
-        // Add your reward/chest/spawn logic here if needed
+
+        if (treasurePrefab && treasureSpawnPoint)
+            Instantiate(treasurePrefab, treasureSpawnPoint.position, Quaternion.identity);
     }
+
+    private Vector2Int[] GetCustomNeighbors(Vector2Int pos)
+    {
+        // Define all patterns by absolute grid positions
+        if (pos == new Vector2Int(0, 2)) // TL
+            return new[] { new Vector2Int(1, 0), new Vector2Int(0, -1) }; // T, L
+
+        if (pos == new Vector2Int(0, 1)) // L
+            return new[] {
+            new Vector2Int(1, 0), // middle
+            new Vector2Int(0, 1), // TL
+            new Vector2Int(0, -1) // BL
+        };
+
+        if (pos == new Vector2Int(0, 0)) // BL
+            return new[] {
+            new Vector2Int(0, 1),  // L
+            new Vector2Int(1, 0)   // Bottom
+        };
+
+        if (pos == new Vector2Int(1, 0)) // Bottom
+            return new[] {
+            new Vector2Int(-1, 0), // BL
+            new Vector2Int(1, 0),  // BR
+            new Vector2Int(0, 1)   // Middle
+        };
+
+        if (pos == new Vector2Int(2, 0)) // BR
+            return new[] {
+            new Vector2Int(-1, 0), // Bottom
+            new Vector2Int(0, 1)   // R
+        };
+
+        if (pos == new Vector2Int(2, 1)) // R
+            return new[] {
+            new Vector2Int(-1, 0), // Middle
+            new Vector2Int(0, 1),  // TR
+            new Vector2Int(0, -1)  // BR
+        };
+
+        if (pos == new Vector2Int(2, 2)) // TR
+            return new[] {
+            new Vector2Int(-1, 0), // Top
+            new Vector2Int(0, -1)  // Right
+        };
+
+        if (pos == new Vector2Int(1, 1)) // Middle
+            return new[] {
+            new Vector2Int(0, 1),  // Top
+            new Vector2Int(0, -1), // Bottom
+            new Vector2Int(1, 0),  // Right
+            new Vector2Int(-1, 0)  // Left
+        };
+
+        if (pos == new Vector2Int(1, 2)) // Top
+            return new[] {
+            new Vector2Int(-1, 0), // TL
+            new Vector2Int(1, 0),   // TR
+            new Vector2Int(0, 1)   // Middle
+        };
+
+        return new Vector2Int[0];
+    }
+
+
+    private void ToggleTile(Vector2Int pos)
+    {
+        if (IsInBounds(pos) && grid[pos.x, pos.y] != null)
+            grid[pos.x, pos.y].Toggle();
+    }
+
+    private bool IsInBounds(Vector2Int pos)
+    {
+        return pos.x >= 0 && pos.x < 3 && pos.y >= 0 && pos.y < 3;
+    }
+
+    public void CheckPuzzleSolved()
+    {
+        if (puzzleComplete) return;
+
+        // First, check if ALL tiles are lit
+        foreach (var tile in grid)
+        {
+            if (tile == null || !tile.isLit)
+                return; // Puzzle not complete yet
+        }
+
+        // Puzzle is complete!
+        puzzleComplete = true;
+
+        foreach (var tile in grid)
+        {
+            if (tile != null)
+                tile.SetFinishState(); // Now it’s safe
+        }
+
+        Debug.Log("Puzzle Complete!");
+
+        if (treasurePrefab && treasureSpawnPoint)
+            Instantiate(treasurePrefab, treasureSpawnPoint.position, Quaternion.identity);
+    }
+
+
+    public bool IsPuzzleComplete() => puzzleComplete;
 }
