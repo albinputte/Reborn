@@ -61,6 +61,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
 
             
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (rb != null)
                 StartCoroutine(ApplyFloatDrop(rb));
 
@@ -124,6 +125,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
             GameObject ore = Instantiate(orePrefab, transform.position, Quaternion.identity);
             ore.GetComponent<WorldItem>().SetItem(ItemData, 1);
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (rb != null)
                 StartCoroutine(ApplyFloatDrop(rb));
             if(!ShouldMulti)

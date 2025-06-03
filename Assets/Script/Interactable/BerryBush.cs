@@ -44,6 +44,7 @@ public class BerryBush : MonoBehaviour, IInteractable
 
       
             Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (rb != null)
                 StartCoroutine(ApplyFloatDrop(rb));
             if (berryCount == 0)

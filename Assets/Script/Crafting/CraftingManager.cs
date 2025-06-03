@@ -197,8 +197,9 @@ public class CraftingManager : MonoBehaviour, IInteractable
         GameObject obj = Instantiate(ItemPrefab, transform.position, Quaternion.identity);
         SoundManager.PlaySound(SoundType.InteractBerryBush);
         obj.GetComponent<WorldItem>().SetItem(structureItem, 1);
- 
+        
         Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         if (rb != null)
             StartCoroutine(ApplyFloatDrop(rb));
    

@@ -28,6 +28,7 @@ public class TheWiseMen : MonoBehaviour, IInteractable
             ore.GetComponent<WorldItem>().SetItem(ItemNeededGrail, 1);
 
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (rb != null)
                 StartCoroutine(ApplyFloatDrop(rb));
         }

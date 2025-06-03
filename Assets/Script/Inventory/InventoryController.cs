@@ -427,6 +427,7 @@ public class InventoryController : MonoBehaviour
         SoundManager.PlaySound(SoundType.ItemDrop);
         obj.GetComponent<WorldItem>().SetItem(item.item, item.quantity);
         Rigidbody2D rb = obj.AddComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.gravityScale = 0;
         rb.drag = 10;
         rb.AddForce(direction * 10, ForceMode2D.Impulse);
