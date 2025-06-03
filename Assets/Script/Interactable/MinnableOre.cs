@@ -10,7 +10,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
     public int MaxHitCount;
     public GameObject orePrefab;
     [SerializeField] private ItemData ItemData;
-    private Collider2D col;
+    private Collider2D[] col;
     private SpriteRenderer mineRenderer; 
     [SerializeField] private float respawnTime; 
     [SerializeField] private int minOres; 
@@ -28,7 +28,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
     public void Start()
     {
         mineRenderer = GetComponent<SpriteRenderer>();
-        col = GetComponent<Collider2D>();
+        col = GetComponents<Collider2D>();
         oreCount = Random.Range(minOres, maxOres);
         HitCount = MaxHitCount;
     }
@@ -143,10 +143,18 @@ public class MinnableOre : MonoBehaviour, IInteractable
         if (HasShadow)
             Shadow.SetActive(false);
         mineRenderer.enabled = false;
-        col.enabled = false;
+        foreach(var col in col)
+        {
+            col.enabled = false;
+        }
+     
         yield return new WaitForSeconds(respawnTime);
         oreCount = Random.Range(minOres, maxOres);
-        col.enabled = true;
+        foreach (var col in col)
+        {
+            col.enabled = true;
+        }
+
         mineRenderer.enabled = true;
         if(HasShadow)
             Shadow.SetActive(true);
