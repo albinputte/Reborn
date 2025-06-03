@@ -18,6 +18,7 @@ public class PlayerInputManger : MonoBehaviour
     public Vector2 ScrollInput;
     public int HotbarIndex;
     private int  Scrolloffset;
+    public static bool CanScroll;
     public bool isSprinting;
     public bool isInteracting;
     public bool IsAttacking;
@@ -34,6 +35,7 @@ public class PlayerInputManger : MonoBehaviour
     private void Awake()
     {
         craftUi = FindAnyObjectByType<CraftingUI>();
+        CanScroll = true;
     }
 
 
@@ -144,6 +146,8 @@ public class PlayerInputManger : MonoBehaviour
 
     public void OnScrollInput(InputAction.CallbackContext context)
     {
+        if(!CanScroll)
+            return;
         ScrollInput = context.ReadValue<Vector2>();
         if(HotbarIndex == -1)
         {

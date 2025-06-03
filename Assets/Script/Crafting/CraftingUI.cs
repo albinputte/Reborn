@@ -247,6 +247,7 @@ public class CraftingUI : MonoBehaviour
     {
         Frame.SetActive(false);
         UiIsActive = false;
+        PlayerInputManger.CanScroll = true;
         
     }
     public void HideAtStart()
@@ -258,6 +259,7 @@ public class CraftingUI : MonoBehaviour
     {
         layoutGroup.enabled = true;
         Frame.SetActive(true);
+        PlayerInputManger.CanScroll = false;
         UiIsActive = true;
     
     }
