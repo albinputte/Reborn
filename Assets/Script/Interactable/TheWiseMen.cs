@@ -2,24 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HolyFountain : MonoBehaviour,IInteractable
+public class TheWiseMen : MonoBehaviour, IInteractable
 {
+  
+
     [SerializeField] public InteractableType Type;
     public InteractableType type { get => Type; set => Type = value; }
-    [SerializeField] private ItemData NonFilledGrail;
-    [SerializeField] private ItemData FilledGrail;
-    [SerializeField] private GameObject GrailPrefab;
+    [SerializeField] private ItemData ItemNeededGrail;
+    [SerializeField] private GameObject itemPrefab;
     [SerializeField] private Material NewMaterial;
     [SerializeField] private Material OldMaterial;
-    [SerializeField] private SpriteRenderer FountainRenderer;
+    [SerializeField] private SpriteRenderer statueRenderer;
+    public bool HasItem;
 
 
     public void Interact()
     {
-        if (SearchForGrail(NonFilledGrail))
+        if (SearchForReqItem(ItemNeededGrail) && !HasItem)
         {
-            GameObject ore = Instantiate(GrailPrefab, transform.position, Quaternion.identity);
-            ore.GetComponent<WorldItem>().SetItem(FilledGrail, 1);
+           HasItem = true;
+        }
+        else if (HasItem) {
+            HasItem = false;
+            GameObject ore = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            ore.GetComponent<WorldItem>().SetItem(ItemNeededGrail, 1);
 
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
             if (rb != null)
@@ -29,13 +35,13 @@ public class HolyFountain : MonoBehaviour,IInteractable
 
     public void LeavingPlayer()
     {
-        FountainRenderer.material = NewMaterial;
+        statueRenderer.material = NewMaterial;
     }
 
     public void NearPlayer()
     {
-        FountainRenderer.material = OldMaterial;
-     
+        statueRenderer.material = OldMaterial;
+
     }
     private IEnumerator ApplyFloatDrop(Rigidbody2D rb)
     {
@@ -58,7 +64,7 @@ public class HolyFountain : MonoBehaviour,IInteractable
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
     }
-    public bool SearchForGrail(ItemData NonFilledGrail)
+    public bool SearchForReqItem(ItemData NonFilledGrail)
     {
         for (int i = 0; i < InventoryController.Instance.inventoryData.Inventory.Count; i++)
         {
@@ -72,6 +78,4 @@ public class HolyFountain : MonoBehaviour,IInteractable
         }
         return false;
     }
-
-
 }
