@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: SwordAttack1
-    volume: 1
+    volume: 0.616
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 3905092cd0e0e9d47b80d250d81bcd8e, type: 3}
     useRandomPitch: 1
   - name: SwordAttack2
-    volume: 1
+    volume: 0.616
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 046e63928b497f44f80855cbf2730f52, type: 3}
     useRandomPitch: 1
   - name: SwordAttack3
-    volume: 1
+    volume: 0.491
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 327554770568f97408ffa6457ee758ba, type: 3}
     useRandomPitch: 1
   - name: MonsterHitSound1
-    volume: 0.012
+    volume: 0.385
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 4ffe255b6385f274d891ee14fdc15200, type: 3}
+    - {fileID: 8300000, guid: 02bce5fc845f9404394355e46263200e, type: 3}
     useRandomPitch: 1
   - name: MineCoal
     volume: 1
@@ -90,13 +90,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ea614b9a8c7ec1944a9ca6f3af5629df, type: 3}
     useRandomPitch: 0
   - name: StoneGhost_Looking
-    volume: 0.168
+    volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: c898e7c79bf076247b458a2037292134, type: 3}
     useRandomPitch: 1
   - name: StoneGhost_Rising
-    volume: 0.015
+    volume: 0.066
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 756f91524c0c245469cca4972e6ed199, type: 3}
@@ -114,7 +114,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 1069d929b2afd3e489709ef81ddaa27c, type: 3}
     useRandomPitch: 1
   - name: CutGrass
-    volume: 0.316
+    volume: 0.137
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
     - {fileID: 8300000, guid: 3645cbc6aa153ee48be117f9f9211f84, type: 3}
@@ -204,14 +204,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0b2cadd2514f37b4692afdca88bbc3d9, type: 3}
     useRandomPitch: 1
   - name: Open_Inventory
-    volume: 1
-    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    volume: 0.158
+    mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: 713d599c6e5577d4ea61405f6d8dbd1d, type: 3}
+    - {fileID: 8300000, guid: 3383a2a5f5d42554d9b54a97c066736a, type: 3}
     useRandomPitch: 0
   - name: Close_Inventory
-    volume: 1
-    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    volume: 0.147
+    mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: 180dbbcdc77b0634aa068005785ac317, type: 3}
-    useRandomPitch: 0
+    - {fileID: 8300000, guid: 3383a2a5f5d42554d9b54a97c066736a, type: 3}
+    useRandomPitch: 1
