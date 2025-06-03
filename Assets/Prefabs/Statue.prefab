@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 547614779470082141}
   - component: {fileID: 6259516268727162619}
   - component: {fileID: 7049192800376466219}
-  m_Layer: 7
+  - component: {fileID: 6332595201972740484}
+  m_Layer: 6
   m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,3 +161,22 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6332595201972740484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014515077244522492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac37e9c813a8c3549becf480c407914d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  NonFilledGrail: {fileID: 11400000, guid: 9183a7f904ce44849847383c1facbd07, type: 2}
+  FilledGrail: {fileID: 11400000, guid: f770bea7e918dd946bb2fe6c92caa48c, type: 2}
+  GrailPrefab: {fileID: 9145960511673896059, guid: 46989b5eea184d54ab834d70b19d25f7, type: 3}
+  NewMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  OldMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
+  FountainRenderer: {fileID: 547614779470082141}
