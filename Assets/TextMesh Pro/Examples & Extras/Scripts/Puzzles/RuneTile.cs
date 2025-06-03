@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+
 public class RuneTile : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -9,10 +7,11 @@ public class RuneTile : MonoBehaviour
     [SerializeField] private Sprite litSprite;
     [SerializeField] private Sprite finishSprite;
 
-    public Vector2Int gridPosition; // e.g. (0,1)
+    public Vector2Int gridPosition;
     public bool isLit = false;
 
     private PuzzleController controller;
+    private bool isSteppedOn = false; // prevent re-toggling too rapidly
 
     public void Init(PuzzleController puzzleController, Vector2Int position)
     {
@@ -24,8 +23,9 @@ public class RuneTile : MonoBehaviour
     public void Toggle()
     {
         SetLit(!isLit);
-        controller.CheckPuzzleSolved();
+        // Removed: controller.CheckPuzzleSolved(); — we'll control this from PuzzleController only
     }
+
 
     public void SetLit(bool state)
     {
@@ -35,13 +35,24 @@ public class RuneTile : MonoBehaviour
 
     public void SetFinishState()
     {
+        isLit = true;
+        spriteRenderer.sprite = null; // Force refresh
         spriteRenderer.sprite = finishSprite;
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") || isSteppedOn || controller.IsPuzzleComplete())
+            return;
 
+        isSteppedOn = true;
         controller.OnTileStepped(gridPosition);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            isSteppedOn = false;
     }
 }
