@@ -444,6 +444,7 @@ public class InventoryController : MonoBehaviour
         {
             inventoryUi.ShowInventory();
             InventoryUiActive = true;
+            SoundManager.PlaySound(SoundType.Open_Inventory);
             
             foreach (var item in inventoryData.GetInventoryState())
             {
@@ -460,7 +461,7 @@ public class InventoryController : MonoBehaviour
         }
         else if (InventoryUiActive)
         {
-
+            SoundManager.PlaySound(SoundType.Close_Inventory);
             TransferInventoryToHotbar();
             inventoryUi.HideInventory();
             InventoryUiActive = false;

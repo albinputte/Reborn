@@ -39,6 +39,8 @@ namespace SmallHedge.SoundManager
         Preasure_Plate,
         Stone_Puzzle_Destroy,
         SwapItem_Inventory,
+        Open_Inventory,
+        Close_Inventory,
 
 
 

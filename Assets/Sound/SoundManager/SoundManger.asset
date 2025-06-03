@@ -203,3 +203,15 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 0b2cadd2514f37b4692afdca88bbc3d9, type: 3}
     useRandomPitch: 1
+  - name: Open_Inventory
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 713d599c6e5577d4ea61405f6d8dbd1d, type: 3}
+    useRandomPitch: 0
+  - name: Close_Inventory
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 180dbbcdc77b0634aa068005785ac317, type: 3}
+    useRandomPitch: 0
