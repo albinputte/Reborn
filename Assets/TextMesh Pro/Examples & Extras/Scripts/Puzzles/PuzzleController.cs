@@ -158,7 +158,7 @@ public class PuzzleController : MonoBehaviour
             return new[] {
             new Vector2Int(-1, 0), // TL
             new Vector2Int(1, 0),   // TR
-            new Vector2Int(0, 1)   // Middle
+            new Vector2Int(0, -1)   // Middle
         };
 
         return new Vector2Int[0];
