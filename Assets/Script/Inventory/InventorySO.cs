@@ -189,7 +189,22 @@ public class InventorySO : ScriptableObject
             quantity = quantity,
             weaponInstances = instances
         };
+        if (InventoryController.Instance.InventoryUiActive)
+        {
+            for (int i = (Inventory.Count-10); i < Inventory.Count; i++)
+            {
+                if (Inventory[i].IsEmpty)
+                {
+                    Inventory[i] = newItem;
+                    if (newItem.item is WeaponItemData weaponData && newItem.weaponInstances == null)
+                    {
+                        addWeaponinstance(i, CreateWeaponIntances(weaponData, null, i));
+                    }
+                    return quantity;
+                }
 
+            }
+        }
         for (int i = 0; i < Inventory.Count; i++)
         {
             if (Inventory[i].IsEmpty)

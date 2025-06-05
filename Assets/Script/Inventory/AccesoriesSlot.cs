@@ -15,6 +15,7 @@ public class AccesoriesSlot : MonoBehaviour
     private AccesoriesItemBase Item;
     private InventoryController inventoryController;
     public event Action<AccesoriesSlot> OnItemBeginDrag, OnItemDroppedOn, OnItemEndDrag;
+    public UIToolTipTrigger uitipTrigger;
 
 
     public void Awake()
@@ -32,6 +33,16 @@ public class AccesoriesSlot : MonoBehaviour
         ItemImage.sprite = Item.Icon;
         ItemFrame.sprite = FrameImage[1];
         IsEmpty = false;
+        if (uitipTrigger != null)
+        {
+            uitipTrigger.header = item1.Name;
+            uitipTrigger.content = item1.Description;
+            BuffBase buffBase = item1.BuffBase;
+            if (buffBase is AddetiveBuff buff)
+            {
+                uitipTrigger.values = buff.statType.ToString() + " +" + buff.bonusMultiplier;
+            }
+        }
     }
 
     public void RemoveAccesoires(bool ShouldAdd)
