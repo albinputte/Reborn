@@ -22,8 +22,6 @@ MonoBehaviour:
   - ingredients:
     - item: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
       quantity: 2
-    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
-      quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   buffBase:
