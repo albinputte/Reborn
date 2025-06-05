@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stick
   m_EditorClassIdentifier: 
   Name: Stick
-  Description: just a stick
+  Description: Just a stick
   Icon: {fileID: 1655078183, guid: c6f43df1ec32bc540b04a372dbf8b254, type: 3}
   itemType: 0
   IsStackable: 1

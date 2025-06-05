@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grail
   m_EditorClassIdentifier: 
   Name: <color=#f08e39>Grail</color>
-  Description: A magical grail that can be filled with magical water to unluck it's
+  Description: A magical grail that can be filled with magical water to unlock its
     full potential
   Icon: {fileID: 782376372, guid: 990fe6c632bf0514984d47d7037ec6e7, type: 3}
   itemType: 7

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Broken Grail
   m_EditorClassIdentifier: 
   Name: <color=#f08e39>Broken Grail</color>
-  Description: Can be repaired in the anvil
+  Description: Can be repaired in a anvil
   Icon: {fileID: -1040317748, guid: 990fe6c632bf0514984d47d7037ec6e7, type: 3}
   itemType: 7
   IsStackable: 0

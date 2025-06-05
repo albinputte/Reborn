@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Accesories_MultiOre
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Diamond in the rough</color>
-  Description: Sometimes luck is all you need
+  Description: Sometimes, luck is all you need
   Icon: {fileID: 2136796513, guid: ba4241658c391a947b85e43778a03bdd, type: 3}
   itemType: 6
   IsStackable: 0

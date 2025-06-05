@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Accesories_HpSteal
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Ruby Necklace</color>
-  Description: forged with magical lifestealing powers
+  Description: Forged with magical life stealing powers
   Icon: {fileID: 21300000, guid: 16eadeec33b7d4d4bab9cfeac2c94592, type: 3}
   itemType: 6
   IsStackable: 0
