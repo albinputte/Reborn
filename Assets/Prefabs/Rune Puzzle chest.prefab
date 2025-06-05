@@ -151,8 +151,10 @@ MonoBehaviour:
   ItemToInitialize:
   - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
     quantity: 5
-  - item: {fileID: 11400000, guid: 3b21f4d7ef7d2c745bbb528815e30ed3, type: 2}
-    quantity: 2
+  - item: {fileID: 11400000, guid: cbc608c4399f3e54191fd2b1e1b16a3e, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 6bae18554fd189343bf83cae076c1118, type: 2}
+    quantity: 1
   Type: 2
   NewMaterial: {fileID: -876546973899608171, guid: 11c77be3217c99c46bac5339f1e88f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
