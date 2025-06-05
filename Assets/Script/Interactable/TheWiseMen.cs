@@ -13,6 +13,7 @@ public class TheWiseMen : MonoBehaviour, IInteractable
     [SerializeField] private Material NewMaterial;
     [SerializeField] private Material OldMaterial;
     [SerializeField] private SpriteRenderer statueRenderer;
+    public GameObject ItemHeld;
     public bool HasItem;
 
 
@@ -21,12 +22,15 @@ public class TheWiseMen : MonoBehaviour, IInteractable
         if (SearchForReqItem(ItemNeededGrail) && !HasItem)
         {
            HasItem = true;
+            ItemHeld.SetActive(true);
+            EndManager.instance.Offering(HasItem);
         }
         else if (HasItem) {
             HasItem = false;
+            EndManager.instance.Offering(HasItem);
             GameObject ore = Instantiate(itemPrefab, transform.position, Quaternion.identity);
             ore.GetComponent<WorldItem>().SetItem(ItemNeededGrail, 1);
-
+            ItemHeld.SetActive(false);
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (rb != null)

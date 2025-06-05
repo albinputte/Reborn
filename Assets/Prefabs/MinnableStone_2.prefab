@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: MaxHitCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3497596950225550430, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       propertyPath: NewMaterial

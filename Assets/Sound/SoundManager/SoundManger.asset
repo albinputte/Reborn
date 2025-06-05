@@ -215,3 +215,9 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 3383a2a5f5d42554d9b54a97c066736a, type: 3}
     useRandomPitch: 1
+  - name: StoneHitWithSword
+    volume: 1
+    mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
+    sounds:
+    - {fileID: 8300000, guid: 76fd01c55735f4741990e1ac8c90500c, type: 3}
+    useRandomPitch: 0
