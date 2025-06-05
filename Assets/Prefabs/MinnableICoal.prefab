@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5938805785456044729}
   - component: {fileID: 3497596950225550430}
   - component: {fileID: 7399015159688242347}
+  - component: {fileID: 825621224435238358}
   m_Layer: 6
   m_Name: MinnableICoal
   m_TagString: Untagged
@@ -158,6 +159,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 0.76}
   m_EdgeRadius: 0
+--- !u!114 &825621224435238358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324889754127627277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 02e92d967ca06f34d8d0f1be1731652f, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 825621224435238358}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 34
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!1001 &127414206426571993
 PrefabInstance:
   m_ObjectHideFlags: 0

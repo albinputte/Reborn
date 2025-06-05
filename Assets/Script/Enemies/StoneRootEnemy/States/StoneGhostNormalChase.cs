@@ -12,10 +12,11 @@ public class StoneGhostNormalChase : StoneGhostState
     public float MaxTime;
     public float Timer;
     public bool TimerIsActive;
-
+    public bool prefersToChase;
     public override void Enter()
     {
         base.Enter();
+        prefersToChase = Random.value < 0.6f;
         if (IsDamaged)
         {
             MaxTime = 3f;
@@ -41,7 +42,7 @@ public class StoneGhostNormalChase : StoneGhostState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (IsDamaged) { RaycastMovement(controller.Speed, controller.transform, controller.Target); }
+        if (IsDamaged) { RaycastMovement(controller.Speed, controller.transform, controller.Target, prefersToChase); }
         else { Move(controller.Speed, controller.transform, controller.Target); }
             if (TimerIsActive)
         {

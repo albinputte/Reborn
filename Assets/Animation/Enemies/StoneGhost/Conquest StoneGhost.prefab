@@ -150,7 +150,7 @@ MonoBehaviour:
   health: {fileID: 0}
   Layer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 4224
   col: {fileID: 1605275061973566931}
   HitPrefab: {fileID: 3172483201822507954, guid: 6c12cbd756fff4043b87fd8003426f5e, type: 3}
   isConquestEnemy: 1
@@ -399,7 +399,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 2240

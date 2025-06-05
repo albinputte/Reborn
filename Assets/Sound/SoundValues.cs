@@ -41,6 +41,7 @@ namespace SmallHedge.SoundManager
         SwapItem_Inventory,
         Open_Inventory,
         Close_Inventory,
+        StoneHitWithSword,
 
 
 

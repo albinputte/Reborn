@@ -297,8 +297,54 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9010220198643204334}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7324889754127627277, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5263628981028853531}
   m_SourcePrefab: {fileID: 100100000, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+--- !u!1 &529243019597616883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7324889754127627277, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}
+  m_PrefabInstance: {fileID: 7133424547123192574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5263628981028853531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529243019597616883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 02e92d967ca06f34d8d0f1be1731652f, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5263628981028853531}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 34
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!4 &1798135871340710757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8794193996218034587, guid: 1d7497a6b06f8f848abf64f4df3ba668, type: 3}

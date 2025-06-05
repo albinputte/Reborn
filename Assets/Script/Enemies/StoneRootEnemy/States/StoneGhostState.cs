@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoneGhostState : BaseEnemyState<StoneGhostController>
 {
     public static int WasAttacked;
-    public static bool IsDamaged;
+    public static bool IsDamaged = false;
     public StoneGhostState(EnemyStateMachine<StoneGhostController> stateMachine, StoneGhostController controller, string animName) : base(stateMachine, controller, animName)
     {
     }
@@ -37,9 +37,8 @@ public class StoneGhostState : BaseEnemyState<StoneGhostController>
     private bool isRandomMoving = false;         // Flag to track if random movement is active
     private Vector3 currentRandomDirection = Vector3.zero;  // Store the current random direction during random movement
 
-    protected void RaycastMovement(float speed, Transform transform, Transform player)
+    protected void RaycastMovement(float speed, Transform transform, Transform player, bool prefersToChase)
     {
-        // Predefine directions for raycasting (avoiding recalculating every time)
         Vector3[] directions = {
         Vector3.up,
         Vector3.down,
@@ -57,38 +56,45 @@ public class StoneGhostState : BaseEnemyState<StoneGhostController>
 
         float moveSpeed = speed * Time.deltaTime;
         Vector3 bestDirection = Vector3.zero;
-        float minDistance = Mathf.Infinity;
+        float bestScore = -Mathf.Infinity;
+        float tooCloseDistance = 3f;
 
-        // Set a distance threshold for "too close"
-        float tooCloseDistance = 3f; // Adjust this based on your game
-
-        // Calculate the distance to the player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Flag to check if a valid direction was found
         bool foundValidDirection = false;
 
+        List<Vector3> validDirections = new List<Vector3>();
+        foreach (var dir in directions)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 5f, controller.Layer);
+            if (hit.collider == null)
+            {
+                validDirections.Add(dir);
+            }
+        }
+
+        // If not close and not in random movement
         if (distanceToPlayer > tooCloseDistance && !isRandomMoving)
         {
-            // If the enemy is not too close to the player and not currently in random movement mode,
-            // try to move toward the player
-            foreach (var direction in directions)
+           // 50% chance to chase vs flee
+
+            foreach (var direction in validDirections)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 5f, controller.Layer);
-                if (hit.collider == null) // No obstacle hit
+                float score = Vector3.Distance(transform.position + direction * 5f, player.position);
+
+                // Flip scoring based on chase or flee
+                if (prefersToChase)
                 {
-                    // Check if this direction brings the enemy closer to the player
-                    float newDistanceToPlayer = Vector3.Distance(transform.position + direction * 5f, player.position);
-                    if (newDistanceToPlayer < minDistance)
-                    {
-                        bestDirection = direction;
-                        minDistance = newDistanceToPlayer;
-                        foundValidDirection = true;
-                    }
+                    score = -score; // lower distance is better
+                }
+
+                if (score > bestScore)
+                {
+                    bestScore = score;
+                    bestDirection = direction;
+                    foundValidDirection = true;
                 }
             }
 
-            // If a valid direction was found, move towards it
             if (foundValidDirection)
             {
                 Vector3 targetPosition = transform.position + bestDirection * 5f;
@@ -96,43 +102,65 @@ public class StoneGhostState : BaseEnemyState<StoneGhostController>
             }
             else
             {
-                // Fallback to just moving towards the player if no valid direction is found
-                Move(speed, transform, player);
+                Move(speed, transform, player); // fallback
             }
         }
+        // If too close, begin random movement away from player
         else if (distanceToPlayer <= tooCloseDistance && !isRandomMoving)
         {
-            // If the enemy is too close, start moving randomly around the player
             isRandomMoving = true;
 
-            // Choose a new random direction when random movement starts
-            currentRandomDirection = directions[Random.Range(0, directions.Length)];
-            randomMoveTimer = randomMoveDuration;  // Set the timer to the random movement duration
+            if (validDirections.Count > 0)
+            {
+                List<Vector3> awayFromPlayerDirs = new List<Vector3>();
+                Vector3 toPlayer = (player.position - transform.position).normalized;
+
+                foreach (var dir in validDirections)
+                {
+                    float dot = Vector3.Dot(dir, toPlayer);
+                    if (dot < 0) // Points away from player
+                    {
+                        awayFromPlayerDirs.Add(dir);
+                    }
+                }
+
+                if (awayFromPlayerDirs.Count > 0)
+                {
+                    currentRandomDirection = awayFromPlayerDirs[Random.Range(0, awayFromPlayerDirs.Count)];
+                }
+                else
+                {
+                    currentRandomDirection = validDirections[Random.Range(0, validDirections.Count)];
+                }
+            }
+            else
+            {
+                currentRandomDirection = Vector3.zero;
+            }
+
+            randomMoveTimer = randomMoveDuration;
         }
 
-        // Random movement behavior when isRandomMoving is true
+        // Handle ongoing random movement
         if (isRandomMoving)
         {
             if (randomMoveTimer <= 0f)
             {
-                // Timer expired, stop random movement and allow the enemy to move towards the player again
                 isRandomMoving = false;
-                currentRandomDirection = Vector3.zero;  // Reset random direction
+                currentRandomDirection = Vector3.zero;
             }
             else
             {
-                // Move in the current random direction
                 Vector3 targetPosition = transform.position + currentRandomDirection * 5f;
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed);
-
-                // Decrease the timer by the delta time
                 randomMoveTimer -= Time.deltaTime;
             }
         }
 
-        // Flip the enemy based on the player's position
         FlipEnemy(transform, player);
     }
+
+
 
     // Method to flip the enemy based on player's position
     private void FlipEnemy(Transform transform, Transform player)
