@@ -160,11 +160,44 @@ public class InventoryController : MonoBehaviour
             BuffBase buffBase = accesories.BuffBase;
             if (buffBase is AddetiveBuff buff)
             {
-                return $"<color=#7b2536>{buff.statType}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                string statText = "";
+                switch (buff.statType)
+                {
+                    case StatsType.Health:
+                        statText = $"<color=#9d3a78>{"Health"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        break;
 
-           
+                    case StatsType.Multi_OreChance:
+                        statText = $"<color=#6c8294>{"Double Ore Chance"}</color> <color=#dae1e5>+{buff.bonusMultiplier * 100}%</color>";
+                        break;
 
-               
+                    case StatsType.Damage:
+                        statText = $"<color=#7b2536>{"Damage"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        break;
+
+                    case StatsType.HealthRegen:
+                        statText = $"<color=#286345>{"Hp Regen"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        break;
+                    case StatsType.Speed:
+                        statText = $"<color=#fce886>{"Speed"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        break;
+                    case StatsType.Lifesteal:
+                        statText = $"<color=#286345>{"Lifesteal"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        break;
+                    case StatsType.PickaxePower:
+                        statText = $"<color=#3483b0>{"PickaxePower"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        break;
+
+              
+                    default:
+                        break;
+
+                       
+
+                }
+
+                return statText;
+
             }
         }
 
