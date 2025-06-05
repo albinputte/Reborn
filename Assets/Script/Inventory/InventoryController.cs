@@ -149,32 +149,33 @@ public class InventoryController : MonoBehaviour
             return "";
         if (item.item is WeaponItemData weapon)
         {
-            return "Damage " + weapon.Damage.ToString();
+            return "<color=#7b2536>Damage</color> <color=#dae1e5>" + weapon.Damage.ToString() + "</color>";
         }
         if (item.item is StructureItemBase structure)
         {
-            return "Placable";
+            return "<color=#3483b0>Placable</color>";
         }
         if (item.item is AccesoriesItemBase accesories)
         {
             BuffBase buffBase = accesories.BuffBase;
-            if(buffBase is AddetiveBuff buff)
+            if (buffBase is AddetiveBuff buff)
             {
-                return buff.statType.ToString() + " +" + buff.bonusMultiplier;
+                return $"<color=#7b2536>{buff.statType}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+
+           
+
+               
             }
-       
         }
 
         if (item.item is ConsumableItem food)
         {
-           
-            return "Heal " + food.healAmount;
+            return "<color=#2c9f4c>Heal</color> <color=#dae1e5>" + food.healAmount + "</color>";
         }
 
         if (item.item is PickAxeItemBase tool)
         {
-            return "Pickaxe Power " + tool.PickAxePower;
-
+            return "<color=#506275>Pickaxe Power</color> <color=#dae1e5>" + tool.PickAxePower + "</color>";
         }
         return "";
 
