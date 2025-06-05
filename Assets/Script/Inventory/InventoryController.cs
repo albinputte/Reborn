@@ -273,6 +273,10 @@ public class InventoryController : MonoBehaviour
         CurrentIndex = index1;
         if (item.IsEmpty)
             return;
+        if (Chest.ChestUiIsActive)
+        {
+            TransferItemToChest(index1, 0);
+        }
         if(InventoryController.IsAccesoireInHand)
         {
             OnAccesoires();
@@ -286,11 +290,18 @@ public class InventoryController : MonoBehaviour
         else {
             InventorySlideInUi.Instance.CloseSlider();
         }
+        if (item.item is IConsumable)
+        {
+            HandleConsumable();
+            return;
+        }
+
         IDestroyableItem iDestroyableItem = item.item as IDestroyableItem;
         if (iDestroyableItem != null)
         {
             inventoryData.RemoveItem(index1, 1);
         }
+        
 
         IitemAction iitemAction = item.item as IitemAction;
         if (iitemAction != null)
@@ -342,7 +353,7 @@ public class InventoryController : MonoBehaviour
         }
         if(InventoryUiActive)
             InventorySlideInUi.Instance.CloseSlider();
-        if (item.item is IStructure structure) {
+        if (item.item is IStructure structure && !InventoryUiActive) {
             BuildItemEquiped = true;
             BuildItem = item.item as StructureItemBase;
             structure.PerformBuild(index);
