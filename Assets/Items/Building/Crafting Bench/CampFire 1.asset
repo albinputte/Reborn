@@ -21,9 +21,9 @@ MonoBehaviour:
   craftingRecipe:
   - ingredients:
     - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
+      quantity: 3
+    - item: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
       quantity: 2
-    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
-      quantity: 1
     resultItem: {fileID: 11400000}
     resultQuantity: 1
   PlacablePrefab: {fileID: 6095298373504159686, guid: 4b192c0c550d0d04cbfc92c4dc4420b3, type: 3}
