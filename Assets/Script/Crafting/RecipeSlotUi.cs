@@ -27,6 +27,9 @@ public class RecipeSlotUi : MonoBehaviour
         recipeIconImage.sprite = recipe.resultItem.Icon;
         ResultItemToolTip.header = recipe.resultItem.Name;
         ResultItemToolTip.content = recipe.resultItem.Description;
+        InventoryItem item = new InventoryItem();
+        item.item = recipe.resultItem;
+        ResultItemToolTip.values = GetStatsForTooltip(item);
         this.recipe = recipe;
         this.CurrentCraftingMangerIndex = CurrentCraftingMangerIndex;
         SetIngrediants(recipe);
@@ -48,10 +51,49 @@ public class RecipeSlotUi : MonoBehaviour
                 QuanityText[i].text = recipe.ingredients[i].quantity.ToString();
                 toolTipTrigger[i].header = recipe.ingredients[i].item.Name;
                 toolTipTrigger[i].content = recipe.ingredients[i].item.Description;
-
+                InventoryItem item = new InventoryItem();
+                item.item = recipe.ingredients[i].item;
+                toolTipTrigger[i].values = GetStatsForTooltip(item);
 
             }
         }
+    }
+    public string GetStatsForTooltip(InventoryItem item)
+    {
+        if (item.IsEmpty)
+            return "";
+        if (item.item is WeaponItemData weapon)
+        {
+            return "Damage " + weapon.Damage.ToString();
+        }
+        if (item.item is StructureItemBase structure)
+        {
+            return "Placable";
+        }
+        if (item.item is AccesoriesItemBase accesories)
+        {
+            BuffBase buffBase = accesories.BuffBase;
+            if (buffBase is AddetiveBuff buff)
+            {
+                return buff.statType.ToString() + " +" + buff.bonusMultiplier;
+            }
+
+        }
+
+        if (item.item is ConsumableItem food)
+        {
+
+            return "Heal " + food.healAmount;
+        }
+
+        if (item.item is PickAxeItemBase tool)
+        {
+            return "Pickaxe Power " + tool.PickAxePower;
+
+        }
+        return "";
+
+
     }
 
     public void SetBorder()
