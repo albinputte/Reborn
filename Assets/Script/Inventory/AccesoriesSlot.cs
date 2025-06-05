@@ -24,6 +24,7 @@ public class AccesoriesSlot : MonoBehaviour
         ItemImage.sprite = null;
         ItemImage.enabled = false;
         ItemFrame = GetComponent<Image>();
+        uitipTrigger = GetComponent<UIToolTipTrigger>();
     }
     public void SetAccesorie(AccesoriesItemBase item1)
     {
@@ -37,11 +38,9 @@ public class AccesoriesSlot : MonoBehaviour
         {
             uitipTrigger.header = item1.Name;
             uitipTrigger.content = item1.Description;
-            BuffBase buffBase = item1.BuffBase;
-            if (buffBase is AddetiveBuff buff)
-            {
-                uitipTrigger.values = buff.statType.ToString() + " +" + buff.bonusMultiplier;
-            }
+            InventoryItem item = new InventoryItem();
+            item.item = item1;
+            uitipTrigger.values = inventoryController.GetStatsForTooltip(item);
         }
     }
 

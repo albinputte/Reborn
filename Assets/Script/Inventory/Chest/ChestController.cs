@@ -102,7 +102,7 @@ public class ChestController : MonoBehaviour
 
         foreach (var item in chestData.GetChestState())
         {
-            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, GetStatsForTooltip(item.Value));
+            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description,InventoryController.Instance.GetStatsForTooltip(item.Value));
         }
     }
 
@@ -113,50 +113,14 @@ public class ChestController : MonoBehaviour
         foreach (var item in dictionary)
         {
       
-            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, GetStatsForTooltip(item.Value));
+            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, InventoryController.Instance.GetStatsForTooltip(item.Value));
         }
 
 
 
 
     }
-    public string GetStatsForTooltip(InventoryItem item)
-    {
-        if (item.IsEmpty)
-            return "";
-        if (item.item is WeaponItemData weapon)
-        {
-            return "Damage " + weapon.Damage.ToString();
-        }
-        if (item.item is StructureItemBase structure)
-        {
-            return "Placable";
-        }
-        if (item.item is AccesoriesItemBase accesories)
-        {
-            BuffBase buffBase = accesories.BuffBase;
-            if (buffBase is AddetiveBuff buff)
-            {
-                return buff.statType.ToString() + " +" + buff.bonusMultiplier;
-            }
-
-        }
-
-        if (item.item is ConsumableItem food)
-        {
-
-            return "Heal " + food.healAmount;
-        }
-
-        if (item.item is PickAxeItemBase tool)
-        {
-            return "Pickaxe Power " + tool.PickAxePower;
-
-        }
-        return "";
-
-
-    }
+  
     public void TransferItemFromChest(int chestIndex)
     {
         InventoryItem item = chestData.GetSpecificItem(chestIndex);
