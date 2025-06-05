@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AccesoriesDmgBuff
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Blood pendant</color>
-  Description: shoul not give damage wink wink
+  Description: Should not give damage wink wink
   Icon: {fileID: 320151946, guid: d081efe397add7e4293be2c521f39ffd, type: 3}
   itemType: 6
   IsStackable: 0

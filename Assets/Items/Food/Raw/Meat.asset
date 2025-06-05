@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Meat
   m_EditorClassIdentifier: 
   Name: Raw Meat
-  Description: just meat, dropped by a stone?
+  Description: Just meat, dropped by a stone?
   Icon: {fileID: -1463829513, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 0
   IsStackable: 1

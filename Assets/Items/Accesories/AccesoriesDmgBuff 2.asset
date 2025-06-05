@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AccesoriesDmgBuff 2
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Mysterious "fang" necklace</color>
-  Description: ' trophy worthy of a true warrior'
+  Description: ' Trophy worthy of a true warrior'
   Icon: {fileID: 21300000, guid: 79a9203bcb7dc4f4ca3c1daf58967dc4, type: 3}
   itemType: 6
   IsStackable: 0

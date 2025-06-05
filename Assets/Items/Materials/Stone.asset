@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   Name: Stone
-  Description: just a stone
-  Icon: {fileID: -1275198912, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
+  Description: Just a stone
+  Icon: {fileID: 226317503, guid: 4d2b4f0a8c14acc42b13b07d9ddf2705, type: 3}
   itemType: 0
   IsStackable: 1
   IsCraftable: 0
