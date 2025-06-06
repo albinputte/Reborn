@@ -52,7 +52,7 @@ public class Health : MonoBehaviour, IDamagable
             if (currentHealth <= 0)
             {
                 IsInvinsiable = false;
-                
+                OnTakeDamage?.Invoke();
                 OnDeath?.Invoke();
               
             }

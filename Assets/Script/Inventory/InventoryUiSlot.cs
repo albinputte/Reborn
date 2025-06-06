@@ -55,10 +55,12 @@ public class InventoryUiSlot : MonoBehaviour
 
     public void Awake()
     {
+        itemImage = transform.GetChild(0).GetComponent<Image>();
         ResetItemData();
         BorderSprite[1] = BorderImage.sprite;
         DeselectBorder();
         uitipTrigger = GetComponent<UIToolTipTrigger>();
+       
 
     }
 

@@ -7,12 +7,17 @@ public class EndScreen : MonoBehaviour
     [SerializeField] private GameObject UiCanvas;
     [SerializeField] private GameObject ToolTipCanvas;
     [SerializeField] private GameObject EndCanvas;
+    public GameObject Inputmanger;
+    public PlayerInput inputs;
 
+    public void Start()
+    {
+     
+    }
 
     public void ContinueToPlayButton()
     {
         Time.timeScale = 1.0f;
-   
         EndCanvas.SetActive(false);
         Cursor.visible = false;
      

@@ -73,6 +73,22 @@ public class InventoryController : MonoBehaviour
         inventoryUi.OnHotbarAction += HandleHotbarAction;
         inventoryUi.HideInventory();
     }
+    private void OnDisable()
+    {
+        if (inventoryUi != null)
+        {
+            inventoryUi.OnSwap -= HandleItemSwap;
+            inventoryUi.OnDrag -= HandleDragging;
+            inventoryUi.OnItemAction -= HandleItemSelection;
+            inventoryUi.OnDropItem -= HandleDropIitem;
+            inventoryUi.OnHotbarAction -= HandleHotbarAction;
+        }
+
+        if (inventoryData != null)
+        {
+            inventoryData.OnInventoryChange -= UpdateInventoryUI;
+        }
+    }
 
     private void PrepareInventoryData()
     {

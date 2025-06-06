@@ -16,11 +16,14 @@ public class EndManager : MonoBehaviour
     {
         StoneManOffering += Offering;
         instance = this;
+ 
     }
     public void TriggerEndEvent()
     {
         if (timelineDirector != null)
         {
+          
+
             timelineDirector.Play();
             Debug.Log("Timeline Started");
         }
