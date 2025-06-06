@@ -13,6 +13,7 @@ public class TheWiseMen : MonoBehaviour, IInteractable
     [SerializeField] private Material NewMaterial;
     [SerializeField] private Material OldMaterial;
     [SerializeField] private SpriteRenderer statueRenderer;
+    [SerializeField] private GameObject Hint;
     public GameObject ItemHeld;
     public bool HasItem;
 
@@ -24,6 +25,7 @@ public class TheWiseMen : MonoBehaviour, IInteractable
            HasItem = true;
             ItemHeld.SetActive(true);
             EndManager.instance.Offering(HasItem);
+            Hint.SetActive(false);
         }
         else if (HasItem) {
             HasItem = false;
@@ -41,12 +43,18 @@ public class TheWiseMen : MonoBehaviour, IInteractable
     public void LeavingPlayer()
     {
         statueRenderer.material = NewMaterial;
+        if (!HasItem) { 
+            Hint.SetActive(false);
+        }
     }
 
     public void NearPlayer()
     {
         statueRenderer.material = OldMaterial;
-
+        if (!HasItem)
+        {
+            Hint.SetActive(true);
+        }
     }
     private IEnumerator ApplyFloatDrop(Rigidbody2D rb)
     {

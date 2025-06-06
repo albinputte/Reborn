@@ -7,6 +7,9 @@ public class EndManager : MonoBehaviour
     public PlayableDirector timelineDirector;
     public event Action<bool> StoneManOffering;
     public static EndManager instance;
+
+    public static bool HasDropped = false;
+    public static int Killcount = 0;
     private int OfferingCount;
 
     public void Awake()

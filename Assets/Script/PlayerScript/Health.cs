@@ -233,4 +233,18 @@ public class Health : MonoBehaviour, IDamagable
     }
 
 
+    public void RareDrop(ItemData item)
+    {
+        if(EndManager.HasDropped)
+            return;
+        EndManager.Killcount++;
+
+        if(EndManager.Killcount >= 8)
+        {
+            DropItem dropItem = GetComponent<DropItem>();
+            dropItem.DropSpecficItem(item);
+            EndManager.HasDropped = true;
+        }
+    }
+
 }
