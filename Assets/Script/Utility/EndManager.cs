@@ -16,7 +16,13 @@ public class EndManager : MonoBehaviour
     {
         StoneManOffering += Offering;
         instance = this;
- 
+        HasDropped = false;
+         Killcount = 0;
+
+}
+    private void OnDisable()
+    {
+        StoneManOffering -= Offering;
     }
     public void TriggerEndEvent()
     {

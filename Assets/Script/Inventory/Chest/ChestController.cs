@@ -29,6 +29,21 @@ public class ChestController : MonoBehaviour
         chestUi.OnDrag += HandleDragging;
         chestUi.OnItemAction += HandleItemAction;
     }
+    private void OnDisable()
+    {
+        // Unsubscribe from all events
+        if (chestUi != null)
+        {
+            chestUi.OnSwap -= HandleItemSwap;
+            chestUi.OnDrag -= HandleDragging;
+            chestUi.OnItemAction -= HandleItemAction;
+        }
+
+        if (chestData != null)
+        {
+            chestData.OnInventoryChange -= UpdateChestUI;
+        }
+    }
 
     private void HandleDragging(int index)
     {

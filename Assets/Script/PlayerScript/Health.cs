@@ -51,7 +51,8 @@ public class Health : MonoBehaviour, IDamagable
           
             if (currentHealth <= 0)
             {
-                IsInvinsiable = false;
+                if (HasInvinsiabilty)
+                    StartCoroutine(StartInvinsiabiltyTimer(InvinciableTimer));
                 OnTakeDamage?.Invoke();
                 OnDeath?.Invoke();
               
