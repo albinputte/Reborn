@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Magical Grail
   m_EditorClassIdentifier: 
   Name: <color=#f08e39>Filled Magical Grail</color>
-  Description: A magical grail with magical water. Can be used to awaken "the beast"
+  Description: A magical grail with magical water. A worthy offering to awaken "the
+    beast"
   Icon: {fileID: 833894047, guid: 990fe6c632bf0514984d47d7037ec6e7, type: 3}
   itemType: 7
   IsStackable: 0

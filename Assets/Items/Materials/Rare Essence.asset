@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Rare Essence
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Corrupt Nature Essence</color>
-  Description: Corrupted essence that drops rarely
+  Description: Corrupted essence that drops rarely. A great offering to summon "the
+    beast"
   Icon: {fileID: 1563049594, guid: b9fb5f5abac4ee345a496c9334fa46f8, type: 3}
   itemType: 0
   IsStackable: 1
