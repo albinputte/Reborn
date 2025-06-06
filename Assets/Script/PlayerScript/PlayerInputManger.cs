@@ -53,6 +53,14 @@ public class PlayerInputManger : MonoBehaviour
 
 
     }
+    private void OnDestroy()
+    {
+        agent.OnExit -= () => CheckBufferedInput("Fire");
+    }
+    private void OnDisable()
+    {
+        agent.OnExit -= () => CheckBufferedInput("Fire");
+    }
 
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -218,6 +226,7 @@ public class PlayerInputManger : MonoBehaviour
 
     public void OnEscapeInput(InputAction.CallbackContext context)
     {
+        if (context.performed) { 
         if (Ui[3].activeSelf)
         {
             pauseManager.UnpauseGame();
@@ -260,6 +269,7 @@ public class PlayerInputManger : MonoBehaviour
         {
             controller.OnUiOpenInvoke();
             Ui[2].gameObject.SetActive(false);
+        }
         }
     }
 

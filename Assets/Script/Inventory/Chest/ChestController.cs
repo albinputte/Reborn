@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChestController : MonoBehaviour
 {
-
     [SerializeField] private ChestUiPage chestUi;
     [SerializeField] public ChestSO chestData;
     [SerializeField] private GameObject itemPrefab; // For dropping items
@@ -12,31 +11,43 @@ public class ChestController : MonoBehaviour
     private int currentIndex;
     [SerializeField] InventorySO inventory;
 
-
     private void Start()
     {
+        Debug.Log("ChestController Start");
         InitializeChest();
     }
-  
 
-    public void InitializeChest()
-    {
-    
-   
-        ChestUiIsActive = false;
-        chestUi.OnSwap += HandleItemSwap;
-        chestUi.OnDrag += HandleDragging;
-        chestUi.OnItemAction += HandleItemAction;
-    }
     private void OnDisable()
     {
+        Debug.Log("ChestController OnDisable");
         CleanupListeners();
     }
 
     private void OnDestroy()
     {
+        Debug.Log("ChestController OnDestroy");
         CleanupListeners(); // <- This ensures listeners are always cleared on scene reload
     }
+
+    public void InitializeChest()
+    {
+        Debug.Log("Initializing Chest");
+        ChestUiIsActive = false;
+
+        CleanupListeners(); // Prevent double subscriptions
+
+        if (chestUi != null)
+        {
+            chestUi.OnSwap += HandleItemSwap;
+            chestUi.OnDrag += HandleDragging;
+            chestUi.OnItemAction += HandleItemAction;
+        }
+        else
+        {
+            Debug.LogWarning("chestUi is not assigned!");
+        }
+    }
+
     private void CleanupListeners()
     {
         if (chestUi != null)
@@ -52,6 +63,26 @@ public class ChestController : MonoBehaviour
         }
     }
 
+    public void PrepareChestData(List<InventoryItem> ItemToInitialize)
+    {
+        Debug.Log("Preparing chest data");
+
+        chestData.InstantiateInventory();
+
+        // Prevent double subscription
+        chestData.OnInventoryChange -= UpdateChestUI;
+        chestData.OnInventoryChange += UpdateChestUI;
+
+        foreach (var item in ItemToInitialize)
+        {
+            if (item.IsEmpty)
+                continue;
+
+            Debug.Log($"Adding item to chest: {item}");
+            chestData.AddItem(item);
+        }
+    }
+
     private void HandleDragging(int index)
     {
         InventoryItem item = chestData.GetSpecificItem(index);
@@ -60,31 +91,23 @@ public class ChestController : MonoBehaviour
 
         chestUi.SetMouse(item.item.Icon, item.quantity);
     }
-    public void PrepareChestData(List<InventoryItem> ItemToInitialize)
-    {
-        chestData.InstantiateInventory();
-        chestData.OnInventoryChange += UpdateChestUI;
-        foreach (var item in ItemToInitialize)
-        {
-            if (item.IsEmpty)
-                continue;
-            Debug.Log(item.ToString());
-            chestData.AddItem(item);
-
-        }
-     
-    }
 
     private void HandleItemSwap(InventoryUiSlot slot)
     {
-        Debug.Log(slot.name.ToString());
+        Debug.Log($"Handling item swap: {slot.name}");
 
         if (DragContext.SourceType == DragSourceType.Inventory && slot.OwnerPage is ChestUiPage)
         {
-            InventoryController.Instance.inventoryData.MoveItemToChest(chestData, slot.SlotIndex, DragContext.SourceIndex);
+            if (InventoryController.Instance != null)
+            {
+                InventoryController.Instance.inventoryData.MoveItemToChest(chestData, slot.SlotIndex, DragContext.SourceIndex);
+            }
+            else
+            {
+                Debug.LogWarning("InventoryController.Instance is null!");
+            }
         }
-        else if (DragContext.SourceType == DragSourceType.Chest && slot.OwnerPage is ChestUiPage
-        )
+        else if (DragContext.SourceType == DragSourceType.Chest && slot.OwnerPage is ChestUiPage)
         {
             chestData.SwapitemPlace(DragContext.SourceIndex, slot.SlotIndex);
         }
@@ -97,52 +120,78 @@ public class ChestController : MonoBehaviour
 
         if (item.IsEmpty) return;
         TransferItemFromChest(index);
-
     }
 
     public void ShowChest()
     {
-        chestUi.ShowChest();
+        Debug.Log("Showing chest");
+
+        if (chestUi != null)
+            chestUi.ShowChest();
+
         ChestUiIsActive = true;
-        if(!InventoryController.Instance.InventoryUiActive)
+
+        if (InventoryController.Instance != null && !InventoryController.Instance.InventoryUiActive)
             InventoryController.Instance.InventoryInput();
+
         UpdateChestUI();
     }
 
     public void HideChest()
     {
-        chestUi.HideChest();
-        if (InventoryController.Instance.InventoryUiActive)
-            InventoryController.Instance.InventoryInput();
-        ChestUiIsActive = false;
+        Debug.Log("Hiding chest");
 
+        if (chestUi != null)
+            chestUi.HideChest();
+
+        if (InventoryController.Instance != null && InventoryController.Instance.InventoryUiActive)
+            InventoryController.Instance.InventoryInput();
+
+        ChestUiIsActive = false;
     }
-    
+
     public void UpdateChestUI()
     {
+        Debug.Log("Updating Chest UI");
+
+        if (chestUi == null || chestData == null)
+        {
+            Debug.LogWarning("chestUi or chestData is null!");
+            return;
+        }
+
         chestUi.ResetChest();
 
         foreach (var item in chestData.GetChestState())
         {
-            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description,InventoryController.Instance.GetStatsForTooltip(item.Value));
+            var stats = InventoryController.Instance != null
+                ? InventoryController.Instance.GetStatsForTooltip(item.Value)
+                : null;
+
+            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, stats);
         }
     }
 
     private void UpdateChestUI(Dictionary<int, InventoryItem> dictionary)
     {
-
-        chestUi.ResetChest();
-        foreach (var item in dictionary)
+        if (chestUi == null)
         {
-      
-            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, InventoryController.Instance.GetStatsForTooltip(item.Value));
+            Debug.LogWarning("chestUi is null in dictionary UpdateChestUI!");
+            return;
         }
 
+        chestUi.ResetChest();
 
+        foreach (var item in dictionary)
+        {
+            var stats = InventoryController.Instance != null
+                ? InventoryController.Instance.GetStatsForTooltip(item.Value)
+                : null;
 
-
+            chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, stats);
+        }
     }
-  
+
     public void TransferItemFromChest(int chestIndex)
     {
         InventoryItem item = chestData.GetSpecificItem(chestIndex);
@@ -150,7 +199,5 @@ public class ChestController : MonoBehaviour
 
         inventory.AddItem(item.item, item.quantity, item.weaponInstances);
         chestData.RemoveItem(chestIndex, item.quantity);
-        
     }
 }
-

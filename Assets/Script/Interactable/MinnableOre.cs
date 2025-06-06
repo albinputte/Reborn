@@ -24,6 +24,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
     [SerializeField] private GameObject Shadow;
 
 
+
     public InteractableType type { get => Type; set => Type = value; }
     public void Start()
     {
@@ -31,6 +32,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
         col = GetComponents<Collider2D>();
         oreCount = Random.Range(minOres, maxOres);
         HitCount = MaxHitCount;
+        
     }
 
     public void Interact()

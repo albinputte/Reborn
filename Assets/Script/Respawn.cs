@@ -13,7 +13,13 @@ public class Respawn : MonoBehaviour
     private PlayerWeaponAgent agent;
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
         Healthui = FindAnyObjectByType<SliderUi>();
         agent = FindAnyObjectByType<PlayerWeaponAgent>();
     }

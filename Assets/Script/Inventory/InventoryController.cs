@@ -49,7 +49,13 @@ public class InventoryController : MonoBehaviour
     private bool CanEat = true;
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
         InventoryController.NoWeaponEquiped = true;
     }
     private void Start()

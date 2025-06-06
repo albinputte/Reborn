@@ -44,7 +44,7 @@ public class DropItem : MonoBehaviour
     private IEnumerator ApplyFloatDrop(Rigidbody2D rb)
     {
 
-        Vector2 force = new Vector2(UnityEngine.Random.Range(-1f, 1f), 1.5f).normalized * 3f;
+        Vector2 force = new Vector2(UnityEngine.Random.Range(-1f, 1f), 1.5f).normalized * 4f;
         if (rb == null)
             yield break;
         rb.AddForce(force, ForceMode2D.Impulse);
