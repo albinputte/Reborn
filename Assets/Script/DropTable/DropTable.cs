@@ -14,14 +14,7 @@ public class DropTable : ScriptableObject
         List<ItemData> droppedItems = new List<ItemData>();
         droppedItems = GurantedLoot.lootTable.ConvertAll(x => x.item);
 
-        foreach (var loot in GurantedLoot.lootTable)
-        {
-            int quantity = Random.Range(loot.minDrop, loot.maxDrop + 1);
-            for (int i = 0; i < quantity; i++)
-            {
-                droppedItems.Add(loot.item);
-            }
-        }
+    
 
        
 

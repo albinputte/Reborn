@@ -14,24 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GurantedLoot:
     Name: 
-    ChanceToRoll: 0
-    lootTable: []
-  LootingTable:
-  - Name: common
-    ChanceToRoll: 80
+    ChanceToRoll: 100
     lootTable:
     - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
-      dropChance: 50
-      minDrop: 1
-      maxDrop: 3
-    - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
-      dropChance: 50
-      minDrop: 1
-      maxDrop: 1
-  - Name: rare
-    ChanceToRoll: 20
-    lootTable:
-    - item: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
       dropChance: 100
       minDrop: 1
       maxDrop: 1
+    - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
+      dropChance: 100
+      minDrop: 1
+      maxDrop: 1
+  LootingTable:
+  - Name: 
+    ChanceToRoll: 0
+    lootTable: []

@@ -20,13 +20,17 @@ public class TutorialManger : MonoBehaviour
     private string Lastinteractedname;
 
     public TutorialState currentState = TutorialState.Start;
-
+    public void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
     private void Start()
     {
         instance = this;
         TutorialIsActive = true;
         EisInteractedEnough = true;
         EnterState(currentState);
+
     }
 
     public void EnterState(TutorialState state)

@@ -25,7 +25,7 @@ MonoBehaviour:
       minDrop: 1
       maxDrop: 3
   - Name: rare
-    ChanceToRoll: 50
+    ChanceToRoll: 5
     lootTable:
     - item: {fileID: 11400000, guid: 476ad0f6ba992574b9efb5b06d186c0e, type: 2}
       dropChance: 100

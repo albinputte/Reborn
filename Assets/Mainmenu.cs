@@ -10,11 +10,14 @@ public class Mainmenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+    public void ToMainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 
     // Exit the game
     public void QuitGame()
     {
-        Application.Quit();
-        Debug.Log("Game is exiting..."); // This will show in the editor but not in a built game
+      Application.Quit();
     }
 }
