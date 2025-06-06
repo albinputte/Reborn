@@ -12,7 +12,7 @@ public class PuzzleController : MonoBehaviour
     public RuneTile bottomLeft;
     public RuneTile bottom;
     public RuneTile bottomRight;
-
+    public Animator Stone;
     [Header("Treasure")]
     public GameObject treasurePrefab;
     public Transform treasureSpawnPoint;
@@ -99,6 +99,7 @@ public class PuzzleController : MonoBehaviour
 
         if (treasurePrefab && treasureSpawnPoint)
             Instantiate(treasurePrefab, treasureSpawnPoint.position, Quaternion.identity);
+        Stone.SetTrigger("Hit");
     }
 
     private Vector2Int[] GetCustomNeighbors(Vector2Int pos)
