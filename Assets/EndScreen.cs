@@ -17,10 +17,16 @@ public class EndScreen : MonoBehaviour
 
     public void ContinueToPlayButton()
     {
-        Time.timeScale = 1.0f;
+       
         EndCanvas.SetActive(false);
-        Cursor.visible = false;
+ 
      
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
     }
 
     public void PauseGame()

@@ -32,6 +32,7 @@ public class PlayerInputManger : MonoBehaviour
     [SerializeField] private PlayerWeaponAgent agent;
     [SerializeField] public Vector2 moveDir;
     [SerializeField] private LayerMask UILayer;
+    private PauseManager pauseManager;
  
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class PlayerInputManger : MonoBehaviour
         
     public void Start()
     {
-    
+        pauseManager = FindAnyObjectByType<PauseManager>();
         agent = FindAnyObjectByType<PlayerWeaponAgent>();
         agent.OnExit += () => CheckBufferedInput("Fire");
 
@@ -217,6 +218,18 @@ public class PlayerInputManger : MonoBehaviour
 
     public void OnEscapeInput(InputAction.CallbackContext context)
     {
+        if (Ui[3].activeSelf)
+        {
+            pauseManager.UnpauseGame();
+        }
+        else if (Ui[0].activeSelf == false && Ui[1].activeSelf == false && Ui[2].activeSelf == false && Ui[3].activeSelf == false)
+        {
+
+            pauseManager.PauseGame();
+        }
+    
+     
+
         if (Ui[0].activeSelf)
         {
             inventoryController.InventoryInput();
