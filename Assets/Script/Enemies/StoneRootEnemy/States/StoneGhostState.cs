@@ -19,6 +19,7 @@ public class StoneGhostState : BaseEnemyState<StoneGhostController>
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        Debug.Log(stateMachine.CurrentState);
         if (Respawn.instance.isRespawning)
         {
             if(stateMachine.CurrentState != controller.Hide || stateMachine.CurrentState != controller.PlayerDied)

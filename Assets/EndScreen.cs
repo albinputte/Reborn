@@ -26,12 +26,12 @@ public class EndScreen : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1.0f;
-        Cursor.visible = false;
+      
     }
 
     public void PauseGame()
     {
-        Cursor.visible = true;
+       
         Time.timeScale = 0f;
     }
 

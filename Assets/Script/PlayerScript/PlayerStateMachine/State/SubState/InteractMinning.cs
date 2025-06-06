@@ -59,7 +59,7 @@ public class InteractMinning : ActionState
         controller.OnAnimationDone -= OnAnimDone;
         controller.OnAnimationEvent -= Mine;
         base.Exit();
-
+        controller.Input.CheckBufferedInput("Fire");
         Debug.Log("i Exit");
         controller.Input.isInteracting = false;
 
