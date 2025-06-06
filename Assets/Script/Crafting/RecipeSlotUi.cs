@@ -29,7 +29,7 @@ public class RecipeSlotUi : MonoBehaviour
         ResultItemToolTip.content = recipe.resultItem.Description;
         InventoryItem item = new InventoryItem();
         item.item = recipe.resultItem;
-        ResultItemToolTip.values = GetStatsForTooltip(item);
+        ResultItemToolTip.values = InventoryController.Instance.GetStatsForTooltip(item);
         this.recipe = recipe;
         this.CurrentCraftingMangerIndex = CurrentCraftingMangerIndex;
         SetIngrediants(recipe);
