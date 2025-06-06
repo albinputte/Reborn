@@ -120,31 +120,35 @@ public class PlayerInputManger : MonoBehaviour
         if (context.performed && !Respawn.instance.isRespawning)
         {
             inventoryController.InventoryInput();;
-            if (Ui[1].activeSelf)
-            {
-               
-                if (controller.stateMachine.CurrentState == controller.interactCrafting)
-                    controller.OnUiOpenInvoke();
-                else
-                {
-                    craftUi.HideCraftingUi();
-                    craftUi.ClearRecipeInformation();
-                    CraftingManager[] managers = craftUi.GetCurrentCraftingMangers();
-                    foreach (var manager in managers)
-                    {
-                        craftUi.UpdateUi(manager, manager.currentCraftingMangerIndex, true);
-                    }
-                 
-                }
-              
 
-            }
-            if (Ui[2].activeSelf)
+         
+
+        }
+        if (Ui[1].activeSelf)
+        {
+
+            if (controller.stateMachine.CurrentState == controller.interactCrafting)
             {
                 controller.OnUiOpenInvoke();
-                Ui[2].gameObject.SetActive(false);
             }
 
+            else
+            {
+                craftUi.HideCraftingUi();
+                craftUi.ClearRecipeInformation();
+                CraftingManager[] managers = craftUi.GetCurrentCraftingMangers();
+                foreach (var manager in managers)
+                {
+                    craftUi.UpdateUi(manager, manager.currentCraftingMangerIndex, true);
+                }
+            }
+
+
+        }
+        if (Ui[2].activeSelf)
+        {
+            controller.OnUiOpenInvoke();
+            Ui[2].gameObject.SetActive(false);
         }
     }
 
@@ -214,12 +218,18 @@ public class PlayerInputManger : MonoBehaviour
     public void OnEscapeInput(InputAction.CallbackContext context)
     {
         if (Ui[0].activeSelf)
+        {
             inventoryController.InventoryInput();
+        }
+
         if (Ui[1].activeSelf)
         {
 
             if (controller.stateMachine.CurrentState == controller.interactCrafting)
+            {
                 controller.OnUiOpenInvoke();
+            }
+               
             else
             {
                 craftUi.HideCraftingUi();
