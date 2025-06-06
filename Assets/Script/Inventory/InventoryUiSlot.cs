@@ -67,10 +67,15 @@ public class InventoryUiSlot : MonoBehaviour
     public void ResetItemData()
     {
         empty = true;
-        this.itemImage.sprite = null;
+     
         ItemDescription = "";
         ItemName = "";
-        this.itemImage.gameObject.SetActive(false);
+        if(itemImage != null)
+        {
+            this.itemImage.gameObject.SetActive(false);
+            this.itemImage.sprite = null;
+        }
+          
         if (uitipTrigger != null && !IsHotbar)
         {
             uitipTrigger.header = "";

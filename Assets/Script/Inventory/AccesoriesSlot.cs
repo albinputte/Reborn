@@ -13,14 +13,14 @@ public class AccesoriesSlot : MonoBehaviour
     [SerializeField] private Image ItemFrame; 
     public bool IsEmpty = true;
     private AccesoriesItemBase Item;
-    private InventoryController inventoryController;
+  
     public event Action<AccesoriesSlot> OnItemBeginDrag, OnItemDroppedOn, OnItemEndDrag;
     public UIToolTipTrigger uitipTrigger;
 
 
     public void Awake()
     {
-        inventoryController = InventoryController.Instance;
+        
         ItemImage.sprite = null;
         ItemImage.enabled = false;
         ItemFrame = GetComponent<Image>();
@@ -40,14 +40,14 @@ public class AccesoriesSlot : MonoBehaviour
             uitipTrigger.content = item1.Description;
             InventoryItem item = new InventoryItem();
             item.item = item1;
-            uitipTrigger.values = inventoryController.GetStatsForTooltip(item);
+            uitipTrigger.values = InventoryController.Instance.GetStatsForTooltip(item);
         }
     }
 
     public void RemoveAccesoires(bool ShouldAdd)
     {
         if(ShouldAdd)
-            inventoryController.inventoryData.AddItem(Item, 1,null);
+            InventoryController.Instance.inventoryData.AddItem(Item, 1,null);
         Item.RemoveAccesorie();
         ItemImage.sprite = null;
         ItemImage.enabled = false;

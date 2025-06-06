@@ -23,6 +23,11 @@ public class ChestUiPage : MonoBehaviour
     private InventoryUiSlot selectedSlot;
     private bool IsSelected;
 
+    public void Start()
+    {
+        InstantiateChest();
+    }
+
     public void InstantiateChest()
     {
         chestSlots = GetComponentsInChildren<InventoryUiSlot>();

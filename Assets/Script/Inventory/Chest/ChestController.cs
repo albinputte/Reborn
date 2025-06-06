@@ -12,18 +12,17 @@ public class ChestController : MonoBehaviour
     private int currentIndex;
     [SerializeField] InventorySO inventory;
 
-   
 
-    public void Start()
+    private void Start()
     {
         InitializeChest();
-       
     }
+  
 
     public void InitializeChest()
     {
     
-        chestUi.InstantiateChest();
+   
         ChestUiIsActive = false;
         chestUi.OnSwap += HandleItemSwap;
         chestUi.OnDrag += HandleDragging;
@@ -31,7 +30,15 @@ public class ChestController : MonoBehaviour
     }
     private void OnDisable()
     {
-        // Unsubscribe from all events
+        CleanupListeners();
+    }
+
+    private void OnDestroy()
+    {
+        CleanupListeners(); // <- This ensures listeners are always cleared on scene reload
+    }
+    private void CleanupListeners()
+    {
         if (chestUi != null)
         {
             chestUi.OnSwap -= HandleItemSwap;

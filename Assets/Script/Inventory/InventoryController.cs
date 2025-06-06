@@ -47,7 +47,11 @@ public class InventoryController : MonoBehaviour
     private bool BuildItemEquiped;
     private StructureItemBase BuildItem;
     private bool CanEat = true;
- 
+    private void Awake()
+    {
+        Instance = this;
+        InventoryController.NoWeaponEquiped = true;
+    }
     private void Start()
     {
         PrepareInventoryData();
@@ -56,11 +60,7 @@ public class InventoryController : MonoBehaviour
 
 
     }
-    private void Awake()
-    {
-        Instance = this;
-        InventoryController.NoWeaponEquiped = true;
-    }
+ 
 
     private void PrepareInventoryUI()
     {
@@ -74,6 +74,23 @@ public class InventoryController : MonoBehaviour
         inventoryUi.HideInventory();
     }
     private void OnDisable()
+    {
+        if (inventoryUi != null)
+        {
+            inventoryUi.OnSwap -= HandleItemSwap;
+            inventoryUi.OnDrag -= HandleDragging;
+            inventoryUi.OnItemAction -= HandleItemSelection;
+            inventoryUi.OnDropItem -= HandleDropIitem;
+            inventoryUi.OnHotbarAction -= HandleHotbarAction;
+        }
+
+        if (inventoryData != null)
+        {
+            inventoryData.OnInventoryChange -= UpdateInventoryUI;
+        }
+    }
+
+    private void OnDestroy()
     {
         if (inventoryUi != null)
         {
