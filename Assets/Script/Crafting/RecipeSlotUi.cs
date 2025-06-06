@@ -53,48 +53,12 @@ public class RecipeSlotUi : MonoBehaviour
                 toolTipTrigger[i].content = recipe.ingredients[i].item.Description;
                 InventoryItem item = new InventoryItem();
                 item.item = recipe.ingredients[i].item;
-                toolTipTrigger[i].values = GetStatsForTooltip(item);
+                toolTipTrigger[i].values = InventoryController.Instance.GetStatsForTooltip(item);
 
             }
         }
     }
-    public string GetStatsForTooltip(InventoryItem item)
-    {
-        if (item.IsEmpty)
-            return "";
-        if (item.item is WeaponItemData weapon)
-        {
-            return "Damage " + weapon.Damage.ToString();
-        }
-        if (item.item is StructureItemBase structure)
-        {
-            return "Placable";
-        }
-        if (item.item is AccesoriesItemBase accesories)
-        {
-            BuffBase buffBase = accesories.BuffBase;
-            if (buffBase is AddetiveBuff buff)
-            {
-                return buff.statType.ToString() + " +" + buff.bonusMultiplier;
-            }
-
-        }
-
-        if (item.item is ConsumableItem food)
-        {
-
-            return "Heal " + food.healAmount;
-        }
-
-        if (item.item is PickAxeItemBase tool)
-        {
-            return "Pickaxe Power " + tool.PickAxePower;
-
-        }
-        return "";
-
-
-    }
+  
 
     public void SetBorder()
     {
