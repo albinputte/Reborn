@@ -106,7 +106,7 @@ MonoBehaviour:
   ItemData: {fileID: 11400000, guid: f3aada6bf78aa5448a1615305eb8f7dc, type: 2}
   respawnTime: 90
   minOres: 1
-  maxOres: 2
+  maxOres: 3
   Type: 1
   Button: {fileID: 4986812616954838430}
   NewMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
