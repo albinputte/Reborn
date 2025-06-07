@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class TheWiseMen : MonoBehaviour, IInteractable
     {
         if (SearchForReqItem(ItemNeededGrail) && !HasItem)
         {
+            SoundManager.PlaySound(SoundType.SwapItem_Inventory);
            HasItem = true;
             ItemHeld.SetActive(true);
             EndManager.instance.Offering(HasItem);

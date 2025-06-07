@@ -1,3 +1,4 @@
+using SmallHedge.SoundManager;
 using UnityEngine;
 
 public class PuzzleController : MonoBehaviour
@@ -99,7 +100,9 @@ public class PuzzleController : MonoBehaviour
 
         if (treasurePrefab && treasureSpawnPoint)
             Instantiate(treasurePrefab, treasureSpawnPoint.position, Quaternion.identity);
+        SoundManager.PlaySound(SoundType.Conquest_Chest_Landing);
         Stone.SetTrigger("Hit");
+        SoundManager.PlaySound(SoundType.Stone_Puzzle_Destroy);
     }
 
     private Vector2Int[] GetCustomNeighbors(Vector2Int pos)

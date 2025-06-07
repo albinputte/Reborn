@@ -111,6 +111,46 @@ public class ChestController : MonoBehaviour
         {
             chestData.SwapitemPlace(DragContext.SourceIndex, slot.SlotIndex);
         }
+        else if (DragContext.SourceType == DragSourceType.AccesorieSlot && slot.OwnerPage is ChestUiPage)
+        {
+            // Remove accessory from its original accessory slot
+            ItemData itemFromAccessorySlot = AccesorieSlotManger.Instance.GetItemAndRemove(DragContext.SourceIndex);
+            if (!(itemFromAccessorySlot is AccesoriesItemBase accessoryToDrop))
+                return;
+
+            // Get item currently in chest slot
+            InventoryItem currentChestItem = chestData.GetSpecificItem(slot.SlotIndex);
+
+            // If there's already an accessory in the chest slot, swap it back into the accessory slot
+            if (!currentChestItem.IsEmpty && currentChestItem.item is AccesoriesItemBase)
+            {
+                // Remove from chest
+                chestData.RemoveItem(slot.SlotIndex, 1);
+
+                // Place the old chest item into the accessory slot
+                AccesorieSlotManger.Instance.Slots[DragContext.SourceIndex].SetAccesorie(currentChestItem.item as AccesoriesItemBase);
+
+                // Place dragged accessory into chest
+                InventoryItem newItem = new InventoryItem
+                {
+                    item = accessoryToDrop,
+                    quantity = 1
+                };
+                chestData.AddItemToSpecificPos(newItem.item,1,null, slot.SlotIndex);
+            }
+            else
+            {
+                // Chest slot is empty or not an accessory — just insert
+                InventoryItem newItem = new InventoryItem
+                {
+                    item = accessoryToDrop,
+                    quantity = 1
+                };
+                chestData.AddItemToSpecificPos(newItem.item,1,null, slot.SlotIndex);
+            }
+
+            // Optional: SoundManager.PlaySound(SoundType.SwapItem_Inventory);
+        }
     }
 
     private void HandleItemAction(int index)

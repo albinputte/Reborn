@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,16 +13,17 @@ public class AccesoriesSlot : MonoBehaviour
     [SerializeField] private Image ItemFrame; 
     public bool IsEmpty = true;
     private AccesoriesItemBase Item;
-  
+    public object OwnerPage { get; private set; }
     public event Action<AccesoriesSlot> OnItemBeginDrag, OnItemDroppedOn, OnItemEndDrag;
     public UIToolTipTrigger uitipTrigger;
 
-
+    private ChestController chest; 
     public void Awake()
     {
-        
+        OwnerPage = this;
         ItemImage.sprite = null;
         ItemImage.enabled = false;
+        chest = FindAnyObjectByType<ChestController>();
         ItemFrame = GetComponent<Image>();
         uitipTrigger = GetComponent<UIToolTipTrigger>();
     }
@@ -91,32 +92,69 @@ public class AccesoriesSlot : MonoBehaviour
 
     public void OnDrop()
     {
-        if(DragContext.SourceIndex == -1)
+        if (DragContext.SourceIndex == -1)
             return;
-        InventoryItem item = InventoryController.Instance.inventoryData.GetSpecificItem(DragContext.SourceIndex);
-        
-        if(item.item is AccesoriesItemBase)
+
+        AccesoriesItemBase incomingAccessory = null;
+
+        // 1. Handle accessory dragged from another accessory slot
+        if (DragContext.SourceType == DragSourceType.AccesorieSlot)
         {
-            InventoryController.Instance.inventoryData.RemoveItem(DragContext.SourceIndex, 1);
-            if (IsEmpty)
-            {
-                SetAccesorie(item.item as AccesoriesItemBase);
-
-            }
-            else
-            {
-   
-                InventoryController.Instance.inventoryData.AddItemToSpecificPos(Item, 1, null, DragContext.SourceIndex);
-                RemoveAccesoires(false);
-                SetAccesorie(item.item as AccesoriesItemBase);
-          
-
-            }
-            
-
+            incomingAccessory = AccesorieSlotManger.Instance.GetItemAndRemove(DragContext.SourceIndex) as AccesoriesItemBase;
         }
-   
+        // 2. Handle accessory dragged from inventory
+        else if (DragContext.SourceType == DragSourceType.Inventory)
+        {
+            InventoryItem invItem = InventoryController.Instance.inventoryData.GetSpecificItem(DragContext.SourceIndex);
+            if (invItem.item is AccesoriesItemBase acc)
+            {
+                incomingAccessory = acc;
+                InventoryController.Instance.inventoryData.RemoveItem(DragContext.SourceIndex, 1);
+            }
+        }
+        // 3. Handle accessory dragged from chest
+        else if (DragContext.SourceType == DragSourceType.Chest)
+        {
+            InventoryItem chestItem = chest.chestData.GetSpecificItem(DragContext.SourceIndex);
+            if (chestItem.item is AccesoriesItemBase acc)
+            {
+                incomingAccessory = acc;
+                chest.chestData.RemoveItem(DragContext.SourceIndex, 1);
+            }
+        }
+
+        if (incomingAccessory == null)
+            return;
+
+        // 4. Drop logic
+        if (IsEmpty)
+        {
+            SetAccesorie(incomingAccessory);
+        }
+        else
+        {
+            AccesoriesItemBase currentItem = GetItemFromSlot();
+            RemoveAccesoires(false);
+            SetAccesorie(incomingAccessory);
+
+            // 5. Return the replaced accessory to the correct source
+            switch (DragContext.SourceType)
+            {
+                case DragSourceType.Inventory:
+                    InventoryController.Instance.inventoryData.AddItemToSpecificPos(currentItem, 1, null, DragContext.SourceIndex);
+                    break;
+                case DragSourceType.Chest:
+                    chest.chestData.AddItemToSpecificPos(currentItem, 1, null, DragContext.SourceIndex);
+                 
+                    break;
+                case DragSourceType.AccesorieSlot:
+                    AccesorieSlotManger.Instance.Slots[DragContext.SourceIndex].SetAccesorie(currentItem);
+                    break;
+            }
+        }
     }
+
+
 
     public void OnEndDrag()
     {

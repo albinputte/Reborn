@@ -337,6 +337,7 @@ public class InventoryController : MonoBehaviour
             }
 
         }
+  
 
     }
 

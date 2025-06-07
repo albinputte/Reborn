@@ -29,10 +29,3 @@ MonoBehaviour:
       quantity: 2
     resultItem: {fileID: 11400000}
     resultQuantity: 1
-  - ingredients:
-    - item: {fileID: 11400000, guid: f3aada6bf78aa5448a1615305eb8f7dc, type: 2}
-      quantity: 7
-    - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
-      quantity: 5
-    resultItem: {fileID: 11400000}
-    resultQuantity: 1

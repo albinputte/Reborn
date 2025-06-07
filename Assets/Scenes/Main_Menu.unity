@@ -1420,7 +1420,7 @@ PrefabInstance:
     - target: {fileID: 2741848070483314369, guid: fda63deb5472b424fa7f4ac8c5743990, type: 3}
       propertyPath: cursorSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 1132504983, guid: fab4aca22a8485a41b241f905cfdf093, type: 3}
+      objectReference: {fileID: -388861042, guid: fab4aca22a8485a41b241f905cfdf093, type: 3}
     - target: {fileID: 2741848070483314369, guid: fda63deb5472b424fa7f4ac8c5743990, type: 3}
       propertyPath: cursorSprites.Array.data[1]
       value: 
