@@ -63,13 +63,14 @@ public class ConquestPressureplate : MonoBehaviour
     }
     public void ResetStage()
     {
-        if(currentStage == 4 || currentStage == 0)
+        if(currentStage == 4 || !isPlateLocked)
             return;
         // Reset stage count and visuals
         currentStage = 0;
         ppSprite.sprite = openSprite;
         isPlateLocked = false;
 
+        Debug.Log("i reset");
         // Turn off all torches
         foreach (GameObject torch in torches)
         {

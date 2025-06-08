@@ -49,11 +49,11 @@ TagManager:
   - name: Background
     uniqueID: 4169132639
     locked: 0
-  - name: Foreground
-    uniqueID: 3444446485
-    locked: 0
   - name: WeaponAnim
     uniqueID: 1296566859
+    locked: 0
+  - name: Foreground
+    uniqueID: 3444446485
     locked: 0
   - name: Cliff
     uniqueID: 2669523403
