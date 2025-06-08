@@ -205,23 +205,16 @@ public class PlayerInputManger : MonoBehaviour
        
         inventoryController.ScrollInHotbar(HotbarIndex);
     }
-
     public void OnhotkeyHotbar(InputAction.CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        // Get the key that was actually pressed
-        string keyPressed = context.control.displayName; // or context.control.name
-
-        int index;
-        if (int.TryParse(keyPressed, out index))
+        if (int.TryParse(context.control.displayName, out int index))
         {
             HotbarIndex = index;
             inventoryController.ScrollInHotbar(index);
-         
         }
-        
     }
 
     public void OnEscapeInput(InputAction.CallbackContext context)

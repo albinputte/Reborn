@@ -13,11 +13,11 @@ public class InteractCrafting : ActionState
     public override void Enter()
     {
         base.Enter();
+        controller.Input.isInteracting = false;
         interactable = GetNearestInteractable(2f, controller.InteractionLayer);
         if (interactable != null)
             interactable.Interact();
         controller.Input.ActionPefromed = true;
-        controller.Input.isInteracting = false;
         controller.OnUiOpen += () => { IsAbilityDone = true; };
     }
 

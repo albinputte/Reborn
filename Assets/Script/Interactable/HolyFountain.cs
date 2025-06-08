@@ -17,11 +17,13 @@ public class HolyFountain : MonoBehaviour,IInteractable
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private float fadeSpeed = 1f;   // Speed at which the sound fades in
     [SerializeField] private float maxDistance = 10f; // Max distance at which sound starts to fade in
+    private PlayerInputManger input;
 
     private float currentVolume = 0f;
     public void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        input = FindAnyObjectByType<PlayerInputManger>();
     }
 
     void Update()
@@ -39,8 +41,13 @@ public class HolyFountain : MonoBehaviour,IInteractable
 
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            input.isInteracting = true;
             if (rb != null)
                 StartCoroutine(ApplyFloatDrop(rb));
+        }
+        else
+        {
+            input.isInteracting = true;
         }
     }
 
@@ -60,6 +67,7 @@ public class HolyFountain : MonoBehaviour,IInteractable
 
     private IEnumerator ApplyFloatDrop(Rigidbody2D rb)
     {
+    
         Vector2 force = new Vector2(Random.Range(-1f, 1f), 1.5f).normalized * 4f;
         if (rb == null)
             yield break;
@@ -75,6 +83,7 @@ public class HolyFountain : MonoBehaviour,IInteractable
             yield break;
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
+     
     }
 
     public bool SearchForGrail(ItemData NonFilledGrail)

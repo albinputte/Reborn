@@ -133,10 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e47ff6cf04a3dc4a96763d05e098139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 2
   ItemNeededGrail: {fileID: 11400000, guid: 9183a7f904ce44849847383c1facbd07, type: 2}
   itemPrefab: {fileID: 9145960511673896059, guid: 46989b5eea184d54ab834d70b19d25f7, type: 3}
   NewMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   OldMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
   statueRenderer: {fileID: 3240538175836559909}
+  Hint: {fileID: 0}
+  ItemHeld: {fileID: 0}
   HasItem: 0

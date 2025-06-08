@@ -32,6 +32,13 @@ public class ConquestPressureplate : MonoBehaviour
         SoundManager.PlaySound(SoundType.Preasure_Plate);
         StartCoroutine(SpawnEnemiesWithDelay());
     }
+    public void Update()
+    {
+        if (Respawn.instance.isRespawning)
+        {
+            ResetStage();
+        }
+    }
 
     private IEnumerator SpawnEnemiesWithDelay()
     {
@@ -53,6 +60,34 @@ public class ConquestPressureplate : MonoBehaviour
 
             yield return new WaitForSeconds(0.25f); //  Stagger time between each enemy
         }
+    }
+    public void ResetStage()
+    {
+        if(currentStage == 4 || currentStage == 0)
+            return;
+        // Reset stage count and visuals
+        currentStage = 0;
+        ppSprite.sprite = openSprite;
+        isPlateLocked = false;
+
+        // Turn off all torches
+        foreach (GameObject torch in torches)
+        {
+            if (torch != null)
+                torch.SetActive(false);
+        }
+
+        // Destroy all active enemies
+        foreach (GameObject enemy in activeEnemies)
+        {
+            if (enemy != null)
+                Destroy(enemy, 5f);
+        }
+        activeEnemies.Clear();
+
+        isPlateLocked = false;
+
+
     }
 
     private void ShuffleList<T>(List<T> list)

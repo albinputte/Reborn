@@ -248,9 +248,8 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
             IInteractable inter = GetNearestInteractable(1f, controller.InteractionLayer);
 
 
-            if (inter != null)
-            {
-                if (inter.type == InteractableType.Minning)
+           
+                if (inter?.type == InteractableType.Minning)
                 {
                     stateMachine.SwitchState(controller.interactState);
                 }
@@ -259,13 +258,31 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
                     controller.Input.IsAttacking = false;
                     controller.Input.ActionPefromed = false;
                 }
-               
-            }
-            else
-            {
-                controller.Input.IsAttacking = false;
-                controller.Input.ActionPefromed = false;
-            }
+
+            
+        }
+
+        else if (InventoryController.NoWeaponEquiped && stateMachine.CurrentState != controller.interactCrafting  )
+        {
+
+
+            IInteractable inter = GetNearestInteractable(1f, controller.InteractionLayer);
+
+
+           
+                if (inter?.type == InteractableType.Crafting)
+                {
+              
+                    controller.Input.IsAttacking = false;
+                    controller.Input.ActionPefromed = false;
+                    stateMachine.SwitchState(controller.interactState);
+                }
+                else
+                {
+                    controller.Input.IsAttacking = false;
+                    controller.Input.ActionPefromed = false;
+                }
+          
         }
         else
         {

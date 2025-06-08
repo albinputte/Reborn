@@ -17,30 +17,66 @@ public class TheWiseMen : MonoBehaviour, IInteractable
     [SerializeField] private GameObject Hint;
     public GameObject ItemHeld;
     public bool HasItem;
+    private bool Timer;
+    private PlayerInputManger playerInputManger;
 
+    public void Start()
+    {
+        playerInputManger = FindAnyObjectByType<PlayerInputManger>();
+    }
+    private bool hasInteractedThisCycle = false;
 
     public void Interact()
     {
+        // If this is the second call, reset and return immediately
+        if (hasInteractedThisCycle)
+        {
+            hasInteractedThisCycle = false;
+            return;
+        }
+
+        // First call – run interaction and set the flag
+        hasInteractedThisCycle = true;
+
         if (SearchForReqItem(ItemNeededGrail) && !HasItem)
         {
             SoundManager.PlaySound(SoundType.SwapItem_Inventory);
-           HasItem = true;
+            HasItem = true;
+            StartCoroutine(Cooldown());
             ItemHeld.SetActive(true);
             EndManager.instance.Offering(HasItem);
             Hint.SetActive(false);
         }
-        else if (HasItem) {
+        else if (HasItem)
+        {
             HasItem = false;
+            StartCoroutine(Cooldown());
             EndManager.instance.Offering(HasItem);
             GameObject ore = Instantiate(itemPrefab, transform.position, Quaternion.identity);
             ore.GetComponent<WorldItem>().SetItem(ItemNeededGrail, 1);
             ItemHeld.SetActive(false);
+
             Rigidbody2D rb = ore.AddComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (rb != null)
                 StartCoroutine(ApplyFloatDrop(rb));
         }
+
+        if (!Timer)
+        {
+            playerInputManger.isInteracting = true;
+        }
     }
+
+    public IEnumerator Cooldown()
+    {
+        Timer = true;
+        yield return new WaitForSeconds(0.3f);
+        playerInputManger.isInteracting = true;
+        Timer = false;
+       
+    }
+
 
     public void LeavingPlayer()
     {
