@@ -55,7 +55,7 @@ public class TutorialWorldItem : MonoBehaviour
                 if (IsPickingUp)
                     return;
                 IsPickingUp = true;
-                inventory.AddItemToSpecificPos(item, quantity, null, 14);
+                inventory.AddItemToSpecificPos(item, quantity, null, 1);
                 TutorialManger.instance.OnSwordPickedUp();
                 SoundManager.PlaySound(SoundType.PickUpSound);
                 Destroy(gameObject);

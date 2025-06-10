@@ -203,28 +203,28 @@ public class InventoryController : MonoBehaviour
                 switch (buff.statType)
                 {
                     case StatsType.Health:
-                        statText = $"<color=#9d3a78>{"Health"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#9d3a78>{"Health"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
                         break;
 
                     case StatsType.Multi_OreChance:
-                        statText = $"<color=#6c8294>{"Double Ore Chance"}</color> <color=#dae1e5>+{buff.bonusMultiplier * 100}%</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#6c8294>{"Double Ore Chance"}</color> <color=#dae1e5>+{buff.bonusMultiplier * 100}%</color>";
                         break;
 
                     case StatsType.Damage:
-                        statText = $"<color=#7b2536>{"Damage"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#FFFFFF>Accessory: </color><color=#7b2536>{"Damage"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
                         break;
 
                     case StatsType.HealthRegen:
-                        statText = $"<color=#286345>{"Hp Regen"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#286345>{"Health Regen"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
                         break;
                     case StatsType.Speed:
-                        statText = $"<color=#fce886>{"Speed"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#fce886>{"Speed"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
                         break;
                     case StatsType.Lifesteal:
-                        statText = $"<color=#286345>{"Lifesteal"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#286345>{"Lifesteal"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
                         break;
                     case StatsType.PickaxePower:
-                        statText = $"<color=#3483b0>{"PickaxePower"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
+                        statText = $"<color=#FFFFFF>Accessory: </color><color=#3483b0>{"PickaxePower"}</color> <color=#dae1e5>+{buff.bonusMultiplier}</color>";
                         break;
 
               
