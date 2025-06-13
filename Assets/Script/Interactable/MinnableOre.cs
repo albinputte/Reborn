@@ -1,6 +1,7 @@
 using SmallHedge.SoundManager;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MinnableOre : MonoBehaviour, IInteractable
@@ -10,6 +11,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
     public int MaxHitCount;
     public GameObject orePrefab;
     [SerializeField] private ItemData ItemData;
+    public bool IsStone;
     private Collider2D[] col;
     private SpriteRenderer mineRenderer; 
     [SerializeField] private float respawnTime; 
@@ -19,6 +21,7 @@ public class MinnableOre : MonoBehaviour, IInteractable
     [SerializeField] private GameObject Button;
     [SerializeField] private Material NewMaterial;
     [SerializeField] private Material OldMaterial;
+    [SerializeField] private GameObject Pickaxe;
     [SerializeField] private GameObject StoneParticles;
     [SerializeField] private bool HasShadow;
     [SerializeField] private GameObject Shadow;
@@ -49,6 +52,8 @@ public class MinnableOre : MonoBehaviour, IInteractable
                 SoundManager.PlaySound(SoundType.PickAxe_Sound);
                 GameObject Particle = Instantiate(StoneParticles, transform.position, Quaternion.identity);
                 Mine();
+                if (!TutorialManger.instance.PickaxeShouldAppear() && IsStone)
+                    TutorialManger.instance.StoneMined();
                 if (HitCount > 0)
                     return;
             }
@@ -191,6 +196,10 @@ public class MinnableOre : MonoBehaviour, IInteractable
         {
             Button.gameObject.SetActive(true);
         }
+        if (!TutorialManger.instance.PickaxeShouldAppear() && IsStone)
+        {
+            Pickaxe.SetActive(true);
+        }
         
     }
 
@@ -198,6 +207,8 @@ public class MinnableOre : MonoBehaviour, IInteractable
     {
         mineRenderer.material = OldMaterial;
         Button.gameObject.SetActive(false);
+        if (IsStone) { Pickaxe.SetActive(false); }
+        
     }
 }
 

@@ -18,6 +18,7 @@ public class TutorialManger : MonoBehaviour
     private bool EisInteractedEnough;
     private int InteractionTimes;
     private string Lastinteractedname;
+    private bool IsStoneInteractedWith;
 
     public TutorialState currentState = TutorialState.Start;
     public void Awake()
@@ -29,6 +30,7 @@ public class TutorialManger : MonoBehaviour
         instance = this;
         TutorialIsActive = true;
         EisInteractedEnough = true;
+        IsStoneInteractedWith = false;
         EnterState(currentState);
 
     }
@@ -75,7 +77,15 @@ public class TutorialManger : MonoBehaviour
             TutorialUiManger.Instance.ShowMessage(Messages[0]);
 
     }
+    public bool PickaxeShouldAppear()
+    {
+        return IsStoneInteractedWith;
+    }
 
+    public void StoneMined()
+    {
+        IsStoneInteractedWith = true;   
+    }
     // External event triggers:
     public void OnSwordPickedUp()
     {

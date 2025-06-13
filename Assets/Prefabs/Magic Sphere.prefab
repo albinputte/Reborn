@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3850316404935231739}
   - component: {fileID: 8030027028139759948}
   - component: {fileID: 5241721922954911341}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4805,7 +4805,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 5945223650859562009}
   - component: {fileID: 6608748850944926008}
   - component: {fileID: 7593905145035101623}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4952,7 +4952,7 @@ GameObject:
   - component: {fileID: 6968302147158018781}
   - component: {fileID: 6090812113300014561}
   - component: {fileID: 8438648039000785202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9746,7 +9746,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 12
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9791,7 +9791,7 @@ GameObject:
   - component: {fileID: 1945562758771047558}
   - component: {fileID: 569058256664291808}
   - component: {fileID: 3988354553843581940}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14585,7 +14585,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 13
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14634,7 +14634,7 @@ GameObject:
   - component: {fileID: 3672881401649357342}
   - component: {fileID: 791816363110378056}
   - component: {fileID: 9102292350151987958}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Magic Sphere
   m_TagString: MagicOrb
   m_Icon: {fileID: 0}
@@ -14696,7 +14696,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 103478742, guid: 8f7485e85cc9faa4e8e9762cc9e3362e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14742,7 +14742,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -14835,10 +14835,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -14852,7 +14852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2583306424081456903}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14896,7 +14896,7 @@ GameObject:
   - component: {fileID: 6374531803204300274}
   - component: {fileID: 7305194910542363791}
   - component: {fileID: 7408648439330339861}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19690,7 +19690,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -19735,7 +19735,7 @@ GameObject:
   - component: {fileID: 3044919777264897632}
   - component: {fileID: 521816039581296316}
   - component: {fileID: 8857804154300571713}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24529,7 +24529,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 12
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -24574,7 +24574,7 @@ GameObject:
   - component: {fileID: 872477803080705960}
   - component: {fileID: 4784450481444891926}
   - component: {fileID: 5691796971685267936}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29368,7 +29368,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 11
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -29413,7 +29413,7 @@ GameObject:
   - component: {fileID: 5568984185590123746}
   - component: {fileID: 5123737799485791369}
   - component: {fileID: 4708267561596456370}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34207,7 +34207,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 13
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -34252,7 +34252,7 @@ GameObject:
   - component: {fileID: 5270247118189992241}
   - component: {fileID: 5964090892332646301}
   - component: {fileID: 1276902368161468647}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39046,7 +39046,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 11
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -39091,7 +39091,7 @@ GameObject:
   - component: {fileID: 755212082927207432}
   - component: {fileID: 2652417128895960741}
   - component: {fileID: 1063791052624123975}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43885,7 +43885,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 13
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -43930,7 +43930,7 @@ GameObject:
   - component: {fileID: 9062301043270838169}
   - component: {fileID: 1093177199320033134}
   - component: {fileID: 1238681644351352948}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48724,7 +48724,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 13
   m_RenderMode: 0
   m_MeshDistribution: 0

@@ -19,6 +19,8 @@ public class CraftingManager : MonoBehaviour, IInteractable
     [SerializeField] private GameObject ItemPrefab;
     [SerializeField] private StructureItemBase structureItem;
     [SerializeField] private InteractableType Type;
+
+    public bool WasPlaced;
     private PlayerInputManger input;
     public bool IsInventoryUi;
     
@@ -29,12 +31,14 @@ public class CraftingManager : MonoBehaviour, IInteractable
     {
         spriteRen = GetComponent<SpriteRenderer>();
         input = FindAnyObjectByType<PlayerInputManger>();
+        WasPlaced = false;
        
     }
  
     //delegate add here
     public void Start()
     {
+        StartCoroutine(PlaceCooldown());
         craftingUI = CraftingUI.Instance;
         availableRecipes = craftingRecipes
              .Where(item => item.IsCraftable)
@@ -104,12 +108,22 @@ public class CraftingManager : MonoBehaviour, IInteractable
     {
         return availableRecipes;
     }
+    public IEnumerator PlaceCooldown()
+    {
+        yield return new WaitForSeconds(0.2f);
+        WasPlaced = true;
+    }
 
   
 
     public void Interact()
     {
-
+        if (!WasPlaced)
+        {
+            input.isInteracting = true;
+            return;
+        }
+            
         
 
         if (!craftingUI.UiIsActive )

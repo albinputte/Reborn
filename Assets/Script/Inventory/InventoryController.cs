@@ -192,7 +192,7 @@ public class InventoryController : MonoBehaviour
         }
         if (item.item is StructureItemBase structure)
         {
-            return "<color=#3483b0>Placable</color>";
+            return "<color=#3483b0>Placable, Needs to be in hotbar</color>";
         }
         if (item.item is AccesoriesItemBase accesories)
         {
