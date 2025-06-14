@@ -106,7 +106,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 85f81091b2b84ce44b23098d703c26e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -215,12 +215,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingRecipes:
+  - {fileID: 11400000, guid: 9183a7f904ce44849847383c1facbd07, type: 2}
   - {fileID: 11400000, guid: 4c289086236e22d43befd33a37abeb34, type: 2}
   - {fileID: 11400000, guid: 56bf7f914ec3b964c9c143567d12cf6f, type: 2}
   - {fileID: 11400000, guid: ce27fa171c6da2446ac08205573206eb, type: 2}
   - {fileID: 11400000, guid: cbc608c4399f3e54191fd2b1e1b16a3e, type: 2}
   - {fileID: 11400000, guid: 3d34335f988f01f4684033e470d4f3d4, type: 2}
-  - {fileID: 11400000, guid: 9183a7f904ce44849847383c1facbd07, type: 2}
   currentCraftingMangerIndex: 0
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes: []
@@ -233,5 +233,6 @@ MonoBehaviour:
   ItemPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   structureItem: {fileID: 11400000, guid: 9cfd880476590be42ad94b7686b920a9, type: 2}
   Type: 2
+  WasPlaced: 0
   IsInventoryUi: 0
   CraftSound: 11

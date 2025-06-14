@@ -106,7 +106,7 @@ MonoBehaviour:
   orePrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   ItemData: {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
   IsStone: 1
-  respawnTime: 90
+  respawnTime: 200
   minOres: 3
   maxOres: 5
   Type: 1

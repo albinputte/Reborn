@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 87e0c30d2f3d54140bb9fc4f131aaac6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 4623320791321979634}
-  unlitSprite: {fileID: 21300000, guid: 87e0c30d2f3d54140bb9fc4f131aaac6, type: 3}
-  litSprite: {fileID: 21300000, guid: fc56cb22dd83db045b8b4c746e5dbfe3, type: 3}
-  finishSprite: {fileID: 21300000, guid: ab3143a4ced7a284f8ecc2fc218ad49c, type: 3}
+  unlitSprite: {fileID: 550256010, guid: f35aac8e9b847614fa2032c07ae919b5, type: 3}
+  litSprite: {fileID: 113338215, guid: f35aac8e9b847614fa2032c07ae919b5, type: 3}
+  finishSprite: {fileID: 354226709, guid: f35aac8e9b847614fa2032c07ae919b5, type: 3}
   gridPosition: {x: 0, y: 0}
   isLit: 0
 --- !u!50 &7897571842387302977
