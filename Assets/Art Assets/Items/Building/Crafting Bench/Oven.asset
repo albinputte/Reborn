@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Oven
   Description: Used for melting ores
-  Icon: {fileID: 21300000, guid: 073749369346f7348ba5a85186b384d9, type: 3}
+  Icon: {fileID: 21300000, guid: e69a1a87807c10b46a4f347e5b7a196a, type: 3}
   itemType: 7
   IsStackable: 0
   IsCraftable: 1
