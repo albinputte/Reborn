@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: <color=#D86A9F>Iron pickaxe</color>
   Description: An advanced pixckaxe used to mine resources effectively
-  Icon: {fileID: 393236885, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
+  Icon: {fileID: -528410937, guid: cca628998d735f34cae71cff8ec47a96, type: 3}
   itemType: 4
   IsStackable: 0
   IsCraftable: 1
