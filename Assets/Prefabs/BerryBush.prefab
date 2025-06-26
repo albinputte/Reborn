@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7073632078434268038}
   - component: {fileID: 8344598259808214966}
+  - component: {fileID: 6861248231461739066}
   - component: {fileID: 7718368542389015661}
   - component: {fileID: 8634502899997073335}
   - component: {fileID: 6619221385186334564}
   - component: {fileID: 6083063175040859739}
+  - component: {fileID: 738047849176763311}
   m_Layer: 6
   m_Name: BerryBush
   m_TagString: Untagged
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 682cde4039bdf9646b38354a11c7b0a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,6 +92,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &6861248231461739066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023418283248417547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5764bcf0e639edf4583a1cda9340f1a3, type: 2}
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7718368542389015661}
+        m_TargetAssemblyTypeName: BerryBush, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!114 &7718368542389015661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +146,7 @@ MonoBehaviour:
   berryPrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   ItemData: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
   BushSprites:
-  - {fileID: 21300000, guid: e92c43e14b892b14da8bc700ec229788, type: 3}
+  - {fileID: 21300000, guid: 682cde4039bdf9646b38354a11c7b0a1, type: 3}
   - {fileID: 21300000, guid: 2f88df940fea10d448263678e24d20c3, type: 3}
   SpawnTime: 30
   MinBerries: 1
@@ -230,6 +270,62 @@ CircleCollider2D:
   m_Offset: {x: 0.25, y: -0.42}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!60 &738047849176763311
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023418283248417547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.3}
+    oldSize: {x: 1.65625, y: 1.46875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.055332184, y: 0.7561722}
+      - {x: -0.36840057, y: 0.67616385}
+      - {x: -0.57852936, y: 0.457143}
+      - {x: -0.54297256, y: -0.08367616}
+      - {x: -0.28367615, y: -0.27589113}
+      - {x: 0.23006439, y: -0.26700097}
+      - {x: 0.4493599, y: 0.054660022}
+      - {x: 0.45317078, y: 0.23012924}
+      - {x: 0.43157578, y: 0.45700568}
+      - {x: 0.38878632, y: 0.5897236}
+      - {x: 0.15449905, y: 0.69394225}
+  m_UseDelaunayMesh: 0
 --- !u!1 &8039949595478192764
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +397,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b0b8202b2a2a3d048af5491f2ed0309a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
