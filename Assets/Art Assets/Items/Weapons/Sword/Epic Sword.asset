@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f2559047857584cb19c749a65f5e05, type: 3}
   m_Name: Epic Sword
   m_EditorClassIdentifier: 
-  Name: <color=#f08e39>Enchanted Sword</color>
+  Name: <color=#f08e39>Reforged Sword</color>
   Description: 'A magical sword where its sharpness is nothing to joke about '
   Icon: {fileID: -385816945, guid: 74d653582ec49d5458200c228fe5027d, type: 3}
   itemType: 4
