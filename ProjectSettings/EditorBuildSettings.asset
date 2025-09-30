@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: bb13f4fe7d7086941bbb562931713d3d
+  - enabled: 1
+    path: Assets/Scenes/Ui.unity
+    guid: 40faa7cf9b26d77468d8a244da9ab6ce
+  - enabled: 1
+    path: Assets/Scenes/Presistent Data.unity
+    guid: afd1cea1efafbbd438dd8022b2d89ae7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: dfdff7f063839134ebac0642738439bd, type: 2}

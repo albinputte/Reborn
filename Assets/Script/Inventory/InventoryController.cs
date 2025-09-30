@@ -60,16 +60,16 @@ public class InventoryController : MonoBehaviour
     }
     private void Start()
     {
-        PrepareInventoryData();
-        PrepareInventoryUI();
+        SceneManger.instance.OnAllEssentialScenesLoaded += PrepareInventoryUI;
+        SceneManger.instance.OnAllEssentialScenesLoaded += PrepareInventoryData;
        
-
-
     }
  
 
     private void PrepareInventoryUI()
     {
+        inventoryUi = FindAnyObjectByType<InventoryUiPage>();
+        craftingUI = FindAnyObjectByType<CraftingUI>();
         inventoryUi.ShowInventory(); 
         inventoryUi.InstantiateInventory();
         inventoryUi.OnSwap += HandleItemSwap;

@@ -44,7 +44,9 @@ public class PlayerInputManger : MonoBehaviour
         
     public void Start()
     {
-        pauseManager = FindAnyObjectByType<PauseManager>();
+        SceneManger.instance.OnAllEssentialScenesLoaded += GetRefrences;
+
+
         agent = FindAnyObjectByType<PlayerWeaponAgent>();
         agent.OnExit += () => CheckBufferedInput("Fire");
 
@@ -53,6 +55,12 @@ public class PlayerInputManger : MonoBehaviour
 
 
     }
+    public void GetRefrences()
+    {
+        Ui = GetUiRefrences.instance.InputMangerUiObjectRefrences;
+        pauseManager = FindAnyObjectByType<PauseManager>();
+    }
+
     private void OnDestroy()
     {
         agent.OnExit -= () => CheckBufferedInput("Fire");
