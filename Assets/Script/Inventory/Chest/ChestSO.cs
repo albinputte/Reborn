@@ -8,7 +8,7 @@ public class ChestSO : ScriptableObject
 {
     public List<InventoryItem> Inventory;
     public InventorySO inventorySo;
-    [SerializeField] private int size;
+    [SerializeField] public int size;
     [SerializeField] public int MaxItemStack;
 
     public Action<Dictionary<int, InventoryItem>> OnInventoryChange;

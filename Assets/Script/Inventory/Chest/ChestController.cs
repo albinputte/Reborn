@@ -95,7 +95,7 @@ public class ChestController : MonoBehaviour
 
     private void updateChestState()
     {
-        InventoryItem[] ItemState = new InventoryItem[chestData.GetChestState().Count];
+        InventoryItem[] ItemState = new InventoryItem[chestData.size];
         foreach (var item in chestData.GetChestState())
         {
             ItemState[item.Key] = item.Value;
@@ -171,7 +171,9 @@ public class ChestController : MonoBehaviour
             }
 
             // Optional: SoundManager.PlaySound(SoundType.SwapItem_Inventory);
+           
         }
+
     }
 
     private void HandleItemAction(int index)
@@ -201,7 +203,7 @@ public class ChestController : MonoBehaviour
     public void HideChest()
     {
         Debug.Log("Hiding chest");
-
+        updateChestState();
         if (chestUi != null)
             chestUi.HideChest();
 
