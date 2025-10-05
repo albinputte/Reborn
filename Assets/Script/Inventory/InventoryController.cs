@@ -70,6 +70,7 @@ public class InventoryController : MonoBehaviour
     {
         inventoryUi = FindAnyObjectByType<InventoryUiPage>();
         craftingUI = FindAnyObjectByType<CraftingUI>();
+        Chest = FindAnyObjectByType<ChestController>();
         inventoryUi.ShowInventory(); 
         inventoryUi.InstantiateInventory();
         inventoryUi.OnSwap += HandleItemSwap;
