@@ -59,6 +59,7 @@ public class PlayerInputManger : MonoBehaviour
     {
         Ui = GetUiRefrences.instance.InputMangerUiObjectRefrences;
         pauseManager = FindAnyObjectByType<PauseManager>();
+        craftUi = FindAnyObjectByType<CraftingUI>();
     }
 
     private void OnDestroy()

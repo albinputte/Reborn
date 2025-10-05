@@ -26,7 +26,13 @@ public class TileManger : MonoBehaviour
     public bool BuildMode;
     private void Awake()
     {
+       
         Instance = this;
+    }
+
+    public void PrepareRefrences()
+    {
+        GroundLayer = GetTileMapRefrence.Instance.Ground;
     }
     private void Start()
     {
@@ -44,6 +50,7 @@ public class TileManger : MonoBehaviour
 
         CreatePreviewObject(seedPrefab);
         BuildMode = false;
+        SceneManger.instance.OnAllEssentialScenesLoaded += PrepareRefrences;
     }
 
     private void Update()
