@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ChestController : MonoBehaviour
@@ -10,6 +11,7 @@ public class ChestController : MonoBehaviour
     public bool ChestUiIsActive;
     private int currentIndex;
     [SerializeField] InventorySO inventory;
+    public string ChestName;
 
     private void Start()
     {
@@ -33,6 +35,7 @@ public class ChestController : MonoBehaviour
     {
         Debug.Log("Initializing Chest");
         ChestUiIsActive = false;
+
 
         CleanupListeners(); // Prevent double subscriptions
 
@@ -63,11 +66,17 @@ public class ChestController : MonoBehaviour
         }
     }
 
-    public void PrepareChestData(List<InventoryItem> ItemToInitialize)
+    public void PrepareChestData(List<InventoryItem> ItemToInitialize, string chestName)
     {
         Debug.Log("Preparing chest data");
-
+        ChestName = chestName;
         chestData.InstantiateInventory();
+
+      
+        if (StateManger.Instance.GetChestState(ChestName) != null) {
+            ItemToInitialize = StateManger.Instance.GetChestState(ChestName).ToList();
+        }
+     
 
         // Prevent double subscription
         chestData.OnInventoryChange -= UpdateChestUI;
@@ -81,6 +90,18 @@ public class ChestController : MonoBehaviour
             Debug.Log($"Adding item to chest: {item}");
             chestData.AddItem(item);
         }
+        updateChestState();
+    }
+
+    private void updateChestState()
+    {
+        InventoryItem[] ItemState = new InventoryItem[chestData.GetChestState().Count];
+        foreach (var item in chestData.GetChestState())
+        {
+            ItemState[item.Key] = item.Value;
+        }
+
+        StateManger.Instance.UpdateChestState(ChestName, ItemState);
     }
 
     private void HandleDragging(int index)
@@ -210,6 +231,8 @@ public class ChestController : MonoBehaviour
 
             chestUi.UpdateChestData(item.Key, item.Value.item.Icon, item.Value.quantity, item.Value.item.Name, item.Value.item.Description, stats);
         }
+
+        updateChestState();
     }
 
     private void UpdateChestUI(Dictionary<int, InventoryItem> dictionary)

@@ -37,7 +37,7 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
             {
                 TutorialManger.instance.EwasInteractedWith(gameObject.name);
             }
-            controller.PrepareChestData(ItemToInitialize);
+            controller.PrepareChestData(ItemToInitialize, gameObject.name);
             controller.ShowChest();
             animator.SetTrigger("ChestInteraction");
 
