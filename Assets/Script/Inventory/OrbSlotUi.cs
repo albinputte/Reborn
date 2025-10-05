@@ -22,8 +22,13 @@ public class OrbSlotUi : MonoBehaviour
         ItemImage.sprite = null;
         ItemImage.enabled = false;
         ItemFrame = GetComponent<Image>();
+        SceneManger.instance.OnAllEssentialScenesLoaded += PrepareRefrences;
     }
 
+    public void PrepareRefrences()
+    {
+        Player = GameObject.Find("Player");
+    }
     public void SetOrb(OrbsItemData orbItem)
     {
         Item = orbItem;
