@@ -17,10 +17,15 @@ public class ChestinteractionManger : MonoBehaviour, IInteractable
 
     public void Start()
     {
-        controller = FindAnyObjectByType<ChestController>();
+        SceneManger.instance.OnAllEssentialScenesLoaded += prepareRefrences;
         ChestRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
+    public void prepareRefrences()
+    {
+        controller = FindAnyObjectByType<ChestController>();
+    }
+
     public void Interact()
     {
       
