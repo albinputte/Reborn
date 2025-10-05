@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HolyFountain : MonoBehaviour,IInteractable
 {
@@ -20,16 +21,36 @@ public class HolyFountain : MonoBehaviour,IInteractable
     private PlayerInputManger input;
 
     private float currentVolume = 0f;
-    public void Awake()
+    public void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
-        input = FindAnyObjectByType<PlayerInputManger>();
+        TryFindPlayer();
+          input = FindAnyObjectByType<PlayerInputManger>();
     }
+
+    private void TryFindPlayer()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerObj != null)
+        {
+            Player = playerObj.transform;
+        }
+        else
+        {
+            SceneManger.instance.OnAllEssentialScenesLoaded += PrepareReferences;
+          
+        }
+    }
+
 
     void Update()
     {
         // Call the method to control sound volume based on distance
         ControlSoundBasedOnDistance();
+    }
+    public void PrepareReferences()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void Interact()
