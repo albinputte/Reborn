@@ -100,7 +100,15 @@ public class InventoryUiSlot : MonoBehaviour
     {
         itemImage.gameObject.SetActive(true);
         this.itemImage.sprite = ItemImage;
-        quantityText.text = Quantity.ToString();
+        
+        if (Quantity == 1)
+        {
+            quantityText.text = "";
+        }
+        else
+        {
+            quantityText.text = Quantity.ToString();
+        }
         this.ItemDescription = Desccription;
         this.ItemName = name;
 

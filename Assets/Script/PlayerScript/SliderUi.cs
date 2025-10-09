@@ -10,8 +10,17 @@ public class SliderUi : MonoBehaviour
 
     private void Start()
     {
+        SceneManger.instance.OnAllEssentialScenesLoaded += PrepareRefrences;
+    }
+
+    public void PrepareRefrences()
+    {
+        health = GameObject.Find("Player").gameObject.GetComponentInChildren<Health>();
         slider.maxValue = health.GetMaxHealth();
         slider.value = health.GetCurrentHealth();
+        health.OnTakeDamage.AddListener(UpdateHealth);
+        health.OnHeal.AddListener(UpdateHealth);
+        health.OnPassivRegen.AddListener(UpdateHealth);
     }
 
     public void UpdateHealth()
