@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b5bdec581a970a42a61c75d0ae49a4a
-      internalID: 1687131610
+      spriteID: f62c80273b26fa946ba4344328e5255e
+      internalID: 274110252
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4b5ac307633c5c42825f65ceccd3a38
-      internalID: 90073879
+      spriteID: 99d028dc0b7b2ff4a9024967c056842e
+      internalID: 107309283
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6237bed4acaeaa4a9f4326b8424ad6c
-      internalID: -1993566056
+      spriteID: d3032f4b3fa5b8a4d868cec7c1171d4d
+      internalID: -898549313
       vertices: []
       indices: 
       edges: []
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45dc29c9afdd70d47a460c3198467902
-      internalID: 724657412
+      spriteID: 5a04a24ab3b498f4f897d6fb84ecf63c
+      internalID: 1189328945
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cliff_highlight_0: 1687131610
-      cliff_highlight_1: 90073879
-      cliff_highlight_2: -1993566056
-      cliff_highlight_3: 724657412
+      cliff_highlight_0: 274110252
+      cliff_highlight_1: 107309283
+      cliff_highlight_2: -898549313
+      cliff_highlight_3: 1189328945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
