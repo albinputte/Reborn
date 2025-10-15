@@ -20,6 +20,15 @@ public class Respawn : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+      
+    }
+    public void Start()
+    {
+        SceneManger.instance.OnAllEssentialScenesLoaded += prepareRef;
+    }
+
+    public void prepareRef()
+    {
         Healthui = FindAnyObjectByType<SliderUi>();
         agent = FindAnyObjectByType<PlayerWeaponAgent>();
     }

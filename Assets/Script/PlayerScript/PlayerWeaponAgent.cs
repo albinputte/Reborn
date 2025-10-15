@@ -84,7 +84,13 @@ public class PlayerWeaponAgent : MonoBehaviour
     public void SetWeapon(WeaponInstances newWeapon)
     {
         //if (CurrentWeapon != null)
-            //inventory.AddItem(CurrentWeapon, 1, CurrentWeaponInstances);
+        //inventory.AddItem(CurrentWeapon, 1, CurrentWeaponInstances);
+        Debug.Log("Setting weapon");
+        if (currentOrb != null)
+        {
+            currentOrb = null;// Clears orb data and disables effects
+        }
+
         CurrentWeaponInstances = newWeapon;
         CurrentWeapon = newWeapon.Weapon;
         currentOrb = newWeapon.GetOrb();

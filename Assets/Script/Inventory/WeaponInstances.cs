@@ -20,7 +20,11 @@ public class WeaponInstances
 
     public void UpdateInventoryPos(int inventoryPos) => this.inventoryPos = inventoryPos;
 
-    public void UpdateOrb(OrbsItemData orbdata) => this.Orbdata = orbdata;
+    public void UpdateOrb(OrbsItemData orbdata)
+    {
+        this.Orbdata = orbdata;
+        Debug.Log("Orb WAS ADDED " + orbdata.Name);
+    } 
 
     public WeaponItemData GetWeapon()
     {

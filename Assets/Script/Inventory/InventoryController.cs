@@ -361,6 +361,7 @@ public class InventoryController : MonoBehaviour
         if (weapon != null)
         {
             InventorySlideInUi.Instance.OpenSlider();
+
         }
         else {
             InventorySlideInUi.Instance.CloseSlider();
@@ -419,6 +420,7 @@ public class InventoryController : MonoBehaviour
             InventoryController.NoWeaponEquiped = false;
             if (item.item is IitemAction action)
             {
+                Debug.Log("ScrollWeapon");
                 action.PerformAction(Character, item.weaponInstances);
                 if (InventoryUiActive)
                     InventorySlideInUi.Instance.OpenSlider();
