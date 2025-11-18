@@ -283,9 +283,15 @@ public class CraftingManager : MonoBehaviour, IInteractable
 
         yield return new WaitForSeconds(0.7f);
         if (rb == null)
+        {
+            Destroy(gameObject);
             yield break;
+        }
+           
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
+        Destroy(gameObject);
+        
     }
 
 }

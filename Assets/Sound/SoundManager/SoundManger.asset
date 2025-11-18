@@ -75,7 +75,7 @@ MonoBehaviour:
     volume: 1
     mixer: {fileID: -6074499232664795035, guid: 4e647ff69f43a184f8873f1cdaa20a5c, type: 2}
     sounds:
-    - {fileID: 8300000, guid: 68e96e104a85bfd41b41ddfba9ce98b4, type: 3}
+    - {fileID: 8300000, guid: f420a1e8ce509ad4eab56fcc2564b2cf, type: 3}
     useRandomPitch: 0
   - name: AnvilCrafting
     volume: 0.347
