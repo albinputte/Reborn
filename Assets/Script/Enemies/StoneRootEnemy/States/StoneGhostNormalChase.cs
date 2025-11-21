@@ -24,7 +24,7 @@ public class StoneGhostNormalChase : StoneGhostState
         else {
             MaxTime = 1f;
         }
-      
+        
         Timer = 0;
         TimerIsActive = true;
     
@@ -42,7 +42,7 @@ public class StoneGhostNormalChase : StoneGhostState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (IsDamaged) { RaycastMovement(controller.Speed, controller.transform, controller.Target, prefersToChase); }
+        if (IsDamaged) { MoveFromPlayer(controller.Speed, controller.transform, controller.Target); }//RaycastMovement(controller.Speed, controller.transform, controller.Target, prefersToChase); }
         else { Move(controller.Speed, controller.transform, controller.Target); }
             if (TimerIsActive)
         {

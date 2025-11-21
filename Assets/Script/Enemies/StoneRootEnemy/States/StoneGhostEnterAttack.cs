@@ -16,6 +16,7 @@ public class StoneGhostEnterAttack : StoneGhostState
         base.Enter();
         animDone = false;
         controller.OnAnimationDone += Finished;
+        // GeneratePath(controller.GhostTransform, controller.Target);
     }
 
     public override void Exit()

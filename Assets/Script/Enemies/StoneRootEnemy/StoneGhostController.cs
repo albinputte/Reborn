@@ -22,6 +22,7 @@ public class StoneGhostController : EnemyBaseController
     public Collider2D col;
     [SerializeField] private GameObject HitPrefab;
     [SerializeField] private bool isConquestEnemy = false;
+    public NodeGrid NodeGrid;
 
     // Gör om så att animationene "rising" tas bort och 
     //att wake up byter mid animation wid animation trigger till go down om spelaren ej är close
@@ -60,6 +61,7 @@ public class StoneGhostController : EnemyBaseController
         rb = GetComponent<Rigidbody2D>();
         health.OnDeath.AddListener(() => m_StateMachine.SwitchState(DeathState));
         Target = GameObject.FindWithTag("Player").transform;
+        NodeGrid = FindObjectOfType<NodeGrid>();
     }
     public void OnAnimDone()
     {

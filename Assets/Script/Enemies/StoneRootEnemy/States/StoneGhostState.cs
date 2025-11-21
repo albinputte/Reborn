@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StoneGhostState : BaseEnemyState<StoneGhostController>
 {
     public static int WasAttacked;
     public static bool IsDamaged = false;
+    private List<Node> currentPath = new List<Node>();
+    private Node currNode;
+    private Node EndNode;
+    private int pathIndex = 0;
     public StoneGhostState(EnemyStateMachine<StoneGhostController> stateMachine, StoneGhostController controller, string animName) : base(stateMachine, controller, animName)
     {
     }
@@ -185,7 +190,42 @@ public class StoneGhostState : BaseEnemyState<StoneGhostController>
     protected void Move(float speed, Transform transform, Transform player)
     {
         float move = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, move);
+        // Find closest nodes
+        if(AstarManger.instance.FindNearestNode(player.position) != EndNode)
+        {
+            currentPath.Clear();
+        }
+
+        if(currNode == null)
+        {
+            currNode = AstarManger.instance.FindNearestNode(transform.position);
+        }
+
+        if(currentPath.Count > 0)
+        {
+            int x = 0;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(currentPath[x].transform.position.x, currentPath[x].transform.position.y, -2), speed * Time.deltaTime);
+
+            if(Vector2.Distance(transform.position, currentPath[x].transform.position) < 0.1f)
+            {
+                currNode = currentPath[x];
+                currentPath.RemoveAt(x);
+            }
+
+        }
+        else
+        {
+            if (currentPath.Count == 0)
+            {
+                currentPath = AstarManger.instance.GeneratePath(currNode,EndNode = AstarManger.instance.FindNearestNode(player.position));
+                if (currentPath.Count > 1)
+                {
+                    currNode = currentPath[1];
+                    currentPath.RemoveAt(0);
+                }
+            }
+        }
+
         if (player.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -193,6 +233,65 @@ public class StoneGhostState : BaseEnemyState<StoneGhostController>
         else
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+    protected void MoveFromPlayer(float speed, Transform transform, Transform player)
+    {
+        float move = speed * Time.deltaTime;
+        // Find closest nodes
+        if (AstarManger.instance.FindFurthestNode(player.position, transform.position) != EndNode)
+        {
+            currentPath.Clear();
+        }
+
+        if (currNode == null)
+        {
+            currNode = AstarManger.instance.FindFurthestNode(transform.position, transform.position);
+        }
+
+        if (currentPath.Count > 0)
+        {
+            int x = 0;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(currentPath[x].transform.position.x, currentPath[x].transform.position.y, -2), speed * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, currentPath[x].transform.position) < 0.1f)
+            {
+                currNode = currentPath[x];
+                currentPath.RemoveAt(x);
+            }
+
+        }
+        else
+        {
+            if (currentPath.Count == 0)
+            {
+                currentPath = AstarManger.instance.GeneratePath(currNode, EndNode = AstarManger.instance.FindFurthestNode(player.position, transform.position));
+                if (currentPath.Count > 1 && currentPath != null)
+                {
+                    currNode = currentPath[1];
+                    currentPath.RemoveAt(0);
+                }
+            }
+        }
+
+        if (player.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+
+
+    public void GeneratePath(Transform transform, Transform player)
+    {
+        if (currentPath.Count == 0)
+        {
+            currentPath = AstarManger.instance.GeneratePath(AstarManger.instance.FindNearestNode(transform.position), AstarManger.instance.FindNearestNode(player.position));
         }
     }
 
