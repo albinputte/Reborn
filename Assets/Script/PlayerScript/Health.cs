@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour, IDamagable
 {
     public HealthData data;
-    private int currentHealth;
+    [SerializeField]private int currentHealth;
     private int maxHealth;
     private bool HasInvinsiabilty;
     private bool IsInvinsiable;
