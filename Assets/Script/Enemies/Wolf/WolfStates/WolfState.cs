@@ -8,24 +8,41 @@ public class WolfState : BaseEnemyState<WolfController>
     {
     }
 
-    private enum ActionType { None, Chase, Attack, Patrol, ReturnToTerritory }
 
-    private ActionType chosenAction = ActionType.None;
-    private bool actionInProgress = false;
+   
 
     public override void Enter()
     {
         base.Enter();
+        controller.animator.Play(animName);
+        controller.OnTakeDamage += Hit;
+    
     }
 
     public override void Exit()
     {
         base.Exit();
+        controller.OnTakeDamage -= Hit;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+       
+ 
+        if (controller.chosenAction == WolfController.ActionType.Patrol && controller.iSePlayer) {
+            controller.stateMachine.SwitchState(controller.spotted);
+        }
+    }
+    public void Hit()
+    {
+    
+        stateMachine.SwitchState(controller.hit);
+
+    }
+    public void Death()
+    {
+        stateMachine.SwitchState(controller.death);
     }
 
     public override void PhysicsUpdate()

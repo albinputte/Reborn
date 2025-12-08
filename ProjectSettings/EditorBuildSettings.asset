@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ui.unity
     guid: 40faa7cf9b26d77468d8a244da9ab6ce
   - enabled: 1
-    path: Assets/Scenes/Presistent Data.unity
+    path: Assets/Prefabs/Presistent Data.unity
     guid: afd1cea1efafbbd438dd8022b2d89ae7
   - enabled: 1
     path: Assets/Scenes/Cave Entrance A.unity

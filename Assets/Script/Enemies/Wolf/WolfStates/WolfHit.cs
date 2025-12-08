@@ -2,17 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WolfHit : MonoBehaviour
+public class WolfHit : WolfState
 {
-    // Start is called before the first frame update
-    void Start()
+    public WolfHit(EnemyStateMachine<WolfController> stateMachine, WolfController controller, string animName) : base(stateMachine, controller, animName)
     {
-        
+    }
+    public bool animDone;
+
+
+    public override void Enter()
+    {
+        base.Enter();
+
+        animDone = false;
+        controller.OnAnimationDone += Finished;
+  
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Exit()
     {
-        
+        base.Exit();
+        controller.OnAnimationDone -= Finished;
+
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        if (animDone)
+        {
+            stateMachine.SwitchState(controller.chase);
+        }
+    }
+
+    public void Finished()
+    {
+        animDone = true;
     }
 }
