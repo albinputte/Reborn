@@ -47,10 +47,39 @@ public class GrootBurnFireRangedAttack : GrootState
     {
 
         controller.OnAnimationAction -= BurnPilarSpawn;
-        GameObject.Instantiate(controller.BurnPilar, new Vector3(controller.player.transform.position.x ,controller.player.transform.position.y ), Quaternion.identity);
+        controller.StartCoroutine(SpawnBurnPillars());
+        //GameObject.Instantiate(controller.BurnPilar, new Vector3(controller.player.transform.position.x ,controller.player.transform.position.y  so), Quaternion.identity);
         controller.BurnCircle.SetActive(true);
         controller.OnAnimationAction += BurnPilarSpawn;
 
+    }
+
+    private IEnumerator SpawnBurnPillars()
+    {
+        Vector3 playerPos = controller.player.transform.position;
+
+        // Enable the circle effect
+        controller.BurnCircle.SetActive(true);
+
+        // Choose axis (Example: X axis)
+        bool useXAxis = Random.value > 0.5f; // change to false if you want Y axis
+
+        // Spawn order offsets
+        int[] offsets = { 2, 1, 0, -1, -2 };
+
+        foreach (int offset in offsets)
+        {
+            Vector3 spawnPos;
+
+            if (useXAxis)
+                spawnPos = new Vector3(playerPos.x + offset, playerPos.y, playerPos.z);
+            else
+                spawnPos = new Vector3(playerPos.x, playerPos.y + offset, playerPos.z);
+
+            GameObject.Instantiate(controller.BurnPilar, spawnPos, Quaternion.identity);
+
+            yield return new WaitForSeconds(0.15f); // small delay
+        }
     }
     public void FinishAnimation()
     {

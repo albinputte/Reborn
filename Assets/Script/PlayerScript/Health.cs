@@ -22,7 +22,7 @@ public class Health : MonoBehaviour, IDamagable
     public UnityEvent OnPassivRegen;
     [SerializeField] private bool IsPlayer;
 
-
+    private bool IsTakingDOT;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class Health : MonoBehaviour, IDamagable
         currentHealth = maxHealth;
         HasInvinsiabilty = data.hasInvincibilty;
         InvinciableTimer = data.invincibiltyTime;
-
+        IsTakingDOT = false;
         if (IsPlayer)
             InvokeHealthRegen();
     }
@@ -74,6 +74,45 @@ public class Health : MonoBehaviour, IDamagable
     {
         StopCoroutine(StartInvinsiabiltyTimer(InvinciableTimer));
       
+    }
+
+    public void ApplyDamageOverTime(int amountPerTick, float interval, int ticks)
+    {
+        if (!IsTakingDOT)
+        {
+            StartCoroutine(DamageOverTimeRoutine(amountPerTick, interval, ticks));
+        }
+       
+    }
+
+    private IEnumerator DamageOverTimeRoutine(int amountPerTick, float interval, int ticks)
+    {
+        IsTakingDOT = true;
+        for (int i = 0; i < ticks; i++)
+        {
+          
+            DamageOverTimeTick(amountPerTick);
+            yield return new WaitForSeconds(interval);
+        }
+        IsTakingDOT = false;
+    }
+
+    public void DamageOverTimeTick(int amount)
+    {
+        
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
+            DamageAmount = amount;
+            OnTakeDamage?.Invoke();
+            OnDeath?.Invoke();
+        }
+        else
+        {
+            DamageAmount = amount;
+            OnTakeDamage?.Invoke();
+        }
     }
 
     public void heal(int amount, bool PassivRegen)

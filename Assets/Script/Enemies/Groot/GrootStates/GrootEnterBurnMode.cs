@@ -16,6 +16,7 @@ public class GrootEnterBurnMode : GrootState
         base.Enter();
         BurnMode = true;
         animDone = false;
+        controller.BurnMode = BurnMode; 
         controller.OnAnimatioDone += Finished;
 
     }

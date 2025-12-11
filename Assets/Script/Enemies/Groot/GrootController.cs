@@ -26,7 +26,7 @@ public class GrootController : EnemyBaseController
     public GrootBurnEnterFireRangedAttack EnterRangedAttack;
     public GrootBurnFireRangedAttack RangedAttack;
     public GrootBurnIdle BurnIdle;
-
+    public bool BurnMode = false;
     [Header("Movement")]
     public Transform player;                     // Assign in inspector
     public float MoveSpeed = 4f;
