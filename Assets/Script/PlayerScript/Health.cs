@@ -216,15 +216,22 @@ public class Health : MonoBehaviour, IDamagable
 
     public void SpawnParticlesFromTarget(GameObject ParticlePrefab)
     {
+        if (ParticlePrefab == null)
+            return;
         Vector3 direction = new Vector3(tempKnockBack.x, tempKnockBack.y).normalized;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
         Instantiate(ParticlePrefab, transform.position, rotation);
     }
     public void SpawnParticlesFromTargetWithWeapon ()
     {
+        //add so only player can do this :)
+
+        var weapon = PlayerWeaponAgent.Instance.CurrentWeapon;
+        if (weapon == null)
+            return;
         Vector3 direction = new Vector3(tempKnockBack.x, tempKnockBack.y).normalized;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        Instantiate(PlayerWeaponAgent.Instance.CurrentWeapon.AttackParticle, transform.position, rotation);
+         Instantiate(PlayerWeaponAgent.Instance.CurrentWeapon.AttackParticle, transform.position, rotation);
     }
 
     public void SpawnParticlesFromTarget(GameObject ParticlePrefab, Vector2 dir)

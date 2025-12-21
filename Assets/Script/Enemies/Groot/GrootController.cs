@@ -42,7 +42,7 @@ public class GrootController : EnemyBaseController
     private List<Node> currentPath = new List<Node>();
     private Node currNode = null;
     private Node EndNode = null;
-
+    float test;
 
     public void Start()
     {
@@ -60,7 +60,8 @@ public class GrootController : EnemyBaseController
         RangedAttack = new GrootBurnFireRangedAttack(m_StateMachine, this, "GrootBurnRangedAttack");
         EnterFireAttack = new GrootBurnEnterFireAttack(m_StateMachine, this, "GrootBurnEnterAttack");
         FireAttack = new GrootBurnFireAttack(m_StateMachine, this, "GrootBurnAttack");
-
+        test = 1 / 2f;
+        Debug.Log(test);
        
         m_StateMachine.InstantiateState(Idle);
 
