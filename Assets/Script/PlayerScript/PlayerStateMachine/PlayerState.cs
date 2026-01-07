@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,10 +15,11 @@ public class PlayerState
     protected Vector2 CurrentVelocity;
     protected bool IsAbilityDone;
     protected Directions directions;
+    public static Vector2 LastMoveDir;
     private float checkCooldown = 0f;
     private const float checkInterval = 0.1f;
     public bool IsAttacking = false;
-    private static readonly Dictionary<Vector2, Directions> DirectionMap = new Dictionary<Vector2, Directions>
+    public static readonly Dictionary<Vector2, Directions> DirectionMap = new Dictionary<Vector2, Directions>
 {
     { new Vector2(1, 0), Directions.Right },
     { new Vector2(0, 1), Directions.Up },
@@ -28,6 +30,7 @@ public class PlayerState
     { new Vector2(-1, 1), Directions.LeftUp },
     { new Vector2(-1, -1), Directions.LeftDown }
 };
+    public static readonly Dictionary<Directions, Vector2> ReverseDirectionMap = DirectionMap.ToDictionary(kvp => kvp.Value, kvp => kvp.Key);
 
     private static readonly (float min, float max, Directions dir)[] angleToDirectionMap = new[]
  {
@@ -94,7 +97,14 @@ public class PlayerState
 
     public void MovementXY()
     {
-        if(!controller.Input.isSprinting) 
+        
+        if (controller.Input.moveDir != Vector2.zero)
+        {
+            LastMoveDir = controller.Input.moveDir;
+
+        }
+        Debug.Log("Dir is " + LastMoveDir);
+        if (!controller.Input.isSprinting) 
         {
          
             controller.rb.velocity = new Vector2(controller.Input.moveDir.x * Mathf.Lerp(0, (playerData.moveSpeed + StatSystem.instance.GetStat(StatsType.Speed)),1f), controller.Input.moveDir.y * Mathf.Lerp(0, (playerData.moveSpeed + StatSystem.instance.GetStat(StatsType.Speed)) , 1f));
@@ -104,6 +114,16 @@ public class PlayerState
         {
             controller.rb.velocity = new Vector2(controller.Input.normInputX * playerData.runSpeed, controller.Input.normInputY * playerData.runSpeed);
         }
+        
+     
+        
+    }
+
+    public void Dash()
+    {
+        Debug.Log("dash " + LastMoveDir.x + " " + LastMoveDir.y + " " + playerData.dashSpeed);
+        controller.rb.velocity = new Vector2(LastMoveDir.x * playerData.dashSpeed, LastMoveDir.y * (playerData.dashSpeed));
+        CurrentVelocity = new Vector2(LastMoveDir.x * playerData.dashSpeed, LastMoveDir.y * (playerData.dashSpeed));
     }
 
     public void SetVelocity(Vector2 vel)
@@ -144,6 +164,7 @@ public class PlayerState
             if ((angle >= min && angle < max) || (min > max && (angle >= min || angle < max))) // handles wrapping
             {
                 //HandleSpriteFlip(dir);
+                LastMoveDir = ReverseDirectionMap[dir];
                 return dir;
             }
         }
@@ -296,6 +317,8 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
         var inputX = controller.Input.normInputX;
         var inputY = controller.Input.normInputY;
 
+      
+
         if (inputX == 0 && inputY == 0)
         {
             stateMachine.SwitchState(controller.idle);
@@ -307,6 +330,12 @@ public Directions GetPlayerQuadrant(Transform player, Transform origin)
         else
         {
             stateMachine.SwitchState(controller.move);
+        }
+
+        if (controller.Input.IsDashing)
+        {
+            stateMachine.SwitchState(controller.dashState);
+           
         }
     }
 

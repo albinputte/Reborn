@@ -7,4 +7,6 @@ public class PlayerData : ScriptableObject
 {
     public float moveSpeed;
     public float runSpeed;
+    public float dashSpeed;
+    public float DashTime;
 }

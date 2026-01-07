@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public InteractMinning MinningState { get; private set; }
     public RebornStartState StartState { get; private set; }
     public PlayerDeathState playerDeathState { get; private set; }
+    public DashState dashState { get; private set; }
 
     void Start()
     {
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         StartState = new RebornStartState(stateMachine, playerData, "RebornStartIntro", this);
         MinningState = new InteractMinning(stateMachine, playerData, "MiningAnim", this);
         playerDeathState = new PlayerDeathState(stateMachine, playerData, "Die",this);
+        dashState = new DashState(stateMachine, playerData, "Dash", this);
         stateMachine.InisiateState(StartState);
        
      

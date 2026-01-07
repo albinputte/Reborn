@@ -23,6 +23,7 @@ public class PlayerInputManger : MonoBehaviour
     public bool isInteracting;
     public bool IsAttacking;
     public bool ActionPefromed;
+    public bool IsDashing;
     private bool CanPefromKeyBuffer;
     public GameObject[] Ui;
     private PlayerController controller;
@@ -65,6 +66,7 @@ public class PlayerInputManger : MonoBehaviour
     private void OnDestroy()
     {
         agent.OnExit -= () => CheckBufferedInput("Fire");
+     
     }
     private void OnDisable()
     {
@@ -80,6 +82,24 @@ public class PlayerInputManger : MonoBehaviour
         normInputY = (int)(rawInput * Vector2.up).normalized.y;
         moveDir = new Vector2(normInputX, normInputY).normalized;
 
+    }
+    public void OnDashInput(InputAction.CallbackContext context)
+    {
+        if(IsDashing)
+            return;
+        else if(CanPefromKeyBuffer)
+        {
+            CheckBufferedInput("DashHotkey");
+            return;
+        }
+    
+
+        if(!ActionPefromed && context.performed)
+        {
+            IsDashing = true;
+            CanPefromKeyBuffer = true;
+        }
+      
     }
 
     public void FixedUpdate()
@@ -300,8 +320,17 @@ public class PlayerInputManger : MonoBehaviour
             {
               
                 BufferList.Remove(actionName); // Optionally consume it
-                StartCoroutine(PeformAttack());
-             
+                if(actionName == "Fire")
+                {
+                    StartCoroutine(PeformAttack());
+                }
+                else if (actionName == "DashHotkey")
+                {
+                    StartCoroutine(PerformDash());
+                }
+
+
+
             }
             else
             {
@@ -319,6 +348,12 @@ public class PlayerInputManger : MonoBehaviour
         IsAttacking = true;
         ActionPefromed = true;
   
+    }
+    public IEnumerator PerformDash()
+    {
+        yield return new WaitForSeconds(0.1f);
+        IsDashing = true;
+        ActionPefromed = true ;
     }
 
     private bool IsPointerOverUI()
