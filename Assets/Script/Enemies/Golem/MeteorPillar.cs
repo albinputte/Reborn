@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MeteorPillar : GolemPillar
 {
     [Header("Prefabs")]
     public GameObject shadowPrefab;
     public GameObject meteorPrefab;
-
-    public GameObject BigCrystalShadow;
     public GameObject BigCrystalPrefab;
 
-    [SerializeField]private List<GameObject> CrystalSpawnList = new List<GameObject>();
-    private GolemBossController bossController;
-    private CreaturePillar HealPilar;
+    [Header("References")]
+    public Tilemap arenaTilemap;
+    [SerializeField] private Transform Center;
 
     [Header("Meteor Settings")]
     public float spawnHeight = 10f;
@@ -22,61 +20,207 @@ public class MeteorPillar : GolemPillar
 
     [Header("Grid Settings")]
     public float gridCellSize = 2f;
-    public int gridRadius = 1; // 1 = 3x3 grid
+    public float[] gridcellsizeOffset;
+    public int gridRadius = 2;
 
     [Header("Wave Settings")]
     public int waves = 3;
     public int meteorsPerWave = 4;
-    public int BigCrystalPerWave;
+    public int BigCrystalPerWave = 1;
     public float waveDelay = 2f;
 
-    [Header("Random Spawn Delay")]
-    public float minSpawnDelay = 0f;
-    public float maxSpawnDelay = 0.4f;
-    public void Start()
+    [Header("Spawn Bias")]
+    [Range(0f, 1f)] public float playerBias = 0.7f;
+    [Range(0f, 1f)] public float centerBias = 0.8f;
+
+    private GolemBossController bossController;
+    private CreaturePillar healPillar;
+    private BoundsInt arenaBounds;
+
+    // Tracks occupied tiles per wave (prevents overlap)
+    private HashSet<Vector3Int> occupiedCells = new();
+
+    void Start()
     {
         bossController = GetComponentInParent<GolemBossController>();
-        HealPilar = GetCreaturePillar();
-    }
-    public override void ExecuteAbility()
-    {
-        StartCoroutine(MeteorGridWavesRoutine());
+        healPillar = GetCreaturePillar();
+        arenaBounds = arenaTilemap.cellBounds;
     }
 
-    IEnumerator MeteorGridWavesRoutine()
+    public override void ExecuteAbility()
+    {
+        StartCoroutine(MeteorWaveRoutine());
+    }
+
+    // ─────────────────────────────────────────────
+    // MAIN ROUTINE
+    // ─────────────────────────────────────────────
+    IEnumerator MeteorWaveRoutine()
     {
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 arenaCenter = Center.position;
 
         for (int w = 0; w < waves; w++)
         {
-            Vector3 playerGridPos = SnapToGrid(player.position);
+            occupiedCells.Clear();
 
-            // 1️⃣ Always spawn one on player
-            SpawnMeteor(playerGridPos);
-
-            // 2️⃣ Collect available grid positions
-            List<Vector3> availablePositions = GetGridPositionsAround(playerGridPos);
-
-            // Remove player cell so no duplicates
-            availablePositions.Remove(playerGridPos);
-            ShuffleCrystals();
-            // Shuffle positions
-            Shuffle(availablePositions);
-
-            int count = Mathf.Min(meteorsPerWave+ BigCrystalPerWave, availablePositions.Count);
-
-            for (int i = 0; i < count; i++)
+            // Small meteors (player pressure)
+            for (int i = 0; i < meteorsPerWave; i++)
             {
-                float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
-                StartCoroutine(DelayedMeteorSpawn(availablePositions[i], delay, CrystalSpawnList[i]));
-                yield return new WaitForSeconds(delay);
+                if (TryGetValidNearPlayer(player, out Vector3 spawnPos))
+                {
+                 
+                    StartCoroutine(SpawnMeteorWithWarning(spawnPos, meteorPrefab));
+                }
+
+                yield return new WaitForSeconds(Random.Range(0.1f, 0.3f));
+            }
+
+            // Big crystals (arena control)
+            for (int i = 0; i < BigCrystalPerWave; i++)
+            {
+                if (TryGetValidTowardCenter(arenaCenter, out Vector3 spawnPos))
+                {
+                    StartCoroutine(SpawnMeteorWithWarning(spawnPos, BigCrystalPrefab));
+                }
             }
 
             yield return new WaitForSeconds(waveDelay);
         }
     }
 
-    #region Grid Helpers
+    // ─────────────────────────────────────────────
+    // POSITION SELECTION (TRY-PATTERN)
+    // ─────────────────────────────────────────────
+
+    bool TryGetValidNearPlayer(Transform player, out Vector3 result)
+    {
+        for (int attempt = 0; attempt < 15; attempt++)
+        {
+            Vector3 playerGridPos = SnapToGrid(player.position);
+            Vector3 candidate = GetBiasedPositionNearPlayer(playerGridPos);
+          
+            if (IsValidAndFree(candidate))
+            {
+                RegisterCell(candidate);
+                result = candidate;
+               
+                return true;
+            }
+        }
+
+        result = Vector3.zero;
+        return false;
+    }
+
+    bool TryGetValidTowardCenter(Vector3 center, out Vector3 result)
+    {
+        for (int attempt = 0; attempt < 15; attempt++)
+        {
+            Vector3 candidate = GetBiasedPositionTowardCenter(center);
+
+            if (IsValidAndFree(candidate))
+            {
+          
+                result = RegisterCell(candidate);
+
+                return true;
+            }
+        }
+
+        result = Vector3.zero;
+        return false;
+    }
+
+    bool IsValidAndFree(Vector3 worldPos)
+    {
+        Vector3Int cell = arenaTilemap.WorldToCell(worldPos);
+
+        if (!arenaBounds.Contains(cell)) return false;
+        if (!arenaTilemap.HasTile(cell)) return false;
+        if (occupiedCells.Contains(cell)) return false;
+
+        return true;
+    }
+
+    Vector3 RegisterCell(Vector3 worldPos)
+    {
+        Vector3Int cell = arenaTilemap.WorldToCell(worldPos);
+        occupiedCells.Add(cell);
+        return arenaTilemap.CellToWorld(cell);
+    }
+
+    // ─────────────────────────────────────────────
+    // BIAS LOGIC
+    // ─────────────────────────────────────────────
+
+    Vector3 GetBiasedPositionNearPlayer(Vector3 playerGridPos)
+    {
+        List<Vector3> candidates = new();
+
+        for (int x = -gridRadius; x <= gridRadius; x++)
+        {
+            for (int y = -gridRadius; y <= gridRadius; y++)
+            {
+                if (x == 0 && y == 0) continue;
+
+                Vector3 pos = playerGridPos + new Vector3(
+                    x * (gridCellSize + Random.Range(gridcellsizeOffset[0],gridcellsizeOffset[1])),
+                    y * (gridCellSize + Random.Range(gridcellsizeOffset[2], gridcellsizeOffset[3])),
+                    0
+                );
+
+                candidates.Add(pos);
+                
+            }
+        }
+
+        candidates.Sort((a, b) =>
+            Vector3.Distance(a, playerGridPos)
+            .CompareTo(Vector3.Distance(b, playerGridPos)));
+
+        int maxIndex = Mathf.RoundToInt(
+            Mathf.Lerp(candidates.Count - 1, 0, playerBias)
+        );
+
+        return candidates[Random.Range(0, maxIndex + 1)];
+    }
+
+    Vector3 GetBiasedPositionTowardCenter(Vector3 center)
+    {
+        float radius = gridRadius * gridCellSize * 2f;
+        Vector2 random = Random.insideUnitCircle * radius;
+        Vector2 biased = Vector2.Lerp(random, Vector2.zero, centerBias);
+        return SnapToGrid(center + new Vector3(biased.x, biased.y, 0));
+    }
+
+    // ─────────────────────────────────────────────
+    // SPAWNING
+    // ─────────────────────────────────────────────
+
+    IEnumerator SpawnMeteorWithWarning(Vector3 groundPos, GameObject prefab)
+    {
+        // Shadow ONLY spawns if meteor WILL spawn
+        GameObject shadow = Instantiate(shadowPrefab, groundPos, Quaternion.identity);
+
+        yield return new WaitForSeconds(warningTime);
+
+        Vector3 spawnPos = groundPos + Vector3.up * spawnHeight;
+        GameObject meteor = Instantiate(prefab, spawnPos, Quaternion.identity);
+
+        if (meteor.TryGetComponent<FallingMeteor>(out FallingMeteor crystal))
+        {
+            crystal.Init(groundPos, shadow);
+        }
+        else if (meteor.TryGetComponent<BigCrystalFalling>(out BigCrystalFalling bigCrystal))
+        {
+            bigCrystal.Init(groundPos, shadow, healPillar);
+        }
+    }
+
+    // ─────────────────────────────────────────────
+    // HELPERS
+    // ─────────────────────────────────────────────
 
     Vector3 SnapToGrid(Vector3 position)
     {
@@ -85,109 +229,15 @@ public class MeteorPillar : GolemPillar
         return new Vector3(x, y, 0);
     }
 
-    List<Vector3> GetGridPositionsAround(Vector3 center)
-    {
-        List<Vector3> positions = new();
-
-        for (int x = -gridRadius; x <= gridRadius; x++)
-        {
-            for (int y = -gridRadius; y <= gridRadius; y++)
-            {
-                Vector3 pos = center + new Vector3(
-                    x * gridCellSize,
-                    y * gridCellSize,
-                    0
-                );
-                positions.Add(pos);
-            }
-        }
-
-        return positions;
-    }
-
-    public void ShuffleCrystals()
-    {
-        CrystalSpawnList.Clear();
-
-        // Add meteors
-        for (int i = 0; i < meteorsPerWave; i++)
-        {
-            CrystalSpawnList.Add(meteorPrefab);
-        }
-
-        // Add big crystals
-        for (int i = 0; i < BigCrystalPerWave; i++)
-        {
-            CrystalSpawnList.Add(BigCrystalPrefab);
-
-        }
-
-        // Shuffle list (Fisher–Yates)
-        for (int i = 0; i < CrystalSpawnList.Count; i++)
-        {
-            int rand = Random.Range(i, CrystalSpawnList.Count);
-            (CrystalSpawnList[i], CrystalSpawnList[rand]) =
-                (CrystalSpawnList[rand], CrystalSpawnList[i]);
-        }
-    }
-
-    void Shuffle(List<Vector3> list)
-    {
-        for (int i = 0; i < list.Count; i++)
-        {
-            int rnd = Random.Range(i, list.Count);
-            (list[i], list[rnd]) = (list[rnd], list[i]);
-        }
-    }
-
-    #endregion
-
-    #region Meteor Spawn
-
-    void SpawnMeteor(Vector3 groundPos)
-    {
-        StartCoroutine(MeteorRoutine(groundPos, meteorPrefab));
-    }
-
-    IEnumerator DelayedMeteorSpawn(Vector3 groundPos, float delay, GameObject FallingPrefab)
-    {
-        yield return new WaitForSeconds(delay);
-        yield return MeteorRoutine(groundPos, FallingPrefab);
-    }
-
-    IEnumerator MeteorRoutine(Vector3 groundPos, GameObject FallingPrefab)
-    {
-        GameObject shadow = Instantiate(shadowPrefab, groundPos, Quaternion.identity);
-
-        yield return new WaitForSeconds(warningTime);
-
-        Vector3 meteorPos = groundPos + Vector3.up * spawnHeight;
-        GameObject meteor = Instantiate(FallingPrefab, meteorPos, Quaternion.identity);
-
-        if (meteor.TryGetComponent<FallingMeteor>(out FallingMeteor crystal))
-        {
-            crystal.Init(groundPos, shadow);
-        }
-        else if(meteor.TryGetComponent<BigCrystalFalling>(out BigCrystalFalling BigCrystal))
-        {
-            BigCrystal.Init(groundPos, shadow, HealPilar);
-        }
-
-
-     
-             
-    }
     private CreaturePillar GetCreaturePillar()
     {
         foreach (var pillar in bossController.pillars)
         {
-            if (pillar is CreaturePillar creaturePillar)
-                return creaturePillar;
+            if (pillar is CreaturePillar creature)
+                return creature;
         }
 
         Debug.LogWarning("No CreaturePillar found!");
         return null;
     }
-
-    #endregion
 }

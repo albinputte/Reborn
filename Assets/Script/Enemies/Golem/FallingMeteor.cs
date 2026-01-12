@@ -10,6 +10,8 @@ public class FallingMeteor : MonoBehaviour
 
     private Vector3 targetPosition;
     private GameObject shadow;
+    [SerializeField ] private GameObject Splash;
+    [SerializeField] private Transform splashSpawn;
 
     public void Init(Vector3 targetPos, GameObject shadowObj)
     {
@@ -25,8 +27,10 @@ public class FallingMeteor : MonoBehaviour
             fallSpeed * Time.deltaTime
         );
 
-        if (Vector3.Distance(transform.position, targetPosition) <= 0.05f)
+        if (Vector3.Distance(transform.position, targetPosition) <= 0.3f)
         {
+            GameObject ob = Instantiate(Splash, splashSpawn.position, Quaternion.identity);
+            Destroy(ob, 0.5f);
             Impact();
         }
     }
@@ -38,7 +42,7 @@ public class FallingMeteor : MonoBehaviour
             targetPosition,
             damageRadius
         );
-
+     
         foreach (var hit in hits)
         {
             IDamagable damagable = hit.GetComponent<IDamagable>();
@@ -54,7 +58,7 @@ public class FallingMeteor : MonoBehaviour
             }
 
         }
-
+ 
         if (shadow != null)
             Destroy(shadow);
 

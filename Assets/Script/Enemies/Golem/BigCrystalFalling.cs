@@ -13,6 +13,7 @@ public class BigCrystalFalling : MonoBehaviour
     private GameObject shadow;
     private CreaturePillar pillar;
     private bool HasImpact = false;
+    [SerializeField] private GameObject hitSplash;
 
     public void Init(Vector3 targetPos, GameObject shadowObj, CreaturePillar Pilar)
     {
@@ -42,6 +43,7 @@ public class BigCrystalFalling : MonoBehaviour
             targetPosition,
             damageRadius
         );
+        hitSplash.SetActive( true );
 
         foreach (var hit in hits)
         {
