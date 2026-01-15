@@ -1,5 +1,5 @@
 
-public class BatIdleState : BaseEnemyState<BatEnemyController>
+public class BatIdleState : BatbaseState
 {
     public BatIdleState(EnemyStateMachine<BatEnemyController> sm, BatEnemyController c, string a)
         : base(sm, c, a) { }

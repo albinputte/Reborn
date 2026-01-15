@@ -15,11 +15,13 @@ public class GolemChargingState : GolemBaseState
     public override void Enter()
     {
         base.Enter();
+        controller.StartPillarCharging();
         time = controller.ChargeTimePhase + Time.time;
     }
 
     public override void LogicUpdate()
     {
+        Debug.Log("Golem " + HasQueuedAbility());
         if (Time.time >= time && HasQueuedAbility())
         {
             stateMachine.SwitchState(

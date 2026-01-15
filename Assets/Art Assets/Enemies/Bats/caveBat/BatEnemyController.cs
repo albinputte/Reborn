@@ -32,11 +32,12 @@ public class BatEnemyController : EnemyBaseController
     public float stateTimer;
 
     public Transform Player;
+    public Animator animator;
 
     protected virtual void Awake()
     {
         StateMachine = new EnemyStateMachine<BatEnemyController>();
-
+        animator = GetComponent<Animator>();
         IdleState   = new BatIdleState(StateMachine, this, "Idle");
         AlertState  = new BatAlertState(StateMachine, this, "Alert");
         PatrolState = new BatPatrolState(StateMachine, this, "Fly");
@@ -94,5 +95,17 @@ public class BatEnemyController : EnemyBaseController
             targetPos,
             moveSpeed * Time.deltaTime
         );
+    }
+    public static string[] GetAnimNames()
+    {
+        return new[]
+        {
+        "Idle",
+        "Alert",
+        "Fly",
+        "Attack",
+        "Flee",
+        "Dead"
+    };
     }
 }

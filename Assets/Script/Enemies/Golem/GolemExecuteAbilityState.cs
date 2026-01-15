@@ -16,6 +16,7 @@ public class GolemExecuteAbilityState : GolemBaseState
         base.Enter();
 
         GolemAbilityType ability = controller.GetNextAbility();
+        Debug.Log("uWU " +  ability);
         Debug.Log(ability.ToString());
         switch (ability)
         {
@@ -27,6 +28,11 @@ public class GolemExecuteAbilityState : GolemBaseState
                 break;
             case GolemAbilityType.Creature:
                 stateMachine.SwitchState(new GolemExecuteHeal(stateMachine, controller, ""));
+                break;
+            case GolemAbilityType.Wall:
+                stateMachine.SwitchState(
+                    new GolemExecuteLaser(stateMachine, controller, "")
+                    );
                 break;
             case GolemAbilityType.none:
                 stateMachine.SwitchState(new GolemIdleState(stateMachine, controller));

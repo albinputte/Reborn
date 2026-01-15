@@ -21,7 +21,7 @@ public class GolemExecuteCrystalRain : GolemBaseState
         base.Enter();
 
         // 1️⃣ Prevent instant exit
-        exitTime = Time.time + Mathf.Max(0.1f, controller.TimeBetweenPhases);
+        exitTime = Time.time + Mathf.Max(0.1f, controller.TimeBetweenPhases[0]);
 
         // 2️⃣ Execute Meteor ability ONLY
         MeteorPillar pillar = GetMeteorPillar();
@@ -56,6 +56,12 @@ public class GolemExecuteCrystalRain : GolemBaseState
                 stateMachine.SwitchState(
                     new GolemExecuteHeal(stateMachine, controller, "")
                 );
+                break;
+
+            case GolemAbilityType.Wall:
+                stateMachine.SwitchState(
+                    new GolemExecuteLaser(stateMachine, controller, "")
+                    );
                 break;
 
             default:

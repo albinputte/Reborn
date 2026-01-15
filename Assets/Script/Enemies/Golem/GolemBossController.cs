@@ -15,14 +15,16 @@ public class GolemBossController : EnemyBaseController
     public Queue<GolemAbilityType> abilityQueue = new();
     public Animator animator;
     public float ChargeTimePhase;
-    public float TimeBetweenPhases;
+    public float[] TimeBetweenPhases;
 
+    private BossHealthBar healthBar;
 
 
     private void Start()
     {
         stateMachine = new EnemyStateMachine<GolemBossController> ();
         stateMachine.InstantiateState(new GolemIdleState(stateMachine, this));
+        SceneManger.instance.OnAllEssentialScenesLoaded += StartBoss;
     }
 
     private void Update()
@@ -30,6 +32,11 @@ public class GolemBossController : EnemyBaseController
         stateMachine.CurrentState?.LogicUpdate();
     }
 
+    public void StartBoss()
+    {
+        healthBar = BossHealthBar.instance;
+        healthBar.SetBossHealthBar(crystalHealth);
+    }
     public void AddAbilityPoint(GolemAbilityType ability)
     {
         abilityPoints++;

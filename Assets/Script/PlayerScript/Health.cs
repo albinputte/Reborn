@@ -209,6 +209,10 @@ public class Health : MonoBehaviour, IDamagable
         
     }
 
+    public void ChainDamage(Health health)
+    {
+        health.TakeDamage((int)DamageAmount);
+    }
     public void SpawnParticles(GameObject ParticlePrefab)
     {
         Instantiate(ParticlePrefab, transform.position, Quaternion.identity);

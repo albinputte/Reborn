@@ -1,5 +1,5 @@
 
-public class BatAlertState : BaseEnemyState<BatEnemyController>
+public class BatAlertState : BatbaseState
 {
     public BatAlertState(EnemyStateMachine<BatEnemyController> sm, BatEnemyController c, string a)
         : base(sm, c, a) { }

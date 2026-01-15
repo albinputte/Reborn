@@ -21,7 +21,7 @@ public class GolemExecuteHeal : GolemBaseState
         base.Enter();
 
         // 1️⃣ Prevent instant exit
-        exitTime = Time.time + Mathf.Max(0.1f, controller.TimeBetweenPhases);
+        exitTime = Time.time + Mathf.Max(0.1f, controller.TimeBetweenPhases[1]);
 
         // 2️⃣ Execute Creature ability ONLY
         CreaturePillar pillar = GetCreaturePillar();
@@ -56,6 +56,11 @@ public class GolemExecuteHeal : GolemBaseState
                 stateMachine.SwitchState(
                     new GolemExecuteHeal(stateMachine, controller, "")
                 );
+                break;
+            case GolemAbilityType.Wall:
+                stateMachine.SwitchState(
+                    new GolemExecuteLaser(stateMachine, controller, "")
+                    );
                 break;
 
             default:

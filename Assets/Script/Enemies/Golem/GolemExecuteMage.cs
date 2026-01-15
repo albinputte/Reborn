@@ -19,7 +19,7 @@ public class GolemExecuteMage : GolemBaseState
         base.Enter();
 
         // 1️⃣ Ensure we don't instantly exit the state
-        exitTime = Time.time + Mathf.Max(0.1f, controller.TimeBetweenPhases);
+        exitTime = Time.time + Mathf.Max(0.1f, controller.TimeBetweenPhases[2]);
 
         // 2️⃣ Execute Mage ability (do NOT get next ability yet)
         MagePillar pillar = GetMagePillar();
@@ -56,6 +56,11 @@ public class GolemExecuteMage : GolemBaseState
                 stateMachine.SwitchState(
                     new GolemExecuteHeal(stateMachine, controller, "")
                 );
+                break;
+            case GolemAbilityType.Wall:
+                stateMachine.SwitchState(
+                    new GolemExecuteLaser(stateMachine, controller, "")
+                    );
                 break;
 
             case GolemAbilityType.none:

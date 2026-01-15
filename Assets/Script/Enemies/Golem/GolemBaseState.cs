@@ -17,6 +17,7 @@ public abstract class GolemBaseState
     {
         // Common logic for ALL golem states
         controller.animator?.Play(animName);
+        Debug.Log(stateMachine.CurrentState);
     }
 
     protected void FacePlayer()
