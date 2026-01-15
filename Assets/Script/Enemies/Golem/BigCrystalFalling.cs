@@ -14,12 +14,20 @@ public class BigCrystalFalling : MonoBehaviour
     private CreaturePillar pillar;
     private bool HasImpact = false;
     [SerializeField] private GameObject hitSplash;
+    private SpriteRenderer renderer;
+    private Animator animator;
+    public Sprite GroundSprite;
 
     public void Init(Vector3 targetPos, GameObject shadowObj, CreaturePillar Pilar)
     {
         targetPosition = targetPos;
         shadow = shadowObj;
         pillar = Pilar;
+    }
+    public void Start()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -44,6 +52,7 @@ public class BigCrystalFalling : MonoBehaviour
             damageRadius
         );
         hitSplash.SetActive( true );
+        animator.Play("BigCrystalGround");
 
         foreach (var hit in hits)
         {
@@ -79,6 +88,17 @@ public class BigCrystalFalling : MonoBehaviour
 
 
     }
+    public void StartRoots()
+    {
+
+        animator.Play("BigCrystalGroundRoots");
+    }
+
+    public void StartDestroy()
+    {
+        animator.Play("BigCrystalGroundBreak");
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

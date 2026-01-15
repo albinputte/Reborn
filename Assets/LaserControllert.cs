@@ -24,6 +24,6 @@ public class LaserControllert : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lineRenderer.SetPosition(1,LaserTarget.position);
+        lineRenderer.SetPosition(1, new Vector3(LaserTarget.position.x, LaserTarget.position.y + 0.5f));
     }
 }

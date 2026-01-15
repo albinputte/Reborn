@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7507068302733929300}
   - component: {fileID: -3935995470224077851}
   - component: {fileID: -1405608516276926780}
+  - component: {fileID: 4765366810304026527}
   m_Layer: 6
   m_Name: BigCrystal
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700483184619015340}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 117.92, y: 87.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -104,6 +105,7 @@ MonoBehaviour:
   damage: 20
   damageRadius: 1.5
   hitSplash: {fileID: 4653675887015166269}
+  GroundSprite: {fileID: 21300000, guid: 9df45de00f9404d4c938b7a1fc05a98b, type: 3}
 --- !u!114 &-3935995470224077851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +230,27 @@ PolygonCollider2D:
       - {x: 1.015625, y: -0.6875}
       - {x: 1.015625, y: -0.0625}
   m_UseDelaunayMesh: 0
+--- !u!95 &4765366810304026527
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700483184619015340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b2f2e043467e344fb26eb83ce6b2e91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &92005780600584288
 PrefabInstance:
   m_ObjectHideFlags: 0

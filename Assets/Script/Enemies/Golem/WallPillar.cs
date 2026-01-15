@@ -23,11 +23,15 @@ public class WallPillar : GolemPillar
 
     [Header("Offsets")]
     public float LaserOffestVertical;
+    private float HorizentalCount;
     public float LaserOffestHorizental;
 
     [Header("Tile Exit Spawn")]
-    public GameObject exitTileSpawnPrefab;
+    public GameObject[] exitTileSpawnPrefab;
+    private int exitTileSpawnCount = 0;
 
+    public GameObject Laser;
+    public GameObject LaserPoint;
     // ===== Tile tracking =====
     private Vector3Int lastCell;
     private bool hasLastCell = false;
@@ -38,7 +42,7 @@ public class WallPillar : GolemPillar
     public override void ExecuteAbility()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        Debug.Log("I doo UwU");
+       
 
         CheckSpawnHorizental(Player);
         StartLaserMovement();
@@ -134,7 +138,8 @@ public class WallPillar : GolemPillar
     {
         if (laserMover == null)
             return;
-
+        exitTileSpawnCount = 0;
+        HorizentalCount = 0;
         laserMoving = true;
         StopAllCoroutines();
         StartCoroutine(MoveLaserOnce(leftSpawn, rightSpawn));
@@ -145,6 +150,8 @@ public class WallPillar : GolemPillar
     // =========================
     IEnumerator MoveLaserOnce(Vector3 start, Vector3 end)
     {
+        LaserPoint.SetActive(true);
+        Laser.SetActive(true);
         laserMover.position = start;
 
         lastCell = WalkableTiels.WorldToCell(start);
@@ -165,6 +172,9 @@ public class WallPillar : GolemPillar
 
         laserMover.position = end;
         laserMoving = false;
+        Laser.SetActive(false);
+        LaserPoint.SetActive(false);
+      
     }
 
     // =========================
@@ -178,6 +188,7 @@ public class WallPillar : GolemPillar
         {
             lastCell = currentCell;
             hasLastCell = true;
+            Instantiate(exitTileSpawnPrefab[1], lastCell, Quaternion.identity);
             return;
         }
 
@@ -195,11 +206,35 @@ public class WallPillar : GolemPillar
     {
         if (!WalkableTiels.HasTile(exitedCell))
             return;
+     
 
         Vector3 spawnWorldPos =
             WalkableTiels.GetCellCenterWorld(exitedCell);
+        if (exitTileSpawnCount == 0)
+        {
+            Instantiate(exitTileSpawnPrefab[0], spawnWorldPos, Quaternion.identity);
+            exitTileSpawnCount++;
+        }
+        else if (HorizentalCount == (LaserOffestHorizental *2) -1)
+        {
+            Instantiate(exitTileSpawnPrefab[1], spawnWorldPos, Quaternion.identity);
+        }
+        else
+        {
+            if (exitTileSpawnCount == 1)
+            {
+                Instantiate(exitTileSpawnPrefab[2], spawnWorldPos, Quaternion.identity);
+                exitTileSpawnCount++;
+            }
+            else {
+                Instantiate(exitTileSpawnPrefab[3], spawnWorldPos, Quaternion.identity);
+                exitTileSpawnCount = 1;
+            }
 
-        Instantiate(exitTileSpawnPrefab, spawnWorldPos, Quaternion.identity);
+         
+        }
+        HorizentalCount++;
+
     }
 
     // =========================

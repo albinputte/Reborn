@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7b2562a04de9674f95df8d76227a2da
+guid: 31b079361d11cba489cd1b9c37baefbc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crystals_Pylons_0
+      name: LaserLava_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 15
+        y: 8
         width: 32
-        height: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46fe339d890c2f7499ff15a6af9d392b
-      internalID: 1319688123
+      spriteID: e8826c4ab6b03e54abbd54783afbe324
+      internalID: -1402917756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystals_Pylons_1
+      name: LaserLava_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 47
+        y: 8
         width: 32
-        height: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42b8dfb0685bdf342a4638f48695fc16
-      internalID: -243038848
+      spriteID: 57e30815411673245b99238ea046508b
+      internalID: -474897054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystals_Pylons_2
+      name: LaserLava_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 128
+        y: 8
         width: 32
-        height: 64
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,29 +192,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aca0fd07712993b4ebcb6f7fa4bc18ac
-      internalID: -1251977532
+      spriteID: ae80909b68eaaee4db7af3c81842b273
+      internalID: -1979269508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystals_Pylons_3
+      name: LaserLava_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 160
+        y: 8
         width: 32
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 391b5533202b27146b20ba7b52ae67cc
-      internalID: 1616305737
+      spriteID: c4140fdc849de874ab579e131316cae9
+      internalID: -427802918
       vertices: []
       indices: 
       edges: []
@@ -228,14 +228,12 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 78760f16304d7794c8013b2e3f820100, type: 3}
-      name: _Emissions
+    secondaryTextures: []
     nameFileIdTable:
-      Crystals_Pylons_0: 1319688123
-      Crystals_Pylons_1: -243038848
-      Crystals_Pylons_2: -1251977532
-      Crystals_Pylons_3: 1616305737
+      LaserLava_0: -1402917756
+      LaserLava_1: -474897054
+      LaserLava_2: -1979269508
+      LaserLava_3: -427802918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

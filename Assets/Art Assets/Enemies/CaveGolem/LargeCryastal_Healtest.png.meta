@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7b2562a04de9674f95df8d76227a2da
+guid: c721e7898a1c8684ba7b24d9787d63c2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,85 +136,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crystals_Pylons_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46fe339d890c2f7499ff15a6af9d392b
-      internalID: 1319688123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crystals_Pylons_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42b8dfb0685bdf342a4638f48695fc16
-      internalID: -243038848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crystals_Pylons_2
+      name: LargeCryastal_Healtest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 64
+        width: 70
+        height: 83
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aca0fd07712993b4ebcb6f7fa4bc18ac
-      internalID: -1251977532
+      spriteID: 7440cc25bc718474a815b3372ca8df1d
+      internalID: -1123620720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crystals_Pylons_3
+      name: LargeCryastal_Healtest_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 70
         y: 0
-        width: 32
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 391b5533202b27146b20ba7b52ae67cc
-      internalID: 1616305737
+      spriteID: 4a2fef927c532d540bf8e3ed9d4b1184
+      internalID: -406965822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c6d31fdc491a2449d25298d461691b
+      internalID: 1241767828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd069955644dd84d97a43f1a8cdbcb3
+      internalID: 1413152408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421e04ecb7221294cbb7eebb4a9aaeb7
+      internalID: 482274935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769fe1f7b0ca33b4bad7378664fc56a1
+      internalID: -1056562855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c161ac7def993149b152becc9066d5b
+      internalID: 642506810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_7
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509ffee2adea59842b5ec0c6b7d0ee9a
+      internalID: 436378226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_8
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9084517eff750204293a10477ef90cdc
+      internalID: -1602968265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargeCryastal_Healtest_9
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb9513555a6c51429172dd7f112aded
+      internalID: 1635695160
       vertices: []
       indices: 
       edges: []
@@ -228,14 +354,18 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 78760f16304d7794c8013b2e3f820100, type: 3}
-      name: _Emissions
+    secondaryTextures: []
     nameFileIdTable:
-      Crystals_Pylons_0: 1319688123
-      Crystals_Pylons_1: -243038848
-      Crystals_Pylons_2: -1251977532
-      Crystals_Pylons_3: 1616305737
+      LargeCryastal_Healtest_0: -1123620720
+      LargeCryastal_Healtest_1: -406965822
+      LargeCryastal_Healtest_2: 1241767828
+      LargeCryastal_Healtest_3: 1413152408
+      LargeCryastal_Healtest_4: 482274935
+      LargeCryastal_Healtest_5: -1056562855
+      LargeCryastal_Healtest_6: 642506810
+      LargeCryastal_Healtest_7: 436378226
+      LargeCryastal_Healtest_8: -1602968265
+      LargeCryastal_Healtest_9: 1635695160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
