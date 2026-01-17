@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8681158270499908412, guid: 3bb13380ee7ee874f803cf3193b5cc55, type: 3}
-  shootInterval: 1.5
+  shootInterval: 2.5
 --- !u!114 &-6950427083989486084
 MonoBehaviour:
   m_ObjectHideFlags: 0

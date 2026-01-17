@@ -211,7 +211,8 @@ public class Health : MonoBehaviour, IDamagable
 
     public void ChainDamage(Health health)
     {
-        health.TakeDamage((int)DamageAmount);
+
+        health.Hit((int)DamageAmount, Vector2.zero);
     }
     public void SpawnParticles(GameObject ParticlePrefab)
     {
