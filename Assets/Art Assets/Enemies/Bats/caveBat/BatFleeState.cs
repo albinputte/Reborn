@@ -4,15 +4,23 @@ public class BatFleeState : BatbaseState
     public BatFleeState(EnemyStateMachine<BatEnemyController> sm, BatEnemyController c, string a)
         : base(sm, c, a) { }
 
-    public override void PhysicsUpdate()
+    public override void Enter()
     {
-        UnityEngine.Vector2 dir = (controller.transform.position - controller.Player.position).normalized;
-        controller.transform.position += (UnityEngine.Vector3)dir * controller.fleeSpeed * UnityEngine.Time.deltaTime;
+        base.Enter();
+        controller.ResetStateTimer();
     }
+
+   
 
     public override void LogicUpdate()
     {
-        if (controller.DistanceToPlayer > controller.attackRange)
+        controller.FleeFromPlayerPathfinding(controller.fleeSpeed);
+        controller.TickStateTimer();
+
+        if (controller.stateTimer >= controller.fleeDuration)
+        {
             stateMachine.SwitchState(controller.PatrolState);
+        }
     }
 }
+

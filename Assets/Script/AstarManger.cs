@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -96,33 +96,38 @@ public class AstarManger : MonoBehaviour
 
     public Node FindFurthestNode(Vector2 playerPos, Vector2 enemyPos)
     {
-         Node foundNode = null;
-        float maxDistance = default;
-        float MaximumDistance = 20f;
+        Node foundNode = null;
+        float maxProjected = float.NegativeInfinity;
+        float maxDistance = 20f;
 
-        // Calculate the direction from player to enemy
-        Vector2 direction = (enemyPos - playerPos).normalized;
+        Vector2 fleeDir = (enemyPos - playerPos).normalized;
 
         foreach (Node node in FindObjectsOfType<Node>())
         {
-            // Calculate the vector from the player to the node
-            Vector2 toNode = new Vector2(node.transform.position.x, node.transform.position.y) - playerPos;
+            Vector2 nodePos = node.transform.position;
+            Vector2 toNode = nodePos - playerPos;
 
-            // Project the toNode vector onto the direction vector (this gives us the distance along the direction)
-            float projectedDistance = Vector2.Dot(toNode, direction);
+            float distanceToPlayer = toNode.magnitude;
+            if (distanceToPlayer > maxDistance)
+                continue;
 
-            // Only consider nodes within the maximum distance
-            float currentDistance = Vector2.Distance(playerPos, node.transform.position);
-            if (currentDistance < MaximumDistance && projectedDistance > maxDistance)
+            float projected = Vector2.Dot(toNode.normalized, fleeDir);
+
+            // ❌ Reject nodes behind player
+            if (projected <= 0f)
+                continue;
+
+            if (projected > maxProjected)
             {
-                maxDistance = projectedDistance;
+                maxProjected = projected;
                 foundNode = node;
             }
         }
 
-        if (foundNode != null)
+        // 🔒 SAFETY FALLBACK
+        if (foundNode == null)
         {
-            Debug.Log("Furthest Node Position: " + foundNode.transform.position);
+            foundNode = FindNearestNode(enemyPos);
         }
 
         return foundNode;

@@ -6,7 +6,7 @@ public class BatPatrolState : BatbaseState
 
     public override void PhysicsUpdate()
     {
-        controller.CirclePlayer();
+        //controller.CirclePlayer();
     }
 
     public override void LogicUpdate()

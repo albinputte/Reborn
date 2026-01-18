@@ -61445,7 +61445,6 @@ MonoBehaviour:
   stateMachine: {fileID: 0}
   crystalHealth: {fileID: 2101089554}
   pillars:
-  - {fileID: 1939335719}
   - {fileID: 1191255765}
   - {fileID: 437504181}
   - {fileID: 529298462}
@@ -61453,7 +61452,6 @@ MonoBehaviour:
   animator: {fileID: 2101089552}
   ChargeTimePhase: 5.14
   TimeBetweenPhases:
-  - 5
   - 4
   - 4
   - 4
