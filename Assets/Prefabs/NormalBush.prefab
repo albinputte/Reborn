@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8634502899997073335}
   - component: {fileID: 6619221385186334564}
   - component: {fileID: 6083063175040859739}
+  - component: {fileID: 2814877267083774304}
   m_Layer: 6
   m_Name: NormalBush
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2f88df940fea10d448263678e24d20c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15073061}
+  m_Offset: {x: -0.05052185, y: 0.05164337}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.3}
@@ -131,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.51, y: 0.30557728}
+  m_Size: {x: 0.859375, y: 0.3590317}
   m_EdgeRadius: 0
 --- !u!58 &6619221385186334564
 CircleCollider2D:
@@ -203,6 +204,57 @@ CircleCollider2D:
   m_Offset: {x: 0.25, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &2814877267083774304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023418283248417547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5764bcf0e639edf4583a1cda9340f1a3, type: 2}
+  currentHealth: 0
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BerryBush, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2814877267083774304}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: SpawnParticlesFromTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4614288602200262478, guid: d5a7347524c66f743bd85b14e1fe948c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPassivRegen:
+    m_PersistentCalls:
+      m_Calls: []
+  IsPlayer: 0
 --- !u!1 &6218002472294654398
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +326,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b0b8202b2a2a3d048af5491f2ed0309a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
