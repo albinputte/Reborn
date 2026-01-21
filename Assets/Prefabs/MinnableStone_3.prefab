@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 02e92d967ca06f34d8d0f1be1731652f, type: 2}
+  currentHealth: 0
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
