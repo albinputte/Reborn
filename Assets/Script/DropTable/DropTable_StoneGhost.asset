@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072b9ee32a032504fb809636cf7b88ea, type: 3}
+  m_Name: DropTable_StoneGhost
+  m_EditorClassIdentifier: 
+  GurantedLoot:
+    Name: 
+    ChanceToRoll: 100
+    lootTable:
+    - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
+      dropChance: 100
+      minDrop: 1
+      maxDrop: 1
+    - item: {fileID: 11400000, guid: 2551cd245a7b66e4f97ff99af4ca01bb, type: 2}
+      dropChance: 30
+      minDrop: 1
+      maxDrop: 3
+  LootingTable:
+  - Name: 
+    ChanceToRoll: 40
+    lootTable:
+    - item: {fileID: 11400000, guid: f3aada6bf78aa5448a1615305eb8f7dc, type: 2}
+      dropChance: 20
+      minDrop: 1
+      maxDrop: 1
