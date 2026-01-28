@@ -10,21 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 072b9ee32a032504fb809636cf7b88ea, type: 3}
-  m_Name: DropTableBase 1
+  m_Name: DropTable_NatureWolf
   m_EditorClassIdentifier: 
   GurantedLoot:
-    Name: 
+    Name: Common
     ChanceToRoll: 100
     lootTable:
     - item: {fileID: 11400000, guid: 2f5aeb70d1764c04e9b1b8646e73d98b, type: 2}
       dropChance: 100
       minDrop: 1
-      maxDrop: 1
+      maxDrop: 3
     - item: {fileID: 11400000, guid: f6d5ef8775055bc41bd2700716d1c26d, type: 2}
       dropChance: 100
       minDrop: 1
-      maxDrop: 1
+      maxDrop: 2
   LootingTable:
-  - Name: 
-    ChanceToRoll: 0
-    lootTable: []
+  - Name: Uncommon
+    ChanceToRoll: 20
+    lootTable:
+    - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
+      dropChance: 20
+      minDrop: 1
+      maxDrop: 4
+    - item: {fileID: 11400000, guid: cc3b412bc5c5fb6458d8d3cc8eb1d4aa, type: 2}
+      dropChance: 10
+      minDrop: 1
+      maxDrop: 1
+  - Name: Rare
+    ChanceToRoll: 8
+    lootTable:
+    - item: {fileID: 11400000, guid: 0f565937d6d41a94ebf3f22649209b87, type: 2}
+      dropChance: 40
+      minDrop: 1
+      maxDrop: 1

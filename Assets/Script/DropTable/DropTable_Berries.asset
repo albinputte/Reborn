@@ -17,15 +17,15 @@ MonoBehaviour:
     ChanceToRoll: 0
     lootTable: []
   LootingTable:
-  - Name: common
+  - Name: Common
     ChanceToRoll: 100
     lootTable:
     - item: {fileID: 11400000, guid: c759988bad9f455418ef9c49bf9821d2, type: 2}
       dropChance: 100
       minDrop: 1
       maxDrop: 3
-  - Name: rare
-    ChanceToRoll: 5
+  - Name: Rare
+    ChanceToRoll: 100
     lootTable:
     - item: {fileID: 11400000, guid: 476ad0f6ba992574b9efb5b06d186c0e, type: 2}
       dropChance: 100

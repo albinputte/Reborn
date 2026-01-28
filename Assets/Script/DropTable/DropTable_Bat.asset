@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072b9ee32a032504fb809636cf7b88ea, type: 3}
+  m_Name: DropTable_Bat
+  m_EditorClassIdentifier: 
+  GurantedLoot:
+    Name: Common
+    ChanceToRoll: 100
+    lootTable:
+    - item: {fileID: 11400000, guid: 16265b246f2480849abfe908640847e7, type: 2}
+      dropChance: 100
+      minDrop: 0
+      maxDrop: 2
+  LootingTable:
+  - Name: Rare
+    ChanceToRoll: 20
+    lootTable:
+    - item: {fileID: 11400000, guid: 4d95ff54cbeedfd40b7f409f521634a0, type: 2}
+      dropChance: 20
+      minDrop: 1
+      maxDrop: 2
+    - item: {fileID: 11400000, guid: be3f7f09b88eab0438bce0adaa7bdd64, type: 2}
+      dropChance: 50
+      minDrop: 1
+      maxDrop: 2
