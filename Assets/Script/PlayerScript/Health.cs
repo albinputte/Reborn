@@ -115,6 +115,11 @@ public class Health : MonoBehaviour, IDamagable
         }
     }
 
+    public void heal(int amount)
+    {
+        heal(amount, false);
+    }
+
     public void heal(int amount, bool PassivRegen)
     {
         currentHealth += amount;

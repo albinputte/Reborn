@@ -88,6 +88,11 @@ public class BigCrystalFalling : MonoBehaviour
 
 
     }
+
+    private void OnDestroy()
+    {
+        pillar.StoneList.Remove(transform.position);
+    }
     public void StartRoots()
     {
 
