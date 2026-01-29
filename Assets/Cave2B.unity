@@ -10720,7 +10720,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17795134, y: 1.3020835}
+  m_Offset: {x: -0.008110046, y: 0.19529343}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4066485, y: 0.15564734}
@@ -10731,7 +10731,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.90625, y: 3.78125}
+  m_Size: {x: 0.91145325, y: 1.5185928}
   m_EdgeRadius: 0
 --- !u!114 &281894123
 MonoBehaviour:
@@ -10782,6 +10782,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 281894121}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 281894123}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16762,6 +16774,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 437504180}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -17808,6 +17832,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 2101089554}
           m_ObjectArgumentAssemblyTypeName: Health, Assembly-CSharp
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 529298461}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -30425,6 +30461,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1019091976}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -30467,7 +30515,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17795134, y: 1.3020835}
+  m_Offset: {x: -0.008110046, y: 0.19529343}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4066485, y: 0.15564734}
@@ -30478,7 +30526,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.90625, y: 3.78125}
+  m_Size: {x: 0.91145325, y: 1.5185928}
   m_EdgeRadius: 0
 --- !u!1001 &1036589981
 PrefabInstance:
@@ -61730,6 +61778,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1191255764}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -63388,7 +63448,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17795134, y: 1.3020835}
+  m_Offset: {x: -0.008110046, y: 0.19529343}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4066485, y: 0.15564734}
@@ -63399,7 +63459,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.90625, y: 3.78125}
+  m_Size: {x: 0.91145325, y: 1.5185928}
   m_EdgeRadius: 0
 --- !u!114 &1499051805
 MonoBehaviour:
@@ -63456,12 +63516,12 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1499051805}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: OnDamagePopUp
-        m_Mode: 2
+        m_MethodName: heal
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1499051803}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -65288,7 +65348,7 @@ Transform:
   m_GameObject: {fileID: 1718979013}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.7, y: 38.8, z: 0}
+  m_LocalPosition: {x: 10.7, y: 38.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92925,7 +92985,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17795134, y: 1.3020835}
+  m_Offset: {x: -0.008110046, y: 0.19529343}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4066485, y: 0.15564734}
@@ -92936,7 +92996,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.90625, y: 3.78125}
+  m_Size: {x: 0.91145325, y: 1.5185928}
   m_EdgeRadius: 0
 --- !u!114 &1861595604
 MonoBehaviour:
@@ -92987,6 +93047,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 1861595602}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1861595604}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -93956,6 +94028,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 2101089554}
           m_ObjectArgumentAssemblyTypeName: Health, Assembly-CSharp
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1939335720}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -95066,15 +95150,17 @@ MonoBehaviour:
   crystalHealth: {fileID: 2101089554}
   pillars:
   - {fileID: 1191255765}
+  - {fileID: 1939335719}
   - {fileID: 437504181}
   - {fileID: 529298462}
   abilityPoints: 0
   animator: {fileID: 2101089552}
   ChargeTimePhase: 5.14
   TimeBetweenPhases:
-  - 4
-  - 4
-  - 4
+  - 5
+  - 5
+  - 5
+  - 5
 --- !u!95 &2101089552
 Animator:
   serializedVersion: 5

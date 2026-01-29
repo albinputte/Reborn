@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e643301dd70e54983aa04d3126fb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerTick: 1
-  amountOfTick: 15
-  tickInterval: 0.2
+  damagePerTick: 4
+  amountOfTick: 3
+  tickInterval: 3
   timeToStartFading: 4
   fadeDuration: 1
 --- !u!61 &8130033622418248524
