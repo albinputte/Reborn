@@ -102,11 +102,13 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8681158270499908412, guid: 3bb13380ee7ee874f803cf3193b5cc55, type: 3}
   minPause: 4
   maxPause: 4
-  baseProjectileSpeed: 6
   burstMin: 3
   burstMax: 3
-  playerAimBias: 0.5
-  maxAimAngleOffset: 180
+  enragedBurstmin: 7
+  enragedBurstmax: 7
+  isEnraged: 0
+  playerAimBias: 0.606
+  maxAimAngleOffset: 120
 --- !u!114 &-6950427083989486084
 MonoBehaviour:
   m_ObjectHideFlags: 0
