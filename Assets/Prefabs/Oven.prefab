@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingRecipes:
   - {fileID: 11400000, guid: 8ee83a8eb1b8d404e92d6c5ead7812bb, type: 2}
-  - {fileID: 11400000, guid: 13a52a1d6988ac6468a31c8fdb152302, type: 2}
+  - {fileID: 11400000, guid: c5ccc7acc2bbed444b42271091531cf8, type: 2}
   currentCraftingMangerIndex: 0
   inventory: {fileID: 11400000, guid: 275bc8709cac5e440ab70d83e2dbb906, type: 2}
   availableRecipes: []
@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 0eda0e67ff6678e408948927e17b1cf9, type: 2}
+  currentHealth: 0
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []

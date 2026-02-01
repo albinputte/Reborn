@@ -17,5 +17,10 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 2f97fa93a5ee6e34b86aabc48a200125, type: 3}
   itemType: 0
   IsStackable: 1
-  IsCraftable: 0
-  craftingRecipe: []
+  IsCraftable: 1
+  craftingRecipe:
+  - ingredients:
+    - item: {fileID: 11400000, guid: 3a90c974f2172a44382dfebc892126cb, type: 2}
+      quantity: 2
+    resultItem: {fileID: 11400000}
+    resultQuantity: 1

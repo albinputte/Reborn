@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 18f2214558e3a5f47af8d5037626eaa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,11 +161,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -850520811
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32829004a86be7a44859bdf5963de11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 5764bcf0e639edf4583a1cda9340f1a3, type: 2}
+  currentHealth: 0
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -225,8 +226,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oreCount: 3
+  MaxHitCount: 0
   orePrefab: {fileID: 9145960511673896059, guid: 0e0b52866569ff04796138b122c231de, type: 3}
   ItemData: {fileID: 11400000, guid: 5712b0ff2ce6bed4face90e76dd2ffd1, type: 2}
+  IsStone: 0
   respawnTime: 120
   minOres: 3
   maxOres: 5
@@ -234,6 +237,7 @@ MonoBehaviour:
   Button: {fileID: 3357101700934851416}
   NewMaterial: {fileID: 2100000, guid: 592784dc5b0e13e4d9deb495f4be30d7, type: 2}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  Pickaxe: {fileID: 0}
   StoneParticles: {fileID: 4487043840457761303}
   HasShadow: 1
   Shadow: {fileID: 3357101700934851416}
