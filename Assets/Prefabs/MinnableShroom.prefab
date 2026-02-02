@@ -235,7 +235,7 @@ MonoBehaviour:
   maxOres: 5
   Type: 0
   Button: {fileID: 3357101700934851416}
-  NewMaterial: {fileID: 2100000, guid: 592784dc5b0e13e4d9deb495f4be30d7, type: 2}
+  NewMaterial: {fileID: -876546973899608171, guid: 0605581ee36b79145992400f5d365f7f, type: 3}
   OldMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   Pickaxe: {fileID: 0}
   StoneParticles: {fileID: 4487043840457761303}
