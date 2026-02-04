@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 74d653582ec49d5458200c228fe5027d
+guid: 63721c7bde0e69b47970d552e9f76ca2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icons_Swords_0
+      name: Nm_Sword 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,20 +144,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a8682629b8540d4e9f826c78036f830
-      internalID: 987380367
+      spriteID: 9edd02812a457e347bb78eb7458cf4c2
+      internalID: -266421800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_Swords_1
+      name: Nm_Sword 1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -165,20 +165,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9a6f9070c85ba944a10de65dfbf3f05
-      internalID: 1235880240
+      spriteID: 7b0f69330de5cb64b98a217a32694631
+      internalID: -1700936361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_Swords_2
+      name: Nm_Sword 1_2
       rect:
         serializedVersion: 2
         x: 32
@@ -186,20 +186,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb5cf32b84b51b041a62d7a86f57c064
-      internalID: 95129405
+      spriteID: 609944f08b3f0e749a3840088c44cabb
+      internalID: -1077896541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_Swords_3
+      name: Nm_Sword 1_3
       rect:
         serializedVersion: 2
         x: 48
@@ -207,20 +207,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e65739d20bba9c4ca350a0f7a5916c2
-      internalID: -610712275
+      spriteID: cd9cf32f1c7425c47ad1799b72be6b99
+      internalID: 1645224817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_Swords_4
+      name: Nm_Sword 1_4
       rect:
         serializedVersion: 2
         x: 64
@@ -228,14 +228,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3569f08665b9cf4ba11292591a82c60
-      internalID: -385816945
+      spriteID: 70beadef7b1ba20498e910300810b2a7
+      internalID: 336927089
       vertices: []
       indices: 
       edges: []
@@ -249,15 +249,13 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 63721c7bde0e69b47970d552e9f76ca2, type: 3}
-      name: _NormalMap
+    secondaryTextures: []
     nameFileIdTable:
-      Icons_Swords_0: 987380367
-      Icons_Swords_1: 1235880240
-      Icons_Swords_2: 95129405
-      Icons_Swords_3: -610712275
-      Icons_Swords_4: -385816945
+      Nm_Sword 1_0: -266421800
+      Nm_Sword 1_1: -1700936361
+      Nm_Sword 1_2: -1077896541
+      Nm_Sword 1_3: 1645224817
+      Nm_Sword 1_4: 336927089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
