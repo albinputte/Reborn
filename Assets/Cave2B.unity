@@ -30864,34 +30864,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091086295}
     m_Modifications:
-    - target: {fileID: 547614779470082141, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 3041332850753614888, guid: 246476c0e04e29145ba66935711022a2, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 21300000, guid: 60257beee2a7ca24282aa9d667e3b4ea, type: 3}
-    - target: {fileID: 5322504507647189891, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_Size.y
-      value: 0.30548096
-      objectReference: {fileID: 0}
-    - target: {fileID: 5322504507647189891, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.35170746
-      objectReference: {fileID: 0}
-    - target: {fileID: 5322504507647189891, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.4066485
-      objectReference: {fileID: 0}
-    - target: {fileID: 5322504507647189891, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.15564734
-      objectReference: {fileID: 0}
-    - target: {fileID: 5322504507647189891, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.90625
-      objectReference: {fileID: 0}
-    - target: {fileID: 5322504507647189891, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3.78125
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 437504180}
     - target: {fileID: 6014515077244522492, guid: 246476c0e04e29145ba66935711022a2, type: 3}
       propertyPath: m_Name
       value: LargePillar2 (3)
@@ -30939,13 +30915,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6014515077244522492, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1861595604}
-    - targetCorrespondingSourceObject: {fileID: 6014515077244522492, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1861595603}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 246476c0e04e29145ba66935711022a2, type: 3}
 --- !u!1001 &1060058803
 PrefabInstance:
@@ -92998,141 +92968,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9107154811363128214, guid: b08c16b1192c83d43af0f0e58dc8b622, type: 3}
   m_PrefabInstance: {fileID: 1837776467}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1861595599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6014515077244522492, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-  m_PrefabInstance: {fileID: 1056614162}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1861595601 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 547614779470082141, guid: 246476c0e04e29145ba66935711022a2, type: 3}
-  m_PrefabInstance: {fileID: 1056614162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1861595602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8933382353687882613, guid: 246476c0e04e29145ba66935711022a2, type: 3}
   m_PrefabInstance: {fileID: 1056614162}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1861595603
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861595599}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 768
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 15615
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.008110046, y: 0.19529343}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4066485, y: 0.15564734}
-    oldSize: {x: 1.90625, y: 3.78125}
-    newSize: {x: 4.875, y: 7.53125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.91145325, y: 1.5185928}
-  m_EdgeRadius: 0
---- !u!114 &1861595604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861595599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c208b59971fd24c8aa272f69271399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 742896d82f817a44eb1aa101e07ddf54, type: 2}
-  currentHealth: 0
-  OnTakeDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1861595604}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: ChainDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 437504180}
-          m_ObjectArgumentAssemblyTypeName: Health, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1861595604}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: Flash
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1861595601}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1861595604}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: OnDamagePopUp
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1861595602}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1861595604}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: heal
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPassivRegen:
-    m_PersistentCalls:
-      m_Calls: []
-  IsPlayer: 0
 --- !u!1001 &1864866353
 PrefabInstance:
   m_ObjectHideFlags: 0
