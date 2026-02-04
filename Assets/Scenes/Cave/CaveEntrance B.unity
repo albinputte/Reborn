@@ -2845,6 +2845,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4404569578405026400}
     m_Modifications:
+    - target: {fileID: 547614779470082141, guid: 208003bc44228074cb6b602130530e46, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 547614779470082141, guid: 208003bc44228074cb6b602130530e46, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 547614779470082141, guid: 208003bc44228074cb6b602130530e46, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6014515077244522492, guid: 208003bc44228074cb6b602130530e46, type: 3}
       propertyPath: m_Name
       value: Mushroom_Small (1)
